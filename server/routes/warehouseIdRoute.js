@@ -17,8 +17,10 @@ router.get('/:warehouseId', (req,res) => {
     const warehouse = warehousesDataParsed.find(warehouse => warehouse.id === warehouseId)
     const inventory = inventoriesDataParsed.filter(inventoryItem => inventoryItem.warehouseID === warehouseId)
 
-    console.log(inventory)
-
+    if(warehouse === undefined){
+        return res.status(404).json('Warehouse not found.')
+    }
+    return res.status(200).json({warehouse: warehouse, inventory: inventory})
 } )
 
 module.exports = router;
