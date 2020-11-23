@@ -14,7 +14,11 @@ router.get('/:warehouseId', (req,res) => {
 
     const warehouseId = req.params.warehouseId;
 
-    console.log(warehouseId)
+    const warehouse = warehousesDataParsed.find(warehouse => warehouse.id === warehouseId)
+    const inventory = inventoriesDataParsed.filter(inventoryItem => inventoryItem.warehouseID === warehouseId)
+
+    console.log(inventory)
+
 } )
 
 module.exports = router;
