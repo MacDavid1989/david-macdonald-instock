@@ -10,6 +10,9 @@
   padding: 0.5rem;
   border-radius: 1rem;
 }
+.header__btn:hover {
+  cursor: pointer;
+}
 .header__btn--active {
   background-color: #13182C;
 }
