@@ -1,3 +1,16 @@
-.h{
-    color: blue;
+.header{
+    background-color: #232940;
+    padding: 1rem;
+
+    &__btn{
+        background-color: #232940;
+        border: none;
+        color: white;
+        width: 50%;
+        padding: .5rem;
+        border-radius: 1rem;
+        &--active{
+            background-color: #13182C;
+        }
+    }
 }
