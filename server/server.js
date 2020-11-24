@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const warehouseIdRoute = require('./routes/warehouseIdRoute')
-const inventoryIdRoute = require('./routes/inventoryIdRoute')
+const warehouseIdRoute = require('./routes/warehouseIdRoute');
+const inventoryIdRoute = require('./routes/inventoryIdRoute');
 
 // allows use of .env
 require('dotenv').config();
