@@ -31,7 +31,8 @@ router.post('/create', (req, res) => {
 
 //Method to get all warehouses from JSON FILE
 function getAllWarehouses(){
-    
+    const warehousesData = fs.readFileSync(warehouses);
+    return JSON.parse(warehousesData);
 }
 
 
