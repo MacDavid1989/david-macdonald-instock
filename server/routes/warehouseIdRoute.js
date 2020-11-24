@@ -1,12 +1,12 @@
 const fs = require('fs')
 const express = require('express');
 const router = express.Router();
-const warehouses = './data/warehouses.json';
+const warehouseFile = './data/warehouses.json';
 const inventories = './data/inventories.json'
 
 // GET /:warehouseId
 router.get('/:warehouseId', (req,res) => {
-    const warehousesData = fs.readFileSync(warehouses);
+    const warehousesData = fs.readFileSync(warehouseFile);
     const inventoriesData = fs.readFileSync(inventories);
 
     const warehousesDataParsed = JSON.parse(warehousesData);
@@ -25,12 +25,23 @@ router.get('/:warehouseId', (req,res) => {
 
 // POST / CREATE A NEW WAREHOUSE
 router.post('/create', (req, res) => {
+    //get the list of warehouses
+    const warehouses = getAllWarehouses();
+
+    //make the new warehouse
+    const newWarehouse = createNewWarehouse(req.body);
+
+    //add the new warehouse to the list
+    warehouses.push(newWarehouse);
+
+    //update the file
+    fs.writeFileSync(warehouseFile, JSON.stringify(warehouses));
 })
 
 
 //Method to get all warehouses from JSON FILE
 function getAllWarehouses(){
-    const warehousesData = fs.readFileSync(warehouses);
+    const warehousesData = fs.readFileSync(warehouseFile);
     return JSON.parse(warehousesData);
 }
 
