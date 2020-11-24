@@ -25,7 +25,6 @@ router.get('/:warehouseId', (req,res) => {
 
 // POST / CREATE A NEW WAREHOUSE
 router.post('/create', (req, res) => {
-
 })
 
 
@@ -33,6 +32,21 @@ router.post('/create', (req, res) => {
 function getAllWarehouses(){
     const warehousesData = fs.readFileSync(warehouses);
     return JSON.parse(warehousesData);
+}
+
+function createNewWarehouse({name, address, city, country, contactName, position, phoneNumber, email}){
+    const newWarehouse = {
+        "name": name, 
+        "address": address, 
+        "city": city, 
+        "country": country, 
+        "contactName": contactName, 
+        "position": position, 
+        "phoneNumber": phoneNumber, 
+        "email": email
+    }
+
+    return newWarehouse;
 }
 
 
