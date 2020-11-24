@@ -3,8 +3,8 @@ const express = require('express');
 const router = express.Router();
 const inventories = './data/inventories.json'
 
-// GET /:warehouseId/inventory/:inventoryId
-router.get('/:inventoryId', (req,res) => {
+// GET /:warehouseId/inventory/:itemId
+router.get('/:itemId', (req,res) => {
     const inventoriesData = fs.readFileSync(inventories);
 
     const inventoriesDataParsed = JSON.parse(inventoriesData);
