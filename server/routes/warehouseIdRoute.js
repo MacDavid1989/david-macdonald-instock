@@ -50,7 +50,10 @@ router.post("/create", (req, res) => {
   res.status(406).json("Input not accepted");
 });
 
-
+router.put("/:warehouseId/update", (req, res) =>{
+    //get the list of warehouses
+    const warehouseList = getAllWarehouses();
+});
 
 //Method to get all warehouses from JSON FILE
 function getAllWarehouses() {
