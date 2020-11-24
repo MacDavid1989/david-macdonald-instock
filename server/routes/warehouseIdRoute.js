@@ -71,6 +71,14 @@ router.put("/:warehouseId/update", (req, res) => {
 
 router.delete("/:warehouseId", (req,res) => {
     const warehouseList = getAllWarehouses();
+    let didDelete = false;
+    for(let i = 0; i < warehouseList.length; i++){
+        if(warehouseList[i].id == req.params.warehouseId){
+            didDelete = true;
+            warehouseList.splice(i, 1);
+        }
+    }
+
     
 })
 
