@@ -26,16 +26,19 @@ router.get('/:warehouseId', (req,res) => {
 // POST / CREATE A NEW WAREHOUSE
 router.post('/create', (req, res) => {
     //get the list of warehouses
-    const warehouses = getAllWarehouses();
+    const warehouseList = getAllWarehouses();
 
     //make the new warehouse
     const newWarehouse = createNewWarehouse(req.body);
 
     //add the new warehouse to the list
-    warehouses.push(newWarehouse);
+    warehouseList.push(newWarehouse);
 
     //update the file
-    fs.writeFileSync(warehouseFile, JSON.stringify(warehouses));
+    fs.writeFileSync(warehouseFile, JSON.stringify(warehouseList));
+
+    //send response
+    res.status(200).josn({warehouses: warehouseList});
 })
 
 
