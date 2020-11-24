@@ -34,7 +34,7 @@ router.post("/create", (req, res) => {
   const warehouseList = getAllWarehouses();
 
   //make the new warehouse
-  const newWarehouse = createNewWarehouse(uuid(), req.body);
+  const newWarehouse = createNewWarehouse(uuidv4(), req.body);
 
   //if there is a good input
   if (newWarehouse) {
