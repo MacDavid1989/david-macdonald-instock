@@ -69,6 +69,11 @@ router.put("/:warehouseId/update", (req, res) => {
   }
 });
 
+router.delete("/:warehouseId", (req,res) => {
+    const warehouseList = getAllWarehouses();
+    
+})
+
 //Method to get all warehouses from JSON FILE
 function getAllWarehouses() {
   const warehousesData = fs.readFileSync(warehouseFile);
