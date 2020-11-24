@@ -7,14 +7,14 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Home}/>
-        {/* <Route path="/warehouse/:warehouseid" component={Warehouse} /> */}
-        {/* <Route path="/warehouse/edit/:warehouseid" component={WarehouseEdit} /> */}
+        {/* <Route path="/warehouse/:warehouseId" component={Warehouse} /> */}
+        {/* <Route path="/warehouse/:warehouseId/edit" component={WarehouseEdit} /> */}
         {/* <Route path="/warehouse/add" component={WarehouseAdd} /> */}
-        {/* <Route path="/warehouse/inventory/:warehouseid" component={WarehouseInventory} /> */}
+        {/* <Route path="/warehouse/:warehouseId/inventory" component={WarehouseInventory} /> */}
         {/* <Route path="/inventory" component={Inventory} /> */}
-        {/* <Route path="/inventory/:itemid" component={ItemDetails} /> */}
-        {/* <Route path="/inventory/edit/:itemid" component={ItemEdit} /> */}
-        {/* <Route path="/inventory/add" component={ItemAdd} /> */}
+        {/* <Route path="/warehouse/:warehouseId/inventory/:itemId" component={ItemDetails} /> */}
+        {/* <Route path="/warehouse/:warehouseId/inventory/:itemId/edit" component={ItemEdit} /> */}
+        {/* <Route path="/warehouse/:warehouseId/inventory/add" component={ItemAdd} /> */}
       </Switch>
     </BrowserRouter>
   );
