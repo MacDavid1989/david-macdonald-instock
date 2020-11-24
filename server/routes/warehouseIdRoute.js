@@ -5,6 +5,8 @@ const router = express.Router();
 const warehouseFile = "./data/warehouses.json";
 const inventories = "./data/inventories.json";
 
+
+
 // GET /:warehouseId
 router.get("/:warehouseId", (req, res) => {
   const warehousesData = fs.readFileSync(warehouseFile);
@@ -92,6 +94,7 @@ function getAllWarehouses() {
   return JSON.parse(warehousesData);
 }
 
+//creates a new warehosue
 function createNewWarehouse(newId, {
   name,
   address,
@@ -124,6 +127,7 @@ function createNewWarehouse(newId, {
   return null;
 }
 
+//check inputs for creating new warehouse
 function checkInput({
   name,
   address,
