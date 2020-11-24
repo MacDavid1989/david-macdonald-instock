@@ -34,7 +34,7 @@ router.post("/create", (req, res) => {
   const warehouseList = getAllWarehouses();
 
   //make the new warehouse
-  const newWarehouse = createNewWarehouse(req.body);
+  const newWarehouse = createNewWarehouse(uuid(), req.body);
 
   //if there is a good input
   if (newWarehouse) {
@@ -50,9 +50,23 @@ router.post("/create", (req, res) => {
   res.status(406).json("Input not accepted");
 });
 
-router.put("/:warehouseId/update", (req, res) =>{
-    //get the list of warehouses
-    const warehouseList = getAllWarehouses();
+router.put("/:warehouseId/update", (req, res) => {
+  //get the list of warehouses
+  let warehouseList = getAllWarehouses();
+  if(checkInput(req.body)){
+      warehouseList.forEach(data => {
+          if(data.id == req.params.warehouseId){
+              let newData = createNewWarehouse(data.id, data);
+              if(newData){
+                  data = newData;
+                  res.status(200).json({ warehouses: warehouseList });
+              }else{
+                res.status(406).json("Input not accepted");
+              }
+              return;
+          }
+      })
+  }
 });
 
 //Method to get all warehouses from JSON FILE
@@ -61,7 +75,7 @@ function getAllWarehouses() {
   return JSON.parse(warehousesData);
 }
 
-function createNewWarehouse({
+function createNewWarehouse(newId, {
   name,
   address,
   city,
@@ -69,26 +83,12 @@ function createNewWarehouse({
   contactName,
   position,
   phoneNumber,
-  email,
+  email
 }) {
-  //regular expressions
-  const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-  const regexPhone = /[a-zA-Z]/g;
-
   //check each input
-  if (
-    name.trim() &&
-    address.trim() &&
-    city.trim() &&
-    country.trim() &&
-    contactName.trim() &&
-    position.trim() &&
-    regexEmail.test(email) &&
-    !regexPhone.test(phoneNumber) &&
-    phoneNumber.length >= 10
-  ) {
+  if (checkInput(name, address, city, country, contactName, position, phoneNumber, email)) {
     const newWarehouse = {
-      id: uuidv4(),
+      id: newId,
       name: name,
       address: address,
       city: city,
@@ -105,6 +105,33 @@ function createNewWarehouse({
 
   //if input is bad return null
   return null;
+}
+
+function checkInput({
+  name,
+  address,
+  city,
+  country,
+  contactName,
+  position,
+  phoneNumber,
+  email
+}) {
+  //regular expressions
+  const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  const regexPhone = /[a-zA-Z]/g;
+
+  return (
+    name.trim() &&
+    address.trim() &&
+    city.trim() &&
+    country.trim() &&
+    contactName.trim() &&
+    position.trim() &&
+    regexEmail.test(email) &&
+    !regexPhone.test(phoneNumber) &&
+    phoneNumber.length >= 10
+  );
 }
 
 module.exports = router;
