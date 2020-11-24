@@ -15,10 +15,10 @@ app.use(express.json());
 app.use(cors());
 
 // warehouse id route
-app.use('/', warehouseIdRoute)
+app.use('/warehouse', warehouseIdRoute)
 
 // inventory id route
-app.use('/:warehouseId/inventory', inventoryIdRoute)
+app.use('/warehouse/:warehouseId/inventory', inventoryIdRoute)
 
 app.listen(port, ()=>{
     console.log(`Server Started on http://localhost:${port}`);
