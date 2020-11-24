@@ -4,7 +4,7 @@ const router = express.Router();
 const warehouses = './data/warehouses.json';
 const inventories = './data/inventories.json'
 
-// GET /:warehouseId
+// GET /warehouse/:warehouseId
 router.get('/:warehouseId', (req,res) => {
     const warehousesData = fs.readFileSync(warehouses);
     const inventoriesData = fs.readFileSync(inventories);
