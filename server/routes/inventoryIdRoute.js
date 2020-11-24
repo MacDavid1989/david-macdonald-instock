@@ -3,15 +3,15 @@ const express = require('express');
 const router = express.Router();
 const inventories = './data/inventories.json'
 
-// GET /:warehouseId/inventory/:itemId
+// GET /warehouse/:warehouseId/inventory/:itemId
 router.get('/:itemId', (req,res) => {
     const inventoriesData = fs.readFileSync(inventories);
 
     const inventoriesDataParsed = JSON.parse(inventoriesData);
 
-    const inventoryId = req.params.inventoryId;
+    const itemId = req.params.itemId;
 
-    const inventoryItem = inventoriesDataParsed.filter(inventoryItem => inventoryItem.id === inventoryId)
+    const inventoryItem = inventoriesDataParsed.filter(inventoryItem => inventoryItem.id === itemId)
 
     if(inventoryItem[0] === undefined){
         return res.status(404).json('Item not found.')
