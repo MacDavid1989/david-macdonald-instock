@@ -11,7 +11,6 @@ function App() {
         {/* <Route path="/warehouse/:warehouseId/edit" component={WarehouseEdit} /> */}
         {/* <Route path="/warehouse/add" component={WarehouseAdd} /> */}
         {/* <Route path="/warehouse/:warehouseId/inventory" component={WarehouseInventory} /> */}
-        {/* <Route path="/inventory" component={Inventory} /> */}
         {/* <Route path="/warehouse/:warehouseId/inventory/:itemId" component={ItemDetails} /> */}
         {/* <Route path="/warehouse/:warehouseId/inventory/:itemId/edit" component={ItemEdit} /> */}
         {/* <Route path="/warehouse/:warehouseId/inventory/add" component={ItemAdd} /> */}
