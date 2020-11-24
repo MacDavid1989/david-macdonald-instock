@@ -2,12 +2,10 @@ import './App.scss';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Warehouse from './components/Warehouse/Warehouse';
-import Header from './components/Header/Header'
 
 function App() {
   return (
     <BrowserRouter>
-      <Header/>
       <Switch>
         <Route path="/" exact component={Home}/>
         <Route path="/warehouse/:warehouseId" component={Warehouse} />

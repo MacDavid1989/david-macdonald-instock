@@ -1,0 +1,10 @@
+@import './partials/variables';
+@import './partials/mixins';
+
+*, *::before, *::after {
+    @include normal;
+}
+
+#root {
+    background-color: #D1D1D1;
+}

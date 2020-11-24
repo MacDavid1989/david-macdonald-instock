@@ -1,0 +1,105 @@
+// <<<<<<<< IMPORTS >>>>>>>> \\
+
+@import 'variables';
+@import 'fontDefinition';
+
+// <<<<<<<< MEDIA-QUERY BREAKPOINTS >>>>>>>> \\
+
+@mixin mobile {
+    min-width: $mobile-breakpoint;
+}
+@mixin tablet {
+    @media (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+// <<<<<<<< DESKTOP AND TABLET DESK STYLES >>>>>>>> \\
+
+@mixin page-header {
+    font-size: map-get($size, page-header);
+    line-height: 2.5rem;
+}
+
+@mixin sub-header {
+    font-size: map-get($size, sub-header);
+    line-height: 2rem;
+}
+
+@mixin label-links-btn {
+    font-size: map-get($size, label-links-btn);
+    line-height: 1.375rem;
+}
+
+@mixin table-header {
+    font-size: map-get($size, table-header);
+    line-height: 1.125rem;
+}
+
+@mixin body-large {
+    font-size: map-get($size, body-large);
+    line-height: 1.75rem;
+}
+
+@mixin body-medium {
+    font-size: map-get($size-tab-desk, body-medium);
+    line-height: 1.375rem;
+}
+
+@mixin body-small {
+    font-size: map-get($size-tab-desk, body-small);
+    line-height: 1.125rem;
+}
+
+// <<<<<< MOBILE TEXT STYLES >>>>>> \\
+
+
+
+@mixin mob-page-header {
+    font-size: map-get($size-tab-desk, mob-page-header);
+    line-height: 2.25rem;
+}
+
+@mixin mob-sub-header {
+    font-size: map-get($size-tab-desk, mob-sub-header);
+    line-height: 1.75rem;
+}
+
+@mixin mob-labels-links-btn {
+    font-size: map-get($size-tab-desk, mob-labels-links-btn);
+    line-height: 1.25rem;
+}
+
+@mixin mob-table-header {
+    font-size: map-get($size-tab-desk, mob-table-header);
+    line-height: 1rem;
+}
+
+@mixin mob-body-large {
+    font-size: map-get($size-tab-desk, mob-body-large);
+    line-height: 1.625rem;
+}
+
+@mixin mob-body-medium {
+    font-size: map-get($size-tab-desk, mob-body-medium);
+    line-height: 1.25rem;
+}
+
+@mixin mob-body-small {
+    font-size: map-get($size-tab-desk, mob-body-small);
+    line-height: 1rem;
+}
+
+// <<<<<<<< DEFAULT STYLING RESET >>>>>>>> \\
+
+@mixin normal {
+    box-sizing: border-box;
+    *, *:before, *:after {box-sizing: inherit}
+    margin: 0;
+    padding: 0
+}
