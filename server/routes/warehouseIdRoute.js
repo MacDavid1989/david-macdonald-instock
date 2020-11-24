@@ -23,4 +23,16 @@ router.get('/:warehouseId', (req,res) => {
     return res.status(200).json({warehouse: warehouse, inventory: inventory})
 } )
 
+// POST / CREATE A NEW WAREHOUSE
+router.post('/create', (req, res) => {
+
+})
+
+
+//Method to get all warehouses from JSON FILE
+function getAllWarehouses(){
+    
+}
+
+
 module.exports = router;
