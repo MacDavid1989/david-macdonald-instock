@@ -47,10 +47,10 @@ router.post("/create", (req, res) => {
     //send response
     res.status(200).josn({ warehouses: warehouseList });
   }
-
   res.status(406).json("Input not accepted");
-
 });
+
+
 
 //Method to get all warehouses from JSON FILE
 function getAllWarehouses() {
