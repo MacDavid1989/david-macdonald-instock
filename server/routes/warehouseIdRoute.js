@@ -36,14 +36,20 @@ router.post("/create", (req, res) => {
   //make the new warehouse
   const newWarehouse = createNewWarehouse(req.body);
 
-  //add the new warehouse to the list
-  warehouseList.push(newWarehouse);
+  //if there is a good input
+  if (newWarehouse) {
+    //add the new warehouse to the list
+    warehouseList.push(newWarehouse);
 
-  //update the file
-  fs.writeFileSync(warehouseFile, JSON.stringify(warehouseList));
+    //update the file
+    fs.writeFileSync(warehouseFile, JSON.stringify(warehouseList));
 
-  //send response
-  res.status(200).josn({ warehouses: warehouseList });
+    //send response
+    res.status(200).josn({ warehouses: warehouseList });
+  }
+
+  res.status(406).json("Input not accepted");
+
 });
 
 //Method to get all warehouses from JSON FILE
@@ -62,20 +68,40 @@ function createNewWarehouse({
   phoneNumber,
   email,
 }) {
-  const newWarehouse = {
-    id: uuidv4(),
-    name: name,
-    address: address,
-    city: city,
-    country: country,
-    contact: {
-      name: contactName,
-      position: position,
-      phone: phoneNumber,
-      email: email,
-    },
-  };
-  return newWarehouse;
+  //regular expressions
+  const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  const regexPhone = /[a-zA-Z]/g;
+
+  //check each input
+  if (
+    name.trim() &&
+    address.trim() &&
+    city.trim() &&
+    country.trim() &&
+    contactName.trim() &&
+    position.trim() &&
+    regexEmail.test(email) &&
+    !regexPhone.test(phoneNumber) &&
+    phoneNumber.length >= 10
+  ) {
+    const newWarehouse = {
+      id: uuidv4(),
+      name: name,
+      address: address,
+      city: city,
+      country: country,
+      contact: {
+        name: createRoute,
+        position: position,
+        phone: phoneNumber,
+        email: email,
+      },
+    };
+    return newWarehouse;
+  }
+
+  //if input is bad return null
+  return null;
 }
 
 module.exports = router;
