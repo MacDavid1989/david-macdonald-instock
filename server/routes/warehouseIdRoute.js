@@ -79,7 +79,11 @@ router.delete("/:warehouseId", (req,res) => {
         }
     }
 
-    
+    if(didDelete){
+        res.status(200).json({ warehouses: warehouseList })
+    }else{
+        res.status(400).send("bad request, warehouse does not exist");
+    }
 })
 
 //Method to get all warehouses from JSON FILE
