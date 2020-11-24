@@ -1,6 +1,24 @@
+@font-face {
+  font-family: "regular";
+  src: url("../assets/fonts/TitilliumWebRegular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "semi-bold";
+  src: url("../assets/fonts/TitilliumWebSemiBold.ttf") format("truetype");
+}
 .header {
   background-color: #232940;
   padding: 1rem;
+}
+@media (min-width: 768px) {
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 .header__btn {
   background-color: #232940;
