@@ -24,13 +24,18 @@
   padding: 1rem;
   border-bottom: 1px solid #BDC5D5;
 }
+@media (min-width: 768px) {
+  .add-item-header {
+    padding: 2rem;
+  }
+}
 .add-item-header__title {
   margin: 0;
   font-family: regular;
 }
 @media (min-width: 768px) {
   .add-item-header__title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 }
 .add-item-header__back {
@@ -39,7 +44,7 @@
 }
 @media (min-width: 768px) {
   .add-item-header__back {
-    margin-top: 1.4rem;
+    margin-top: 1.2rem;
     margin-right: 0.5rem;
   }
 }

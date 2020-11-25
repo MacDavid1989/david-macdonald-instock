@@ -7,11 +7,14 @@
     align-items: flex-start;
     padding: 1rem;
     border-bottom: 1px solid #BDC5D5;
+    @include tablet{
+        padding: 2rem;
+    }
     &__title{
         margin: 0;
         font-family: regular;
         @include tablet{
-            font-size: 2.5rem;
+            font-size: 2.2rem;
         }
     }
     &__back{
