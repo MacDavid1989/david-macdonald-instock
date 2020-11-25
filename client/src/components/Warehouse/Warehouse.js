@@ -57,35 +57,28 @@ class Warehouse extends Component {
                 </div>
             </section>
             <section className="warehouse__inventory">
-                <table>
-                    <thead>
-                        <tr>
-                            <th colSpan="1">INVENTORY ITEM<img src={sort} alt=""/></th>
-                            <th colSpan="1">CATEGORY<img src={sort} alt=""/></th>
-                            <th colSpan="1">STATUS<img src={sort} alt=""/></th>
-                            <th colSpan="1">QTY<img src={sort} alt=""/></th>
-                            <th colSpan="1">ACTIONS</th>
+                <table className="inventory">
+                    <thead className="inventory__header">
+                        <tr className="inventory__header-categories">
+                            <th className="inventory__header-category" colSpan="1">INVENTORY ITEM<img src={sort} alt=""/></th>
+                            <th className="inventory__header-category" colSpan="1">CATEGORY<img src={sort} alt=""/></th>
+                            <th className="inventory__header-category" colSpan="1">STATUS<img src={sort} alt=""/></th>
+                            <th className="inventory__header-category" colSpan="1">QTY<img src={sort} alt=""/></th>
+                            <th className="inventory__header-category" colSpan="1">ACTIONS</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="inventory__items">
                         {!!this.state.inventory&&this.state.inventory.map(item => {
                             return ( 
-                                <tr className="inventory" key={item.id}>
-                                    <td className="item">{item.itemName}<img src={chevron} alt=""/></td>
-                                    <td className="type">{item.category}</td>
-                                    <td className={item.status.toUpperCase() === 'IN STOCK' ? "value value__in" : "value value__out"}>{item.status.toUpperCase()}</td>
-                                    <td className="amount">{item.quantity}</td>
+                                <tr className="item__details" key={item.id}>
+                                    <td className="item__name">{item.itemName}<img src={chevron} alt=""/></td>
+                                    <td className="item__type">{item.category}</td>
+                                    <td className={item.status.toUpperCase() === 'IN STOCK' ? "item__value item__value--in" : "item__value item__value--out"}>{item.status.toUpperCase()}</td>
+                                    <td className="item__amount">{item.quantity}</td>
                                     <td><img src={deleteOutline} alt=""/><img src={edit} alt=""/></td>
                                 </tr>
                             )
                         })}
-                        <tr>
-                            <td>Television<img src={chevron} alt=""/></td>
-                            <td>Electronics</td>
-                            <td>IN STOCK</td>
-                            <td>500</td>
-                            <td><img src={deleteOutline} alt=""/><img src={edit} alt=""/></td>
-                        </tr>
                     </tbody>
                 </table>
             </section>
