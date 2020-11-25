@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 import './Warehouse.scss'
 import backArrow from '../../Assets/Icons/arrow_back-24px.svg'
 import edit from '../../Assets/Icons/edit-24px.svg'
@@ -7,9 +8,25 @@ import sort from '../../Assets/Icons/sort-24px.svg'
 import chevron from '../../Assets/Icons/chevron_right-24px.svg'
 import deleteOutline from '../../Assets/Icons/delete_outline-24px.svg'
 
-function Warehouse() {
-    return (
-        <div className="warehouse">
+
+class Warehouse extends Component {
+
+    state ={
+        inventory: null
+    }
+
+    componentDidMount(){
+        axios.get('http://localhost:8080/warehouse/2922c286-16cd-4d43-ab98-c79f698aeab0')
+        .then(res=>{
+            this.setState({inventory: res.data.inventory})
+            console.log(res)
+        })
+        .catch(console.error)
+    }
+
+    render() {
+        return (
+            <div className="warehouse">
             <section className="warehouse__banner">
                 <div className="banner__header">
                     <img className="banner__arrow" src={backArrow} alt=""/>
@@ -51,6 +68,17 @@ function Warehouse() {
                         </tr>
                     </thead>
                     <tbody>
+                        {!!this.state.inventory&&this.state.inventory.map(item => {
+                            return ( 
+                                <tr key={item.id}>
+                                    <td>{item.itemName}<img src={chevron} alt=""/></td>
+                                    <td>{item.category}</td>
+                                    <td>{item.status}</td>
+                                    <td>{item.quantity}</td>
+                                    <td><img src={deleteOutline} alt=""/><img src={edit} alt=""/></td>
+                                </tr>
+                            )
+                        })}
                         <tr>
                             <td>Television<img src={chevron} alt=""/></td>
                             <td>Electronics</td>
@@ -62,36 +90,44 @@ function Warehouse() {
                 </table>
             </section>
             <section className="warehouse__inventory-mobile">
-                <div className="inventory__item">
-                    <div className="item__name">
-                        <h4 className="item__heading">INVENTORY ITEM</h4>
-                        <div className="item__link">
-                            <p className="item__item">TELEVISION</p>
-                            <img className="item__icon" src={chevron} alt=""/>
-                        </div>
-                    </div>
-                    <div className="item__status">
-                        <h4 className="item__heading">STATUS</h4>
-                        <p className="item__value">IN STOCK</p>
-                    </div>
-                </div>
-                <div className="inventory__info">
-                    <div className="item__category">
-                        <h4 className="item__heading">CATEGORY</h4>
-                        <p className="item__type">ELECTRONICS</p>
-                    </div>
-                    <div className="item__quantity">
-                        <h4 className="item__heading">QTY</h4>
-                        <p className="item__amount">500</p>
-                    </div>
-                </div>
-                <div className="inventory__buttons">
-                    <img className="inventory__delete" src={deleteOutline} alt=""/>
-                    <img className="inventory__edit" src={edit} alt=""/>
-                </div>
+            {!!this.state.inventory&&this.state.inventory.map(item => {
+                            return ( 
+                                <div key={item.id}>
+                                <div className="inventory__item">
+                                    <div className="item__name">
+                                        <h4 className="heading">INVENTORY ITEM</h4>
+                                        <div className="link">
+                                            <p className="item">{item.itemName}</p>
+                                            <img className="icon" src={chevron} alt=""/>
+                                        </div>
+                                    </div>
+                                    <div className="item__status">
+                                        <h4 className="heading">STATUS</h4>
+                                        <p className="value">{item.status}</p>
+                                    </div>
+                                </div>
+                                <div className="inventory__info">
+                                    <div className="item__category">
+                                        <h4 className="heading">CATEGORY</h4>
+                                        <p className="type">{item.category}</p>
+                                    </div>
+                                    <div className="item__quantity">
+                                        <h4 className="heading">QTY</h4>
+                                        <p className="amount">{item.quantity}</p>
+                                    </div>
+                                </div>
+                                <div className="inventory__buttons">
+                                    <img className="inventory__delete" src={deleteOutline} alt=""/>
+                                    <img className="inventory__edit" src={edit} alt=""/>
+                                </div>
+                                </div>
+                            )
+                        })}
+                        
             </section>
         </div>
-    );
+        );
+    }
 }
 
 export default Warehouse;

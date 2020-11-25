@@ -72,7 +72,10 @@
     &__address {
         .address {
             &__heading{
-
+                color: #5C667E;
+                font-size: 11px;
+                line-height: 16px;
+                font-weight: 600;
             }
             &__street {
 
@@ -89,7 +92,10 @@
 
         &-name {
             .title{
-
+                color: #5C667E;
+                font-size: 11px;
+                line-height: 16px;
+                font-weight: 600;
             }
             .name {
 
@@ -101,7 +107,10 @@
 
         &-info {
             .title {
-
+                color: #5C667E;
+                font-size: 11px;
+                line-height: 16px;
+                font-weight: 600;
             }
 
             .number {
@@ -128,18 +137,80 @@
             &__item {
                 display: flex;
                 .item {
-                    &__link {
-                        display: flex;
+                    &__name {
+                        .heading {
+                            color: #5C667E;
+                            font-size: 11px;
+                            line-height: 16px;
+                            font-weight: 600;
+                        }
+                        
+                        .link {
+                            display: flex;
+                        }
+                        .item {
+                            
+                        }
+                        .icon {
+    
+                        }
+                    }
+                    
+                    &__status {
+                        .heading {
+                            color: #5C667E;
+                            font-size: 11px;
+                            line-height: 16px;
+                            font-weight: 600;
+                        }
+                        .value {
+
+                        }
                     }
                 }
-            }
+            }   
+
             &__info {
                 display: flex;
+                .item {
+                    &__category {
+                        .heading {
+                            color: #5C667E;
+                            font-size: 11px;
+                            line-height: 16px;
+                            font-weight: 600;
+                        }
+                        .type {
+
+                        }
+                    }
+                    
+                    &__quantity{
+                        .heading {
+                            color: #5C667E;
+                            font-size: 11px;
+                            line-height: 16px;
+                            font-weight: 600;
+                        }
+                        .amount {
+
+                        }
+                    }
+                    
+                }
             }
+
             &__buttons {
                 display: flex;
                 justify-content: space-between;
             }
+            &__delete{
+
+            }
+            &__edit {
+
+            }
+        
         }
     }
 }
