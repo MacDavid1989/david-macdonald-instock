@@ -5,7 +5,6 @@
     @include normal;
     display: flex;
     flex-direction: column;
-    margin: 0 16px;
     width: 343px;
     background: #FFFFFF;
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
@@ -277,4 +276,265 @@
         
         }
     }
+
+    @media (min-width: 768px) {
+        width: 704px;
+        
+        &__banner {
+            padding: 32px 32px 23px;
+            height: 93px;
+            
+            .banner {
+                
+                &__arrow {
+                    width: 24px;
+                    height: 24px;
+                }
+                
+                &__heading {
+                    width: 139px;
+                    line-height: 40px;
+                    font-size: 32px;
+                }
+                
+                &__button {
+                    width: 81px;
+                    height: 38px;
+                    padding: 8px 16px;
+                    justify-content: space-between;
+                    
+                    .button {
+                        
+                        &__icon {
+                            width: 19px;
+                            height: 19px;
+                        }
+                        &__text {
+                            display: initial;
+                            color: #FFFFFF;
+                            font-size: 14px;
+                            line-height: 22px;
+                            font-weight: 600;
+                            // vvvvvvvvvvvvv HERE vvvvvvvvvvvvvvvvvv 
+                        }
+                    }
+                }
+            }
+        } 
+        
+        &__info {
+            border-bottom: solid #BDC5D5 1px;
+            padding: 16px 24px;
+        }
+
+        &__address {
+            margin: 0 0 16px;
+
+            .address {
+                &__heading{
+                    color: #5C667E;
+                    font-size: 11px;
+                    line-height: 16px;
+                    font-weight: 600;
+                    margin: 0 0 4px;
+
+                }
+                &__street {
+                    font-size: 13px;
+                    line-height: 20px;
+                }
+                &__city {
+                    font-size: 13px;
+                    line-height: 20px;
+                }
+            }
+        }
+
+        &__contact {
+            display: flex;
+            justify-content: space-between;
+
+            &-name {
+                
+                .title{
+                    color: #5C667E;
+                    font-size: 11px;
+                    line-height: 16px;
+                    font-weight: 600;
+                    margin: 0 0 4px;
+
+                }
+                .name {
+                    font-size: 13px;
+                    line-height: 20px;
+                }
+                .position {
+                    font-size: 13px;
+                    line-height: 20px;
+                }
+            }
+
+            &-info {
+                .title {
+                    color: #5C667E;
+                    font-size: 11px;
+                    line-height: 16px;
+                    font-weight: 600;
+                    margin: 0 0 4px;
+
+                }
+
+                .number {
+                    font-size: 13px;
+                    line-height: 20px;
+                }
+
+                .email {
+                    font-size: 13px;
+                    line-height: 20px;
+                }
+            }
+        }
+
+        &__inventory {
+            display: none;
+        }
+
+        &__inventory-mobile {
+            display: flex;
+            flex-direction: column;
+
+            .inventory {
+            padding: 16px 24px 24px;
+            border-bottom: solid #BDC5D5 1px;
+
+                &__item {
+                    display: flex;
+                    align-items: center;
+                    margin: 0 0 20px;
+                    
+                    .item {
+                        &__name {
+                            width: 140px;
+
+                            .heading {
+                                color: #5C667E;
+                                font-size: 11px;
+                                line-height: 16px;
+                                font-weight: 600;
+                                margin: 0 0 4px;
+
+                            }
+                            
+                            .link {
+                                height: 24px;
+                                display: flex;
+                                align-items: center;
+                            }
+                            .item {
+                                margin: 0 0 0 0;
+                                font-size: 13px;
+                                font-weight: 600;
+                                line-height: 20px;
+                                color: #2E66E5;
+                            }
+                            .icon {
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+                        
+                        &__status {
+                            width: 140px;
+
+                            .heading {
+                                color: #5C667E;
+                                font-size: 11px;
+                                line-height: 16px;
+                                font-weight: 600;
+                                margin: 0 0 4px;
+
+                            }
+                            .value {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                height: 24px;
+                                border-radius: 20px;
+                                font-size: 11px;
+                                line-height: 16px;
+                                font-weight: 600;
+                                
+                                &__in {
+                                    color: #158463;
+                                    background: rgba(21, 132, 99, 0.07);                            ;
+                                    width: 61px;
+
+                                }
+
+                                &__out {
+                                    color: #C94515;
+                                    background: rgba(201, 69, 21, 0.07);                            ;
+                                    width: 86px;
+                                }
+                            }
+                        }
+                    }
+                }   
+
+                &__info {
+                    display: flex;
+                    margin: 0 0 19px;
+
+                    .item {
+                        &__category {
+                            width: 140px;
+
+                            .heading {
+                                color: #5C667E;
+                                font-size: 11px;
+                                line-height: 16px;
+                                font-weight: 600;
+                                margin: 0 0 4px;
+                            }
+                            .type {
+                                font-size: 13px;
+                                line-height: 20px;
+                            }
+                        }
+                        
+                        &__quantity{
+                            width: 140px;
+
+                            .heading {
+                                color: #5C667E;
+                                font-size: 11px;
+                                line-height: 16px;
+                                font-weight: 600;
+                                margin: 0 0 4px;
+                            
+                            }
+                            .amount {
+                                font-size: 13px;
+                                line-height: 20px;
+                            }
+                        }
+                        
+                    }
+                }
+
+                &__buttons {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                &__delete{
+                    
+                }
+                &__edit {
+
+                }
+            
+            }
+        }
+    } 
 }

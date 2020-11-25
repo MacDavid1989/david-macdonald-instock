@@ -34,7 +34,7 @@ class Warehouse extends Component {
                 </div>
                 <button className="banner__button">
                     <img className="button__icon" src={editWhite} alt=""/>
-                    <h3 className="button__text">EDIT</h3>
+                    <h3 className="button__text">Edit</h3>
                 </button>
             </section>
             <section className="warehouse__info">
