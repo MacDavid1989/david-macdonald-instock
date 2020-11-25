@@ -6,4 +6,41 @@
   font-family: "semi-bold";
   src: url("../assets/Fonts/TitilliumWebSemiBold.ttf") format("truetype");
 }
+@font-face {
+  font-family: "regular";
+  src: url("../assets/Fonts/TitilliumWebRegular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "semi-bold";
+  src: url("../assets/Fonts/TitilliumWebSemiBold.ttf") format("truetype");
+}
+.add-item-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 1rem;
+  border-bottom: 1px solid #BDC5D5;
+}
+.add-item-header__title {
+  margin: 0;
+  font-family: regular;
+}
+@media (min-width: 768px) {
+  .add-item-header__title {
+    font-size: 2.5rem;
+  }
+}
+.add-item-header__back {
+  margin-top: 1rem;
+  margin-right: 0.2rem;
+}
+@media (min-width: 768px) {
+  .add-item-header__back {
+    margin-top: 1.4rem;
+    margin-right: 0.5rem;
+  }
+}
 /*# sourceMappingURL=AddNewItemHeader.css.map */

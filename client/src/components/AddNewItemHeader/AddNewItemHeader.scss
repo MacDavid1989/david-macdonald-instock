@@ -1,1 +1,25 @@
 @import "../../partials/mixins";
+@import "../../partials/fontDefinition";
+@import "../../partials/variables";
+
+.add-item-header{
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    border-bottom: 1px solid #BDC5D5;
+    &__title{
+        margin: 0;
+        font-family: regular;
+        @include tablet{
+            font-size: 2.5rem;
+        }
+    }
+    &__back{
+        margin-top: 1rem;
+        margin-right: .2rem;
+        @include tablet{
+            margin-top: 1.2rem;
+            margin-right: .5rem;
+        }
+    }
+}
