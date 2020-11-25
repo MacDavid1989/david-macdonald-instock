@@ -2,6 +2,7 @@ import './App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
+import AddnewInventory from './components/AddNewInventory/AddNewInventory';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         {/* <Route path="/warehouse/:warehouseId/inventory" component={WarehouseInventory} /> */}
         {/* <Route path="/warehouse/:warehouseId/inventory/:itemId" component={ItemDetails} /> */}
         {/* <Route path="/warehouse/:warehouseId/inventory/:itemId/edit" component={ItemEdit} /> */}
-        {/* <Route path="/warehouse/:warehouseId/inventory/add" component={ItemAdd} /> */}
+         <Route path="/warehouse/:warehouseId/inventory/add" component={AddnewInventory} />
       </Switch>
     </BrowserRouter>
   );
