@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "regular";
+  src: url("../assets/Fonts/TitilliumWebRegular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "semi-bold";
+  src: url("../assets/Fonts/TitilliumWebSemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "regular";
+  src: url("../assets/Fonts/TitilliumWebRegular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "semi-bold";
+  src: url("../assets/Fonts/TitilliumWebSemiBold.ttf") format("truetype");
+}
+.item-form-com {
+  padding: 1rem;
+}
+.item-form-com__title {
+  margin: 0;
+  font-family: regular;
+}
+/*# sourceMappingURL=ItemForm.css.map */

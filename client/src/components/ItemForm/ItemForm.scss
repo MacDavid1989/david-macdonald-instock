@@ -1,0 +1,11 @@
+@import "../../partials/mixins";
+@import "../../partials/fontDefinition";
+@import "../../partials/variables";
+
+.item-form-com{
+    padding: 1rem;
+    &__title{
+        margin: 0;
+        font-family: regular;
+    }
+}
