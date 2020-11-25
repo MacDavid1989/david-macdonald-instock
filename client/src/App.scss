@@ -1,6 +1,13 @@
 @import "./partials/variables";
+@import "./partials/mixins";
 
 .App{
   background-color: map-get($color-background, page-bg);
-  padding: .2rem;
+  padding: 1rem;
+  @include tablet{
+    padding: 1rem 1.5rem;
+  }
+  @include desktop{
+    padding: 0 130px;
+  }
 }

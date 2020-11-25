@@ -1,5 +1,23 @@
+@font-face {
+  font-family: "regular";
+  src: url("../assets/Fonts/TitilliumWebRegular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "semi-bold";
+  src: url("../assets/Fonts/TitilliumWebSemiBold.ttf") format("truetype");
+}
 .App {
   background-color: #F7F8F9;
-  padding: 0.2rem;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .App {
+    padding: 1rem 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .App {
+    padding: 0 130px;
+  }
 }
 /*# sourceMappingURL=App.css.map */
