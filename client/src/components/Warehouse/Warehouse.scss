@@ -315,7 +315,6 @@
                             font-size: 14px;
                             line-height: 22px;
                             font-weight: 600;
-                            // vvvvvvvvvvvvv HERE vvvvvvvvvvvvvvvvvv 
                         }
                     }
                 }
@@ -323,86 +322,79 @@
         } 
         
         &__info {
-            border-bottom: solid #BDC5D5 1px;
-            padding: 16px 24px;
+            border-bottom: none;
+            padding: 24px 32px;
+            display: flex;
+            flex-direction: row;
         }
-
+        
         &__address {
-            margin: 0 0 16px;
-
+            margin: 0 40px 0 0;
+            border-right: solid #BDC5D5 1px;
+            width: 246px;
+            
             .address {
                 &__heading{
-                    color: #5C667E;
-                    font-size: 11px;
-                    line-height: 16px;
-                    font-weight: 600;
-                    margin: 0 0 4px;
-
+                    font-size: 12px;
+                    line-height: 18px;
+                    
                 }
                 &__street {
-                    font-size: 13px;
-                    line-height: 20px;
+                    font-size: 14px;
+                    line-height: 22px;
                 }
                 &__city {
-                    font-size: 13px;
-                    line-height: 20px;
+                    font-size: 14px;
+                    line-height: 22px;
                 }
             }
         }
-
+        
         &__contact {
-            display: flex;
-            justify-content: space-between;
-
+            justify-content: initial;
+            width: 354px;
+            
             &-name {
+                margin: 0 24px 0 0;
                 
                 .title{
-                    color: #5C667E;
-                    font-size: 11px;
-                    line-height: 16px;
-                    font-weight: 600;
-                    margin: 0 0 4px;
-
+                    font-size: 12px;
+                    line-height: 18px;
+                    
                 }
                 .name {
-                    font-size: 13px;
-                    line-height: 20px;
+                    font-size: 14px;
+                    line-height: 22px;
                 }
                 .position {
-                    font-size: 13px;
-                    line-height: 20px;
+                    font-size: 14px;
+                    line-height: 22px;
                 }
             }
-
+            
             &-info {
                 .title {
-                    color: #5C667E;
-                    font-size: 11px;
-                    line-height: 16px;
-                    font-weight: 600;
-                    margin: 0 0 4px;
-
+                    font-size: 12px;
+                    line-height: 18px;
+                    
                 }
-
+                
                 .number {
-                    font-size: 13px;
-                    line-height: 20px;
+                    font-size: 14px;
+                    line-height: 22px;
                 }
 
                 .email {
-                    font-size: 13px;
-                    line-height: 20px;
+                    font-size: 14px;
+                    line-height: 22px;
                 }
             }
         }
-
+        
         &__inventory {
-            display: none;
-        }
-
-        &__inventory-mobile {
             display: flex;
             flex-direction: column;
+            // vvvvvvvvvvvvv HERE vvvvvvvvvvvvvvvvvv 
 
             .inventory {
             padding: 16px 24px 24px;
@@ -535,6 +527,11 @@
                 }
             
             }
+        
+        }
+
+        &__inventory-mobile {
+            display: none;
         }
     } 
 }
