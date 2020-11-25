@@ -17,12 +17,6 @@ router.get("/", (req, res) => {
     res.status(200).json(data)
 })
 
-<<<<<<< HEAD
-// GET /warehouse/:warehouseId
-router.get('/:warehouseId', (req,res) => {
-    const warehousesData = fs.readFileSync(warehouses);
-    const inventoriesData = fs.readFileSync(inventories);
-=======
 // GET /:warehouseId
 router.get("/:warehouseId", (req, res) => {
   const warehousesData = fs.readFileSync(warehouseFile);
@@ -50,7 +44,6 @@ router.get("/:warehouseId", (req, res) => {
 router.post("/create", (req, res) => {
   //get the list of warehouses
   const warehouseList = getAllWarehouses();
->>>>>>> develop
 
   //make the new warehouse
   const newWarehouse = createNewWarehouse(uuidv4(), req.body);

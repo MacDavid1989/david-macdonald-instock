@@ -3,6 +3,8 @@
 
 .warehouse {
     @include normal;
+    position: absolute;
+    top: 6rem;
     display: flex;
     flex-direction: column;
     width: 343px;
