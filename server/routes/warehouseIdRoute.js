@@ -4,6 +4,16 @@ const router = express.Router();
 const warehouses = './data/warehouses.json';
 const inventories = './data/inventories.json'
 
+// GET / all warehouse
+const readFileSync = () => {
+    return JSON.parse(fs.readFileSync(warehouses))
+}
+
+router.get("/", (req, res) => {
+    const data = readFileSync();
+    res.status(200).json(data)
+})
+
 // GET /:warehouseId
 router.get('/:warehouseId', (req,res) => {
     const warehousesData = fs.readFileSync(warehouses);
