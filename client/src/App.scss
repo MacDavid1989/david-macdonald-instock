@@ -1,0 +1,6 @@
+@import "./partials/variables";
+
+.App{
+  background-color: map-get($color-background, page-bg);
+  padding: .2rem;
+}

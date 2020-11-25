@@ -1,1 +1,1 @@
-{"version":3,"sources":["AddNewInventory.scss","AddNewInventory.css"],"names":[],"mappings":"AAAA;EACI,kBAAA;EACA,YAAA;ACCJ","file":"AddNewInventory.css"}
+{"version":3,"sources":["../../partials/_fontDefinition.scss","AddNewInventory.css","AddNewInventory.scss"],"names":[],"mappings":"AAIA;EACI,sBAAA;EACA,sEAAA;ACHJ;ADQA;EACI,wBAAA;EACA,uEAAA;ACNJ;ACNA;EACI,kBAAA;EACA,YAAA;EACA,uBAAA;ADQJ","file":"AddNewInventory.css"}

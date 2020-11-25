@@ -1,2 +1,2 @@
-.new-inventory{border-radius:4px;margin:1rem}
+@font-face{font-family:"regular";src:url("../assets/Fonts/TitilliumWebRegular.ttf") format("truetype")}@font-face{font-family:"semi-bold";src:url("../assets/Fonts/TitilliumWebSemiBold.ttf") format("truetype")}.new-inventory{border-radius:8px;margin:1rem;background-color:#fff}
 /*# sourceMappingURL=AddNewInventory.min.css.map */
