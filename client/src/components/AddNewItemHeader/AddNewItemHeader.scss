@@ -13,12 +13,13 @@
     &__title{
         margin: 0;
         font-family: regular;
+        font-size: 1.5rem;
         @include tablet{
             font-size: 2.2rem;
         }
     }
     &__back{
-        margin-top: 1rem;
+        margin-top: .5rem;
         margin-right: .2rem;
         @include tablet{
             margin-top: 1.2rem;

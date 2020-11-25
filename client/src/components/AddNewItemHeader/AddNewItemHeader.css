@@ -32,6 +32,7 @@
 .add-item-header__title {
   margin: 0;
   font-family: regular;
+  font-size: 1.5rem;
 }
 @media (min-width: 768px) {
   .add-item-header__title {
@@ -39,7 +40,7 @@
   }
 }
 .add-item-header__back {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   margin-right: 0.2rem;
 }
 @media (min-width: 768px) {
