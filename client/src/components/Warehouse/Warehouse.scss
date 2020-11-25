@@ -7,7 +7,6 @@
     flex-direction: column;
     margin: 0 16px;
     width: 343px;
-    height: 1709px;
     background: #FFFFFF;
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
     border-radius: 3px;
@@ -27,8 +26,8 @@
             }
 
             &__arrow {
-                width: 16px;
-                height: 16px;
+                width: 24px;
+                height: 24px;
             }
 
             &__heading {
@@ -53,8 +52,8 @@
                 .button {
 
                     &__icon {
-                        width: 15px;
-                        height: 15px;
+                        width: 19px;
+                        height: 19px;
                     }
                     &__text {
                         display: none;
@@ -70,18 +69,24 @@
     }
 
     &__address {
+        margin: 0 0 16px;
+
         .address {
             &__heading{
                 color: #5C667E;
                 font-size: 11px;
                 line-height: 16px;
                 font-weight: 600;
+                margin: 0 0 4px;
+
             }
             &__street {
-
+                font-size: 13px;
+                line-height: 20px;
             }
             &__city {
-
+                font-size: 13px;
+                line-height: 20px;
             }
         }
     }
@@ -91,17 +96,22 @@
         justify-content: space-between;
 
         &-name {
+            
             .title{
                 color: #5C667E;
                 font-size: 11px;
                 line-height: 16px;
                 font-weight: 600;
+                margin: 0 0 4px;
+
             }
             .name {
-
+                font-size: 13px;
+                line-height: 20px;
             }
             .position {
-
+                font-size: 13px;
+                line-height: 20px;
             }
         }
 
@@ -111,14 +121,18 @@
                 font-size: 11px;
                 line-height: 16px;
                 font-weight: 600;
+                margin: 0 0 4px;
+
             }
 
             .number {
-
+                font-size: 13px;
+                line-height: 20px;
             }
 
             .email {
-
+                font-size: 13px;
+                line-height: 20px;
             }
         }
     }
@@ -130,41 +144,80 @@
     &__inventory-mobile {
         display: flex;
         flex-direction: column;
-        padding: 16px 24px 27px;
-        border-bottom: solid #BDC5D5 1px;
 
         .inventory {
+        padding: 16px 24px 24px;
+        border-bottom: solid #BDC5D5 1px;
+
             &__item {
                 display: flex;
+                align-items: center;
+                margin: 0 0 20px;
+                
                 .item {
                     &__name {
+                        width: 140px;
+
                         .heading {
                             color: #5C667E;
                             font-size: 11px;
                             line-height: 16px;
                             font-weight: 600;
+                            margin: 0 0 4px;
+
                         }
                         
                         .link {
+                            height: 24px;
                             display: flex;
+                            align-items: center;
                         }
                         .item {
-                            
+                            margin: 0 0 0 0;
+                            font-size: 13px;
+                            font-weight: 600;
+                            line-height: 20px;
+                            color: #2E66E5;
                         }
                         .icon {
-    
+                            width: 20px;
+                            height: 20px;
                         }
                     }
                     
                     &__status {
+                        width: 140px;
+
                         .heading {
                             color: #5C667E;
                             font-size: 11px;
                             line-height: 16px;
                             font-weight: 600;
+                            margin: 0 0 4px;
+
                         }
                         .value {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 24px;
+                            border-radius: 20px;
+                            font-size: 11px;
+                            line-height: 16px;
+                            font-weight: 600;
+                            
+                            &__in {
+                                color: #158463;
+                                background: rgba(21, 132, 99, 0.07);                            ;
+                                width: 61px;
 
+                            }
+
+                            &__out {
+                                color: #C94515;
+                                background: rgba(201, 69, 21, 0.07);                            ;
+                                width: 86px;
+                            }
                         }
                     }
                 }
@@ -172,28 +225,39 @@
 
             &__info {
                 display: flex;
+                margin: 0 0 19px;
+
                 .item {
                     &__category {
+                        width: 140px;
+
                         .heading {
                             color: #5C667E;
                             font-size: 11px;
                             line-height: 16px;
                             font-weight: 600;
+                            margin: 0 0 4px;
                         }
                         .type {
-
+                            font-size: 13px;
+                            line-height: 20px;
                         }
                     }
                     
                     &__quantity{
+                        width: 140px;
+
                         .heading {
                             color: #5C667E;
                             font-size: 11px;
                             line-height: 16px;
                             font-weight: 600;
+                            margin: 0 0 4px;
+                        
                         }
                         .amount {
-
+                            font-size: 13px;
+                            line-height: 20px;
                         }
                     }
                     
@@ -205,7 +269,7 @@
                 justify-content: space-between;
             }
             &__delete{
-
+                
             }
             &__edit {
 

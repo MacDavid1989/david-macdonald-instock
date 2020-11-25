@@ -12,14 +12,14 @@ import deleteOutline from '../../Assets/Icons/delete_outline-24px.svg'
 class Warehouse extends Component {
 
     state ={
+        warehouse: null,
         inventory: null
     }
 
     componentDidMount(){
         axios.get('http://localhost:8080/warehouse/2922c286-16cd-4d43-ab98-c79f698aeab0')
         .then(res=>{
-            this.setState({inventory: res.data.inventory})
-            console.log(res)
+            this.setState({warehouse: res.data.warehouse ,inventory: res.data.inventory})
         })
         .catch(console.error)
     }
@@ -30,7 +30,7 @@ class Warehouse extends Component {
             <section className="warehouse__banner">
                 <div className="banner__header">
                     <img className="banner__arrow" src={backArrow} alt=""/>
-                    <h1 className="banner__heading">King West</h1>
+                    <h1 className="banner__heading">{!!this.state.warehouse&&this.state.warehouse.name}</h1>
                 </div>
                 <button className="banner__button">
                     <img className="button__icon" src={editWhite} alt=""/>
@@ -40,19 +40,19 @@ class Warehouse extends Component {
             <section className="warehouse__info">
                 <div className="warehouse__address">
                     <h4 className="address__heading">WAREHOUSE ADDRESS:</h4>
-                    <p className="address__street">469 King Street West</p>
-                    <p className="address__city">Toronto, CAN</p>
+                    <p className="address__street">{!!this.state.warehouse&&this.state.warehouse.address}</p>
+                    <p className="address__city">{!!this.state.warehouse&&(`${this.state.warehouse.city}, ${this.state.warehouse.country}`)}</p>
                 </div>
                 <div className="warehouse__contact">
                     <div className="warehouse__contact-name">
                         <h4 className="title">CONTACT NAME:</h4>
-                        <p className="name">Graeme Lyon</p>
-                        <p className="position">Warehouse Manager</p>
+                        <p className="name">{!!this.state.warehouse&&this.state.warehouse.contact.name}</p>
+                        <p className="position">{!!this.state.warehouse&&this.state.warehouse.contact.position}</p>
                     </div>
                     <div className="warehouse__contact-info">
                         <h4 className="title">CONTACT INFORMATION:</h4>
-                        <p className="number">+1 (647) 504-0911</p>
-                        <p className="email">glyon@instock.com</p>
+                        <p className="number">{!!this.state.warehouse&&this.state.warehouse.contact.phone}</p>
+                        <p className="email">{!!this.state.warehouse&&this.state.warehouse.contact.email}</p>
                     </div>
                 </div>
             </section>
@@ -92,7 +92,7 @@ class Warehouse extends Component {
             <section className="warehouse__inventory-mobile">
             {!!this.state.inventory&&this.state.inventory.map(item => {
                             return ( 
-                                <div key={item.id}>
+                                <div className="inventory" key={item.id}>
                                 <div className="inventory__item">
                                     <div className="item__name">
                                         <h4 className="heading">INVENTORY ITEM</h4>
@@ -103,7 +103,7 @@ class Warehouse extends Component {
                                     </div>
                                     <div className="item__status">
                                         <h4 className="heading">STATUS</h4>
-                                        <p className="value">{item.status}</p>
+                                        <p className={item.status.toUpperCase() === 'IN STOCK' ? "value value__in" : "value value__out"}>{item.status.toUpperCase()}</p>
                                     </div>
                                 </div>
                                 <div className="inventory__info">
