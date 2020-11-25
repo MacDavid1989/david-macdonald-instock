@@ -60,18 +60,18 @@ class Warehouse extends Component {
                     <table className="inventory">
                         <thead className="inventory__header">
                             <tr className="inventory__header-categories">
-                                <th className="inventory__header-category" colSpan="1">INVENTORY ITEM<img src={sort} alt=""/></th>
-                                <th className="inventory__header-category" colSpan="1">CATEGORY<img src={sort} alt=""/></th>
-                                <th className="inventory__header-category" colSpan="1">STATUS<img src={sort} alt=""/></th>
-                                <th className="inventory__header-category" colSpan="1">QTY<img src={sort} alt=""/></th>
-                                <th className="inventory__header-category" colSpan="1">ACTIONS</th>
+                                <th className="inventory__header-category inventory__header-category--1" colSpan="1">INVENTORY ITEM<img className="inventory__header-icon" src={sort} alt=""/></th>
+                                <th className="inventory__header-category inventory__header-category--2" colSpan="1">CATEGORY<img className="inventory__header-icon" src={sort} alt=""/></th>
+                                <th className="inventory__header-category inventory__header-category--3" colSpan="1">STATUS<img className="inventory__header-icon" src={sort} alt=""/></th>
+                                <th className="inventory__header-category inventory__header-category--4" colSpan="1">QTY<img className="inventory__header-icon" src={sort} alt=""/></th>
+                                <th className="inventory__header-category inventory__header-category--5" colSpan="1">ACTIONS</th>
                             </tr>
                         </thead>
                         <tbody className="inventory__items">
                             {!!this.state.inventory&&this.state.inventory.map(item => {
                                 return ( 
                                     <tr className="item__details" key={item.id}>
-                                        <td className="item__name">{item.itemName}<img src={chevron} alt=""/></td>
+                                        <td className="item__name">{item.itemName}<img className="item__icon" src={chevron} alt=""/></td>
                                         <td className="item__type">{item.category}</td>
                                         <td className={item.status.toUpperCase() === 'IN STOCK' ? "item__value item__value--in" : "item__value item__value--out"}>{item.status.toUpperCase()}</td>
                                         <td className="item__amount">{item.quantity}</td>

@@ -395,141 +395,137 @@
         
         &__inventory {
             display: flex;
-            flex-direction: column;
             // vvvvvvvvvvvvv HERE vvvvvvvvvvvvvvvvvv 
 
             .inventory {
-            padding: 16px 24px 24px;
-            border-bottom: solid #BDC5D5 1px;
+                display: flex;
+                flex-direction: column;
+                padding: 16px 0 24px;
+                border-bottom: solid #BDC5D5 1px;
 
-                &__item {
+                &__header {
+                    width: 704px;
+                    height: 40px;
+                    padding: 11px 32px;
+                    background-color: rgba($color: #F7F8F9, $alpha: 0.7);
+
+                    &-categories{
+                        display: flex;  
+                    }
+
+                    &-category {
+                        display: flex;
+                        align-items: center;
+                        color: #5C667E;
+                        font-size: 12px;
+                        line-height: 18px;
+                        font-weight: 600;
+
+                        &--1{
+                            width: 128px;
+                        }
+
+                        &--2 {
+                            width: 77px;
+                            margin: 0 0 0 43.94px;
+                        }
+
+                        &--3 {
+                            width: 61px;
+                            margin: 0 0 0 49.94px;
+                        }
+
+                        &--4 {
+                            width: 75px;
+                            margin: 0 0 0 126.94px;
+                        }
+
+                        &--5 {
+                            display: flex;
+                            justify-content: flex-end;
+                            width: 93px;
+                            margin: 0 0 0 24.94px;
+                            
+                        }
+                    }
+
+                    &-icon {
+                        width: 12px;
+                        height: 12px;
+                        margin: 0 0 0 8.94px;
+
+                    }
+                }
+
+                &__items {
                     display: flex;
-                    align-items: center;
-                    margin: 0 0 20px;
+                    flex-direction: column;
                     
                     .item {
+
+                        &__details {
+                            display: flex;
+                            align-items: center;
+                        }
+
                         &__name {
-                            width: 140px;
+                            display: flex;
+                            align-items: center;
+                            margin: 0 0 0 0;
+                            font-size: 13px;
+                            font-weight: 600;
+                            line-height: 20px;
+                            color: #2E66E5;
+                        }
 
-                            .heading {
-                                color: #5C667E;
-                                font-size: 11px;
-                                line-height: 16px;
-                                font-weight: 600;
-                                margin: 0 0 4px;
+                        &__icon {
+                            width: 20px;
+                            height: 20px;
+                        }
+
+                        &__type{
+                            font-size: 13px;
+                            line-height: 20px;
+                        }
+
+                        &__value {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 24px;
+                            border-radius: 20px;
+                            font-size: 11px;
+                            line-height: 16px;
+                            font-weight: 600;
+
+                            &--in {
+                                color: #158463;
+                                background: rgba(21, 132, 99, 0.07);                            ;
+                                width: 61px;
 
                             }
-                            
-                            .link {
-                                height: 24px;
-                                display: flex;
-                                align-items: center;
-                            }
-                            .item {
-                                margin: 0 0 0 0;
-                                font-size: 13px;
-                                font-weight: 600;
-                                line-height: 20px;
-                                color: #2E66E5;
-                            }
-                            .icon {
-                                width: 20px;
-                                height: 20px;
+
+                            &--out {
+                                color: #C94515;
+                                background: rgba(201, 69, 21, 0.07);                            ;
+                                width: 86px;
                             }
                         }
-                        
-                        &__status {
-                            width: 140px;
 
-                            .heading {
-                                color: #5C667E;
-                                font-size: 11px;
-                                line-height: 16px;
-                                font-weight: 600;
-                                margin: 0 0 4px;
+                        &__amount {
 
-                            }
-                            .value {
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                height: 24px;
-                                border-radius: 20px;
-                                font-size: 11px;
-                                line-height: 16px;
-                                font-weight: 600;
-                                
-                                &__in {
-                                    color: #158463;
-                                    background: rgba(21, 132, 99, 0.07);                            ;
-                                    width: 61px;
+                        }
 
-                                }
+                        &__delete {
 
-                                &__out {
-                                    color: #C94515;
-                                    background: rgba(201, 69, 21, 0.07);                            ;
-                                    width: 86px;
-                                }
-                            }
+                        }
+
+                        &__edit {
+
                         }
                     }
-                }   
-
-                &__info {
-                    display: flex;
-                    margin: 0 0 19px;
-
-                    .item {
-                        &__category {
-                            width: 140px;
-
-                            .heading {
-                                color: #5C667E;
-                                font-size: 11px;
-                                line-height: 16px;
-                                font-weight: 600;
-                                margin: 0 0 4px;
-                            }
-                            .type {
-                                font-size: 13px;
-                                line-height: 20px;
-                            }
-                        }
-                        
-                        &__quantity{
-                            width: 140px;
-
-                            .heading {
-                                color: #5C667E;
-                                font-size: 11px;
-                                line-height: 16px;
-                                font-weight: 600;
-                                margin: 0 0 4px;
-                            
-                            }
-                            .amount {
-                                font-size: 13px;
-                                line-height: 20px;
-                            }
-                        }
-                        
-                    }
                 }
-
-                &__buttons {
-                    display: flex;
-                    justify-content: space-between;
-                }
-                &__delete{
-                    
-                }
-                &__edit {
-
-                }
-            
             }
-        
         }
 
         &__inventory-mobile {
