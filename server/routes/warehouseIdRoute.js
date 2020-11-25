@@ -5,6 +5,8 @@ const router = express.Router();
 const warehouseFile = "./data/warehouses.json";
 const inventories = "./data/inventories.json";
 
+
+
 // GET /:warehouseId
 router.get("/:warehouseId", (req, res) => {
   const warehousesData = fs.readFileSync(warehouseFile);
@@ -34,7 +36,7 @@ router.post("/create", (req, res) => {
   const warehouseList = getAllWarehouses();
 
   //make the new warehouse
-  const newWarehouse = createNewWarehouse(uuid(), req.body);
+  const newWarehouse = createNewWarehouse(uuidv4(), req.body);
 
   //if there is a good input
   if (newWarehouse) {
@@ -69,12 +71,30 @@ router.put("/:warehouseId/update", (req, res) => {
   }
 });
 
+router.delete("/:warehouseId", (req,res) => {
+    const warehouseList = getAllWarehouses();
+    let didDelete = false;
+    for(let i = 0; i < warehouseList.length; i++){
+        if(warehouseList[i].id == req.params.warehouseId){
+            didDelete = true;
+            warehouseList.splice(i, 1);
+        }
+    }
+
+    if(didDelete){
+        res.status(200).json({ warehouses: warehouseList })
+    }else{
+        res.status(400).send("bad request, warehouse does not exist");
+    }
+})
+
 //Method to get all warehouses from JSON FILE
 function getAllWarehouses() {
   const warehousesData = fs.readFileSync(warehouseFile);
   return JSON.parse(warehousesData);
 }
 
+//creates a new warehosue
 function createNewWarehouse(newId, {
   name,
   address,
@@ -107,6 +127,7 @@ function createNewWarehouse(newId, {
   return null;
 }
 
+//check inputs for creating new warehouse
 function checkInput({
   name,
   address,
