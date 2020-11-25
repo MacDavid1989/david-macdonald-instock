@@ -17,6 +17,9 @@ app.use(cors());
 // warehouse id route
 app.use('/warehouse', warehouseIdRoute)
 
+// inventories
+app.use('/inventory', require('./routes/inventoryRoute'))
+
 // inventory id route
 app.use('/warehouse/:warehouseId/inventory', inventoryIdRoute)
 
