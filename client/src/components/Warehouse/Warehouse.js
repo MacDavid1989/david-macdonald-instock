@@ -70,11 +70,11 @@ class Warehouse extends Component {
                     <tbody>
                         {!!this.state.inventory&&this.state.inventory.map(item => {
                             return ( 
-                                <tr key={item.id}>
-                                    <td>{item.itemName}<img src={chevron} alt=""/></td>
-                                    <td>{item.category}</td>
-                                    <td>{item.status}</td>
-                                    <td>{item.quantity}</td>
+                                <tr className="inventory" key={item.id}>
+                                    <td className="item">{item.itemName}<img src={chevron} alt=""/></td>
+                                    <td className="type">{item.category}</td>
+                                    <td className={item.status.toUpperCase() === 'IN STOCK' ? "value value__in" : "value value__out"}>{item.status.toUpperCase()}</td>
+                                    <td className="amount">{item.quantity}</td>
                                     <td><img src={deleteOutline} alt=""/><img src={edit} alt=""/></td>
                                 </tr>
                             )
