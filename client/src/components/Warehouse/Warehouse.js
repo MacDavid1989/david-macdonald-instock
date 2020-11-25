@@ -2,6 +2,7 @@ import React from 'react';
 import './Warehouse.scss'
 import backArrow from '../../Assets/Icons/arrow_back-24px.svg'
 import edit from '../../Assets/Icons/edit-24px.svg'
+import editWhite from '../../Assets/Icons/edit-24px-white.svg'
 import sort from '../../Assets/Icons/sort-24px.svg'
 import chevron from '../../Assets/Icons/chevron_right-24px.svg'
 import deleteOutline from '../../Assets/Icons/delete_outline-24px.svg'
@@ -15,7 +16,7 @@ function Warehouse() {
                     <h1 className="banner__heading">King West</h1>
                 </div>
                 <button className="banner__button">
-                    <img className="button__icon" src={edit} alt=""/>
+                    <img className="button__icon" src={editWhite} alt=""/>
                     <h3 className="button__text">EDIT</h3>
                 </button>
             </section>
@@ -61,34 +62,32 @@ function Warehouse() {
                 </table>
             </section>
             <section className="warehouse__inventory-mobile">
-                <div className="">
-                    <div className="">
-                        <h4 className="">Inventory Item</h4>
-                        <div className="">
-                            <p className="">TELEVISION</p>
-                            <img className=""/>
+                <div className="inventory__item">
+                    <div className="item__name">
+                        <h4 className="item__heading">INVENTORY ITEM</h4>
+                        <div className="item__link">
+                            <p className="item__item">TELEVISION</p>
+                            <img className="item__icon" src={chevron} alt=""/>
                         </div>
                     </div>
-                    <div className="">
-                        <h4 className="">STATUS</h4>
-                        <div className="">
-                            <p className="">IN STOCK</p>
-                        </div>
+                    <div className="item__status">
+                        <h4 className="item__heading">STATUS</h4>
+                        <p className="item__value">IN STOCK</p>
                     </div>
                 </div>
-                <div className="">
-                    <div className="">
-                        <h4 className="">CATEGORY</h4>
-                        <p className="">ELECTRONICS</p>
+                <div className="inventory__info">
+                    <div className="item__category">
+                        <h4 className="item__heading">CATEGORY</h4>
+                        <p className="item__type">ELECTRONICS</p>
                     </div>
-                    <div className="">
-                        <h4 className="">QTY</h4>
-                        <p className="">500</p>
+                    <div className="item__quantity">
+                        <h4 className="item__heading">QTY</h4>
+                        <p className="item__amount">500</p>
                     </div>
                 </div>
-                <div className="">
-                    <img className="" src={deleteOutline} alt=""/>
-                    <img className="" src={edit} alt=""/>
+                <div className="inventory__buttons">
+                    <img className="inventory__delete" src={deleteOutline} alt=""/>
+                    <img className="inventory__edit" src={edit} alt=""/>
                 </div>
             </section>
         </div>

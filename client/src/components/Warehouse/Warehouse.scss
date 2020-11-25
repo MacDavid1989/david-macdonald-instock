@@ -32,8 +32,10 @@
             }
 
             &__heading {
+                width: 122px;
                 line-height: 36px;
                 font-size: 28px;
+                font-weight: 600;
                 margin: 0 0 0 12px;
             }
 
@@ -41,7 +43,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                // background: #2E66E6;
+                background: #2E66E6;
                 border-radius: 20px;
                 outline: none;
                 border: none;
@@ -68,12 +70,48 @@
     }
 
     &__address {
+        .address {
+            &__heading{
 
+            }
+            &__street {
+
+            }
+            &__city {
+
+            }
+        }
     }
 
     &__contact {
         display: flex;
         justify-content: space-between;
+
+        &-name {
+            .title{
+
+            }
+            .name {
+
+            }
+            .position {
+
+            }
+        }
+
+        &-info {
+            .title {
+
+            }
+
+            .number {
+
+            }
+
+            .email {
+
+            }
+        }
     }
 
     &__inventory {
@@ -81,6 +119,27 @@
     }
 
     &__inventory-mobile {
-        
+        display: flex;
+        flex-direction: column;
+        padding: 16px 24px 27px;
+        border-bottom: solid #BDC5D5 1px;
+
+        .inventory {
+            &__item {
+                display: flex;
+                .item {
+                    &__link {
+                        display: flex;
+                    }
+                }
+            }
+            &__info {
+                display: flex;
+            }
+            &__buttons {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
     }
 }
