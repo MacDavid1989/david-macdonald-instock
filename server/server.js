@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const warehouseIdRoute = require('./routes/warehouseIdRoute')
 const inventoryIdRoute = require('./routes/inventoryIdRoute')
+const inventoryRoute = require('./routes/inventoryRoute')
 
 // allows use of .env
 require('dotenv').config();
@@ -16,6 +17,9 @@ app.use(cors());
 
 // warehouse id route
 app.use('/warehouse', warehouseIdRoute)
+
+// inventories
+app.use('/inventory', inventoryRoute)
 
 // inventory id route
 app.use('/warehouse/:warehouseId/inventory', inventoryIdRoute)
