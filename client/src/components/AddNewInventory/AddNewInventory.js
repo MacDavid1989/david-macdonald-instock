@@ -1,11 +1,11 @@
 import React from 'react';
 
-const AddNewItemHeader = () => {
+const AddNewInventory = () => {
     return (
-        <div>
-            
+        <div class="new-inventory">
+            <AddNewItemHeader />
         </div>
     );
 }
 
-export default AddNewItemHeader;
+export default AddNewInventory;
