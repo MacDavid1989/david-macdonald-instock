@@ -204,7 +204,7 @@ class ItemForm extends Component {
           </div>
           <div className="form__btn-wrapper">
             <button className="form__btn" type="reset">Cancel</button>
-            <button className="form__btn" type="submit"> + Add Item</button>
+            <button className="form__btn form__btn--add" type="submit"> + Add Item</button>
           </div>
         </form>
       </div>

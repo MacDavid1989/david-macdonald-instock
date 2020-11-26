@@ -36,7 +36,7 @@
     border-radius: 20px;
     height: 2rem;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid map-get($color-secondary, borders);
     resize: none;
     padding: 1rem;
     &--text-area {
@@ -67,7 +67,7 @@
     @include tablet {
       width: 100%;
       &--top {
-        border-right: 1px solid black;
+        border-right: 1px solid map-get($color-secondary, dividers);
       }
     }
   }
@@ -87,6 +87,8 @@
     border: none;
     height: 2.2rem;
     &--add {
+        color: white;
+        background-color: map-get($color-primary, interactive-el);
     }
     @include tablet {
         width: fit-content;
