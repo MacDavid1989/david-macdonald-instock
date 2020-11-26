@@ -2,6 +2,7 @@ import './App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
+import WarehouseEdit from './components/Warehouse/EditWarehouse/EditWarehouse';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home}/>
         {/* <Route path="/warehouse/:warehouseId" component={Warehouse} /> */}
-        {/* <Route path="/warehouse/:warehouseId/edit" component={WarehouseEdit} /> */}
+        <Route path="/warehouse/:warehouseId/edit" component={WarehouseEdit} />
         {/* <Route path="/warehouse/add" component={WarehouseAdd} /> */}
         {/* <Route path="/warehouse/:warehouseId/inventory" component={WarehouseInventory} /> */}
         {/* <Route path="/warehouse/:warehouseId/inventory/:itemId" component={ItemDetails} /> */}

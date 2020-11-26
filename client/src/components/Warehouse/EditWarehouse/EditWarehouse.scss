@@ -3,75 +3,84 @@
 
 // <<<<<<<<<< EDIT WAREHOUSE STYLING >>>>>>>>>> \\
 .edit-warehouse {
-    //width: 23.4375rem;
-    height: 12.5rem;
-    background-color: map-get($color-background, top-nav-header-bg);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    // //width: 23.4375rem;
+    // height: 12.5rem;
+    // background-color: map-get($color-background, top-nav-header-bg);
 
-    &__main-header{
-        display: flex;
-        flex-direction: column;
-        @include tablet {
-            flex-direction: row;
-            justify-content: space-between;
-        }
-    }
+    // &__main-header{
+    //     display: flex;
+    //     flex-direction: column;
+    //     @include tablet {
+    //         flex-direction: row;
+    //         justify-content: space-between;
+    //     }
+    // }
 
-    &__logo-btn {
-        height: 1.75rem;
-        margin-top: 1.5rem;
-        background-color: transparent;
-        border: transparent;
-    }
+    // &__logo-btn {
+    //     height: 1.75rem;
+    //     margin-top: 1.5rem;
+    //     background-color: transparent;
+    //     border: transparent;
+    // }
 
-    &__w-i-btns {
-        margin: 1.5rem 1rem;
-        display: flex;
-        justify-content: space-between;
-    }
+    // &__w-i-btns {
+    //     margin: 1.5rem 1rem;
+    //     display: flex;
+    //     justify-content: space-between;
+    // }
 
-    &__warehouse-btn {
-        width: 10.25rem;
-        height: 2.25rem;
-        padding: 0.5rem ;
-        border-radius: 20px;
-        border: transparent;
-        background-color: #13182C;
-        @include mob-labels-links-btn;
-        font-family: 'semi-bold';
-        text-transform: capitalize;
-        color: map-get($color-primary, global-white);
-        &:hover {
-            background-color: map-get($color-background, cta-btn-hover);
-        }
-    }
+    // &__warehouse-btn {
+    //     width: 10.25rem;
+    //     height: 2.25rem;
+    //     padding: 0.5rem ;
+    //     border-radius: 20px;
+    //     border: transparent;
+    //     background-color: #13182C;
+    //     @include mob-labels-links-btn;
+    //     font-family: 'semi-bold';
+    //     text-transform: capitalize;
+    //     color: map-get($color-primary, global-white);
+    //     &:hover {
+    //         background-color: map-get($color-background, cta-btn-hover);
+    //     }
+    // }
 
-    &__inventory-btn {
-        width: 10.25rem;
-        height: 2.25rem;
-        padding: 0.5rem ;
-        border-radius: 20px;
-        border: transparent;
-        background-color: map-get($color-background, cta-btn-hover);
-        @include mob-labels-links-btn;
-        font-family: 'semi-bold';
-        text-transform: capitalize;
-        color: map-get($color-secondary, table-sort-icon);
-    }
+    // &__inventory-btn {
+    //     width: 10.25rem;
+    //     height: 2.25rem;
+    //     padding: 0.5rem ;
+    //     border-radius: 20px;
+    //     border: transparent;
+    //     background-color: map-get($color-background, cta-btn-hover);
+    //     @include mob-labels-links-btn;
+    //     font-family: 'semi-bold';
+    //     text-transform: capitalize;
+    //     color: map-get($color-secondary, table-sort-icon);
+    // }
 
     &__card {
-        width: 21.4375rem;
-        margin: 0 1rem 1.5rem 1rem;
+        min-width: 21.4375rem;
         border-radius: 3px;
         box-shadow: 2px 0 5px 0 rgba($color: #13182C, $alpha: 0.1);
         display: flex;
         flex-direction: column;
+        position: absolute;
+        left: 4.27%;
+        right: 4.27%;
+        top: 11.79%;
         @include tablet {
-            width: 44rem;
-            margin: 0 2rem 1.5rem 2rem;
+            left: 4.17%;
+            right: 4.17%;
+            top: 8.98%;
         }
         @include desktop {
-            width: 63.75rem;
-            margin: 0 8.125rem 1.5rem 8.125rem;
+            left: 10.16%;
+            right: 10.16%;
+            top: 9.95%;
+            max-width: 63.75rem;
         }
     }
 
