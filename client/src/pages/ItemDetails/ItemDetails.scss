@@ -1,7 +1,7 @@
 @import '../../partials/variables';
 @import '../../partials/mixins';
 
-.item {
+.itemDetails {
     @include normal;
     position: absolute;
     top: 8rem;
@@ -13,6 +13,8 @@
     border-radius: 3px;
 
     a {
+        display: flex;
+        align-items: center;
         text-decoration: none;
     }
 
@@ -70,15 +72,15 @@
     &__details {
         display: flex;
         flex-wrap: wrap;
-        padding: 16px 24px;
+        padding: 16px 24px 24px;
     }
 
     &__about {
-
+        width: 295px;
     }
 
     &__description {
-        width: 147.5px;
+        width: 100%;
         margin: 0 0 16px;
 
         .description {
@@ -117,11 +119,11 @@
     } 
 
     &__info {
-
+        width: 295px;
     }
 
     &__stock {
-        
+        display: flex;
     }
 
     &__status {
@@ -135,7 +137,6 @@
                 line-height: 16px;
                 font-weight: 600;
                 margin: 0 0 4px;
-
             }
                
             &__value {
