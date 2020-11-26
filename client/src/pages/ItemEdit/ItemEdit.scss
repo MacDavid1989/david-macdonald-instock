@@ -1,0 +1,43 @@
+@import '../../partials/variables';
+@import '../../partials/mixins';
+
+.itemEdit {
+    @include normal;
+    position: absolute;
+    top: 8rem;
+    display: flex;
+    flex-direction: column;
+    width: calc(343px + (361/393) * (100vw - 375px));
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+
+    a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    &__banner {
+        display: flex;
+        align-items: center;
+        padding: 32px 24px 24px;
+        border-bottom: solid #BDC5D5 1px;
+        height: 92px;
+        
+        .banner {
+
+            &__arrow {
+                width: 24px;
+                height: 24px;
+            }
+
+            &__heading {
+                line-height: 36px;
+                font-size: 28px;
+                font-weight: 600;
+                margin: 0 0 0 8px;
+            }
+        }
+    }
+}

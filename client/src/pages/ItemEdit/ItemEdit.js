@@ -25,7 +25,7 @@ class ItemEdit extends Component {
                             <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}`}>
                                 <img className="banner__arrow" src={backArrow} alt=""/>
                             </Link>
-                            <h1 className="banner__heading">{!!this.state.item&&this.state.item.itemName}</h1>
+                            <h1 className="banner__heading">Edit Inventory Item</h1>
                     </section>
                 </div> 
             </>
