@@ -400,7 +400,7 @@
             .inventory {
                 display: flex;
                 flex-direction: column;
-                padding: 16px 0 24px;
+                padding: 16px 0 0;
                 border-bottom: solid #BDC5D5 1px;
 
                 &__header {
@@ -422,30 +422,25 @@
                         font-weight: 600;
 
                         &--1{
-                            width: 128px;
+                            width: 150px;
                         }
 
                         &--2 {
-                            width: 77px;
-                            margin: 0 0 0 43.94px;
+                            width: 121px;
                         }
 
                         &--3 {
-                            width: 61px;
-                            margin: 0 0 0 49.94px;
+                            width: 182px;
                         }
 
                         &--4 {
-                            width: 75px;
-                            margin: 0 0 0 126.94px;
+                            width: 94px;
                         }
 
                         &--5 {
                             display: flex;
                             justify-content: flex-end;
-                            width: 93px;
-                            margin: 0 0 0 24.94px;
-                            
+                            width: 93px;                            
                         }
                     }
 
@@ -466,26 +461,32 @@
                         &__details {
                             display: flex;
                             align-items: center;
+                            border-bottom: solid #BDC5D5 1px;
+                            padding: 18px 32px;
+
                         }
 
                         &__name {
                             display: flex;
                             align-items: center;
-                            margin: 0 0 0 0;
-                            font-size: 13px;
+                            font-size: 14px;
                             font-weight: 600;
-                            line-height: 20px;
+                            line-height: 22px;
+                            width: 150px;
+
                             color: #2E66E5;
                         }
 
                         &__icon {
                             width: 20px;
                             height: 20px;
+                            margin: 0 0 0 5px;
                         }
 
                         &__type{
-                            font-size: 13px;
-                            line-height: 20px;
+                            font-size: 14px;
+                            width: 121px;
+                            line-height: 22px;
                         }
 
                         &__value {
@@ -494,30 +495,41 @@
                             justify-content: center;
                             height: 24px;
                             border-radius: 20px;
-                            font-size: 11px;
-                            line-height: 16px;
+                            font-size: 12px;
+                            line-height: 18px;
                             font-weight: 600;
+
 
                             &--in {
                                 color: #158463;
                                 background: rgba(21, 132, 99, 0.07);                            ;
-                                width: 61px;
+                                width: 65px;
+                                margin: 0 117px 0 0;
 
                             }
 
                             &--out {
                                 color: #C94515;
                                 background: rgba(201, 69, 21, 0.07);                            ;
-                                width: 86px;
+                                width: 92px;
+                                margin: 0 90px 0 0;
                             }
                         }
 
                         &__amount {
+                            width: 94px;
+                            font-size: 14px;
+                            line-height: 22px;
+                        }
 
+                        &__icons {
+                            display: flex;
+                            justify-content: flex-end;
+                            width: 93px; 
                         }
 
                         &__delete {
-
+                            margin: 0 24px 0 0;
                         }
 
                         &__edit {

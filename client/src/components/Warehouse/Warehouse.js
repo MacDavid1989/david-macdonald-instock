@@ -75,7 +75,7 @@ class Warehouse extends Component {
                                         <td className="item__type">{item.category}</td>
                                         <td className={item.status.toUpperCase() === 'IN STOCK' ? "item__value item__value--in" : "item__value item__value--out"}>{item.status.toUpperCase()}</td>
                                         <td className="item__amount">{item.quantity}</td>
-                                        <td>
+                                        <td className="item__icons">
                                             <img className="item__delete" src={deleteOutline} alt=""/>
                                             <img className="item__edit" src={edit} alt=""/>
                                         </td>
