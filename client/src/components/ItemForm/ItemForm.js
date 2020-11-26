@@ -6,6 +6,7 @@ import "./ItemForm.scss";
 class ItemForm extends Component {
   
   state = {
+    warehouseList: [],
     name: "",
     description: "",
     category: "",
@@ -15,7 +16,14 @@ class ItemForm extends Component {
   };
   
   componentDidMount(){
-    axios
+    axios.get("http://localhost:8080/warehouse/")
+    .then((res)=>{
+      this.setState({
+        warehouseList: res.data
+      })
+      
+    })
+    .catch((err)=> console.log(err))
   }
 
   onNameChange = (e) => {
