@@ -5,14 +5,15 @@
 .add-item-header{
     display: flex;
     align-items: flex-start;
-    padding: 1rem;
+    padding: 1.8rem;
+    width: 100%;
     border-bottom: 1px solid map-get($color-secondary, borders);
     @include tablet{
         padding: 2rem;
     }
     &__title{
         margin: 0;
-        font-family: regular;
+        font-family: semi-bold;
         font-size: 1.5rem;
         @include tablet{
             font-size: 2.2rem;
@@ -20,7 +21,7 @@
     }
     &__back{
         margin-top: .5rem;
-        margin-right: .2rem;
+        margin-right: .4rem;
         @include tablet{
             margin-top: 1.2rem;
             margin-right: .5rem;

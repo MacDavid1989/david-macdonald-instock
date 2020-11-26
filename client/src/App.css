@@ -14,9 +14,18 @@
   font-family: "semi-bold";
   src: url("../assets/Fonts/TitilliumWebSemiBold.ttf") format("truetype");
 }
-.new-inventory {
-  border-radius: 8px;
-  background-color: white;
-  width: 100%;
+.App {
+  background-color: #F7F8F9;
+  padding: 1rem;
 }
-/*# sourceMappingURL=AddNewInventory.css.map */
+@media (min-width: 768px) {
+  .App {
+    padding: 1rem 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .App {
+    padding: 0 130px;
+  }
+}
+/*# sourceMappingURL=App.css.map */

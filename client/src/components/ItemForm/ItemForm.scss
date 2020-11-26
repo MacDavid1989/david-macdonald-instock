@@ -6,6 +6,36 @@
     padding: 1rem;
     &__title{
         margin: 0;
-        font-family: regular;
+        font-family: semi-bold;
+    }
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        margin-top: .5rem;
+        &--radio{
+            flex-direction: row;
+            &-wrapper{
+                margin-right: 4rem;
+            }
+        } 
+    }
+    &__input{
+        border-radius: 20px;
+        height: 2rem;
+        width: 100%;
+        border: 1px solid black;
+        resize: none;
+        padding: 1rem;
+        &--text-area{
+            height: 100px;
+            padding: .8rem;
+        }
+        &--select{
+            padding: 0;
+            padding-left: .5rem;
+        }
+    }
+    &__radio{
+        margin-right: 5px;
     }
 }
