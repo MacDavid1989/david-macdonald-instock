@@ -261,11 +261,11 @@
         &__about {
             margin: 0 40px 0 0;
             border-right: solid #BDC5D5 1px;
-            width: calc(319px + (124/512) * (100vw - 768px));
+            width: calc(319px + (150/512) * (100vw - 768px));
         }
 
         &__description {
-            width: 295px;
+            width: calc(295px + (134/512) * (100vw - 768px));
             margin: 0 0 32px;
 
             .description {
@@ -302,7 +302,7 @@
         } 
 
         &__info {
-            width: 280px;
+            width: calc(280px + (150/512) * (100vw - 768px));
         }
 
         &__stock {
@@ -311,7 +311,7 @@
         }
 
         &__status {
-            width: 154px;
+            width: calc(154px + (69/512) * (100vw - 768px));
 
             .status {
 
@@ -338,7 +338,7 @@
             }
         } 
         &__quantity {
-            width: 126px;
+            width: calc(126px + (71/512) * (100vw - 768px));
             margin: 0 0 16px;
 
             .quantity {
@@ -371,6 +371,42 @@
                     line-height: 22px;
                 }
             }
+        }  
+    }
+
+    @media (min-width: 1280px) {
+        width: 1020px;
+
+        &__banner {
+            padding: 32px 40px 21px;
+        } 
+        
+        &__details {
+            padding: 24px 40px;
+        }
+
+        &__about {
+            width: 469px;
+        }
+
+        &__description {
+            width: 429px;
+        }
+
+        &__info {
+            width: 430px;
+        }
+
+        &__status {
+            width: 233px;
+        } 
+
+        &__quantity {
+            width: 197px;
+        } 
+
+        &__warehouse {
+            width: 197px;
         }  
     }
 }
