@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from 'react-router-dom';
+import search from '../../Assets/Icons/search-24px.svg'
 
 const WarehouseNav = () => {
   return (
