@@ -64,11 +64,14 @@
     } 
     
     &__info {
+        display: flex;
+        flex-wrap: wrap;
         border-bottom: solid #BDC5D5 1px;
         padding: 16px 24px;
     }
 
     &__address {
+        width: 147.5px;
         margin: 0 0 16px;
 
         .address {
@@ -92,11 +95,14 @@
     }
 
     &__contact {
+        width: 295px;
         display: flex;
-        justify-content: space-between;
+
 
         &-name {
-            
+            width: 155.5px;
+            margin: 0 auto 0 0;
+
             .title{
                 color: #5C667E;
                 font-size: 11px;
@@ -105,10 +111,12 @@
                 margin: 0 0 4px;
 
             }
+
             .name {
                 font-size: 13px;
                 line-height: 20px;
             }
+
             .position {
                 font-size: 13px;
                 line-height: 20px;
@@ -116,6 +124,8 @@
         }
 
         &-info {
+            width: 139.5px;
+
             .title {
                 color: #5C667E;
                 font-size: 11px;
@@ -148,8 +158,12 @@
         .inventory {
         padding: 16px 24px 24px;
         border-bottom: solid #BDC5D5 1px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
 
             &__item {
+                width: 265px;
                 display: flex;
                 align-items: center;
                 margin: 0 0 20px;
@@ -186,7 +200,7 @@
                     }
                     
                     &__status {
-                        width: 140px;
+                        width: 86px;
 
                         .heading {
                             color: #5C667E;
@@ -224,6 +238,7 @@
             }   
 
             &__info {
+                width: 265px;
                 display: flex;
                 margin: 0 0 19px;
 
@@ -245,7 +260,7 @@
                     }
                     
                     &__quantity{
-                        width: 140px;
+                        width: 100px;
 
                         .heading {
                             color: #5C667E;
@@ -265,11 +280,11 @@
             }
 
             &__buttons {
+                width: 295px;
                 display: flex;
                 justify-content: space-between;
             }
             &__delete{
-                
             }
             &__edit {
 
@@ -324,8 +339,9 @@
         &__info {
             border-bottom: none;
             padding: 24px calc(32px + (8/512) * (100vw - 768px));
-            display: flex;
             flex-direction: row;
+            justify-content: initial;
+            flex-wrap: none;
         }
         
         &__address {
@@ -355,6 +371,7 @@
             width: calc(354px + (176/512) * (100vw - 768px));
             
             &-name {
+                width: calc(142px + (75/512) * (100vw - 768px));
                 margin: 0 calc(24px + (4/512) * (100vw - 768px)) 0 0;
                 
                 .title{
@@ -374,6 +391,8 @@
             }
             
             &-info {
+                width: calc(142px + (75/512) * (100vw - 768px));
+
                 .title {
                     font-size: 12px;
                     line-height: 18px;
