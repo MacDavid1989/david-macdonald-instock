@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import './Warehouse.scss'
 import backArrow from '../../Assets/Icons/arrow_back-24px.svg'
@@ -17,7 +18,8 @@ class Warehouse extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:8080/warehouse/2922c286-16cd-4d43-ab98-c79f698aeab0')
+        console.log(this.props.match)
+        axios.get(`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}`)
         .then(res=>{
             this.setState({warehouse: res.data.warehouse ,inventory: res.data.inventory})
         })
@@ -32,10 +34,12 @@ class Warehouse extends Component {
                         <img className="banner__arrow" src={backArrow} alt=""/>
                         <h1 className="banner__heading">{!!this.state.warehouse&&this.state.warehouse.name}</h1>
                     </div>
-                    <button className="banner__button">
-                        <img className="button__icon" src={editWhite} alt=""/>
-                        <h3 className="button__text">Edit</h3>
-                    </button>
+                    <Link to={`/warehouse/${this.props.match.params.warehouseId}/edit`}>
+                        <button className="banner__button">
+                            <img className="button__icon" src={editWhite} alt=""/>
+                            <h3 className="button__text">Edit</h3>
+                        </button>
+                    </Link>
                 </section>
                 <section className="warehouse__info">
                     <div className="warehouse__address">
@@ -71,13 +75,17 @@ class Warehouse extends Component {
                             {!!this.state.inventory&&this.state.inventory.map(item => {
                                 return ( 
                                     <tr className="item__details" key={item.id}>
-                                        <td className="item__name">{item.itemName}<img className="item__icon" src={chevron} alt=""/></td>
+                                        <td><Link className="item__name" to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${item.id}`}>{item.itemName}<img className="item__icon" src={chevron} alt=""/></Link></td>
                                         <td className="item__type">{item.category}</td>
                                         <td className={item.status.toUpperCase() === 'IN STOCK' ? "item__value item__value--in" : "item__value item__value--out"}>{item.status.toUpperCase()}</td>
                                         <td className="item__amount">{item.quantity}</td>
                                         <td className="item__icons">
-                                            <img className="item__delete" src={deleteOutline} alt=""/>
-                                            <img className="item__edit" src={edit} alt=""/>
+                                            <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${item.id}/edit`}>
+                                                <img className="item__delete" src={deleteOutline} alt=""/>
+                                            </Link>
+                                            <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${item.id}/delete`}>
+                                                <img className="item__edit" src={edit} alt=""/>
+                                            </Link>
                                         </td>
                                     </tr>
                                 )
@@ -92,10 +100,12 @@ class Warehouse extends Component {
                         <div className="inventory__item">
                             <div className="item__name">
                                 <h4 className="heading">INVENTORY ITEM</h4>
+                                <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${item.id}`}>
                                 <div className="link">
                                     <p className="item">{item.itemName}</p>
                                     <img className="icon" src={chevron} alt=""/>
                                 </div>
+                                </Link>
                             </div>
                             <div className="item__status">
                                 <h4 className="heading">STATUS</h4>
@@ -113,8 +123,12 @@ class Warehouse extends Component {
                             </div>
                         </div>
                             <div className="inventory__buttons">
+                            <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${item.id}/edit`}>
                                 <img className="inventory__delete" src={deleteOutline} alt=""/>
+                                </Link>
+                                <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${item.id}/delete`}>
                                 <img className="inventory__edit" src={edit} alt=""/>
+                                </Link>
                             </div>
                     </div>
                 )
