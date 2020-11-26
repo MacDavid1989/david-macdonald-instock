@@ -32,38 +32,38 @@ class ItemEdit extends Component {
                             <h2 className="itemEdit__details-title">Item Details</h2>
                             <div className="itemEdit__details-name">
                                 <label className="itemEdit__details-label">Item Name</label>
-                                <input id="itemName" name="itemName" type="text" placeholder={`${!!this.state.item&&this.state.item.itemName}`} required/>
+                                <input id="itemName" name="itemName" type="text" placeholder={`${!!this.state.item&&this.state.item.itemName}`}/>
                             </div>
-                            <div>
+                            <div className="itemEdit__details-description">
                                 <label className="itemEdit__details-label">Description</label>
-                                <textarea id="itemDescription" name="itemDescription"></textarea>
+                                <textarea id="itemDescription" name="itemDescription" placeholder={`${!!this.state.item&&this.state.item.description}`}></textarea>
                             </div>
-                            <div>
+                            <div className="itemEdit__details-category">
                                 <label className="itemEdit__details-label">Category</label>
                                 <select id="itemCategory" name="itemCategory">
-                                    <option>Electronics</option>
+                                    <option>{!!this.state.item&&this.state.item.category}</option>
                                 </select>
                             </div>
                         </div>
                         <div className="itemEdit__availability">
                             <h2 className="itemEdit__availability-title">Item Availability</h2>
-                            <div>
+                            <div className="itemEdit__availability-status">
                                 <label className="itemEdit__availability-label">Status</label>
                                 <div>
                                     <div>
                                         <input id="itemStatus" name="itemStatus" type="radio"/>
-                                        <label className="itemEdit__availability-radio">In Stock</label>
+                                        <label className="itemEdit__availability-radio checked">In Stock</label>
                                     </div>
                                     <div>
                                         <input id="itemStatus" name="itemStatus" type="radio"/>
-                                        <label className="itemEdit__availability-radio">Out of Stock</label>
+                                        <label className="itemEdit__availability-radio checked">Out of Stock</label>
                                     </div>
                                 </div>
                             </div>
-                            <div>
+                            <div className="itemEdit__availability-warehouse">
                                 <label className="itemEdit__availability-label">Warehouse</label>
                                 <select id="itemWarehouse" name="itemWarehouse">
-                                    <option>Manhattan</option>
+                                    <option>{!!this.state.item&&this.state.item.warehouseName}</option>
                                 </select>
                             </div>
                         </div>
