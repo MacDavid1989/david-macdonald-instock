@@ -42,6 +42,87 @@
     }
 
     &__form {
+        padding: 16px 24px 0;
+    }
+
+    &__details {
+
+        &-title {
+
+        }
+
+        &-name {
+
+            #itemName {
+
+            }
+        }
+
+        &-description {
+
+            #itemDescription {
+
+            }
+        }
+
+        &-category {
+
+            #itemCategory {
+
+            }
+        }
         
+        &-label {
+
+        }
+    }
+
+    &__availability {
+
+        &-title {
+
+        }
+
+        &-status {
+
+            .status{
+
+                &__wrapper {
+
+                }
+
+                &__in {
+
+                    &-radio{
+                        
+                    }
+                }
+                &__out {
+                    &-radio{
+                        
+                    }
+                }
+
+            }
+         
+            .checked {
+
+            }
+            
+            #itemStatus {
+
+            }
+        }
+
+        &-warehouse {
+
+            #itemDescription {
+
+            }
+        }
+        
+        &-label {
+
+        }
     }
 }

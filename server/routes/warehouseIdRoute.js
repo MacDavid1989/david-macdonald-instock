@@ -9,7 +9,7 @@ const inventories = "./data/inventories.json";
 
 // GET / all warehouse
 const readFileSync = () => {
-    return JSON.parse(fs.readFileSync(warehouses))
+    return JSON.parse(fs.readFileSync(warehouseFile))
 }
 
 router.get("/", (req, res) => {
