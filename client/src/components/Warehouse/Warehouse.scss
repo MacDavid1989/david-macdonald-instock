@@ -4,10 +4,10 @@
 .warehouse {
     @include normal;
     position: absolute;
-    top: 6rem;
+    top: 8rem;
     display: flex;
     flex-direction: column;
-    width: 343px;
+    width: calc(343px + (361/393) * (100vw - 375px));
     background: #FFFFFF;
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
     border-radius: 3px;
@@ -208,14 +208,14 @@
                             
                             &__in {
                                 color: #158463;
-                                background: rgba(21, 132, 99, 0.07);                            ;
+                                background: rgba(21, 132, 99, 0.07);                     
                                 width: 61px;
 
                             }
 
                             &__out {
                                 color: #C94515;
-                                background: rgba(201, 69, 21, 0.07);                            ;
+                                background: rgba(201, 69, 21, 0.07);
                                 width: 86px;
                             }
                         }
@@ -279,10 +279,10 @@
     }
 
     @media (min-width: 768px) {
-        width: 704px;
+        width: calc(704px + (316/512) * (100vw - 768px));
         
         &__banner {
-            padding: 32px 32px 23px;
+            padding: 32px calc(32px + (8/512) * (100vw - 768px)) calc(23px - (2/512) * (100vw - 768px));
             height: 93px;
             
             .banner {
@@ -323,7 +323,7 @@
         
         &__info {
             border-bottom: none;
-            padding: 24px 32px;
+            padding: 24px calc(32px + (8/512) * (100vw - 768px));
             display: flex;
             flex-direction: row;
         }
@@ -331,7 +331,7 @@
         &__address {
             margin: 0 40px 0 0;
             border-right: solid #BDC5D5 1px;
-            width: 246px;
+            width: calc(246px + (124/512) * (100vw - 768px));
             
             .address {
                 &__heading{
@@ -352,10 +352,10 @@
         
         &__contact {
             justify-content: initial;
-            width: 354px;
+            width: calc(354px + (176/512) * (100vw - 768px));
             
             &-name {
-                margin: 0 24px 0 0;
+                margin: 0 calc(24px + (4/512) * (100vw - 768px)) 0 0;
                 
                 .title{
                     font-size: 12px;
@@ -365,6 +365,7 @@
                 .name {
                     font-size: 14px;
                     line-height: 22px;
+                    width: calc(142px + (75/512) * (100vw - 768px));
                 }
                 .position {
                     font-size: 14px;
@@ -398,11 +399,12 @@
                 display: flex;
                 flex-direction: column;
                 border-bottom: solid #BDC5D5 1px;
+                width: 100%;
 
                 &__header {
-                    width: 704px;
+                    width: calc(704px + (316/512) * (100vw - 768px));
                     height: 40px;
-                    padding: 11px 32px;
+                    padding: 11px calc(32px + (8/512) * (100vw - 768px));;
                     background-color: rgba($color: #F7F8F9, $alpha: 0.7);
 
                     &-categories{
@@ -418,25 +420,25 @@
                         font-weight: 600;
 
                         &--1{
-                            width: 150px;
+                            width: calc(150px + (71/512) * (100vw - 768px));
                         }
 
                         &--2 {
-                            width: 121px;
+                            width: calc(121px + (53/512) * (100vw - 768px));
                         }
 
                         &--3 {
-                            width: 182px;
+                            width: calc(182px + (79/512) * (100vw - 768px));
                         }
 
                         &--4 {
-                            width: 94px;
+                            width: calc(94px + (80/512) * (100vw - 768px));
                         }
 
                         &--5 {
                             display: flex;
                             justify-content: flex-end;
-                            width: 93px;                            
+                            width: calc(93px + (17/512) * (100vw - 768px));                            
                         }
                     }
 
@@ -458,7 +460,7 @@
                             display: flex;
                             align-items: center;
                             border-bottom: solid #BDC5D5 1px;
-                            padding: 18px 32px;
+                            padding: 18px calc(32px + (8/512) * (100vw - 768px));
 
                         }
 
@@ -468,7 +470,8 @@
                             font-size: 14px;
                             font-weight: 600;
                             line-height: 22px;
-                            width: 150px;
+                            width: calc(150px + (71/512) * (100vw - 768px));
+
 
                             color: #2E66E5;
                         }
@@ -481,7 +484,8 @@
 
                         &__type{
                             font-size: 14px;
-                            width: 121px;
+                            width: calc(121px + (53/512) * (100vw - 768px));
+
                             line-height: 22px;
                         }
 
@@ -498,22 +502,24 @@
 
                             &--in {
                                 color: #158463;
-                                background: rgba(21, 132, 99, 0.07);                            ;
+                                background: rgba(21, 132, 99, 0.07);                            
                                 width: 65px;
-                                margin: 0 117px 0 0;
+                                margin: 0 calc(117px + (79/512) * (100vw - 768px)) 0 0;
 
                             }
 
                             &--out {
                                 color: #C94515;
-                                background: rgba(201, 69, 21, 0.07);                            ;
+                                background: rgba(201, 69, 21, 0.07);                            
                                 width: 92px;
-                                margin: 0 90px 0 0;
+                                margin: 0 calc(90px + (79/512) * (100vw - 768px)) 0 0;
                             }
                         }
 
                         &__amount {
-                            width: 94px;
+                            width: calc(94px + (80/512) * (100vw - 768px));
+                           
+
                             font-size: 14px;
                             line-height: 22px;
                         }
@@ -521,7 +527,8 @@
                         &__icons {
                             display: flex;
                             justify-content: flex-end;
-                            width: 93px; 
+                            width: calc(93px + (17/512) * (100vw - 768px));                            
+
                         }
 
                         &__delete {
