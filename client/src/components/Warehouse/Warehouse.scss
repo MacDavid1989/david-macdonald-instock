@@ -32,11 +32,10 @@
             }
 
             &__heading {
-                width: 122px;
                 line-height: 36px;
                 font-size: 28px;
                 font-weight: 600;
-                margin: 0 0 0 12px;
+                margin: 0 0 0 8px;
             }
 
             &__button {
@@ -294,7 +293,6 @@
                 }
                 
                 &__heading {
-                    width: 139px;
                     line-height: 40px;
                     font-size: 32px;
                 }
@@ -385,7 +383,7 @@
                     font-size: 14px;
                     line-height: 22px;
                 }
-
+                
                 .email {
                     font-size: 14px;
                     line-height: 22px;
@@ -395,12 +393,10 @@
         
         &__inventory {
             display: flex;
-            // vvvvvvvvvvvvv HERE vvvvvvvvvvvvvvvvvv 
 
             .inventory {
                 display: flex;
                 flex-direction: column;
-                padding: 16px 0 0;
                 border-bottom: solid #BDC5D5 1px;
 
                 &__header {
@@ -543,5 +539,110 @@
         &__inventory-mobile {
             display: none;
         }
-    } 
+    }
+    
+    @media (min-width: 1280px) {
+        width: 1020px;
+        
+        &__banner {
+            padding: 32px 40px 21px;
+        } 
+        
+        &__info {
+            padding: 24px 40px;
+        }
+        
+        &__address {
+            width: 370px;
+        }
+        
+        &__contact {
+            width: 530px;
+            
+            &-name {
+                width: 217px;
+                margin: 0 28px 0 0;
+            }
+        }
+        
+        &__inventory {
+            
+            .inventory {
+                width: 100%;
+                
+                &__header {
+                    width: 100%;
+                    padding: 11px 40px;
+                    
+                    &-category {
+                        
+                        &--1{
+                            width: 221px;
+                        }
+                        
+                        &--2 {
+                            width: 174px;
+                        }
+
+                        &--3 {
+                            width: 261px;
+                        }
+                        
+                        &--4 {
+                            width: 174px;
+                        }
+                        
+                        &--5 {
+                            width: 110px;                            
+                        }
+                    }
+                }
+                
+                &__items {
+                    
+                    .item {
+
+                        &__details {
+                            padding: 18px 40px;
+                        }
+
+                        &__name {
+                            width: 221px;
+                        }
+                        
+                        &__type{
+                            width: 174px;
+                        }
+                        
+                        &__value {
+
+                            &--in {
+                                margin: 0 196px 0 0;
+                            }
+
+                            &--out {
+                                margin: 0 169px 0 0;
+                            }
+                        }
+
+                        &__amount {
+                            width: 174px;
+                        }
+
+                        &__icons {
+                            width: 110px;                            
+                        }
+
+                        &__delete {
+                            margin: 0 24px 0 0;
+                        }
+                        
+                        &__edit {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
