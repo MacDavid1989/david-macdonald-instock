@@ -76,7 +76,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        padding: 16px 24px 24px;
+        padding: 16px 24px 8px;
     }
 
     &__about {
@@ -106,7 +106,7 @@
     }
 
     &__category {
-        width: 147.5px;
+        width: 295px;
         margin: 0 0 16px;
 
         .category {
@@ -129,6 +129,7 @@
 
     &__info {
         width: 295px;
+        margin: 0 0 16px;
     }
 
     &__stock {
@@ -137,7 +138,7 @@
     }
 
     &__status {
-        width: 147.5px;
+        width: 156px;
 
         .status {
 
@@ -176,8 +177,7 @@
         }
     } 
     &__quantity {
-        width: 147.5px;
-        margin: 0 0 16px;
+        width: 139px;
 
         .quantity {
 
@@ -197,8 +197,7 @@
         }
     } 
     &__warehouse {
-        width: 147.5px;
-        margin: 0 0 16px;
+        width: 295px;
 
         .warehouse {
 
@@ -285,6 +284,7 @@
 
         &__category {
             width: 154px;
+            margin: 0;
 
             .category {
 
@@ -382,7 +382,7 @@
         } 
         
         &__details {
-            padding: 24px 40px;
+            padding: 24px 40px 36px;
         }
 
         &__about {

@@ -52,7 +52,7 @@ class ItemDetails extends Component {
                             <div className="itemDetails__stock">
                                 <div className="itemDetails__status">
                                     <h4 className="status__heading">STATUS:</h4>
-                                    <p className={!!this.state.item&&this.state.item.status.toUpperCase() === 'IN STOCK' ? "status__value status__value--in" : "status__value status__value--out"}>{!!this.state.item&&this.state.item.status}</p>
+                                    <p className={!!this.state.item&&this.state.item.status.toUpperCase() === 'IN STOCK' ? "status__value status__value--in" : "status__value status__value--out"}>{!!this.state.item&&this.state.item.status.toUpperCase()}</p>
                                 </div>
                                 <div className="itemDetails__quantity">
                                     <h4 className="quantity__heading">QUANTITY:</h4>
