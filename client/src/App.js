@@ -10,9 +10,6 @@ import ItemEdit from './pages/ItemEdit/ItemEdit';
 import './App.scss';
 
 
-
-import Header from './components/Header/Header';
-
 function App() {
   return (
     <BrowserRouter>
