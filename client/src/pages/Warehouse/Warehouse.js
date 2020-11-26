@@ -30,7 +30,9 @@ class Warehouse extends Component {
             <div className="warehouse">
                 <section className="warehouse__banner">
                     <div className="banner__header">
-                        <img className="banner__arrow" src={backArrow} alt=""/>
+                        <Link to='/'>
+                            <img className="banner__arrow" src={backArrow} alt=""/>
+                        </Link>
                         <h1 className="banner__heading">{!!this.state.warehouse&&this.state.warehouse.name}</h1>
                     </div>
                     <Link to={`/warehouse/${this.props.match.params.warehouseId}/edit`}>
