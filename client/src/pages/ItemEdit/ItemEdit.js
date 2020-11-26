@@ -27,42 +27,42 @@ class ItemEdit extends Component {
                             </Link>
                             <h1 className="banner__heading">Edit Inventory Item</h1>
                     </section>
-                    <form>
-                        <div>
-                            <h2>Item Details</h2>
-                            <div>
-                                <label>Item Name</label>
-                                <input/>
+                    <form className="itemEdit__form">
+                        <div className="itemEdit__details">
+                            <h2 className="itemEdit__details-title">Item Details</h2>
+                            <div className="itemEdit__details-name">
+                                <label className="itemEdit__details-label">Item Name</label>
+                                <input id="itemName" name="itemName" type="text" placeholder={`${!!this.state.item&&this.state.item.itemName}`} required/>
                             </div>
                             <div>
-                                <label>Description</label>
-                                <textarea></textarea>
+                                <label className="itemEdit__details-label">Description</label>
+                                <textarea id="itemDescription" name="itemDescription"></textarea>
                             </div>
                             <div>
-                                <label>Category</label>
-                                <select>
+                                <label className="itemEdit__details-label">Category</label>
+                                <select id="itemCategory" name="itemCategory">
                                     <option>Electronics</option>
                                 </select>
                             </div>
                         </div>
-                        <div>
-                        <h2>Item Availability</h2>
+                        <div className="itemEdit__availability">
+                            <h2 className="itemEdit__availability-title">Item Availability</h2>
                             <div>
-                                <label>Status</label>
+                                <label className="itemEdit__availability-label">Status</label>
                                 <div>
                                     <div>
-                                        <input type="radio"/>
-                                        <label>In Stock</label>
+                                        <input id="itemStatus" name="itemStatus" type="radio"/>
+                                        <label className="itemEdit__availability-radio">In Stock</label>
                                     </div>
                                     <div>
-                                        <input type="radio"/>
-                                        <label>Out of Stock</label>
+                                        <input id="itemStatus" name="itemStatus" type="radio"/>
+                                        <label className="itemEdit__availability-radio">Out of Stock</label>
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <label>Warehouse</label>
-                                <select>
+                                <label className="itemEdit__availability-label">Warehouse</label>
+                                <select id="itemWarehouse" name="itemWarehouse">
                                     <option>Manhattan</option>
                                 </select>
                             </div>
