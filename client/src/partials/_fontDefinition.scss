@@ -3,13 +3,17 @@
 // <<<<<<<< REGULAR >>>>>>>> \\
 
 @font-face {
-    font-family: 'regular';
-    src: url('../Assets/Fonts/TitilliumWebRegular.ttf') format('truetype');
+    font-family: 'Titillium';
+    src: url('../Assets/fonts/TitilliumWebRegular.ttf') format('truetype'),
+    url('../Assets/fonts/TitilliumWebRegular.woff') format('woff'),
+    url('../Assets/fonts/TitilliumWebRegular.woff2') format('woff2');
 }
 
 // <<<<<<<< SEMI-BOLD >>>>>>>> \\
 
 @font-face {
-    font-family: 'semi-bold';
-    src: url('../Assets/Fonts/TitilliumWebSemiBold.ttf') format('truetype');
+    font-family: 'Titillium';
+    src: url('../Assets/fonts/TitilliumWebSemiBold.ttf') format('truetype'),
+    url('../Assets/fonts/TitilliumWebRegular.woff') format('woff'),
+    url('../Assets/fonts/TitilliumWebRegular.woff2') format('woff2');
 }
