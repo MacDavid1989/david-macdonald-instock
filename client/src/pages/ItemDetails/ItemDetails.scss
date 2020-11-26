@@ -19,6 +19,7 @@
     }
 
     &__banner {
+
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -27,6 +28,7 @@
         height: 92px;
         
         .banner {
+
             &__header {
                 display: flex;
                 align-items: center;
@@ -61,6 +63,7 @@
                         width: 19px;
                         height: 19px;
                     }
+
                     &__text {
                         display: none;
                     }
@@ -72,6 +75,7 @@
     &__details {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
         padding: 16px 24px 24px;
     }
 
@@ -80,10 +84,11 @@
     }
 
     &__description {
-        width: 100%;
+        width: 295px;
         margin: 0 0 16px;
 
         .description {
+
             &__heading{
                 color: #5C667E;
                 font-size: 11px;
@@ -92,17 +97,20 @@
                 margin: 0 0 4px;
 
             }
+
             &__text {
                 font-size: 13px;
                 line-height: 20px;
             }
         }
     }
+
     &__category {
         width: 147.5px;
         margin: 0 0 16px;
 
         .category {
+
             &__heading{
                 color: #5C667E;
                 font-size: 11px;
@@ -111,6 +119,7 @@
                 margin: 0 0 4px;
 
             }
+
             &__text {
                 font-size: 13px;
                 line-height: 20px;
@@ -124,13 +133,14 @@
 
     &__stock {
         display: flex;
+        margin: 0 0 16px;
     }
 
     &__status {
         width: 147.5px;
-        margin: 0 0 16px;
 
         .status {
+
             &__heading{
                 color: #5C667E;
                 font-size: 11px;
@@ -145,24 +155,22 @@
                 justify-content: center;
                 height: 24px;
                 border-radius: 20px;
-                font-size: 12px;
-                line-height: 18px;
+                font-size: 11px;
+                line-height: 16px;
                 font-weight: 600;
 
 
                 &--in {
                     color: #158463;
-                    background: rgba(21, 132, 99, 0.07);                            
-                    width: 65px;
-                    margin: 0 calc(117px + (79/512) * (100vw - 768px)) 0 0;
+                    background: rgba(21, 132, 99, 0.07);                     
+                    width: 61px;
 
                 }
 
                 &--out {
                     color: #C94515;
-                    background: rgba(201, 69, 21, 0.07);                            
-                    width: 92px;
-                    margin: 0 calc(90px + (79/512) * (100vw - 768px)) 0 0;
+                    background: rgba(201, 69, 21, 0.07);
+                    width: 86px;
                 }
             }
         }
@@ -172,6 +180,7 @@
         margin: 0 0 16px;
 
         .quantity {
+
             &__heading{
                 color: #5C667E;
                 font-size: 11px;
@@ -180,6 +189,7 @@
                 margin: 0 0 4px;
 
             }
+
             &__text {
                 font-size: 13px;
                 line-height: 20px;
@@ -191,6 +201,7 @@
         margin: 0 0 16px;
 
         .warehouse {
+
             &__heading{
                 color: #5C667E;
                 font-size: 11px;
@@ -199,10 +210,167 @@
                 margin: 0 0 4px;
 
             }
+
             &__text {
                 font-size: 13px;
                 line-height: 20px;
             }
         }
-    }  
+    }
+    
+    @media (min-width: 768px) {
+        width: calc(704px + (316/512) * (100vw - 768px));
+
+        &__banner {
+            padding: 32px calc(32px + (8/512) * (100vw - 768px)) calc(23px - (2/512) * (100vw - 768px));
+            height: 93px;
+            
+            .banner {
+
+                &__heading {
+                    line-height: 40px;
+                    font-size: 32px;
+                }
+
+                &__button {
+                    width: 81px;
+                    height: 38px;
+                    padding: 8px 16px;
+                    justify-content: space-between;
+
+                    .button {
+
+                        &__text {
+                            display: initial;
+                            color: #FFFFFF;
+                            font-size: 14px;
+                            line-height: 22px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+        
+        &__details {
+            flex-wrap: nowrap;
+            justify-content: initial;
+            padding: 24px calc(32px + (8/512) * (100vw - 768px));
+        }
+
+        &__about {
+            margin: 0 40px 0 0;
+            border-right: solid #BDC5D5 1px;
+            width: calc(319px + (124/512) * (100vw - 768px));
+        }
+
+        &__description {
+            width: 295px;
+            margin: 0 0 32px;
+
+            .description {
+
+                &__heading{
+                    font-size: 12px;
+                    line-height: 18px;
+
+                }
+
+                &__text {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
+        }
+
+        &__category {
+            width: 154px;
+
+            .category {
+
+                &__heading{
+                    font-size: 12px;
+                    line-height: 18px;
+
+                }
+
+                &__text {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
+        } 
+
+        &__info {
+            width: 280px;
+        }
+
+        &__stock {
+            display: flex;
+            margin: 0 0 32px;
+        }
+
+        &__status {
+            width: 154px;
+
+            .status {
+
+                &__heading{
+                    font-size: 12px;
+                    line-height: 18px;
+
+                }
+                
+                &__value {
+                    font-size: 12px;
+                    line-height: 18px;
+
+
+                    &--in {
+                        width: 65px;
+
+                    }
+
+                    &--out {
+                        width: 92px;
+                    }
+                }
+            }
+        } 
+        &__quantity {
+            width: 126px;
+            margin: 0 0 16px;
+
+            .quantity {
+
+                &__heading{
+                    font-size: 12px;
+                    line-height: 18px;
+
+                }
+
+                &__text {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
+        } 
+        &__warehouse {
+            width: 154px;
+
+            .warehouse {
+
+                &__heading{
+                    font-size: 12px;
+                    line-height: 18px;
+
+                }
+
+                &__text {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
+        }  
+    }
 }
