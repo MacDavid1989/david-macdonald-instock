@@ -56,6 +56,11 @@
     font-size: 2.2rem;
   }
 }
+@media (min-width: 768px) {
+  .add-item-header__title {
+    font-size: 3rem;
+  }
+}
 .add-item-header__back {
   margin-top: 0.5rem;
   margin-right: 0.4rem;
@@ -64,6 +69,12 @@
   .add-item-header__back {
     margin-top: 1.2rem;
     margin-right: 0.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .add-item-header__back {
+    margin-top: 1.7rem;
+    margin-right: 1rem;
   }
 }
 /*# sourceMappingURL=AddNewItemHeader.css.map */
