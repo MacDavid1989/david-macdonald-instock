@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 import "./ItemForm.scss";
 
 class ItemForm extends Component {
+  
   state = {
     name: "",
     description: "",
@@ -11,13 +13,9 @@ class ItemForm extends Component {
     qty: 0,
     warehouse: "",
   };
-
-  checkStatus = (data) =>{
-    if(data="in"){
-      return this.state.status
-    }else{
-      return !this.state.status
-    }
+  
+  componentDidMount(){
+    axios
   }
 
   onNameChange = (e) => {
@@ -32,9 +30,12 @@ class ItemForm extends Component {
     this.setState({ category: e.target.value });
   };
 
-  onStatusChange = (e) => {
-    this.setState({ status: e.target.value });
-  };
+  onStatusChange = (e)=> {
+    const s = e.target.value === "true"
+    this.setState({
+      status: s
+    });
+  }
 
   onQtyChange = (e) => {
     this.setState({ qty: e.target.value });
@@ -104,7 +105,9 @@ class ItemForm extends Component {
                       className="item-form-com__radio"
                       type="radio"
                       name="status"
-                      value={ this.checkStatus("in")}
+                      onChange={this.onStatusChange}
+                      checked={this.state.status}
+                      value={true}
                     />
                     <label>In Stock</label>
                   </div>
@@ -113,7 +116,9 @@ class ItemForm extends Component {
                       className="item-form-com__radio"
                       type="radio"
                       name="status"
-                      value={this.checkStatus("in")}
+                      onChange={this.onStatusChange}
+                      checked={!this.state.status}
+                      value={false}
                     />
                     <label>Out of Stock</label>
                   </div>
