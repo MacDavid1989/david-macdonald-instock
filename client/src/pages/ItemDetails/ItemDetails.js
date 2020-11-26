@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import './ItemDetails.scss'
 import backArrow from '../../Assets/Icons/arrow_back-24px.svg'
 import editWhite from '../../Assets/Icons/edit-24px-white.svg'
 
@@ -23,7 +24,7 @@ class ItemDetails extends Component {
             <>
                 <div className="item">
                     <section className="item__banner">
-                        <div className="item__header">
+                        <div className="banner__header">
                             <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory`}>
                                 <img className="banner__arrow" src={backArrow} alt=""/>
                             </Link>
@@ -50,12 +51,12 @@ class ItemDetails extends Component {
                         <div className="item__info">
                             <div className="item__stock">
                                 <div className="item__status">
-                                    <h4 className="item__heading">STATUS:</h4>
-                                    <p className={!!this.state.item&&this.state.item.status.toUpperCase() === 'IN STOCK' ? "item__value item__value--in" : "item__value item__value--out"}>{!!this.state.item&&this.state.item.status}</p>
+                                    <h4 className="status__heading">STATUS:</h4>
+                                    <p className={!!this.state.item&&this.state.item.status.toUpperCase() === 'IN STOCK' ? "status__value status__value--in" : "status__value status__value--out"}>{!!this.state.item&&this.state.item.status}</p>
                                 </div>
                                 <div className="item__quantity">
-                                    <h4 className="item__heading">QUANTITY:</h4>
-                                    <p className="item__text">{!!this.state.item&&this.state.item.quantity}</p>
+                                    <h4 className="quantity__heading">QUANTITY:</h4>
+                                    <p className="quantity__text">{!!this.state.item&&this.state.item.quantity}</p>
                                 </div>
                             </div>
                             <div>

@@ -1,7 +1,7 @@
 @import '../../partials/variables';
 @import '../../partials/mixins';
 
-.warehouse {
+.item {
     @include normal;
     position: absolute;
     top: 8rem;
@@ -65,5 +65,143 @@
                 }
             }
         }
+    }
+    
+    &__details {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 16px 24px;
+    }
+
+    &__about {
+
+    }
+
+    &__description {
+        width: 147.5px;
+        margin: 0 0 16px;
+
+        .description {
+            &__heading{
+                color: #5C667E;
+                font-size: 11px;
+                line-height: 16px;
+                font-weight: 600;
+                margin: 0 0 4px;
+
+            }
+            &__text {
+                font-size: 13px;
+                line-height: 20px;
+            }
+        }
+    }
+    &__category {
+        width: 147.5px;
+        margin: 0 0 16px;
+
+        .category {
+            &__heading{
+                color: #5C667E;
+                font-size: 11px;
+                line-height: 16px;
+                font-weight: 600;
+                margin: 0 0 4px;
+
+            }
+            &__text {
+                font-size: 13px;
+                line-height: 20px;
+            }
+        }
     } 
+
+    &__info {
+
+    }
+
+    &__stock {
+        
+    }
+
+    &__status {
+        width: 147.5px;
+        margin: 0 0 16px;
+
+        .status {
+            &__heading{
+                color: #5C667E;
+                font-size: 11px;
+                line-height: 16px;
+                font-weight: 600;
+                margin: 0 0 4px;
+
+            }
+               
+            &__value {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 24px;
+                border-radius: 20px;
+                font-size: 12px;
+                line-height: 18px;
+                font-weight: 600;
+
+
+                &--in {
+                    color: #158463;
+                    background: rgba(21, 132, 99, 0.07);                            
+                    width: 65px;
+                    margin: 0 calc(117px + (79/512) * (100vw - 768px)) 0 0;
+
+                }
+
+                &--out {
+                    color: #C94515;
+                    background: rgba(201, 69, 21, 0.07);                            
+                    width: 92px;
+                    margin: 0 calc(90px + (79/512) * (100vw - 768px)) 0 0;
+                }
+            }
+        }
+    } 
+    &__quantity {
+        width: 147.5px;
+        margin: 0 0 16px;
+
+        .quantity {
+            &__heading{
+                color: #5C667E;
+                font-size: 11px;
+                line-height: 16px;
+                font-weight: 600;
+                margin: 0 0 4px;
+
+            }
+            &__text {
+                font-size: 13px;
+                line-height: 20px;
+            }
+        }
+    } 
+    &__warehouse {
+        width: 147.5px;
+        margin: 0 0 16px;
+
+        .warehouse {
+            &__heading{
+                color: #5C667E;
+                font-size: 11px;
+                line-height: 16px;
+                font-weight: 600;
+                margin: 0 0 4px;
+
+            }
+            &__text {
+                font-size: 13px;
+                line-height: 20px;
+            }
+        }
+    }  
 }
