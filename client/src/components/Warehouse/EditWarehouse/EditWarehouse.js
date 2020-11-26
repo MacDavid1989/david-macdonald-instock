@@ -111,7 +111,7 @@ class EditWarehouse extends Component {
                                     <input name= "position" placeholder="Position" type="text" className="edit-warehouse__insert" />
 
                                     <label htmlFor="phone"  className="edit-warehouse__tag">phone number</label>
-                                    <input name= "phone" placeholder="Phone Number" type="tel" value="416-"  className="edit-warehouse__insert" />
+                                    <input name= "phone" placeholder="Phone Number" type="tel"  className="edit-warehouse__insert" />
 
                                     <label htmlFor="email"  className="edit-warehouse__tag">email</label>
                                     <input name= "email" placeholder="Email" type="email" className="edit-warehouse__insert" />
