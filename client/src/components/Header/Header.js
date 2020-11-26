@@ -1,7 +1,6 @@
-import React from "react";
-import "./Header.scss";
-
-import logo from "../../assets/Logo/InStock-Logo_1x.png";
+import React from 'react';
+import './Header.scss';
+import logo from '../../Assets/Logo/InStock-Logo.svg'
 
 const header = () => {
   return (
