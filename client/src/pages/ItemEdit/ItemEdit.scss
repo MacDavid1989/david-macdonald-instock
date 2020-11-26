@@ -42,53 +42,93 @@
     }
 
     &__form {
-        padding: 16px 24px 0;
+        padding: 16px 0 0;
     }
 
     &__details {
+        
+        padding: 0 24px 24px;
+        border-bottom: solid #BDC5D5 1px;
 
         &-title {
-
+            font-size: 20px;
+            line-height: 28px;
+            margin: 0 0 24px;
         }
 
         &-name {
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 16px;
 
             #itemName {
-
+                padding: 8px 16px;
+                width: 295px;
+                height: 36px;
+                background: #FFFFFF;
+                border: 1px solid #BDC5D5;
+                border-radius: 20px;
+                font-size: 13px;
+                line-height: 20px;
             }
         }
 
         &-description {
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 16px;
 
             #itemDescription {
-
+                resize: none;
+                padding: 8px 16px;
+                width: 295px;
+                height: 120px;
+                background: #FFFFFF;
+                border: 1px solid #BDC5D5;
+                border-radius: 20px;
+                font-size: 13px;
+                line-height: 20px;
             }
         }
 
         &-category {
+            display: flex;
+            flex-direction: column;
 
             #itemCategory {
-
+                padding: 8px 16px;
+                width: 295px;
+                height: 36px;
+                background: #FFFFFF;
+                border: 1px solid #BDC5D5;
+                border-radius: 20px;
+                font-size: 13px;
+                line-height: 20px;
             }
         }
         
         &-label {
-
+            font-size: 13px;
+            line-height: 20px;
+            margin: 0 0 4px;
         }
     }
 
     &__availability {
+        padding: 16px 24px;
 
         &-title {
 
         }
 
         &-status {
+            display: flex;
+            flex-direction: column;
 
             .status{
 
                 &__wrapper {
-
+                    display: flex;
                 }
 
                 &__in {
@@ -115,7 +155,9 @@
         }
 
         &-warehouse {
-
+            display: flex;
+            flex-direction: column;
+            
             #itemDescription {
 
             }
@@ -124,5 +166,20 @@
         &-label {
 
         }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 24px;
+    }
+
+    &__cancel {
+
+    }
+
+    &__save {
+
     }
 }

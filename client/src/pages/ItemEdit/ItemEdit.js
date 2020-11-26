@@ -20,7 +20,6 @@ class ItemEdit extends Component {
 
         axios.get(`http://localhost:8080/warehouse`)
         .then(res=>{
-            console.log(res.data.map(warehouse=> warehouse.name).sort())
             this.setState({warehouse: res.data.map(warehouse=> warehouse.name).sort()})
         })
         .catch(console.error)
