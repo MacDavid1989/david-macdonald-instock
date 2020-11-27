@@ -1,0 +1,23 @@
+// <<<<<<<< FONT FACE >>>>>>>> \\
+
+// <<<<<<<< REGULAR >>>>>>>> \\
+
+@font-face {
+    font-family: 'Titillium';
+    src: url('../Assets/Fonts/TitilliumWebRegular.ttf') format('truetype'),
+    url('../Assets/Fonts/TitilliumWebRegular.woff') format('woff'),
+    url('../Assets/Fonts/TitilliumWebRegular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// <<<<<<<< SEMI-BOLD >>>>>>>> \\
+
+@font-face {
+    font-family: 'Titillium';
+    src: url('../Assets/Fonts/TitilliumWebSemiBold.ttf') format('truetype'),
+    url('../Assets/Fonts/TitilliumWebSemiBold.woff') format('woff'),
+    url('../Assets/Fonts/TitilliumWebSemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
