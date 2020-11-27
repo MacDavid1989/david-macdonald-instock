@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
 import './ItemEdit.scss'
 import backArrow from '../../assets/icons/arrow_back-24px.svg'
 class ItemEdit extends Component {
@@ -98,80 +97,84 @@ class ItemEdit extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        const warehouseID = this.state.warehouseList.find(warehouse => warehouse.name === this.state.warehouse).id
+        // const warehouseID = this.state.warehouseList.find(warehouse => warehouse.name === this.state.warehouse).id
 
-        const item = {
-            category: this.state.category,
-            description: this.state.description,
-            id: this.props.match.params.itemId,
-            itemName: this.state.name,
-            quantity: this.state.quantity,
-            status: this.state.status,
-            warehouseID: warehouseID,
-            warehouseName: this.state.warehouse
-        }
+        // const item = {
+        //     category: this.state.category,
+        //     description: this.state.description,
+        //     id: this.props.match.params.itemId,
+        //     itemName: this.state.name,
+        //     quantity: this.state.quantity,
+        //     status: this.state.status,
+        //     warehouseID: warehouseID,
+        //     warehouseName: this.state.warehouse
+        // }
 
-        // axios.put(`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}/edit`, item)
+        // axios.put(`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}/update`, item)
         // .then(res => {
-        //     this.props.history.push(`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}`)
+        //     this.props.history.back()
         // })
         // .catch(console.error)
+        this.props.history.back()
 
-        this.props.history.push(`http://localhost:8080/warehouse/${warehouseID}/inventory/${this.props.match.params.itemId}`)
     };
+
+    handleBack = () => {
+        this.props.history.goBack()
+    }
 
     render() {
         return (
             <>
                <div className="itemEdit">
                     <section className="itemEdit__banner">
-                            <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}`}>
-                                <img className="banner__arrow" src={backArrow} alt=""/>
-                            </Link>
+                                <img className="banner__arrow" src={backArrow} onClick={this.handleBack} alt=""/>
                             <h1 className="banner__heading">Edit Inventory Item</h1>
                     </section>
                     <form className="itemEdit__form" onSubmit={this.handleSubmit}>
-                        <div className="itemEdit__details">
+                        <div className="itemEdit__inputs">
+                            <div className="itemEdit__details">
                             <h2 className="itemEdit__details-title">Item Details</h2>
                             <div className="itemEdit__details-name">
-                                <label className="itemEdit__details-label">Item Name</label>
-                                <input id="itemName" name="itemName" type="text" placeholder="Item Name" value={this.state.name} onChange={this.handleName}/>
+                            <label className="itemEdit__details-label">Item Name</label>
+                            <input id="itemName" name="itemName" type="text" placeholder="Item Name" value={this.state.name} onChange={this.handleName}/>
                             </div>
                             <div className="itemEdit__details-description">
-                                <label className="itemEdit__details-label">Description</label>
-                                <textarea id="itemDescription" name="itemDescription" placeholder="Description" value={this.state.description} onChange={this.handleDescription}></textarea>
+                            <label className="itemEdit__details-label">Description</label>
+                            <textarea id="itemDescription" name="itemDescription" placeholder="Description" value={this.state.description} onChange={this.handleDescription}></textarea>
                             </div>
                             <div className="itemEdit__details-category">
-                                <label className="itemEdit__details-label">Category</label>
-                                <select id="itemCategory" name="itemCategory" value={this.state.category} onChange={this.handleCategory}>
-                                {this.state.categoryList.map((category, i) => (
-                                    <option key={i} value={category}>{category}</option>
-                                ))}
-                                </select>
+                            <label className="itemEdit__details-label">Category</label>
+                            <select id="itemCategory" name="itemCategory" value={this.state.category} onChange={this.handleCategory}>
+                            {this.state.categoryList.map((category, i) => (
+                            <option key={i} value={category}>{category}</option>
+                            ))}
+                            </select>
                             </div>
-                        </div>
-                        <div className="itemEdit__availability">
+                            </div>
+                            <div className="itemEdit__availability">
                             <h2 className="itemEdit__availability-title">Item Availability</h2>
                             <div className="itemEdit__availability-status">
-                                <label className="itemEdit__availability-label">Status</label>
-                                <div className="status__wrapper">
-                                    <div className="status__in">
-                                        <input id="itemStatus" name="itemStatus" type="radio" checked={this.state.check} value="true" onChange={this.handleStatus}/>
-                                        <label className={!!this.state.status&&this.state.status.toLowerCase() === "in stock" ? "status__in-radio checked" : "status__in-radio"}>In Stock</label>
-                                    </div>
-                                    <div className="status__out">
-                                        <input id="itemStatus" name="itemStatus" type="radio" checked={!this.state.check} value="false" onChange={this.handleStatus}/>
-                                        <label className={!!this.state.status&&this.state.status.toLowerCase() === "out of stock" ? "status__out-radio checked" : "status__out-radio"}>Out of Stock</label>
-                                    </div>
-                                </div>
+                            <label className="itemEdit__availability-label">Status</label>
+                            <div className="status__wrapper">
+                            <div className="status__in">
+                            <input id="itemStatus" name="itemStatus" type="radio" checked={this.state.check} value="true" onChange={this.handleStatus}/>
+                            <label className={!!this.state.status&&this.state.status.toLowerCase() === "in stock" ? "status__in-radio checked" : "status__in-radio"}>In Stock</label>
+                            </div>
+                            <div className="status__out">
+                            <input id="itemStatus" name="itemStatus" type="radio" checked={!this.state.check} value="false" onChange={this.handleStatus}/>
+                            <label className={!!this.state.status&&this.state.status.toLowerCase() === "out of stock" ? "status__out-radio checked" : "status__out-radio"}>Out of Stock</label>
+                            </div>
+                            </div>
                             </div>
                             <div className="itemEdit__availability-warehouse">
-                                <label className="itemEdit__availability-label">Warehouse</label>
-                                <select id="itemWarehouse" name="itemWarehouse" value={this.state.warehouse} onChange={this.handleWarehouse}>
-                                {this.state.warehouseNameList.map((warehouse, i) => (
-                                    <option key={i} value={warehouse}>{warehouse}</option>
-                                ))}
-                                </select>
+                            <label className="itemEdit__availability-label">Warehouse</label>
+                            <select id="itemWarehouse" name="itemWarehouse" value={this.state.warehouse} onChange={this.handleWarehouse}>
+                            {this.state.warehouseNameList.map((warehouse, i) => (
+                            <option key={i} value={warehouse}>{warehouse}</option>
+                            ))}
+                            </select>
+                            </div>
                             </div>
                         </div>
                         <div className="itemEdit__buttons">
