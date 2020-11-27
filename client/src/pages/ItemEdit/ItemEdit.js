@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import './ItemEdit.scss'
-import backArrow from '../../Assets/Icons/arrow_back-24px.svg'
+import backArrow from '../../assets/icons/arrow_back-24px.svg'
 class ItemEdit extends Component {
     state = {
         name: "",

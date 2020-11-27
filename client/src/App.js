@@ -2,7 +2,7 @@ import "./App.scss";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
-import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
+// import AddNewInventory from "./components/ItemAdd/ItemAdd";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
 import ItemDetails from "./pages/ItemDetails/ItemDetails";
 import ItemEdit from "./pages/ItemEdit/ItemEdit";
@@ -14,15 +14,14 @@ function App() {
     <BrowserRouter>
       <Header />
       <Switch>
-
         <Route path="/" exact component={Home}/>
-        {/* <Route path="/warehouse/:warehouseId/inventory" component={WarehouseInventory} /> */}
+        {/* <Route path="/inventory/add" exact component={AddNewInventory}/> */}
+        {/* <Route path="/inventory" exact component={InventoryList}/> */}
+        <Route path="/warehouse/add" component={WarehouseAdd} />
         <Route path="/warehouse/:warehouseId/inventory/:itemId/edit" component={ItemEdit}/>
         <Route path="/warehouse/:warehouseId/inventory/:itemId" component={ItemDetails}/>
-        <Route path="/warehouse/:warehouseId/inventory/add" component={AddNewInventory}/>
         <Route path="/warehouse/:warehouseId/edit" component={WarehouseEdit} />
         <Route path="/warehouse/:warehouseId" component={WarehouseDetails} />
-        <Route path="/warehouse/add" component={WarehouseAdd} />
       </Switch>
     </BrowserRouter>
   );
