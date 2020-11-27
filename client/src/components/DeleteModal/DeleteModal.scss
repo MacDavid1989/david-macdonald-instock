@@ -1,0 +1,31 @@
+@import "../../partials/mixins";
+@import "../../partials/typography";
+@import "../../partials/variables";
+
+.deleteModal{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    &__wrapper{
+        width: 100%;
+        height: 100%;
+        padding: 1.5rem;
+        background-color: white;
+        @include tablet{
+            width: fit-content;
+            height: fit-content;
+        }
+    }
+    &__btn{
+        width: 163px;
+        padding: .5rem;
+        border-radius: 20px;
+        border: none;
+        &--delete{
+            background-color: orange;
+            color: white;
+        }
+    }
+}

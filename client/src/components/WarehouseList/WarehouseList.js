@@ -4,7 +4,7 @@ import deleteOutline from "../../assets/icons/delete_outline-24px.svg"
 import edit from "../../assets/icons/edit-24px.svg"
 import './WarehouseList.scss'
 
-const WarehouseList = ({warehouses}) => {
+const WarehouseList = ({warehouses, setDelete}) => {
     const showWarehouses = warehouses.map((warehouse) => {
         return(
         <div className="card" key={warehouse.id}>
@@ -37,7 +37,7 @@ const WarehouseList = ({warehouses}) => {
                 </div>
             </div>
             <div className="card__icons">
-                <img src={deleteOutline} alt="delete" className="card__delete-icon"/>
+                <img src={deleteOutline} alt="delete" className="card__delete-icon" onClick={()=>{setDelete(warehouse.id, warehouse.name)}}/>
                 <img src={edit} alt="edit" className="card__edit-icon"/>
             </div>
         </div>)
