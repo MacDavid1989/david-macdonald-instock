@@ -94,6 +94,74 @@ getWarehouseById = (req, res) => {
     }
 }
 
+// HELPER METHODS
+//Method to get all warehouses from JSON FILE
+function getAllWarehouses() {
+    const warehousesData = fs.readFileSync(warehouseFile);
+    return JSON.parse(warehousesData);
+  }
+  
+  //creates a new warehosue
+  function createNewWarehouse(newId, {
+    name,
+    address,
+    city,
+    country,
+    contactName,
+    position,
+    phoneNumber,
+    email
+  }) {
+    //check each input
+    if (checkInput(name, address, city, country, contactName, position, phoneNumber, email)) {
+      const newWarehouse = {
+        id: newId,
+        name: name,
+        address: address,
+        city: city,
+        country: country,
+        contact: {
+          name: createRoute,
+          position: position,
+          phone: phoneNumber,
+          email: email,
+        },
+      };
+      return newWarehouse;
+    }
+  
+    //if input is bad return null
+    return null;
+  }
+  
+  //check inputs for creating new warehouse
+  function checkInput({
+    name,
+    address,
+    city,
+    country,
+    contactName,
+    position,
+    phoneNumber,
+    email
+  }) {
+    //regular expressions
+    const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    const regexPhone = /[a-zA-Z]/g;
+  
+    return (
+      name.trim() &&
+      address.trim() &&
+      city.trim() &&
+      country.trim() &&
+      contactName.trim() &&
+      position.trim() &&
+      regexEmail.test(email) &&
+      !regexPhone.test(phoneNumber) &&
+      phoneNumber.length >= 10
+    );
+  }
+
 module.exports = {
     getAllWarehouses,
     getWarehouseById,
