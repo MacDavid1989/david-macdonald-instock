@@ -72,7 +72,7 @@ class ItemForm extends Component {
       return false;
     }
 
-    e.preventDefualt();
+    e.preventDefault();
 
     /* AXIOS REQUEST HERE */
   };
