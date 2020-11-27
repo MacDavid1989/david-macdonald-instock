@@ -19,6 +19,10 @@
         padding: 1rem 2rem 0 2rem;
     }
 
+    @include tablet {
+        padding: 1rem 2.5rem 0 2.5rem;
+    }
+
     &__top-container {
         
         padding: 1.5rem;
@@ -63,6 +67,10 @@
         @include tablet {
             width: 150px;
         }
+
+        @include desktop {
+            width: 221px;
+        }
     }
 
     &__location {
@@ -71,6 +79,11 @@
         line-height: 20px;
         font-family: 'regular';
         position: relative;
+
+        @include desktop{
+            font-size: 14px;
+            line-height: 22px;
+        }
     }
 
     &__chevron {
@@ -88,6 +101,23 @@
 
         @include tablet {
             width: 95px;
+        }
+
+        @include desktop{
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        &--address {
+            @include desktop {
+                width: 261px;
+            }
+        }
+
+        &--name {
+            @include desktop {
+                width: 174px;
+            }
         }
     }
 
@@ -130,6 +160,10 @@
 
         @include tablet {
             width: 150px;
+        }
+
+        @include desktop {
+            width: 174px;
         }
     }
 

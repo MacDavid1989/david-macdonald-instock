@@ -11,10 +11,12 @@
         align-items: center;
     }
 
+    @include desktop {
+        padding: 10px 20px 10px 40px;
+    }
+
     &__container--address {
         padding-right: 2rem;
-
-
     }
 
     &__sub-container {
@@ -26,11 +28,19 @@
             @include tablet {
                 width: 150px;
             }
+
+            @include desktop {
+                width: 221px;
+            }
         }
 
         &--address {
             @include tablet {
                 width: 95px;
+            }
+
+            @include desktop {
+                width: 261px;
             }
         }
 
@@ -38,11 +48,19 @@
             @include tablet {
                 width: 121px;
             }
+
+            @include desktop {
+                width: 200px;
+            }
         }
 
         &--info {
             @include tablet {
                 width: 150px;
+            }
+
+            @include desktop {
+                width: 174px;
             }
         }
 

@@ -21,13 +21,13 @@ const WarehouseList = ({warehouses}) => {
                     </div>
                     <div className="card__address">
                         <span className="card__subheader">ADDRESS</span>
-                        <span className="card__info">{`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}</span>
+                        <span className="card__info card__info--address">{`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}</span>
                     </div>
                 </div>
                 <div className="card__contact-details">
                     <div className="card__name">
                         <span className="card__subheader">CONTACT NAME</span>
-                        <span className="card__info">{warehouse.contact.name}</span>
+                        <span className="card__info card__info--name">{warehouse.contact.name}</span>
                     </div>
                     <div className="card__contact-info">
                         <span className="card__subheader">CONTACT INFORMATION</span>

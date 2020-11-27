@@ -14,6 +14,10 @@
         align-items: center;
         padding: 2rem;
     }
+
+    @include desktop {
+        padding: 2.5rem;
+    }
     
     &__left {
         width: 100%;
@@ -41,6 +45,10 @@
         @include tablet {
             margin-bottom: 0;
         }
+
+        @include desktop {
+            padding-left: 330px;
+        }
     }
 
     &__search-wrapper {
@@ -50,6 +58,10 @@
         @include tablet {
             width: 185px;
             margin-left: auto;
+        }
+
+        @include desktop {
+            width: 274px;
         }
     }
 
@@ -80,6 +92,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include desktop {
+            justify-content: flex-end;
+        }
     }
 
     &__button {
@@ -97,6 +113,10 @@
             width: 168px;
             font-size: 14px;
             line-height: 22px;
+        }
+
+        @include desktop {
+            padding: 8px 16px;
         }
     }
 }
