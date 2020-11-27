@@ -9,47 +9,16 @@ const warehouseControllers = require('../controllers/warehouseIdController');
 
 router.get("/", warehouseControllers.getAllWarehouses);
 
-// GET /:warehouseId
+// GET / SEARCH FOR WAREHOUSE ON ID
 router.get("/:warehouseId", warehouseControllers.getWarehouseById);
 
 // POST / CREATE A NEW WAREHOUSE
 router.post("/create", warehouseControllers.createNewWarehouse);
 
-router.put("/:warehouseId/update", (req, res) => {
-  //get the list of warehouses
-  let warehouseList = getAllWarehouses();
-  if(checkInput(req.body)){
-      warehouseList.forEach(data => {
-          if(data.id == req.params.warehouseId){
-              let newData = createNewWarehouse(data.id, data);
-              if(newData){
-                  data = newData;
-                  res.status(200).json({ warehouses: warehouseList });
-              }else{
-                res.status(406).json("Input not accepted");
-              }
-              return;
-          }
-      })
-  }
-});
+// PUT / UPFATE WAREHOUSE ON ID
+router.put("/:warehouseId/update", warehouseControllers.updateWarehouse);
 
-router.delete("/:warehouseId", (req,res) => {
-    const warehouseList = getAllWarehouses();
-    let didDelete = false;
-    for(let i = 0; i < warehouseList.length; i++){
-        if(warehouseList[i].id == req.params.warehouseId){
-            didDelete = true;
-            warehouseList.splice(i, 1);
-        }
-    }
-
-    if(didDelete){
-        res.status(200).json({ warehouses: warehouseList })
-    }else{
-        res.status(400).send("bad request, warehouse does not exist");
-    }
-})
+router.delete("/:warehouseId", warehouseControllers.deleteWarehouse);
 
 //Method to get all warehouses from JSON FILE
 function getAllWarehouses() {
