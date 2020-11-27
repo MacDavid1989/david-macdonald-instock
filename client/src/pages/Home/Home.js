@@ -1,3 +1,4 @@
+
 import WarehouseNav from '../../components/WarehouseNav/WarehouseNav';
 import WarehouseList from '../../components/WarehouseList/WarehouseList';
 import {appUrl} from '../../utils/axios';
@@ -35,5 +36,7 @@ class Home extends Component {
         );
     }
 }
+
+
 
 export default Home;
