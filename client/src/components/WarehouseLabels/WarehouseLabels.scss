@@ -12,7 +12,9 @@
     }
 
     &__container--address {
-        padding-right: 1rem;
+        padding-right: 2rem;
+
+
     }
 
     &__sub-container {
@@ -28,7 +30,7 @@
 
         &--address {
             @include tablet {
-                width: 121px;
+                width: 95px;
             }
         }
 

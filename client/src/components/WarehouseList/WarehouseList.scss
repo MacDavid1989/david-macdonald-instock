@@ -87,7 +87,7 @@
         padding-bottom: 1rem;
 
         @include tablet {
-            width: 121px;
+            width: 95px;
         }
     }
 
@@ -95,6 +95,10 @@
         display: flex;
         flex-direction: column;
         padding-right: 1rem;
+
+        @include tablet {
+            padding-right: 2rem;
+        }
     }
 
     &__contact-details {
@@ -115,6 +119,7 @@
 
         @include tablet {
             justify-content: center;
+            padding-right: 1.7rem;
         }
     }
 
@@ -130,6 +135,7 @@
 
     &__phone {
         padding-bottom: 0;
+        width: 121px;
     }
 
     &__icons {
@@ -137,6 +143,11 @@
         padding: 0 1.5rem;
         justify-content: space-between;
         width: 110px;
+
+        @include tablet {
+            padding: 0 0 0 1rem;
+            width: 90px;
+        }
     }
 
     
