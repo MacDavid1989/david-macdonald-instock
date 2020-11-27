@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
     res.status(200).json(data)
 })
 
-// <<<<<<<<<< POST /videos >>>>>>>>>> \\
+// <<<<<<<<<< POST >>>>>>>>>> \\
 
 router.post ('/', inventoryController.createNewInventory);
 
