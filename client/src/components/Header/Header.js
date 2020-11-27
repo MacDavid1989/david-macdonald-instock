@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.scss';
 import logo from '../../assets/Logo/InStock-Logo.svg'
 
+
 const header = () => {
   return (
     <header className="header">
