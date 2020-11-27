@@ -127,7 +127,7 @@ render() {
             <div className="edit-warehouse__card">
                 <div className="edit-warehouse__header">
                     <img src={BackArrow} alt="Go Back " className="edit-warehouse__arrow"/>
-                    <h2 className="edit-warehouse__title">add warehouse</h2>
+                    <h2 className="edit-warehouse__title">add new warehouse</h2>
                 </div>
 
                 {/*  <<<<<<<<<< EDIT WAREHOUSE FORMS >>>>>>>>>> */}
