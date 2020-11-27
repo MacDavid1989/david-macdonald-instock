@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import './Warehouse.scss'
-import backArrow from '../../Assets/Icons/arrow_back-24px.svg'
-import edit from '../../Assets/Icons/edit-24px.svg'
-import editWhite from '../../Assets/Icons/edit-24px-white.svg'
-import sort from '../../Assets/Icons/sort-24px.svg'
-import chevron from '../../Assets/Icons/chevron_right-24px.svg'
-import deleteOutline from '../../Assets/Icons/delete_outline-24px.svg'
+import backArrow from '../../assets/Icons/arrow_back-24px.svg'
+import edit from '../../assets/Icons/edit-24px.svg'
+import editWhite from '../../assets/Icons/edit-24px-white.svg'
+import sort from '../../assets/Icons/sort-24px.svg'
+import chevron from '../../assets/Icons/chevron_right-24px.svg'
+import deleteOutline from '../../assets/Icons/delete_outline-24px.svg'
 
 
 class Warehouse extends Component {
