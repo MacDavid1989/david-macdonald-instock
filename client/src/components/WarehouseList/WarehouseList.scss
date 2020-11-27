@@ -136,6 +136,7 @@
         flex-direction: column;
         justify-content: center;
         flex: 50%;
+        margin-left: 1.5rem;
 
         @include tablet {
             flex-direction: row;
@@ -176,7 +177,6 @@
         display: flex;
         padding: 0 1.5rem;
         justify-content: space-between;
-        width: 110px;
 
         @include tablet {
             padding: 0 0 0 1rem;
