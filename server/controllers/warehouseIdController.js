@@ -105,7 +105,7 @@ function getAllWarehouses() {
   return JSON.parse(warehousesData);
 }
 
-//creates a new warehosue
+//creates a new warehouse
 function createNewWarehouse(
   newId,
   { name, address, city, country, contactName, position, phoneNumber, email }
