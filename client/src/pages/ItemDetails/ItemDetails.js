@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import './ItemDetails.scss'
-import backArrow from '../../Assets/Icons/arrow_back-24px.svg'
-import editWhite from '../../Assets/Icons/edit-24px-white.svg'
+import backArrow from '../../assets/icons/arrow_back-24px.svg'
+import editWhite from '../../assets/icons/edit_white-24px.svg'
 
 class ItemDetails extends Component {
     state ={
