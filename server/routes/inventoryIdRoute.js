@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const inventoryIdControllers = require('../controllers/inventoryIdController');
+const inventoryFile = "../data/inventories.json";
 
 
 // GET /warehouse/:warehouseId/inventory/:itemId
@@ -49,63 +50,53 @@ function getAllInventory() {
   
   //creates a new warehosue
   function createNewInventory(newId, {
-    name,
-    address,
-    city,
-    country,
-    contactName,
-    position,
-    phoneNumber,
-    email
-  }) {
+    warehouseID,
+    warehouseName,
+    itemName,
+    description,
+    category,
+    status,
+    quantity
+}) {
     //check each input
-    if (checkInput(name, address, city, country, contactName, position, phoneNumber, email)) {
-      const newWarehouse = {
+    if (checkInput(warehouseID, warehouseName, itemName, description, category, status, quantity)) {
+    const newWarehouse = {
         id: newId,
-        name: name,
-        address: address,
-        city: city,
-        country: country,
-        contact: {
-          name: createRoute,
-          position: position,
-          phone: phoneNumber,
-          email: email,
-        },
-      };
-      return newWarehouse;
+        warehouseID: warehouseID,
+        warehouseName: warehouseName,
+        itemName: itemName,
+        description: description,
+        category: category,
+        status: status,
+        quantity: quantity
+    };
+    return newWarehouse;
     }
-  
-    //if input is bad return null
+
     return null;
-  }
-  
-  //check inputs for creating new warehouse
-  function checkInput({
-    name,
-    address,
-    city,
-    country,
-    contactName,
-    position,
-    phoneNumber,
-    email
-  }) {
-    //regular expressions
-    const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-    const regexPhone = /[a-zA-Z]/g;
-  
+}
+
+function checkInput({
+    warehouseID,
+    warehouseName,
+    itemName,
+    description,
+    category,
+    status,
+    quantity
+}) {
+    const regexQuantity = /[a-zA-Z]/g;
+
     return (
-      name.trim() &&
-      address.trim() &&
-      city.trim() &&
-      country.trim() &&
-      contactName.trim() &&
-      position.trim() &&
-      regexEmail.test(email) &&
-      !regexPhone.test(phoneNumber) &&
-      phoneNumber.length >= 10
+        warehouseID.trim() &&
+        warehouseName.trim() &&
+        itemName.trim() &&
+        description.trim() &&
+        category.trim() &&
+        status.trim() &&
+        !regexQuantity.test(quantity) &&
+        quantity.trim()
     );
-  }
+}
 
 module.exports = router;
