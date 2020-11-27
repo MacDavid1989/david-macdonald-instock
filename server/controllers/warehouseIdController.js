@@ -1,5 +1,9 @@
 const warehouseFile = '../data/warehouses.json';
 const inventories = "../data/inventories.json";
+const warehouseFile = "./data/warehouses.json";
+
+const { v4: uuidv4 } = require("uuid");
+const fs = require("fs");
 
 const readFileSync = () => {
     return JSON.parse(fs.readFileSync(warehouseFile))

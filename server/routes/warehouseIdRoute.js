@@ -1,12 +1,8 @@
-const fs = require("fs");
 const express = require("express");
-const { v4: uuidv4 } = require("uuid");
 const router = express.Router();
-const warehouseFile = "./data/warehouses.json";
 const warehouseControllers = require('../controllers/warehouseIdController');
 
-
-
+//GET / GET ALL WAREHOUSES
 router.get("/", warehouseControllers.getAllWarehouses);
 
 // GET / SEARCH FOR WAREHOUSE ON ID
