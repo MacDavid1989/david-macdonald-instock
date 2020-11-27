@@ -1,7 +1,7 @@
 import React from 'react';
-import chevronRight from "../../Assets/Icons/chevron_right-24px.svg"
-import deleteOutline from "../../Assets/Icons/delete_outline-24px.svg"
-import edit from "../../Assets/Icons/edit-24px.svg"
+import chevronRight from "../../assets/icons/chevron_right-24px.svg"
+import deleteOutline from "../../assets/icons/delete_outline-24px.svg"
+import edit from "../../assets/icons/edit-24px.svg"
 import './WarehouseList.scss'
 
 const WarehouseList = ({warehouses}) => {

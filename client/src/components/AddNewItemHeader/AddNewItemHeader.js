@@ -1,6 +1,6 @@
 import React from 'react';
 
-import backArrow from '../../assets/Icons/arrow_back-24px.svg';
+import backArrow from '../../assets/icons/arrow_back-24px.svg';
 
 import './AddNewItemHeader.scss'
 

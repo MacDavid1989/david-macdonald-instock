@@ -1,8 +1,8 @@
 // <<<<<<<<<< IMPORTS >>>>>>>>>> \\
 
 import React, { Component } from 'react';
-import BackArrow from '../../../Assets/Icons/arrow_back-24px.svg';
-import './EditWarehouse.scss';
+import BackArrow from '../../assets/icons/arrow_back-24px.svg';
+import './WarehouseEdit.scss';
 import axios from 'axios';
 
 // <<<<<<<<<< CLASS COMPONENT FUNCTION >>>>>>>>>> \\

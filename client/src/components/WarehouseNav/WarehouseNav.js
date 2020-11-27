@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import {Link} from 'react-router-dom';
-import search from '../../Assets/Icons/search-24px.svg'
+import search from '../../assets/icons/search-24px.svg'
 import './WarehouseNav.scss';
 
 const WarehouseNav = () => {
