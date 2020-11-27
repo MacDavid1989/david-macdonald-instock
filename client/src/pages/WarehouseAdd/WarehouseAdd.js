@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import BackArrow from '../../assets/icons/arrow_back-24px.svg';
-import '../WarehouseEdit/WarehouseEdit.scss';
+import './WarehouseAdd.scss';
 
 class WarehouseAdd extends Component {
 state = {
@@ -122,55 +122,55 @@ onFormSubmit = (e) => {
 render() {
     return (
         <>
-        {/*  <<<<<<<<<< EDIT WAREHOUSE HEADER >>>>>>>>>> */}
-        <div className="edit-warehouse">
-            <div className="edit-warehouse__card">
-                <div className="edit-warehouse__header">
-                    <img src={BackArrow} alt="Go Back " className="edit-warehouse__arrow"/>
-                    <h2 className="edit-warehouse__title">add new warehouse</h2>
+        {/*  <<<<<<<<<< add WAREHOUSE HEADER >>>>>>>>>> */}
+        <div className="add-warehouse">
+            <div className="add-warehouse__card">
+                <div className="add-warehouse__header">
+                    <img src={BackArrow} alt="Go Back " className="add-warehouse__arrow"/>
+                    <h2 className="add-warehouse__title">add new warehouse</h2>
                 </div>
 
-                {/*  <<<<<<<<<< EDIT WAREHOUSE FORMS >>>>>>>>>> */}
-                <div className="edit-warehouse__details">
+                {/*  <<<<<<<<<< add WAREHOUSE FORMS >>>>>>>>>> */}
+                <div className="add-warehouse__details">
                     <form onSubmit={this.onFormSubmit} >
-                        <div className="edit-warehouse__details-form">
+                        <div className="add-warehouse__details-form">
                             {/*  <<<<<<<<<< WAREHOUSE DETAILS >>>>>>>>>> */}
-                            <div className="edit-warehouse__warehouse-details">
+                            <div className="add-warehouse__warehouse-details">
 
-                                <h3 className="edit-warehouse__details-title">warehouse details</h3>
-                                <label htmlFor="warehouseName" className="edit-warehouse__tag" >warehouse name</label>
-                                <input name= "warehouseName" placeholder="King West" type="text" className="edit-warehouse__insert" value={this.state.warehouseName} onChange={this.onNameChange} />
+                                <h3 className="add-warehouse__details-title">warehouse details</h3>
+                                <label htmlFor="warehouseName" className="add-warehouse__tag" >warehouse name</label>
+                                <input name= "warehouseName" placeholder="King West" type="text" className="add-warehouse__insert" value={this.state.warehouseName} onChange={this.onNameChange} />
 
-                                <label htmlFor="address" className="edit-warehouse__tag">street address</label>
-                                <input name= "address" placeholder="469 King Street West" type="address" className="edit-warehouse__insert" value={this.state.address} onChange={this.onAddressChange} />
+                                <label htmlFor="address" className="add-warehouse__tag">street address</label>
+                                <input name= "address" placeholder="469 King Street West" type="address" className="add-warehouse__insert" value={this.state.address} onChange={this.onAddressChange} />
 
-                                <label htmlFor="city" className="edit-warehouse__tag">city</label>
-                                <input name= "city" placeholder="Toronto" type="text" className="edit-warehouse__insert" value={this.state.city} onChange={this.onCityChange} />
+                                <label htmlFor="city" className="add-warehouse__tag">city</label>
+                                <input name= "city" placeholder="Toronto" type="text" className="add-warehouse__insert" value={this.state.city} onChange={this.onCityChange} />
 
-                                <label htmlFor="country" className="edit-warehouse__tag">country</label>
-                                <input name= "country" placeholder="CAN" type="text" className="edit-warehouse__insert" value={this.state.country} onChange={this.onCountryChange} />
+                                <label htmlFor="country" className="add-warehouse__tag">country</label>
+                                <input name= "country" placeholder="CAN" type="text" className="add-warehouse__insert" value={this.state.country} onChange={this.onCountryChange} />
                             </div>
 
                             {/*  <<<<<<<<<< CONTACT DETAILS >>>>>>>>>> */}
-                            <div className="edit-warehouse__contact-details">
-                                <h3 className="edit-warehouse__details-title">contact details</h3>
-                                <label htmlFor="contactName" className="edit-warehouse__tag">contact name</label>
-                                <input name= "contactName" placeholder="I" type="text"  className="edit-warehouse__insert" value={this.state.contactName} onChange={this.onContactNameChange} />
+                            <div className="add-warehouse__contact-details">
+                                <h3 className="add-warehouse__details-title">contact details</h3>
+                                <label htmlFor="contactName" className="add-warehouse__tag">contact name</label>
+                                <input name= "contactName" placeholder="I" type="text"  className="add-warehouse__insert" value={this.state.contactName} onChange={this.onContactNameChange} />
 
-                                <label htmlFor="position" className="edit-warehouse__tag">position</label>
-                                <input name= "position" placeholder="Position" type="text" className="edit-warehouse__insert" value={this.state.position} onChange={this.onPositionChange} />
+                                <label htmlFor="position" className="add-warehouse__tag">position</label>
+                                <input name= "position" placeholder="Position" type="text" className="add-warehouse__insert" value={this.state.position} onChange={this.onPositionChange} />
 
-                                <label htmlFor="phone"  className="edit-warehouse__tag">phone number</label>
-                                <input name= "phone" placeholder="Phone Number" type="tel"  className="edit-warehouse__insert" value={this.state.phone} onChange={this.onPhoneChange} />
+                                <label htmlFor="phone"  className="add-warehouse__tag">phone number</label>
+                                <input name= "phone" placeholder="Phone Number" type="tel"  className="add-warehouse__insert" value={this.state.phone} onChange={this.onPhoneChange} />
 
-                                <label htmlFor="email"  className="edit-warehouse__tag">email</label>
-                                <input name= "email" placeholder="Email" type="email" className="edit-warehouse__insert" value={this.state.email} onChange={this.onEmailChange} />
+                                <label htmlFor="email"  className="add-warehouse__tag">email</label>
+                                <input name= "email" placeholder="Email" type="email" className="add-warehouse__insert" value={this.state.email} onChange={this.onEmailChange} />
                             </div>
                         </div>
-                        {/*  <<<<<<<<<< EDIT WAREHOUSE FOOTER >>>>>>>>>> */}
-                        <div className="edit-warehouse__btn-func">
-                                <button className="edit-warehouse__btn edit-warehouse__btn--cancel" type="reset">cancel</button>
-                                <button className="edit-warehouse__btn edit-warehouse__btn--save" type="submit">save</button>
+                        {/*  <<<<<<<<<< add WAREHOUSE FOOTER >>>>>>>>>> */}
+                        <div className="add-warehouse__btn-func">
+                                <button className="add-warehouse__btn add-warehouse__btn--cancel" type="reset">cancel</button>
+                                <button className="add-warehouse__btn add-warehouse__btn--save" type="submit">save</button>
                         </div>
                     </form>
                 </div>
