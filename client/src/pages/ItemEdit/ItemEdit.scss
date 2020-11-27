@@ -270,7 +270,7 @@
             padding: 0 32px 32px;
             border-bottom: none;
             border-right: solid #BDC5D5 1px;
-            width: 351px;
+            width: calc(351px + (158/512) * (100vw - 768px));
     
             &-title {
                 font-size: 20px;
@@ -313,7 +313,7 @@
         }
     
         &__availability {
-            width: 352px;
+            width: calc(352px + (158/512) * (100vw - 768px));
             padding: 0 32px 32px;
     
             &-title {
@@ -381,6 +381,24 @@
             width: 61px;
             font-size: 14px;
             line-height: 22px;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        width: 1020px;
+    
+        &__details {
+            width: 509px;
+        }
+    
+        &__availability {
+            width: 510px;
+    
+            &-title {
+                font-size: 20px;
+                line-height: 28px;
+                margin: 0 0 32px;
+            }
         }
     }
 }
