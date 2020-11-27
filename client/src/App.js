@@ -7,6 +7,7 @@ import Warehouse from "./pages/Warehouse/Warehouse";
 import ItemDetails from "./pages/ItemDetails/ItemDetails";
 import ItemEdit from "./pages/ItemEdit/ItemEdit";
 import WarehouseEdit from './components/Warehouse/EditWarehouse/EditWarehouse';
+import WarehouseAdd from './pages/WarehouseAdd/WarehouseAdd';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path="/" exact component={Home}/>
         {/* <Route path="/warehouse/:warehouseId" component={Warehouse} /> */}
         <Route path="/warehouse/:warehouseId/edit" component={WarehouseEdit} />
-        {/* <Route path="/warehouse/add" component={WarehouseAdd} /> */}
+        <Route path="/warehouse/add" component={WarehouseAdd} />
         {/* <Route path="/warehouse/:warehouseId/inventory" component={WarehouseInventory} /> */}
         <Route
           exact
