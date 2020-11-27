@@ -1,4 +1,5 @@
 const inventory = require ('../models/inventoryModel.js');
+const fs = require('fs')
 
 // <<<<<<<<<< ATTACH ROUTES >>>>>>>>>> \\
 
