@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import BackArrow from '../../Assets/Icons/arrow_back-24px.svg';
-import '../Warehouse/Warehouse.scss';
+import '../WarehouseDetails/Warehouse.scss';
 
 class WarehouseAdd extends Component {
 state = {

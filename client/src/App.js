@@ -3,10 +3,10 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import AddnewInventory from "./components/AddNewInventory/AddNewInventory";
-import Warehouse from "./pages/Warehouse/Warehouse";
+import Warehouse from "./pages/WarehouseDetails/WarehouseDetails";
 import ItemDetails from "./pages/ItemDetails/ItemDetails";
 import ItemEdit from "./pages/ItemEdit/ItemEdit";
-import WarehouseEdit from './components/Warehouse/EditWarehouse/EditWarehouse';
+import WarehouseEdit from './components/EditWarehouse/EditWarehouse';
 import WarehouseAdd from './pages/WarehouseAdd/WarehouseAdd';
 
 function App() {
