@@ -12,11 +12,16 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        padding: 2rem;
     }
     
     &__left {
         width: 100%;
         margin-bottom: 1.5rem;
+        
+        @include tablet {
+            margin-bottom: 0;
+        }
     }
 
     &__title {
@@ -32,11 +37,20 @@
     &__middle {
         width: 100%;
         margin-bottom: 1rem;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
     }
 
     &__search-wrapper {
         width: 100%;
         position: relative;
+
+        @include tablet {
+            width: 185px;
+            margin-left: auto;
+        }
     }
 
     &__search {
@@ -52,7 +66,6 @@
         @include tablet {
             font-size: 14px;
             line-height: 22px;
-            text-align: center;
         }
     }
 
@@ -79,5 +92,11 @@
         text-align: center;
         text-decoration: none;
         font-family: 'regular';
+
+        @include tablet {
+            width: 168px;
+            font-size: 14px;
+            line-height: 22px;
+        }
     }
 }

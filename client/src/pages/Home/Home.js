@@ -4,6 +4,7 @@ import {appUrl} from '../../utils/axios';
 import axios from 'axios';
 import React, { Component } from 'react';
 import './Home.scss';
+import WarehousesLabels from '../../components/WarehouseLabels/WarehouseLabels';
 
 
 class Home extends Component {
@@ -26,6 +27,7 @@ class Home extends Component {
         return (
             <div className="warehouse__container">
                 <WarehouseNav />
+                <WarehousesLabels />
                 <WarehouseList
                 warehouses={this.state.warehouses} 
                 />
