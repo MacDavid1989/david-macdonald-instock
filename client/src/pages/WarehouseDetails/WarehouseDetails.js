@@ -9,7 +9,7 @@ import sort from '../../assets/icons/sort-24px.svg'
 import chevron from '../../assets/icons/chevron_right-24px.svg'
 import deleteOutline from '../../assets/icons/delete_outline-24px.svg'
 
-
+const API_URL = process.env.REACT_APP_API_URL;
 class Warehouse extends Component {
 
     state ={
@@ -18,7 +18,7 @@ class Warehouse extends Component {
     }
 
     componentDidMount(){
-        axios.get(`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}`)
+        axios.get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}`)
         .then(res=>{
             this.setState({warehouse: res.data.warehouse ,inventory: res.data.inventory})
         })
