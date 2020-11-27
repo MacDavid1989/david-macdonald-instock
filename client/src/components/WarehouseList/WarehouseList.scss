@@ -1,0 +1,137 @@
+@import "../../partials/mixins";
+@import '../../partials/variables';
+
+.card {
+    width: 100%;
+    background-color: map-get($color-primary, global-white);
+    border-top: 1px solid map-get($color-secondary, dividers);
+    padding-bottom: 27px;
+
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    &__top-container {
+        
+        padding: 1.5rem;
+        display: flex;
+
+        @include tablet {
+            padding: 0;
+        }
+    }
+
+    &__warehouse-address {
+        display: flex;
+        flex-direction: column;
+        flex: 50%;
+
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__warehouse {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+    }
+
+    &__subheader {
+        font-size: 11px;
+        line-height: 16px;
+        padding-bottom: 4px;
+        color: map-get($color-secondary, table-column-header);
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__location-container {
+        display: flex;
+        
+        @include tablet {
+            width: 150px;
+        }
+    }
+
+    &__location {
+        color: map-get($color-primary, interactive-el);
+        font-size: 13px;
+        line-height: 20px;
+        font-family: 'regular';
+        position: relative;
+
+        
+    }
+
+    &__chevron {
+        position: absolute;
+    }
+
+    &__info {
+        font-size: 13px;
+        line-height: 20px;
+        font-family: 'regular';
+        display: flex;
+        flex-wrap: wrap;
+        color: map-get($color-primary, global-text);
+        padding-bottom: 1rem;
+    }
+
+    &__address {
+        display: flex;
+        flex-direction: column;
+        padding-right: 1rem;
+    }
+
+    &__contact-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 50%;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__name {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    &__contact-info {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    &__phone {
+        padding-bottom: 0;
+    }
+
+    &__icons {
+        display: flex;
+        padding: 0 1.5rem;
+        justify-content: space-between;
+    }
+
+    
+
+    // &__footer-tag {
+    //     font-family: normal;
+    //     font-size: 11px;
+    //     line-height: 16px;
+    //     text-align: center;
+    // }
+
+
+}

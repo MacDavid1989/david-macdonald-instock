@@ -2,9 +2,8 @@ import WarehouseNav from '../../components/WarehouseNav/WarehouseNav';
 import WarehouseList from '../../components/WarehouseList/WarehouseList';
 import {appUrl} from '../../utils/axios';
 import axios from 'axios';
-
-
 import React, { Component } from 'react';
+import './Home.scss';
 
 
 class Home extends Component {
@@ -13,6 +12,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
+        console.log("hello");
       axios.get(appUrl + "/warehouse")
       .then((response) => {
         this.setState({
@@ -24,7 +24,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
+            <div className="warehouse__container">
                 <WarehouseNav />
                 <WarehouseList
                 warehouses={this.state.warehouses} 
