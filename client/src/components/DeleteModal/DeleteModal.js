@@ -25,7 +25,7 @@ class DeleteModal extends Component {
   onSubmitDelete = () => {
       axios.delete(`http://localhost:8080/warehouse/${this.props.deleteThing.id}`)
       .then((res)=>{
-          console.log(res.data.warehouses)
+          console.log(res.data.warehouses);
         this.props.updateWarehouse(res.data.warehouses);
       })
   }
@@ -34,8 +34,16 @@ class DeleteModal extends Component {
       if(this.props.deleteThing.name){
           this.setState({
               display: true
-          })
+          });
       }
+  }
+
+  componentDidUpdate(prevP, prevS){
+    if(prevS.display == this.state.display && this.props.deleteThing.name){
+        this.setState({
+            display: true
+        });
+    }
   }
 
   render() {

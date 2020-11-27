@@ -42,7 +42,7 @@ class Home extends Component {
   render() {
     return (
       <>
-        {(this.state.deleteObj.name) ? <DeleteModal updateWarehouse={this.updateWarehouses} deleteThing={this.state.deleteObj} /> : ""}
+        <DeleteModal updateWarehouse={this.updateWarehouses} deleteThing={this.state.deleteObj} />
         <div className="warehouse__container">
           <WarehouseNav />
           <WarehousesLabels />
