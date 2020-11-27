@@ -1,10 +1,12 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
+// import {Link} from 'react-router-dom';
 import search from '../../Assets/Icons/search-24px.svg'
+import './WarehouseNav.scss';
 
 const WarehouseNav = () => {
   return (
-    <nav>
+    <nav className="nav">
       <div className="nav__left">
         <h1 className="nav__title">Warehouses</h1>
       </div>
@@ -14,12 +16,10 @@ const WarehouseNav = () => {
           <img src={search} className="nav__search-icon" alt="search icon" />
         </div>
       </div>
-      <div className="header__right">
-          <Link to="/warehouse/add" className="nav__button">
+      <div className="nav__right">
+          <Link to="/warehouse/add"className="nav__button">
               + Add New Warehouse
           </Link>
-
-
       </div>
 
     </nav>
