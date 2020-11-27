@@ -157,11 +157,11 @@ class ItemEdit extends Component {
                                 <div className="status__wrapper">
                                     <div className="status__in">
                                         <input id="itemStatus" name="itemStatus" type="radio" checked={this.state.check} value="true" onChange={this.handleStatus}/>
-                                        <label className={!!this.state.item&&this.state.item.status.toLowerCase() === "in stock" ? "status__in-radio checked" : "status__in-radio"}>In Stock</label>
+                                        <label className={!!this.state.status&&this.state.status.toLowerCase() === "in stock" ? "status__in-radio checked" : "status__in-radio"}>In Stock</label>
                                     </div>
                                     <div className="status__out">
                                         <input id="itemStatus" name="itemStatus" type="radio" checked={!this.state.check} value="false" onChange={this.handleStatus}/>
-                                        <label className={!!this.state.item&&this.state.item.status.toLowerCase() === "out of stock" ? "status__out-radio checked" : "status__out-radio"}>Out of Stock</label>
+                                        <label className={!!this.state.status&&this.state.status.toLowerCase() === "out of stock" ? "status__out-radio checked" : "status__out-radio"}>Out of Stock</label>
                                     </div>
                                 </div>
                             </div>
