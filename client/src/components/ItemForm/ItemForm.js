@@ -77,6 +77,17 @@ class ItemForm extends Component {
 
     /* AXIOS REQUEST HERE */
     // /inventory
+    axios.post("http://localhost:3000/inventory").then(() => {
+      this.setState({
+        warehouseList: [],
+        name: "",
+        description: "",
+        category: "",
+        status: true,
+        qty: 0,
+        warehouse: ""
+      });
+    });
   };
 
   render() {
@@ -142,7 +153,7 @@ class ItemForm extends Component {
               <h3 className="item-form-com__title">Item Availability</h3>
               <div className="item-form-com__wrapper">
                 <div className="item-form-com__wrapper">
-                <label>Status</label>
+                  <label>Status</label>
                   <div className="item-form-com__wrapper item-form-com__wrapper--radio">
                     <div className="item-form-com__wrapper--radio-wrapper">
                       <input
@@ -205,8 +216,13 @@ class ItemForm extends Component {
             </section>
           </div>
           <div className="form__btn-wrapper">
-            <button className="form__btn" type="reset">Cancel</button>
-            <button className="form__btn form__btn--add" type="submit"> + Add Item</button>
+            <button className="form__btn" type="reset">
+              Cancel
+            </button>
+            <button className="form__btn form__btn--add" type="submit">
+              {" "}
+              + Add Item
+            </button>
           </div>
         </form>
       </div>
