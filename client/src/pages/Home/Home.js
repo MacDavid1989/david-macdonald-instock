@@ -8,6 +8,7 @@ import WarehousesLabels from "../../components/WarehouseLabels/WarehouseLabels";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 
 class Home extends Component {
+<<<<<<< HEAD
   state = {
     warehouses: [],
     deleteObj: {name:"", id: ""},
@@ -16,6 +17,14 @@ class Home extends Component {
   componentDidMount() {
     axios
       .get(appUrl + "/warehouse")
+=======
+    state = {
+        warehouses: []
+    }
+
+    componentDidMount() {
+      axios.get(appUrl + "/warehouse")
+>>>>>>> develop
       .then((response) => {
         this.setState({
           warehouses: response.data,

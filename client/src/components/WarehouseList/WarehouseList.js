@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import chevronRight from "../../assets/icons/chevron_right-24px.svg"
 import deleteOutline from "../../assets/icons/delete_outline-24px.svg"
 import edit from "../../assets/icons/edit-24px.svg"
@@ -13,10 +14,12 @@ const WarehouseList = ({warehouses, setDelete}) => {
                     <div className="card__warehouse">
                         <span className="card__subheader">WAREHOUSE</span>
                         <p className="card__location-container">
-                            <span className="card__location">{warehouse.name}</span>
-                            <span>
-                                <img src={chevronRight} className="card__chevron"alt="chevronRight"/>
-                            </span>
+                            <Link to={`/warehouse/${warehouse.id}`}>
+                                <span className="card__location">{warehouse.name}</span>
+                                <span>
+                                    <img src={chevronRight} className="card__chevron"alt="chevronRight"/>
+                                </span>
+                            </Link>
                         </p>
                     </div>
                     <div className="card__address">
@@ -37,8 +40,15 @@ const WarehouseList = ({warehouses, setDelete}) => {
                 </div>
             </div>
             <div className="card__icons">
+<<<<<<< HEAD
                 <img src={deleteOutline} alt="delete" className="card__delete-icon" onClick={()=>{setDelete(warehouse.id, warehouse.name)}}/>
                 <img src={edit} alt="edit" className="card__edit-icon"/>
+=======
+                    <img src={deleteOutline} alt="delete" className="card__delete-icon"/>
+                <Link to={`/warehouse/${warehouse.id}/edit`}>
+                    <img src={edit} alt="edit" className="card__edit-icon"/>
+                </Link>
+>>>>>>> develop
             </div>
         </div>)
     })

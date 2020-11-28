@@ -9,7 +9,7 @@ import sort from '../../assets/icons/sort-24px.svg'
 import chevron from '../../assets/icons/chevron_right-24px.svg'
 import deleteOutline from '../../assets/icons/delete_outline-24px.svg'
 
-
+const API_URL = process.env.REACT_APP_API_URL;
 class Warehouse extends Component {
 
     state ={
@@ -18,7 +18,7 @@ class Warehouse extends Component {
     }
 
     componentDidMount(){
-        axios.get(`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}`)
+        axios.get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}`)
         .then(res=>{
             this.setState({warehouse: res.data.warehouse ,inventory: res.data.inventory})
         })
@@ -81,9 +81,7 @@ class Warehouse extends Component {
                                         <td className={item.status.toUpperCase() === 'IN STOCK' ? "item__value item__value--in" : "item__value item__value--out"}>{item.status.toUpperCase()}</td>
                                         <td className="item__amount">{item.quantity}</td>
                                         <td className="item__icons">
-                                            <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${item.id}/delete`}>
                                                 <img className="item__delete" src={deleteOutline} alt=""/>
-                                            </Link>
                                             <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${item.id}/edit`}>
                                                 <img className="item__edit" src={edit} alt=""/>
                                             </Link>
@@ -124,9 +122,7 @@ class Warehouse extends Component {
                             </div>
                         </div>
                             <div className="inventory__buttons">
-                            <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${item.id}/delete`}>
                                 <img className="inventory__delete" src={deleteOutline} alt=""/>
-                                </Link>
                                 <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${item.id}/edit`}>
                                 <img className="inventory__edit" src={edit} alt=""/>
                                 </Link>
