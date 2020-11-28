@@ -112,7 +112,6 @@ class ItemEdit extends Component {
 
         axios.put(`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}/update`, item)
         .then(res => {
-            console.log(res)
             this.props.history.goBack()
         })
         .catch(console.error)

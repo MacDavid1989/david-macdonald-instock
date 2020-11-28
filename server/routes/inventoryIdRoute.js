@@ -10,7 +10,6 @@ router.get('/:itemId', inventoryIdControllers.getWarehouseInventory);
 
 router.put("/:itemId/update", (req, res) => {
     let inventoryList = getAllInventory();
-    console.log(checkInput(req.body))
     if(checkInput(req.body)){
         inventoryList.forEach((data, i)=> {
             if(data.id == req.body.id){
