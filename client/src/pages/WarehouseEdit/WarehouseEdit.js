@@ -14,7 +14,7 @@ class EditWarehouse extends Component {
     state  = {
         address: "",
         city: "",
-        contact : {
+        contact: {
             email: "",
             name: "",
             phone: "",
@@ -64,19 +64,19 @@ class EditWarehouse extends Component {
     };
 
     onContactNameChange = (e) => {
-        this.setState({ contactName: e.target.value });
+        this.setState({contact: { name: e.target.value }});
     };
 
     onPositionChange = (e) => {
-        this.setState({ position: e.target.value });
+        this.setState({contact: { position: e.target.value }});
     };
 
     onPhoneChange = (e) => {
-        this.setState({ phone: e.target.value });
+        this.setState({contact: { phone: e.target.value }});
     };
 
     onEmailChange = (e) => {
-        this.setState({ email: e.target.value });
+        this.setState({contact: { email: e.target.value }});
     };
 
     editWarehouse = (data) => {
