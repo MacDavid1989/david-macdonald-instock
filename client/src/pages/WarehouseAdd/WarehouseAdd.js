@@ -120,6 +120,10 @@ onFormSubmit = (e) => {
     .catch((error) => console.log(error));
 };
 
+handleBack = () => {
+    this.props.history.goBack();
+}
+
 render() {
     return (
         <>
@@ -127,7 +131,7 @@ render() {
         <div className="add-warehouse">
             <div className="add-warehouse__card">
                 <div className="add-warehouse__header">
-                    <img src={BackArrow} alt="Go Back " className="add-warehouse__arrow"/>
+                    <img src={BackArrow} alt="Go Back " onClick={this.handleBack} className="add-warehouse__arrow"/>
                     <h2 className="add-warehouse__title">add new warehouse</h2>
                 </div>
 
