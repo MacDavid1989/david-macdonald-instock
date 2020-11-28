@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import chevronRight from "../../assets/icons/chevron_right-24px.svg"
 import deleteOutline from "../../assets/icons/delete_outline-24px.svg"
 import edit from "../../assets/icons/edit-24px.svg"
@@ -13,10 +14,12 @@ const WarehouseList = ({warehouses}) => {
                     <div className="card__warehouse">
                         <span className="card__subheader">WAREHOUSE</span>
                         <p className="card__location-container">
-                            <span className="card__location">{warehouse.name}</span>
-                            <span>
-                                <img src={chevronRight} className="card__chevron"alt="chevronRight"/>
-                            </span>
+                            <NavLink to={`/warehouse/${warehouse.id}`}>
+                                <span className="card__location">{warehouse.name}</span>
+                                <span>
+                                    <img src={chevronRight} className="card__chevron"alt="chevronRight"/>
+                                </span>
+                            </NavLink>
                         </p>
                     </div>
                     <div className="card__address">
