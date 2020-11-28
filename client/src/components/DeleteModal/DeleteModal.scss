@@ -1,0 +1,63 @@
+@import "../../partials/mixins";
+@import "../../partials/typography";
+@import "../../partials/variables";
+
+.deleteModal{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    &__wrapper{
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        background-color: white;
+        @include tablet{
+            display: block;
+            margin: 5rem auto;
+            width: 80%;
+            height: fit-content;
+            height: 300px;
+            padding: 1rem 2rem;
+        }
+    }
+    &__close-wrapper{
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__btn-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+        height: 100vw;
+        @include tablet{
+            height: 20vw;
+            justify-content: flex-end;
+        }
+        @include desktop{
+            height: 10vw;
+        }
+    }
+    &__btn{
+        width: 135px;
+        padding: .5rem;
+        border-radius: 20px;
+        border: none;
+        &--delete{
+            background-color: orange;
+            color: white;
+            @include tablet{
+                margin-left: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+        @include tablet{
+            margin-bottom: 1rem;
+        }
+       
+    }
+}

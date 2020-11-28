@@ -3,6 +3,8 @@ import axios from "axios";
 
 import "./ItemForm.scss";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 class ItemForm extends Component {
   state = {
     warehouseList: [],
@@ -16,7 +18,7 @@ class ItemForm extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8080/warehouse/")
+      .get(`${API_URL}/warehouse/`)
       .then((res) => {
         this.setState({
           warehouseList: res.data,
@@ -74,6 +76,7 @@ class ItemForm extends Component {
     e.preventDefault();
 
     /* AXIOS REQUEST HERE */
+    // /inventory
   };
 
   render() {

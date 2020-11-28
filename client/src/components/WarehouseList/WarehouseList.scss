@@ -1,0 +1,202 @@
+@import "../../partials/mixins";
+@import '../../partials/variables';
+
+.card {
+    width: 100%;
+    background-color: map-get($color-primary, global-white);
+    border-top: 1px solid map-get($color-secondary, dividers);
+    padding-bottom: 27px;
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    &:first-of-type{
+        border-top: none;
+    }
+
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 1rem 2rem 0 2rem;
+    }
+
+    @include tablet {
+        padding: 1rem 2.5rem 0 2.5rem;
+    }
+
+    &__top-container {
+        
+        padding: 1.5rem;
+        display: flex;
+
+        @include tablet {
+            padding: 0;
+        }
+    }
+
+    &__warehouse-address {
+        display: flex;
+        flex-direction: column;
+        flex: 50%;
+
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__warehouse {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+    }
+
+    &__subheader {
+        font-size: 11px;
+        line-height: 16px;
+        padding-bottom: 4px;
+        color: map-get($color-secondary, table-column-header);
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__location-container {
+        display: flex;
+        
+        @include tablet {
+            width: 150px;
+        }
+
+        @include desktop {
+            width: 221px;
+        }
+    }
+
+    &__location {
+        color: map-get($color-primary, interactive-el);
+        font-size: 13px;
+        line-height: 20px;
+        position: relative;
+
+        @include desktop{
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+
+    &__chevron {
+        position: absolute;
+    }
+
+    &__info {
+        font-size: 13px;
+        line-height: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        color: map-get($color-primary, global-text);
+        padding-bottom: 1rem;
+
+        @include tablet {
+            width: 95px;
+        }
+
+        @include desktop{
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        &--address {
+            @include desktop {
+                width: 261px;
+            }
+        }
+
+        &--name {
+            @include desktop {
+                width: 174px;
+            }
+        }
+    }
+
+    &__address {
+        display: flex;
+        flex-direction: column;
+        padding-right: 1rem;
+
+        @include tablet {
+            padding-right: 2rem;
+        }
+    }
+
+    &__contact-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 50%;
+        margin-left: 1.5rem;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__name {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        @include tablet {
+            justify-content: center;
+            padding-right: 1.7rem;
+        }
+    }
+
+    &__contact-info {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        @include tablet {
+            width: 150px;
+        }
+
+        @include desktop {
+            width: 174px;
+        }
+    }
+
+    &__phone {
+        padding-bottom: 0;
+        width: 121px;
+    }
+
+    &__icons {
+        display: flex;
+        padding: 0 1.5rem;
+        justify-content: space-between;
+
+        @include tablet {
+            padding: 0 0 0 1rem;
+            width: 90px;
+        }
+    }
+
+    
+
+    // &__footer-tag {
+    //     font-size: 11px;
+    //     line-height: 16px;
+    //     text-align: center;
+    // }
+
+
+}

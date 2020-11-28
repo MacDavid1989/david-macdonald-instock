@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import './ItemDetails.scss'
-import backArrow from '../../assets/Icons/arrow_back-24px.svg'
-import editWhite from '../../assets/Icons/edit-24px-white.svg'
+import backArrow from '../../assets/icons/arrow_back-24px.svg'
+import editWhite from '../../assets/icons/edit_white-24px.svg'
 
+const API_URL = process.env.REACT_APP_API_URL;
 class ItemDetails extends Component {
     state ={
         item: null
@@ -12,7 +13,7 @@ class ItemDetails extends Component {
 
     componentDidMount(){
 
-        axios.get(`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}`)
+        axios.get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}`)
         .then(res=>{
             this.setState({item: res.data.inventoryItem[0]})
         })
