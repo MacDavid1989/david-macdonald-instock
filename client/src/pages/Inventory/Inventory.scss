@@ -9,6 +9,9 @@
     top: 127px;
     box-shadow: 0 2px 5px rgba(19, 24, 44, 0.1);
     border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
 
     @include tablet {
         margin-left: 2rem;
