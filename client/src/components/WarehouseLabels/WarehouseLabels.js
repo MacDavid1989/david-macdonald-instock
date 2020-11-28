@@ -2,7 +2,7 @@ import React from "react";
 import sortIcon from "../../assets/icons/sort-24px.svg";
 import "./WarehouseLabels.scss";
 
-function WarehousesLabels() {
+function WarehousesLabels(props) {
   return (
     <div className="warehouse-labels">
       <div className="warehouse-labels__container warehouse-labels__container--warehouse">
@@ -13,6 +13,7 @@ function WarehousesLabels() {
               src={sortIcon}
               alt="sortIcon"
               className="warehouse-labels__icon-image"
+              onClick={()=>{props.onSort("name")}}
             />
           </span>
         </p>

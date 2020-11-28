@@ -33,12 +33,6 @@ class Home extends Component {
     });
   };
 
-  componentDidUpdate(prevProp, prevState) {
-    this.setState({
-      inOrder: !prevState.inOrder,
-    });
-  }
-
   updateWarehouses = (data) => {
     this.setState({
       warehouseConst: data,
@@ -92,13 +86,15 @@ class Home extends Component {
       tempData.push(this.state.warehouseConst[i]);
     }
 
-    if (this.setState.inOrder) {
-      sortedData = tempData[key].sort(function (a, b) {
-        return a.value - b.value;
+    if (this.state.inOrder) {
+      console.log("up")
+      sortedData = tempData.sort(function (a, b) {
+        return a[key].localeCompare(b[key]);
       });
     } else {
-      sortedData = tempData[key].sort(function (a, b) {
-        return b.value - a.value;
+      console.log("down")
+      sortedData = tempData.sort(function (a, b) {
+        return b[key].localeCompare(a[key]);
       });
     }
 
@@ -106,6 +102,10 @@ class Home extends Component {
       warehouses: sortedData,
       inOrder: !this.state.inOrder
     });
+
+
+
+  
   };
 
   render() {
@@ -117,11 +117,10 @@ class Home extends Component {
         />
         <div className="warehouse__container">
           <WarehouseNav updateDisplay={this.updateDisplay} />
-          <WarehousesLabels />
+          <WarehousesLabels onSort={this.sortByValue} />
           <WarehouseList
             warehouses={this.state.warehouses}
             setDelete={this.setDeleteWarehouse}
-            onSort={this.sortByValue}
           />
         </div>
       </>
