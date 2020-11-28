@@ -5,6 +5,9 @@ import BackArrow from '../../assets/icons/arrow_back-24px.svg';
 import './WarehouseEdit.scss';
 import axios from 'axios';
 
+
+const API_URL = process.env.REACT_APP_API_URL;
+
 // <<<<<<<<<< CLASS COMPONENT FUNCTION >>>>>>>>>> \\
 
 class EditWarehouse extends Component {
@@ -22,7 +25,7 @@ class EditWarehouse extends Component {
     componentDidMount() {
         console.log(this.props.match.params);
         axios
-        .get(`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}`)
+        .get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}`)
         .then((res) => {
             console.log(res.data);
             this.setState({
@@ -77,7 +80,7 @@ class EditWarehouse extends Component {
     editWarehouse = (data) => {
         data.preventDefault();
         axios
-        .post((`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}/update`), {
+        .post((`${API_URL}/warehouse/${this.props.match.params.warehouseId}/update`), {
             name: data.target.warehouseName.value,
             address: data.target.address.value,
             city: data.target.city.value,

@@ -3,6 +3,7 @@ import axios from "axios";
 import BackArrow from '../../assets/icons/arrow_back-24px.svg';
 import './WarehouseAdd.scss';
 
+const API_URL = process.env.REACT_APP_API_URL;
 class WarehouseAdd extends Component {
 state = {
     warehouseName: "",
@@ -17,7 +18,7 @@ state = {
 
 componentDidMount() {
     axios
-    .post("http://localhost:8080/warehouse/create")
+    .post(`${API_URL}/warehouse/create`)
     .then((res) => {
         console.log(res.data);
         this.setState({
@@ -99,7 +100,7 @@ onFormSubmit = (e) => {
     e.preventDefault();
 
     axios
-        .get(`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}`)
+        .get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}`)
         .then((res) => {
             console.log(res.data);
             this.setState({
