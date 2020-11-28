@@ -8,8 +8,8 @@ import WarehousesLabels from "../../components/WarehouseLabels/WarehouseLabels";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 
 class Home extends Component {
-<<<<<<< HEAD
   state = {
+    warehouseConst: [],
     warehouses: [],
     deleteObj: {name:"", id: ""},
   };
@@ -17,17 +17,10 @@ class Home extends Component {
   componentDidMount() {
     axios
       .get(appUrl + "/warehouse")
-=======
-    state = {
-        warehouses: []
-    }
-
-    componentDidMount() {
-      axios.get(appUrl + "/warehouse")
->>>>>>> develop
       .then((response) => {
         this.setState({
-          warehouses: response.data,
+          warehousesConst: response.data,
+          warehouses: response.data
         });
       })
       .catch((error) => console.log(error));
@@ -42,10 +35,17 @@ class Home extends Component {
 
   updateWarehouses = (data) => {
     this.setState({
+      warehouseConst: data,
       warehouses: data,
       deleteObj: {name:"", id: ""}
     })
-    console.log("here", this.state.warehouses, data);
+  }
+
+  updateDisplay = (event) => {
+    let updatedList = this.state.warehouseConst;
+    console.log(event);
+
+
   }
 
   render() {
@@ -53,7 +53,7 @@ class Home extends Component {
       <>
         <DeleteModal updateWarehouse={this.updateWarehouses} deleteThing={this.state.deleteObj} />
         <div className="warehouse__container">
-          <WarehouseNav />
+          <WarehouseNav updateDisplay={this.updateDisplay} />
           <WarehousesLabels />
           <WarehouseList
             warehouses={this.state.warehouses}

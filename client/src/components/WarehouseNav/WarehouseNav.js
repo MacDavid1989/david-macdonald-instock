@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import search from '../../assets/icons/search-24px.svg'
 import './WarehouseNav.scss';
 
-const WarehouseNav = () => {
+const WarehouseNav = (props) => {
   return (
     <nav className="nav">
       <div className="nav__left">
@@ -12,7 +12,7 @@ const WarehouseNav = () => {
       </div>
       <div className="nav__middle">
         <div className="nav__search-wrapper">
-          <input className="nav__search" placeholder="Search..." />
+          <input className="nav__search" placeholder="Search..." onChange={props.updateDisplay} />
           <img src={search} className="nav__search-icon" alt="search icon" />
         </div>
       </div>
