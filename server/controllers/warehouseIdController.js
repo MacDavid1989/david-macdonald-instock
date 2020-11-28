@@ -43,20 +43,21 @@ createNewWarehouse = (req, res) => {
   const warehouseList = readFileSync();
 
   //make the new warehouse
-  const newWarehouse = createNewWarehouse(uuidv4(), req.body);
+  const newWarehouseObj = newWarehouse(uuidv4(), req.body);
 
+  console.log(newWarehouseObj)
   //if there is a good input
-  if (newWarehouse) {
+  if (newWarehouseObj) {
     //add the new warehouse to the list
-    warehouseList.push(newWarehouse);
+    warehouseList.push(newWarehouseObj);
 
     //update the file
     fs.writeFileSync(warehouseFile, JSON.stringify(warehouseList));
 
     //send response
-    res.status(200).json({ warehouses: warehouseList });
+    return res.status(200).json({ warehouses: warehouseList });
   }
-  res.status(406).json("Input not accepted");
+  return res.status(406).json("Input not accepted");
 };
 
 //update warehouse on id
@@ -114,6 +115,7 @@ function newWarehouse(
   warehouse
 ) {
   //check each input
+
   if (
     checkInput(warehouse)
   ) {
@@ -130,6 +132,7 @@ function newWarehouse(
         email: warehouse.contact.email,
       },
     };
+
     return newWarehouse;
   }
 

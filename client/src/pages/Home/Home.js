@@ -12,6 +12,7 @@ class Home extends Component {
     warehouseConst: [],
     warehouses: [],
     deleteObj: { name: "", id: "" },
+    inOrder: true,
   };
 
   componentDidMount() {
@@ -44,30 +45,77 @@ class Home extends Component {
     //need to make a deep copy or else the main copy of the array will change
     let updatedList = [];
     for (let i = 0; i < this.state.warehouseConst.length; i++) {
-        updatedList.push(this.state.warehouseConst[i])
+      updatedList.push(this.state.warehouseConst[i]);
     }
-    
+
     if (data.trim().length > 0) {
       for (let i = 0; i < updatedList.length; i++) {
-        if (!updatedList[i].name.toLowerCase().includes(data.toLowerCase())
-        && !updatedList[i].address.toLowerCase().includes(data.toLowerCase())
-        && !updatedList[i].city.toLowerCase().includes(data.toLowerCase())
-        && !updatedList[i].country.toLowerCase().includes(data.toLowerCase())
-        && !updatedList[i].contact.name.toLowerCase().includes(data.toLowerCase())
-        && !updatedList[i].contact.email.toLowerCase().includes(data.toLowerCase())
-        && !updatedList[i].contact.phone.toLowerCase().includes(data.toLowerCase()) ) {
+        if (
+          !updatedList[i].name.toLowerCase().includes(data.toLowerCase()) &&
+          !updatedList[i].address.toLowerCase().includes(data.toLowerCase()) &&
+          !updatedList[i].city.toLowerCase().includes(data.toLowerCase()) &&
+          !updatedList[i].country.toLowerCase().includes(data.toLowerCase()) &&
+          !updatedList[i].contact.name
+            .toLowerCase()
+            .includes(data.toLowerCase()) &&
+          !updatedList[i].contact.email
+            .toLowerCase()
+            .includes(data.toLowerCase()) &&
+          !updatedList[i].contact.phone
+            .toLowerCase()
+            .includes(data.toLowerCase())
+        ) {
           updatedList.splice(i, 1);
           i--;
         }
       }
       this.setState({
-        warehouses: updatedList
+        warehouses: updatedList,
       });
-    }else{
+    } else {
       this.setState({
-        warehouses: this.state.warehouseConst
+        warehouses: this.state.warehouseConst,
       });
     }
+  };
+
+  sortByValue = (key1, key2) => {
+    let tempData = [];
+    let sortedData = [];
+    for (let i = 0; i < this.state.warehouseConst.length; i++) {
+      tempData.push(this.state.warehouseConst[i]);
+    }
+
+    if (key2) {
+      if (this.state.inOrder) {
+        console.log("up");
+        sortedData = tempData.sort(function (a, b) {
+          return a[key1][key2].localeCompare(b[key1][key2]);
+        });
+      } else {
+        console.log("down");
+        sortedData = tempData.sort(function (a, b) {
+          return b[key1][key2].localeCompare(a[key1][key2]);
+        });
+      }
+    } else {
+      if (this.state.inOrder) {
+        console.log("up");
+        sortedData = tempData.sort(function (a, b) {
+          return a[key1].localeCompare(b[key1]);
+        });
+      } else {
+        console.log("down");
+        sortedData = tempData.sort(function (a, b) {
+          return b[key1].localeCompare(a[key1]);
+        });
+      }
+    }
+
+    this.setState({
+      warehouses: sortedData,
+      inOrder: !this.state.inOrder,
+    });
   };
 
   render() {
@@ -79,7 +127,7 @@ class Home extends Component {
         />
         <div className="warehouse__container">
           <WarehouseNav updateDisplay={this.updateDisplay} />
-          <WarehousesLabels />
+          <WarehousesLabels onSort={this.sortByValue} />
           <WarehouseList
             warehouses={this.state.warehouses}
             setDelete={this.setDeleteWarehouse}
