@@ -8,7 +8,7 @@ const header = () => {
     <header className="header">
         <img className="header__logo" src={logo} alt="logo" />
       <div className="header__wrapper">
-        <NavLink to="/warehouse" className="header__btn"
+        <NavLink exact to="/" className="header__btn"
         activeStyle={{
           backgroundColor: "#13182C"
         }} >Warehouses</NavLink>
