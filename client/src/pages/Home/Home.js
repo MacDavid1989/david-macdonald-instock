@@ -12,6 +12,7 @@ class Home extends Component {
     warehouseConst: [],
     warehouses: [],
     deleteObj: { name: "", id: "" },
+    inOrder: true,
   };
 
   componentDidMount() {
@@ -32,6 +33,12 @@ class Home extends Component {
     });
   };
 
+  componentDidUpdate(prevProp, prevState) {
+    this.setState({
+      inOrder: !prevState.inOrder,
+    });
+  }
+
   updateWarehouses = (data) => {
     this.setState({
       warehouseConst: data,
@@ -44,30 +51,61 @@ class Home extends Component {
     //need to make a deep copy or else the main copy of the array will change
     let updatedList = [];
     for (let i = 0; i < this.state.warehouseConst.length; i++) {
-        updatedList.push(this.state.warehouseConst[i])
+      updatedList.push(this.state.warehouseConst[i]);
     }
-    
+
     if (data.trim().length > 0) {
       for (let i = 0; i < updatedList.length; i++) {
-        if (!updatedList[i].name.toLowerCase().includes(data.toLowerCase())
-        && !updatedList[i].address.toLowerCase().includes(data.toLowerCase())
-        && !updatedList[i].city.toLowerCase().includes(data.toLowerCase())
-        && !updatedList[i].country.toLowerCase().includes(data.toLowerCase())
-        && !updatedList[i].contact.name.toLowerCase().includes(data.toLowerCase())
-        && !updatedList[i].contact.email.toLowerCase().includes(data.toLowerCase())
-        && !updatedList[i].contact.phone.toLowerCase().includes(data.toLowerCase()) ) {
+        if (
+          !updatedList[i].name.toLowerCase().includes(data.toLowerCase()) &&
+          !updatedList[i].address.toLowerCase().includes(data.toLowerCase()) &&
+          !updatedList[i].city.toLowerCase().includes(data.toLowerCase()) &&
+          !updatedList[i].country.toLowerCase().includes(data.toLowerCase()) &&
+          !updatedList[i].contact.name
+            .toLowerCase()
+            .includes(data.toLowerCase()) &&
+          !updatedList[i].contact.email
+            .toLowerCase()
+            .includes(data.toLowerCase()) &&
+          !updatedList[i].contact.phone
+            .toLowerCase()
+            .includes(data.toLowerCase())
+        ) {
           updatedList.splice(i, 1);
           i--;
         }
       }
       this.setState({
-        warehouses: updatedList
+        warehouses: updatedList,
       });
-    }else{
+    } else {
       this.setState({
-        warehouses: this.state.warehouseConst
+        warehouses: this.state.warehouseConst,
       });
     }
+  };
+
+  sortByValue = (key) => {
+    let tempData = [];
+    let sortedData = []
+    for (let i = 0; i < this.state.warehouseConst.length; i++) {
+      tempData.push(this.state.warehouseConst[i]);
+    }
+
+    if (this.setState.inOrder) {
+      sortedData = tempData[key].sort(function (a, b) {
+        return a.value - b.value;
+      });
+    } else {
+      sortedData = tempData[key].sort(function (a, b) {
+        return b.value - a.value;
+      });
+    }
+
+    this.setState({
+      warehouses: sortedData,
+      inOrder: !this.state.inOrder
+    });
   };
 
   render() {
