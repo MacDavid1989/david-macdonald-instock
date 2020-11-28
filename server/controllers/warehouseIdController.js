@@ -11,7 +11,6 @@ const readFileSync = () => {
 //return all warehouses
 getAllWarehouses = (_req, res) => {
   const data = readFileSync();
-  console.log(data);
   res.status(200).json(data);
 };
 

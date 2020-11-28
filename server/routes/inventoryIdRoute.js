@@ -1,7 +1,8 @@
 const express = require('express');
+const fs = require('fs')
 const router = express.Router();
 const inventoryIdControllers = require('../controllers/inventoryIdController');
-const inventoryFile = "../data/inventories.json";
+const inventoryFile = "./data/inventories.json";
 
 
 // GET /warehouse/:warehouseId/inventory/:itemId
@@ -10,16 +11,18 @@ router.get('/:itemId', inventoryIdControllers.getWarehouseInventory);
 router.put("/:itemId/update", (req, res) => {
     let inventoryList = getAllInventory();
     if(checkInput(req.body)){
-        inventoryList.forEach(data => {
-            if(data.id == req.params.inventoryId){
-                let newData = createNewInventory(data.id, data);
+        inventoryList.forEach((data, i)=> {
+            if(data.id == req.body.id){
+                let newData = createNewInventory(req.body.id, req.body);
                 if(newData){
                     data = newData;
-                    res.status(200).json({ inventory: inventoryList });
+                    inventoryList.splice(i,1,data)
+                    console.log(...inventoryList)
+                    fs.writeFile('./data/inventories.json', JSON.stringify([...inventoryList]), (err) => console.log('this is the error :', err))
+                    return res.status(200).json({ item: data });
                 }else{
-                    res.status(406).json("Input not accepted");
+                    return res.status(406).json("Input not accepted");
                 }
-                return;
             }
         })
     }
@@ -49,53 +52,38 @@ function getAllInventory() {
   }
   
   //creates a new warehosue
-  function createNewInventory(newId, {
-    warehouseID,
-    warehouseName,
-    itemName,
-    description,
-    category,
-    status,
-    quantity
-}) {
+  function createNewInventory(newId, item) {
     //check each input
-    if (checkInput(warehouseID, warehouseName, itemName, description, category, status, quantity)) {
-    const newWarehouse = {
+    
+    
+    if (checkInput(item)) {
+    const newItem = {
         id: newId,
-        warehouseID: warehouseID,
-        warehouseName: warehouseName,
-        itemName: itemName,
-        description: description,
-        category: category,
-        status: status,
-        quantity: quantity
+        warehouseID: item.warehouseID,
+        warehouseName: item.warehouseName,
+        itemName: item.itemName,
+        description: item.description,
+        category: item.category,
+        status: item.status,
+        quantity: item.quantity
     };
-    return newWarehouse;
+    return newItem;
     }
 
     return null;
 }
 
-function checkInput({
-    warehouseID,
-    warehouseName,
-    itemName,
-    description,
-    category,
-    status,
-    quantity
-}) {
+function checkInput(item) {
     const regexQuantity = /[a-zA-Z]/g;
-
     return (
-        warehouseID.trim() &&
-        warehouseName.trim() &&
-        itemName.trim() &&
-        description.trim() &&
-        category.trim() &&
-        status.trim() &&
-        !regexQuantity.test(quantity) &&
-        quantity.trim()
+        item.warehouseID.trim() &&
+        item.warehouseName.trim() &&
+        item.itemName.trim() &&
+        item.description.trim() &&
+        item.category.trim() &&
+        item.status.trim() &&
+        !regexQuantity.test(item.quantity) &&
+        item.quantity
     );
 }
 
