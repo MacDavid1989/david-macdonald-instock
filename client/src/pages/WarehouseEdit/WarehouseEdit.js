@@ -140,6 +140,9 @@ class EditWarehouse extends Component {
         .catch((err) => console.log(err));
     }
 
+    handleBack = () => {
+        this.props.history.goBack();
+    }
 
     render() {
         return (
@@ -147,8 +150,8 @@ class EditWarehouse extends Component {
             {/*  <<<<<<<<<< EDIT WAREHOUSE HEADER >>>>>>>>>> */}
             <div className="edit-warehouse">
                 <div className="edit-warehouse__card">
-                    <div className="edit-warehouse__header">
-                        <img src={BackArrow} alt="Go Back " className="edit-warehouse__arrow"/>
+                    <div className="edit-warehouse__header" >
+                        <img src={BackArrow} alt="Go Back " onClick={this.handleBack} className="edit-warehouse__arrow"/>
                         <h2 className="edit-warehouse__title">edit warehouse</h2>
                     </div>
 
