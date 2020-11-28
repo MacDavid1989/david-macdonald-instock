@@ -27,7 +27,6 @@ class Home extends Component {
   }
 
   setDeleteWarehouse = (id, name) => {
-    console.log(name, id);
     this.setState({
       deleteObj: { id: id, name: name },
     });
@@ -42,7 +41,6 @@ class Home extends Component {
   };
 
   updateDisplay = (data) => {
-    console.log(data);
     //need to make a deep copy or else the main copy of the array will change
     let updatedList = [];
     for (let i = 0; i < this.state.warehouseConst.length; i++) {
