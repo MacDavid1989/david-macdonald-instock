@@ -40,7 +40,7 @@ getWarehouseById = (req, res) => {
 //create a new warehouse
 createNewWarehouse = (req, res) => {
   //get the list of warehouses
-  const warehouseList = getAllWarehouses();
+  const warehouseList = readFileSync();
 
   //make the new warehouse
   const newWarehouse = createNewWarehouse(uuidv4(), req.body);
@@ -62,13 +62,17 @@ createNewWarehouse = (req, res) => {
 //update warehouse on id
 updateWarehouse = (req, res) => {
   //get the list of warehouses
-  let warehouseList = getAllWarehouses();
+  let warehouseList = readFileSync();
   if (checkInput(req.body)) {
-    warehouseList.forEach((data) => {
-      if (data.id == req.params.warehouseId) {
-        let newData = createNewWarehouse(data.id, data);
+    warehouseList.forEach((data, i) => {
+      if (data.id == req.body.id) {
+
+        let newData = newWarehouse(data.id, req.body);
         if (newData) {
           data = newData;
+          warehouseList.splice(i,1,data)
+          fs.writeFile('./data/warehouses.json', JSON.stringify([...warehouseList]), (err) => console.log('this is the error :', err))
+
           res.status(200).json({ warehouses: warehouseList });
         } else {
           res.status(406).json("Input not accepted");
@@ -104,34 +108,25 @@ function getAllWarehouses() {
 }
 
 //creates a new warehouse
-function createNewWarehouse(
+function newWarehouse(
   newId,
-  { name, address, city, country, contactName, position, phoneNumber, email }
+  warehouse
 ) {
   //check each input
   if (
-    checkInput(
-      name,
-      address,
-      city,
-      country,
-      contactName,
-      position,
-      phoneNumber,
-      email
-    )
+    checkInput(warehouse)
   ) {
     const newWarehouse = {
       id: newId,
-      name: name,
-      address: address,
-      city: city,
-      country: country,
+      name: warehouse.name,
+      address: warehouse.address,
+      city: warehouse.city,
+      country: warehouse.country,
       contact: {
-        name: createRoute,
-        position: position,
-        phone: phoneNumber,
-        email: email,
+        name: warehouse.contact.name,
+        position: warehouse.contact.position,
+        phone: warehouse.contact.phone,
+        email: warehouse.contact.email,
       },
     };
     return newWarehouse;
@@ -142,30 +137,21 @@ function createNewWarehouse(
 }
 
 //check inputs for creating new warehouse
-function checkInput({
-  name,
-  address,
-  city,
-  country,
-  contactName,
-  position,
-  phoneNumber,
-  email,
-}) {
+function checkInput(warehouse) {
   //regular expressions
   const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   const regexPhone = /[a-zA-Z]/g;
 
   return (
-    name.trim() &&
-    address.trim() &&
-    city.trim() &&
-    country.trim() &&
-    contactName.trim() &&
-    position.trim() &&
-    regexEmail.test(email) &&
-    !regexPhone.test(phoneNumber) &&
-    phoneNumber.length >= 10
+    warehouse.name.trim() &&
+    warehouse.address.trim() &&
+    warehouse.city.trim() &&
+    warehouse.country.trim() &&
+    warehouse.contact.name.trim() &&
+    warehouse.contact.position.trim() &&
+    regexEmail.test(warehouse.contact.email) &&
+    !regexPhone.test(warehouse.contact.phone) &&
+    warehouse.contact.phone.length >= 10
   );
 }
 

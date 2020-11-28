@@ -29,7 +29,6 @@ class EditWarehouse extends Component {
         axios
         .get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}`)
         .then((res) => {
-            console.log(res)
             this.setState({
                 address: res.data.warehouse.address,
                 city: res.data.warehouse.city,
@@ -102,30 +101,28 @@ class EditWarehouse extends Component {
     editWarehouse = (data) => {
         data.preventDefault();
         axios
-        .post((`${API_URL}/warehouse/${this.props.match.params.warehouseId}/update`), {
-            name: data.target.warehouseName.value,
-            address: data.target.address.value,
-            city: data.target.city.value,
-            country: data.target.country.value,
+        .put((`${API_URL}/warehouse/${this.props.match.params.warehouseId}/update`), {
+            address: this.state.address,
+            city: this.state.city,
             contact: {
-                name: data.target.contactName.value,
-                position: data.target.position.value,
-                phone: data.target.number.value,
-                email: data.target.email.value
+                email: this.state.contact.email,
+                name: this.state.contact.name,
+                phone: this.state.contact.phone,
+                position: this.state.contact.position
             },
+            country:this.state.country,
+            id: this.state.id,
+            name: this.state.name,   
         }).then((response) => {
             this.props.history.goBack();
-
         })
         .catch((error) => console.log(error));
-        data.reset();
     }
 
     handleReset = () => {
         axios
         .get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}`)
         .then((res) => {
-            console.log(res)
             this.setState({
                 address: res.data.warehouse.address,
                 city: res.data.warehouse.city,
