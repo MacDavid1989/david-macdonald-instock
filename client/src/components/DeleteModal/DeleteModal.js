@@ -5,9 +5,6 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 
 class DeleteModal extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   state = {
     display: false,
@@ -25,7 +22,6 @@ class DeleteModal extends Component {
     axios
       .delete(`http://localhost:8080/warehouse/${this.props.deleteThing.id}`)
       .then((res) => {
-        console.log(res.data.warehouses);
         this.onCloseDeleteScreen();
         this.props.updateWarehouse(res.data.warehouses);
       });

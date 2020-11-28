@@ -99,19 +99,6 @@ onFormSubmit = (e) => {
     if (!this.state.contact.email || this.state.contact.email.length <= 0) {
         return false;
     }
-
-    console.log({
-        address: this.state.address,
-        city: this.state.city,
-        contact: {
-            email: this.state.contact.email,
-            name: this.state.contact.name,
-            phone: this.state.contact.phone,
-            position: this.state.contact.position
-        },
-        country:this.state.country,
-        name: this.state.name,   
-    })
     
     const header = {'Content-Type': 'application/json'};
 
@@ -127,8 +114,8 @@ onFormSubmit = (e) => {
         },
         country:this.state.country,
         name: this.state.name,   
-    }, header).then((response) => {
-        // this.props.history.goBack();
+    }, header).then(() => {
+        this.props.history.goBack();
     })
     .catch((error) => console.log(error));
 };
