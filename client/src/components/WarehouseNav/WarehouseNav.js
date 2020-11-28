@@ -11,6 +11,14 @@ class WarehouseNav extends Component {
     searchVal: ""
   }
 
+  onSearchChange = (e) =>{
+    this.setState({
+      searchVal: e.target.value
+    }, () => {
+      this.props.updateDisplay(this.state.searchVal);
+    });
+  }
+
   render() {
     return (
       <nav className="nav">
@@ -19,7 +27,7 @@ class WarehouseNav extends Component {
       </div>
       <div className="nav__middle">
         <div className="nav__search-wrapper">
-          <input className="nav__search" placeholder="Search..." onChange={this.props.updateDisplay} />
+          <input className="nav__search" placeholder="Search..." onChange={this.onSearchChange} />
           <img src={search} className="nav__search-icon" alt="search icon" />
         </div>
       </div>

@@ -11,7 +11,7 @@ class Home extends Component {
   state = {
     warehouseConst: [],
     warehouses: [],
-    deleteObj: {name:"", id: ""},
+    deleteObj: { name: "", id: "" },
   };
 
   componentDidMount() {
@@ -19,15 +19,15 @@ class Home extends Component {
       .get(appUrl + "/warehouse")
       .then((response) => {
         this.setState({
-          warehousesConst: response.data,
-          warehouses: response.data
+          warehouseConst: response.data,
+          warehouses: response.data,
         });
       })
       .catch((error) => console.log(error));
   }
 
   setDeleteWarehouse = (id, name) => {
-    console.log(name, id)
+    console.log(name, id);
     this.setState({
       deleteObj: { id: id, name: name },
     });
@@ -37,21 +37,52 @@ class Home extends Component {
     this.setState({
       warehouseConst: data,
       warehouses: data,
-      deleteObj: {name:"", id: ""}
-    })
-  }
+      deleteObj: { name: "", id: "" },
+    });
+  };
 
-  updateDisplay = (event) => {
-    let updatedList = this.state.warehouseConst;
-    console.log(event);
+  updateDisplay = (data) => {
+    console.log(data);
+    //need to make a deep copy or else the main copy of the array will change
+    let updatedList = [];
+    for (let i = 0; i < this.state.warehouseConst.length; i++) {
+        updatedList.push(this.state.warehouseConst[i])
+    }
 
+    /**
+     * 
+        
+     */
 
-  }
+    if (data.trim().length > 0) {
+      for (let i = 0; i < updatedList.length; i++) {
+        if (!updatedList[i].name.toLowerCase().includes(data.toLowerCase())
+        && !updatedList[i].address.toLowerCase().includes(data.toLowerCase())
+        && !updatedList[i].city.toLowerCase().includes(data.toLowerCase())
+        && !updatedList[i].country.toLowerCase().includes(data.toLowerCase())
+        && !updatedList[i].contact.email.toLowerCase().includes(data.toLowerCase())
+        && !updatedList[i].contact.phone.toLowerCase().includes(data.toLowerCase()) ) {
+          updatedList.splice(i, 1);
+          i--;
+        }
+      }
+      this.setState({
+        warehouses: updatedList
+      });
+    }else{
+      this.setState({
+        warehouses: this.state.warehouseConst
+      });
+    }
+  };
 
   render() {
     return (
       <>
-        <DeleteModal updateWarehouse={this.updateWarehouses} deleteThing={this.state.deleteObj} />
+        <DeleteModal
+          updateWarehouse={this.updateWarehouses}
+          deleteThing={this.state.deleteObj}
+        />
         <div className="warehouse__container">
           <WarehouseNav updateDisplay={this.updateDisplay} />
           <WarehousesLabels />
