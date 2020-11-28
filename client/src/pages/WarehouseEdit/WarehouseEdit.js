@@ -12,34 +12,36 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 class EditWarehouse extends Component {
     state  = {
-        warehouseName: "",
         address: "",
         city: "",
+        contact : {
+            email: "",
+            name: "",
+            phone: "",
+            position: ""
+        },
         country: "",
-        contactName: "",
-        position: "",
-        phone: "",
-        email: ""
+        id: "",
+        name: "",
     };
 
     componentDidMount() {
-        console.log(this.props.match.params);
         axios
         .get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}`)
         .then((res) => {
-            console.log(res.data);
+            console.log(res)
             this.setState({
-                warehouseName: res.data.warehouse.name,
                 address: res.data.warehouse.address,
                 city: res.data.warehouse.city,
-                country:res.data.warehouse.country,
                 contact: {
-                    contactName:res.data.warehouse.contact.name,
                     email: res.data.warehouse.contact.email,
+                    name:res.data.warehouse.contact.name,
                     phone:res.data.warehouse.contact.phone,
                     position: res.data.warehouse.contact.position
-                }
-                
+                },
+                country:res.data.warehouse.country,
+                id: res.data.warehouse.id,
+                name: res.data.warehouse.name,   
             });
         })
         .catch((err) => console.log(err));
@@ -92,11 +94,11 @@ class EditWarehouse extends Component {
                 email: data.target.email.value
             },
         }).then((response) => {
+            this.props.history.goBack();
 
         })
         .catch((error) => console.log(error));
         data.reset();
-        this.props.history.push(`/warehouse/${this.props.match.params.warehouseId}`);
     }
 
 
