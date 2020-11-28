@@ -84,7 +84,7 @@ updateWarehouse = (req, res) => {
 };
 
 deleteWarehouse = (req, res) => {
-  const warehouseList = getAllWarehouses();
+  const warehouseList = JSON.parse(fs.readFileSync(warehouseFile));
   let didDelete = false;
   for (let i = 0; i < warehouseList.length; i++) {
     if (warehouseList[i].id == req.params.warehouseId) {
@@ -94,6 +94,7 @@ deleteWarehouse = (req, res) => {
   }
 
   if (didDelete) {
+    fs.writeFileSync(warehouseFile, JSON.stringify(warehouseList));
     res.status(200).json({ warehouses: warehouseList });
   } else {
     res.status(400).send("bad request, warehouse does not exist");

@@ -54,6 +54,7 @@
     &__search-wrapper {
         width: 100%;
         position: relative;
+        z-index: 1;
 
         @include tablet {
             width: 185px;
@@ -66,6 +67,7 @@
     }
 
     &__search {
+        z-index: 1;
         width: 100%;
         background-color: map-get($color-primary, global-white);
         border: 1px solid map-get($color-secondary, outlines);
