@@ -77,6 +77,7 @@ class ItemForm extends Component {
     e.preventDefault();
 
     /* AXIOS REQUEST HERE */
+    // /inventory
   };
 
   render() {

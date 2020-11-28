@@ -1,6 +1,8 @@
 const inventory = require ('../models/inventoryModel.js');
 const fs = require('fs')
 
+const inventoryFile = ""./data/inventories.json";
+
 // <<<<<<<<<< ATTACH ROUTES >>>>>>>>>> \\
 
 function createNewInventory (req, res) {
@@ -13,7 +15,10 @@ function createNewInventory (req, res) {
         status:req.body.status,
         quantity:req.body.quantity};
 
-        res.status(201).json (inventory.add(newInventory));
+
+        fs.writeFileSync(warehouseFile, JSON.stringify(warehouseList));
+
+        res.status(201).send("added product");
 }
 
 // GET / all inventory items
