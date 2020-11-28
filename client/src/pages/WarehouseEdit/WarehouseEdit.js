@@ -64,19 +64,39 @@ class EditWarehouse extends Component {
     };
 
     onContactNameChange = (e) => {
-        this.setState({contact: { name: e.target.value }});
+        this.setState({contact: { 
+            name: e.target.value, 
+            position: this.state.contact.position,
+            phone: this.state.contact.phone,
+            email: this.state.contact.email 
+        }});
     };
 
     onPositionChange = (e) => {
-        this.setState({contact: { position: e.target.value }});
+        this.setState({contact: { 
+            name: this.state.contact.name, 
+            position: e.target.value,
+            phone: this.state.contact.phone,
+            email: this.state.contact.email 
+        }});
     };
 
     onPhoneChange = (e) => {
-        this.setState({contact: { phone: e.target.value }});
+        this.setState({contact: { 
+            name: this.state.contact.name, 
+            position: this.state.contact.position,
+            phone: e.target.value,
+            email: this.state.contact.email 
+        }});
     };
 
     onEmailChange = (e) => {
-        this.setState({contact: { email: e.target.value }});
+        this.setState({contact: { 
+            name: this.state.contact.name, 
+            position: this.state.contact.position,
+            phone: this.state.contact.phone,
+            email: e.target.value 
+        }});
     };
 
     editWarehouse = (data) => {
@@ -99,6 +119,28 @@ class EditWarehouse extends Component {
         })
         .catch((error) => console.log(error));
         data.reset();
+    }
+
+    handleReset = () => {
+        axios
+        .get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}`)
+        .then((res) => {
+            console.log(res)
+            this.setState({
+                address: res.data.warehouse.address,
+                city: res.data.warehouse.city,
+                contact: {
+                    email: res.data.warehouse.contact.email,
+                    name:res.data.warehouse.contact.name,
+                    phone:res.data.warehouse.contact.phone,
+                    position: res.data.warehouse.contact.position
+                },
+                country:res.data.warehouse.country,
+                id: res.data.warehouse.id,
+                name: res.data.warehouse.name,   
+            });
+        })
+        .catch((err) => console.log(err));
     }
 
 
@@ -152,7 +194,7 @@ class EditWarehouse extends Component {
                             </div>
                             {/*  <<<<<<<<<< EDIT WAREHOUSE FOOTER >>>>>>>>>> */}
                             <div className="edit-warehouse__btn-func">
-                                    <button className="edit-warehouse__btn edit-warehouse__btn--cancel" type="reset">cancel</button>
+                                    <button className="edit-warehouse__btn edit-warehouse__btn--cancel" type="reset" onClick={this.handleReset}>cancel</button>
                                     <button className="edit-warehouse__btn edit-warehouse__btn--save" type="submit">save</button>
                                 </div>
                         </form>
