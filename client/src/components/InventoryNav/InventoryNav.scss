@@ -1,5 +1,6 @@
 @import "../../partials/mixins";
 @import '../../partials/variables';
+@import "../../partials/fontDefinition";
 
 .nav {
     width: 100%;
@@ -31,6 +32,7 @@
     &__title {
         font-size: 28px;
         line-height: 36px;
+        font-family: 'semi-bold';
 
         @include tablet {
             font-size: 32px;
@@ -108,6 +110,8 @@
         text-align: center;
         text-decoration: none;
         font-family: 'regular';
+        font-size: 13px;
+        line-height: 20px;
 
         @include tablet {
             width: 168px;

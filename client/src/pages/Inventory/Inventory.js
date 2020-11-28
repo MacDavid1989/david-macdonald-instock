@@ -13,10 +13,15 @@ class Inventory extends Component {
     }
 
     componentDidMount() {
+    const queryId = this.props.match.params.warehouseId;
+
       axios.get(appUrl + "/inventory")
       .then((response) => {
+        const data = response.data.filter(item => {
+            return item.warehouseID === queryId;
+        })
         this.setState({ 
-          inventories: response.data,
+          inventories: data,
         });
       })
       .catch((error) => console.log(error));

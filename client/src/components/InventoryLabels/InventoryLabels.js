@@ -1,5 +1,5 @@
 import React from "react";
-import sortIcon from "../../Assets/Icons/sort-24px.svg";
+import sortIcon from "../../assets/icons/sort-24px.svg";
 import "./InventoryLabels.scss";
 
 function InventoryLabels() {

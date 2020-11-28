@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import './WarehouseDetails.scss'
-import backArrow from '../../assets/Icons/arrow_back-24px.svg'
+import backArrow from '../../assets/icons/arrow_back-24px.svg'
 import edit from '../../assets/icons/edit-24px.svg'
 import editWhite from '../../assets/icons/edit_white-24px.svg'
 import sort from '../../assets/icons/sort-24px.svg'
