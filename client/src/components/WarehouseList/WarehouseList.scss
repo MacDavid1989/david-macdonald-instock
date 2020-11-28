@@ -85,7 +85,6 @@
         color: map-get($color-primary, interactive-el);
         font-size: 13px;
         line-height: 20px;
-        font-family: 'regular';
         position: relative;
 
         @include desktop{
@@ -101,7 +100,6 @@
     &__info {
         font-size: 13px;
         line-height: 20px;
-        font-family: 'regular';
         display: flex;
         flex-wrap: wrap;
         color: map-get($color-primary, global-text);
@@ -195,7 +193,6 @@
     
 
     // &__footer-tag {
-    //     font-family: normal;
     //     font-size: 11px;
     //     line-height: 16px;
     //     text-align: center;
