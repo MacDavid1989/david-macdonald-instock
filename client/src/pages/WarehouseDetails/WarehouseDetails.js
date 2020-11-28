@@ -81,9 +81,7 @@ class Warehouse extends Component {
                                         <td className={item.status.toUpperCase() === 'IN STOCK' ? "item__value item__value--in" : "item__value item__value--out"}>{item.status.toUpperCase()}</td>
                                         <td className="item__amount">{item.quantity}</td>
                                         <td className="item__icons">
-                                            <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${item.id}/delete`}>
                                                 <img className="item__delete" src={deleteOutline} alt=""/>
-                                            </Link>
                                             <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${item.id}/edit`}>
                                                 <img className="item__edit" src={edit} alt=""/>
                                             </Link>
@@ -124,9 +122,7 @@ class Warehouse extends Component {
                             </div>
                         </div>
                             <div className="inventory__buttons">
-                            <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${item.id}/delete`}>
                                 <img className="inventory__delete" src={deleteOutline} alt=""/>
-                                </Link>
                                 <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${item.id}/edit`}>
                                 <img className="inventory__edit" src={edit} alt=""/>
                                 </Link>

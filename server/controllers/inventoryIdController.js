@@ -1,4 +1,4 @@
-const inventories = '../data/inventories.json'
+const inventories = './data/inventories.json'
 const fs = require('fs')
 
 getWarehouseInventory = (req,res) => {
