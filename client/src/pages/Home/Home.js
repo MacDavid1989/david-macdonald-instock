@@ -55,6 +55,7 @@ class Home extends Component {
         && !updatedList[i].address.toLowerCase().includes(data.toLowerCase())
         && !updatedList[i].city.toLowerCase().includes(data.toLowerCase())
         && !updatedList[i].country.toLowerCase().includes(data.toLowerCase())
+        && !updatedList[i].contact.name.toLowerCase().includes(data.toLowerCase())
         && !updatedList[i].contact.email.toLowerCase().includes(data.toLowerCase())
         && !updatedList[i].contact.phone.toLowerCase().includes(data.toLowerCase()) ) {
           updatedList.splice(i, 1);
