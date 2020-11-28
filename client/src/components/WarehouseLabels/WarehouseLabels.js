@@ -26,6 +26,7 @@ function WarehousesLabels(props) {
               src={sortIcon}
               alt="sortIcon"
               className="warehouse-labels__icon-image"
+              onClick={()=>{props.onSort("address")}}
             />
           </span>
         </p>
@@ -38,6 +39,7 @@ function WarehousesLabels(props) {
               src={sortIcon}
               alt="sortIcon"
               className="warehouse-labels__icon-image"
+              onClick={()=>{props.onSort("contact", "name")}}
             />
           </span>
         </p>
@@ -50,6 +52,7 @@ function WarehousesLabels(props) {
               src={sortIcon}
               alt="sortIcon"
               className="warehouse-labels__icon-image"
+              onClick={()=>{props.onSort("contact", "email")}}
             />
           </span>
         </p>

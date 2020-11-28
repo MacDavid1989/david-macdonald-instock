@@ -79,33 +79,43 @@ class Home extends Component {
     }
   };
 
-  sortByValue = (key) => {
+  sortByValue = (key1, key2) => {
     let tempData = [];
-    let sortedData = []
+    let sortedData = [];
     for (let i = 0; i < this.state.warehouseConst.length; i++) {
       tempData.push(this.state.warehouseConst[i]);
     }
 
-    if (this.state.inOrder) {
-      console.log("up")
-      sortedData = tempData.sort(function (a, b) {
-        return a[key].localeCompare(b[key]);
-      });
+    if (key2) {
+      if (this.state.inOrder) {
+        console.log("up");
+        sortedData = tempData.sort(function (a, b) {
+          return a[key1][key2].localeCompare(b[key1][key2]);
+        });
+      } else {
+        console.log("down");
+        sortedData = tempData.sort(function (a, b) {
+          return b[key1][key2].localeCompare(a[key1][key2]);
+        });
+      }
     } else {
-      console.log("down")
-      sortedData = tempData.sort(function (a, b) {
-        return b[key].localeCompare(a[key]);
-      });
+      if (this.state.inOrder) {
+        console.log("up");
+        sortedData = tempData.sort(function (a, b) {
+          return a[key1].localeCompare(b[key1]);
+        });
+      } else {
+        console.log("down");
+        sortedData = tempData.sort(function (a, b) {
+          return b[key1].localeCompare(a[key1]);
+        });
+      }
     }
 
     this.setState({
       warehouses: sortedData,
-      inOrder: !this.state.inOrder
+      inOrder: !this.state.inOrder,
     });
-
-
-
-  
   };
 
   render() {
