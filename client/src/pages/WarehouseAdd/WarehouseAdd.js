@@ -120,6 +120,22 @@ onFormSubmit = (e) => {
     .catch((error) => console.log(error));
 };
 
+handleReset = () => {
+        this.setState({
+            address: "",
+            city: "",
+            contact: {
+                email: "",
+                name: "",
+                phone: "",
+                position: ""
+            },
+            country: "",
+            id: "",
+            name: "",
+        });
+}
+
 handleBack = () => {
     this.props.history.goBack();
 }
