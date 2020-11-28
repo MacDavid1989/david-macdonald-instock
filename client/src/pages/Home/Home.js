@@ -121,6 +121,7 @@ class Home extends Component {
           <WarehouseList
             warehouses={this.state.warehouses}
             setDelete={this.setDeleteWarehouse}
+            onSort={this.sortByValue}
           />
         </div>
       </>
