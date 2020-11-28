@@ -26,10 +26,12 @@ class DeleteModal extends Component {
       .delete(`http://localhost:8080/warehouse/${this.props.deleteThing.id}`)
       .then((res) => {
         console.log(res.data.warehouses);
+        this.onCloseDeleteScreen();
         this.props.updateWarehouse(res.data.warehouses);
       });
   };
 
+  //Check if you have data alrady 
   componentDidMount() {
     if (this.props.deleteThing.name) {
       this.setState({
@@ -38,8 +40,9 @@ class DeleteModal extends Component {
     }
   }
 
+  //Won't open unless this is here
   componentDidUpdate(prevP, prevS) {
-    if (prevS.display == this.state.display && this.props.deleteThing.name) {
+    if (prevS.display === this.state.display && this.props.deleteThing.name) {
       this.setState({
         display: true,
       });
