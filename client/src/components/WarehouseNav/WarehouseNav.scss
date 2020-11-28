@@ -73,7 +73,6 @@
         padding: 0.5rem 0 0.5rem 1rem;
         font-size: 13px;
         line-height: 20px;
-        font-family: 'regular';
 
         @include tablet {
             font-size: 14px;
@@ -107,7 +106,6 @@
         padding: 0.5rem 0;
         text-align: center;
         text-decoration: none;
-        font-family: 'regular';
 
         @include tablet {
             width: 168px;
