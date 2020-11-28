@@ -1,0 +1,99 @@
+@import "../../partials/mixins";
+@import '../../partials/variables';
+
+.inventory-labels {
+    display: none;
+    
+
+    @include tablet {
+        display: flex;
+        padding: 10px 10px 10px 32px;
+        align-items: center;
+    }
+
+    @include desktop {
+        padding: 10px 20px 10px 40px;
+    }
+
+    &__container--inventory {
+        padding-right: 2rem;
+    }
+
+    &__sub-container {
+        display: flex;
+        align-items: center;
+        
+        
+        &--inventory {
+            @include tablet {
+                width: 150px;
+            }
+
+            @include desktop {
+                width: 221px;
+            }
+        }
+
+        &--category {
+            @include tablet {
+                width: 95px;
+            }
+
+            @include desktop {
+                width: 261px;
+            }
+        }
+
+        &--status {
+            @include tablet {
+                width: 121px;
+            }
+
+            @include desktop {
+                width: 200px;
+            }
+        }
+
+        &--qty {
+            @include tablet {
+                width: 150px;
+            }
+
+            @include desktop {
+                width: 174px;
+            }
+        }
+
+        &--warehouse {
+            @include tablet {
+                width: 150px;
+            }
+
+            @include desktop {
+                width: 174px;
+            }
+        }
+
+        &--actions {
+            @include tablet {
+                width: 110px;
+                justify-content: center;
+            }
+        }
+    }
+
+    &__text {
+
+        @include tablet {
+            font-size: 12px;
+            line-height: 18px;
+            color: map-get($color-secondary, table-column-header);
+            }
+    }
+
+    &__icon-image {
+        @include tablet {
+            height: 16px;
+        }
+    }
+}
