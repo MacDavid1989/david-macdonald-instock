@@ -1,6 +1,5 @@
-const warehouseFile = "../data/warehouses.json";
-const inventories = "../data/inventories.json";
 const warehouseFile = "./data/warehouses.json";
+const inventories = "./data/inventories.json";
 
 const { v4: uuidv4 } = require("uuid");
 const fs = require("fs");
@@ -12,7 +11,6 @@ const readFileSync = () => {
 //return all warehouses
 getAllWarehouses = (_req, res) => {
   const data = readFileSync();
-  console.log(data);
   res.status(200).json(data);
 };
 

@@ -14,7 +14,6 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        console.log("hello");
       axios.get(appUrl + "/warehouse")
       .then((response) => {
         this.setState({

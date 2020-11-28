@@ -6,7 +6,7 @@ const inventoryController = require ('../controllers/inventoryController');
 
 router.get("/", inventoryController.getAllInventory);
 
-// <<<<<<<<<< POST /videos >>>>>>>>>> \\
+// <<<<<<<<<< POST >>>>>>>>>> \\
 
 router.post ('/', inventoryController.createNewInventory);
 
