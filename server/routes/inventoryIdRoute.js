@@ -10,6 +10,7 @@ router.get('/:itemId', inventoryIdControllers.getWarehouseInventory);
 
 router.put("/:itemId/update", (req, res) => {
     let inventoryList = getAllInventory();
+    console.log(checkInput(req.body))
     if(checkInput(req.body)){
         inventoryList.forEach((data, i)=> {
             if(data.id == req.body.id){
@@ -17,7 +18,7 @@ router.put("/:itemId/update", (req, res) => {
                 if(newData){
                     data = newData;
                     inventoryList.splice(i,1,data)
-                    console.log(...inventoryList)
+
                     fs.writeFile('./data/inventories.json', JSON.stringify([...inventoryList]), (err) => console.log('this is the error :', err))
                     return res.status(200).json({ item: data });
                 }else{
@@ -82,8 +83,7 @@ function checkInput(item) {
         item.description.trim() &&
         item.category.trim() &&
         item.status.trim() &&
-        !regexQuantity.test(item.quantity) &&
-        item.quantity
+        !regexQuantity.test(item.quantity)
     );
 }
 
