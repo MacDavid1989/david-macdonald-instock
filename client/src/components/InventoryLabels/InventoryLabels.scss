@@ -18,6 +18,10 @@
 
     &__container--inventory {
         padding-right: 2rem;
+
+        @include tablet {
+            padding: 0;
+        }
     }
 
     &__sub-container {
@@ -37,7 +41,7 @@
 
         &--category {
             @include tablet {
-                width: 95px;
+                width: 130px;
             }
 
             @include desktop {
@@ -47,7 +51,7 @@
 
         &--status {
             @include tablet {
-                width: 121px;
+                width: 114px;
             }
 
             @include desktop {
@@ -57,7 +61,7 @@
 
         &--qty {
             @include tablet {
-                width: 150px;
+                width: 61px;
             }
 
             @include desktop {
@@ -67,7 +71,7 @@
 
         &--warehouse {
             @include tablet {
-                width: 150px;
+                width: 127px;
             }
 
             @include desktop {
@@ -77,7 +81,7 @@
 
         &--actions {
             @include tablet {
-                width: 110px;
+                // width: 110px;
                 justify-content: center;
             }
         }
