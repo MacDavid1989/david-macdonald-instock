@@ -38,6 +38,9 @@
             height: 20vw;
             justify-content: flex-end;
         }
+        @include desktop{
+            height: 10vw;
+        }
     }
     &__btn{
         width: 135px;
