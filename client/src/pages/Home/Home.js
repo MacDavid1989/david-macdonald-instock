@@ -27,7 +27,6 @@ class Home extends Component {
   }
 
   setDeleteWarehouse = (id, name) => {
-    console.log(name, id);
     this.setState({
       deleteObj: { id: id, name: name },
     });
@@ -42,7 +41,6 @@ class Home extends Component {
   };
 
   updateDisplay = (data) => {
-    console.log(data);
     //need to make a deep copy or else the main copy of the array will change
     let updatedList = [];
     for (let i = 0; i < this.state.warehouseConst.length; i++) {
@@ -55,6 +53,7 @@ class Home extends Component {
         && !updatedList[i].address.toLowerCase().includes(data.toLowerCase())
         && !updatedList[i].city.toLowerCase().includes(data.toLowerCase())
         && !updatedList[i].country.toLowerCase().includes(data.toLowerCase())
+        && !updatedList[i].contact.name.toLowerCase().includes(data.toLowerCase())
         && !updatedList[i].contact.email.toLowerCase().includes(data.toLowerCase())
         && !updatedList[i].contact.phone.toLowerCase().includes(data.toLowerCase()) ) {
           updatedList.splice(i, 1);
