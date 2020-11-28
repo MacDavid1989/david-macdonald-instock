@@ -48,12 +48,7 @@ class Home extends Component {
     for (let i = 0; i < this.state.warehouseConst.length; i++) {
         updatedList.push(this.state.warehouseConst[i])
     }
-
-    /**
-     * 
-        
-     */
-
+    
     if (data.trim().length > 0) {
       for (let i = 0; i < updatedList.length; i++) {
         if (!updatedList[i].name.toLowerCase().includes(data.toLowerCase())
