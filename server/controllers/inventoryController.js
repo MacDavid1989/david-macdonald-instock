@@ -23,7 +23,7 @@ function createNewInventory(req, res) {
   };
 
   //add new item to array
-  items.push(inventory);
+  items.unshift(inventory);
 
   //write it back to the file
   fs.writeFileSync(inventoryFile, JSON.stringify(items));

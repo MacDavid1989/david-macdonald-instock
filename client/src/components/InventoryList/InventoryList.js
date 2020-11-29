@@ -68,11 +68,13 @@ const InventoryList = (props) => {
                   props.setDelete(item.id, item.itemName);
                 }}
               />
-              <img
-                src={edit}
-                alt="edit"
-                className="inventory-card__edit-icon"
-              />
+              <Link to={`/warehouse/${item.warehouseID}/inventory/${item.id}/edit`}>
+                <img
+                  src={edit}
+                  alt="edit"
+                  className="inventory-card__edit-icon"
+                />
+              </Link>
             </div>
           </div>
         </div>

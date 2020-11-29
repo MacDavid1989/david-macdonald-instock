@@ -20,6 +20,7 @@ class Inventory extends Component {
         const data = response.data
         this.setState({ 
           inventories: data,
+          deleteObj: { name: "", id: "" , header: "inventory item", body: "the inventory list."},
         });
       })
      .catch((error) => console.log(error));
