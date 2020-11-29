@@ -11,7 +11,7 @@ class Home extends Component {
   state = {
     warehouseConst: [],
     warehouses: [],
-    deleteObj: { name: "", id: "" },
+    deleteObj: { name: "", id: "" , header: "warehouse", body: "the list of warehouses."},
     inOrder: true,
   };
 
@@ -31,7 +31,7 @@ class Home extends Component {
   //set the delete object for the delete modal
   setDeleteWarehouse = (id, name) => {
     this.setState({
-      deleteObj: { id: id, name: name },
+      deleteObj: { ...this.state.deleteObj, id: id, name: name },
     });
   };
 
