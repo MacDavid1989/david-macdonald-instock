@@ -26,9 +26,7 @@ class ItemDetails extends Component {
                 <div className="itemDetails">
                     <section className="itemDetails__banner">
                         <div className="banner__header">
-                            <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory`}>
-                                <img className="banner__arrow" src={backArrow} alt=""/>
-                            </Link>
+                                <img className="banner__arrow" onClick={this.props.history.goBack} src={backArrow} alt=""/>
                             <h1 className="banner__heading">{!!this.state.item&&this.state.item.itemName}</h1>
                         </div>
                         <Link to={`/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}/edit`}>
