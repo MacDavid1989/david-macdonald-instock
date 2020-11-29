@@ -25,7 +25,7 @@ class InventoryNav extends Component {
         </div>
         <div className="navInv__middle">
           <div className="navInv__search-wrapper">
-            <input className="navInv__search" placeholder="Search..." />
+            <input className="navInv__search" placeholder="Search..." onChange={this.onSearchChange}/>
             <img
               src={search}
               className="navInv__search-icon"

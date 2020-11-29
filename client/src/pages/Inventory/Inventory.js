@@ -106,20 +106,9 @@ class Inventory extends Component {
     if (data.trim().length > 0) {
       for (let i = 0; i < updatedList.length; i++) {
         if (
-          !updatedList[i].name.toLowerCase().includes(data.toLowerCase()) &&
-          !updatedList[i].address.toLowerCase().includes(data.toLowerCase()) &&
-          !updatedList[i].city.toLowerCase().includes(data.toLowerCase()) &&
-          !updatedList[i].country.toLowerCase().includes(data.toLowerCase()) &&
-          !updatedList[i].contact.name
-            .toLowerCase()
-            .includes(data.toLowerCase()) &&
-          !updatedList[i].contact.email
-            .toLowerCase()
-            .includes(data.toLowerCase()) &&
-          !updatedList[i].contact.phone
-            .toLowerCase()
-            .includes(data.toLowerCase())
-        ) {
+          !updatedList[i].itemName.toLowerCase().includes(data.toLowerCase()) &&
+          !updatedList[i].category.toLowerCase().includes(data.toLowerCase()) &&
+          !updatedList[i].warehouseName.toLowerCase().includes(data.toLowerCase())) {
           updatedList.splice(i, 1);
           i--;
         }
@@ -129,7 +118,7 @@ class Inventory extends Component {
       });
     } else {
       this.setState({
-        inventories: this.state.InventoryConst,
+        inventories: this.state.inventoryConst,
       });
     }
   };
