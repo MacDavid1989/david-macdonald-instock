@@ -10,33 +10,29 @@ import DeleteModal from "../../components/DeleteModal/DeleteModal";
 //http://localhost:8080/inventory
 class Inventory extends Component {
     state = {
-        inventories: [],
+        inventories: null,
         deleteObj: { name: "", id: "" , header: "inventory item", body: "the inventory list."},
     }
 
     getInventories = () => {
-
-    const queryId = this.props.match.params.warehouseId;
-
-    axios.get(appUrl + "/inventory")
-    .then((response) => {
-      const data = response.data.filter(item => {
-          return item.warehouseID === queryId;
+      axios.get(appUrl + "/inventory")
+      .then((response) => {
+        const data = response.data
+        this.setState({ 
+          inventories: data,
+          deleteObj: { name: "", id: "" , header: "inventory item", body: "the inventory list."},
+        });
       })
-      this.setState({ 
-        inventories: data,
-      });
-    })
-    .catch((error) => console.log(error));
+     .catch((error) => console.log(error));
     }
+
     componentDidMount() {
         this.getInventories();
     }
 
-      //when a user pressed the trash can they 
+  //when a user pressed the trash can they 
   //set the delete object for the delete modal
   setDeleteWarehouse = (id, name) => {
-      console.log(id, name)
     this.setState({
       deleteObj: { ...this.state.deleteObj, id: id, name: name },
     });
@@ -52,18 +48,23 @@ class Inventory extends Component {
 
     render() {
         return (
-            <Fragment><DeleteModal
-            deleteThing={this.state.deleteObj}
-            onDeleteRoute={this.deleteRoute}
-          />
-            <div className="inventory__container">
+            <Fragment>
+              <DeleteModal
+                deleteThing={this.state.deleteObj}
+                onDeleteRoute={this.deleteRoute}
+              />
+              <div className="inventory__container">
                 <InventoryNav />
                 <InventoryLabels />
-                <InventoryList 
+                {this.state.inventories&&
+                  <InventoryList 
                     inventories={this.state.inventories} 
-                    setDelete={this.setDeleteWarehouse}
-                />
-            </div></Fragment>
+                    setDelete={this.setDeleteWarehouse} 
+                  />
+                }
+              </div>
+            </Fragment>
+
         );
     }
 }

@@ -2,14 +2,16 @@ import React from 'react';
 import './Header.scss';
 
 import logo from '../../assets/logo/inStock-logo.svg';
-import { NavLink } from 'react-router-dom';
+import {Link, NavLink } from 'react-router-dom';
 
 const header = () => {
   return (
     <header className="header">
-        <img className="header__logo" src={logo} alt="logo" />
+        <Link to="/">
+          <img className="header__logo" src={logo} alt="logo" />
+        </Link>
       <div className="header__wrapper">
-        <NavLink exact to="/" className="header__btn"
+        <NavLink to="/warehouse" className="header__btn"
         activeStyle={{
           backgroundColor: "#13182C"
         }} >Warehouses</NavLink>

@@ -6,11 +6,11 @@ import ItemForm from '../ItemForm/ItemForm';
 import './AddNewInventory.scss';
 
 
-const AddNewInventory = () => {
+const AddNewInventory = (props) => {
     return (
         <div className="new-inventory">
-            <AddNewItemHeader />
-            <ItemForm />
+            <AddNewItemHeader parentProps={props} />
+            <ItemForm parentProps={props}/>
         </div>
     );
 }

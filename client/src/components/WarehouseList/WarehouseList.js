@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import { Link } from "react-router-dom";
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import deleteOutline from "../../assets/icons/delete_outline-24px.svg";
@@ -8,8 +8,8 @@ import "./WarehouseList.scss";
 const WarehouseList = ({ warehouses, setDelete }) => {
   const showWarehouses = warehouses.map((warehouse) => {
     return (
-      <>
-        <div className="card card-mob" key={warehouse.id}>
+      <Fragment key={warehouse.id}>
+        <div className="card card-mob" >
           <div className="card__top-container">
             <div className="card__warehouse-address">
               <div className="card__warehouse">
@@ -69,7 +69,7 @@ const WarehouseList = ({ warehouses, setDelete }) => {
             </Link>
           </div>
         </div>
-        <div className="card card-tab" key={warehouse.id}>
+        <div className="card card-tab" >
           <div className="card__top-container">
             <p className="card__location-container">
               <Link
@@ -117,7 +117,7 @@ const WarehouseList = ({ warehouses, setDelete }) => {
             </div>
           </div>
         </div>
-      </>
+      </Fragment>
     );
   });
 

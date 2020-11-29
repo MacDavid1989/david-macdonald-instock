@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./DeleteModal.scss";
 import close from "../../assets/icons/close-24px.svg";
-import axios from "axios";
 import { withRouter } from "react-router-dom";
 
 class DeleteModal extends Component {
@@ -22,14 +21,6 @@ class DeleteModal extends Component {
 
     this.props.onDeleteRoute(this.props.deleteThing.id);
     this.onCloseDeleteScreen();
-    /*
-    axios
-      .delete(`http://localhost:8080/warehouse/${this.props.deleteThing.id}`)
-      .then((res) => {
-        this.onCloseDeleteScreen();
-        this.props.updateObject(res.data.warehouses);
-      });
-      */
   };
 
   //Check if you have data alrady 

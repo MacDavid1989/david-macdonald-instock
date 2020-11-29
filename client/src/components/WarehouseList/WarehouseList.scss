@@ -14,6 +14,10 @@
 
     a:hover {
         text-decoration: underline;
+
+        .card__chevron {
+            transform: translate(4px, 0);
+        }
     }
 
     &:first-of-type{
@@ -88,7 +92,7 @@
         }
 
         @include desktop {
-            width: 13.586875rem;
+            width: 13.8125rem;
         }
     }
 
@@ -199,7 +203,7 @@
             width: 7.5625rem;
         }
         @include desktop{
-            width: 16.3125rem;
+            width: 10.875rem;
         }
     }
 
@@ -227,7 +231,7 @@
         }
 
         @include desktop{
-            width: 18.3125rem;
+            width: 10.875rem;
         }
     }
 
@@ -243,14 +247,20 @@
         width: 90%;
 
         @include tablet {
+            justify-content: flex-end;
             width: 3.75rem;
             padding: 0;
+        }
+
+        @include desktop{
+            width: 6.875rem;
         }
     }
 
     &__delete-icon{
         width: 1.5rem;
         margin-left: -.175rem;
+        margin:  0 1.5rem 0 0;
     }
 
     &__edit-icon{

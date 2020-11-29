@@ -39,7 +39,7 @@
             }
 
             @include desktop {
-                width: 11.186875rem;
+                width: 13.8125rem;
             }
         }
 
@@ -59,7 +59,7 @@
             }
 
             @include desktop {
-                width: 13.5125rem;
+                width: 10.875rem;
             }
         }
 
@@ -69,7 +69,7 @@
             }
 
             @include desktop {
-                width: 15.0125rem;
+                width: 10.875rem;
             }
         }
 
@@ -78,7 +78,9 @@
                 width: fit-content;
             }
             @include desktop {
-                width: 16.3125rem;
+                display: flex;
+                justify-content: flex-end;
+                width: 6.875rem;
             }
         }
     }
