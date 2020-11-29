@@ -1,6 +1,10 @@
 @import "./partials/variables";
 @import "./partials/mixins";
 
+*, *::before, *::after {
+  @include normal;
+}
+
 .App{
   background-color: map-get($color-background, page-bg);
   padding: 1rem;
@@ -10,4 +14,14 @@
   @include desktop{
     padding: 0 130px;
   }
+}
+
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: map-get($color-background, page-bg);
+    position: relative;
+    height: 500vh;
 }

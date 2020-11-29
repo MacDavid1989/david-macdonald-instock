@@ -104,5 +104,5 @@
     padding: 0;
     font-family: 'Titillium';
     font-weight: 500;
-    color: #13182C;
+    color: map-get($color-primary, global-text);
 }
