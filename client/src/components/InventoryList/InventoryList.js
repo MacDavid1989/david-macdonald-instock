@@ -64,6 +64,9 @@ const InventoryList = (props) => {
                 src={deleteOutline}
                 alt="delete"
                 className="inventory-card__delete-icon"
+                onClick={() => {
+                  props.setDelete(item.id, item.itemName);
+                }}
               />
               <img
                 src={edit}
