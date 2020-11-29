@@ -1,0 +1,105 @@
+@import "../../partials/mixins";
+@import '../../partials/variables';
+@import "../../partials/fontDefinition";
+
+.inventory-labels {
+    display: none;
+    
+
+    @include tablet {
+        display: flex;
+        padding: 10px 32px 10px 32px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @include desktop {
+        padding: 10px 40px 10px 40px;
+    }
+
+    &__container--inventory {
+        padding-right: 2rem;
+
+        @include tablet {
+            padding: 0;
+        }
+    }
+
+    &__sub-container {
+        display: flex;
+        align-items: center;
+        
+        
+        &--inventory {
+            @include tablet {
+                width: 115px;
+            }
+
+            @include desktop {
+                width: 221px;
+            }
+        }
+
+        &--category {
+            @include tablet {
+                width: 115px;
+            }
+
+            @include desktop {
+                width: 174px;
+            }
+        }
+
+        &--status {
+            @include tablet {
+                width: 114px;
+            }
+
+            @include desktop {
+                width: 174px;
+            }
+        }
+
+        &--qty {
+            @include tablet {
+                width: 61px;
+            }
+
+            @include desktop {
+                width: 87px;
+            }
+        }
+
+        &--warehouse {
+            @include tablet {
+                width: 127px;
+            }
+
+            @include desktop {
+                width: 174px;
+            }
+        }
+
+        &--actions {
+            @include tablet {
+                width: 56px;
+                justify-content: center;
+            }
+        }
+    }
+
+    &__text {
+
+        @include tablet {
+            font-size: 12px;
+            line-height: 18px;
+            color: map-get($color-secondary, table-column-header);
+            }
+    }
+
+    &__icon-image {
+        @include tablet {
+            height: 16px;
+        }
+    }
+}

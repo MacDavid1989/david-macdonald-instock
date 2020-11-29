@@ -8,6 +8,7 @@ import ItemDetails from "./pages/ItemDetails/ItemDetails";
 import ItemEdit from "./pages/ItemEdit/ItemEdit";
 import WarehouseEdit from './pages/WarehouseEdit/WarehouseEdit';
 import WarehouseAdd from './pages/WarehouseAdd/WarehouseAdd';
+import Inventory from './pages/Inventory/Inventory';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" exact component={Home}/>
         {/* <Route path="/inventory/add" exact component={AddNewInventory}/> */}
         {/* <Route path="/inventory" exact component={InventoryList}/> */}
+        <Route path="/warehouse/:warehouseId/inventory" component={Inventory} />
         <Route path="/warehouse/add" component={WarehouseAdd} />
         <Route path="/warehouse/:warehouseId/inventory/:itemId/edit" component={ItemEdit}/>
         <Route path="/warehouse/:warehouseId/inventory/:itemId" component={ItemDetails}/>
