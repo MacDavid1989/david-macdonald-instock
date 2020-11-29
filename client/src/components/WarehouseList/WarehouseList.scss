@@ -21,7 +21,7 @@
     }
 
     @include tablet {
-        height: 4.75rem;
+        width: calc(704px + (316 / 512) * (100vw - 768px));
         border-bottom: 1px solid map-get($color-secondary, dividers);
         display: flex;
         flex-direction: row;
@@ -30,6 +30,7 @@
         padding: 0 2rem;
     }
     @include desktop {
+        width: 1020px;
         padding: 0 2.5rem;
     }
 
