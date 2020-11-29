@@ -18,6 +18,14 @@
         text-decoration: none;
     }
 
+    a:hover {
+        text-decoration: underline;
+
+        .item__icon {
+            transform: translate(4px, 0);
+        }
+    }
+
     &__banner {
         display: flex;
         justify-content: space-between;

@@ -86,7 +86,6 @@ class ItemForm extends Component {
       warehouseName: this.state.warehouseList.find(warehouse => warehouse.id === this.state.warehouse).name 
     }
 
-    console.log(itemObj)
 
     // /inventory
     axios.post("http://localhost:8080/inventory", itemObj)
@@ -103,7 +102,7 @@ class ItemForm extends Component {
       description: "",
       category: "",
       status: true,
-      qty: 0,
+      qty: "",
       warehouse: ""
     });
   }
@@ -206,6 +205,7 @@ class ItemForm extends Component {
                     className="item-form-com__input"
                     type="number"
                     name="qty"
+                    placeholder="Enter item amount"
                     value={this.state.qty}
                     onChange={this.onQtyChange}
                   />

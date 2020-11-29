@@ -12,6 +12,18 @@
         border-top: none;
     }
 
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+
+        .inventory-card__chevron {
+            transform: translate(4px, 0);
+        }
+    }
+
     @include tablet {
         display: flex;
         flex-direction: row;
