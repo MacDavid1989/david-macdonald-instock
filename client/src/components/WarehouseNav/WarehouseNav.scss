@@ -11,15 +11,15 @@
     background-color: map-get($color-primary, global-white);
 
     @include tablet {
+        height: 5.875rem;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: initial;
         align-items: center;
-        padding: 2rem;
+        padding: 2rem 2rem 1.5rem;
     }
 
     @include desktop {
-        justify-content: initial;
-        padding: 2.5rem;
+        padding: 2rem 2.5rem 1.5rem;
     }
     
     &__left {
@@ -27,6 +27,7 @@
         margin-bottom: 1.5rem;
         
         @include tablet {
+            width: 10.6875rem;
             margin-bottom: 0;
         }
 
@@ -38,6 +39,7 @@
     &__title {
         font-size: 1.75rem;
         line-height: 2.25rem;
+        font-weight: 600;
 
         @include tablet {
             font-size: 2rem;
@@ -50,7 +52,9 @@
         margin-bottom: 1rem;
 
         @include tablet {
+            width: 11.5625rem;
             margin-bottom: 0;
+            margin-left: auto;
         }
 
         @include desktop {
@@ -107,12 +111,13 @@
         justify-content: flex-start;
         align-items: center;
         @include tablet{
+            width: 11.5625rem;
+            margin: 0 0 0 1rem;
             justify-content: flex-end;
         }
 
         @include desktop {
             width: 10.5rem;
-            margin: 0 0 0 1rem;
             justify-content: flex-end;
         }
     }
@@ -129,6 +134,8 @@
         align-items: center;
         justify-content: center;
         text-decoration: none;
+        @include mob-body-medium;
+        font-weight: 600;
 
         @include tablet {
             height: 2.375rem;
@@ -139,6 +146,10 @@
 
         @include desktop {
             padding: 0.5rem 1rem;
+        }
+
+        &:hover {
+            background-color: map-get($color-background, cta-btn-hover);
         }
     }
 }
