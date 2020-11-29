@@ -12,7 +12,7 @@ class ItemForm extends Component {
     description: "",
     category: "",
     status: true,
-    qty: 0,
+    qty: "",
     warehouse: "",
   };
 
@@ -58,22 +58,22 @@ class ItemForm extends Component {
     e.preventDefault();
 
     //error checking
-    // if (!this.state.name || this.state.name.trim().length <= 0) {
-    //   return false;
-    // }
-    // if (!this.state.description || this.state.description.trim().length <= 0) {
-    //   return false;
-    // }
-    // if (!this.state.category || this.state.category.trim().length <= 0) {
-    //   return false;
-    // }
-    // //qty cannot be negative
-    // if (!this.state.qty || this.state.qty.trim().length < 0) {
-    //   return false;
-    // }
-    // if (!this.state.warehouse || this.state.warehouse.trim().length <= 0) {
-    //   return false;
-    // }
+    if (!this.state.name || this.state.name.trim().length <= 0) {
+      return false;
+    }
+    if (!this.state.description || this.state.description.trim().length <= 0) {
+      return false;
+    }
+    if (!this.state.category || this.state.category.trim().length <= 0) {
+      return false;
+    }
+    //qty cannot be negative
+    if (!this.state.qty || this.state.qty.trim().length < 0) {
+      return false;
+    }
+    if (!this.state.warehouse || this.state.warehouse.trim().length <= 0) {
+      return false;
+    }
 
 
     const itemObj = {
@@ -85,6 +85,8 @@ class ItemForm extends Component {
       warehouseID: this.state.warehouse,
       warehouseName: this.state.warehouseList.find(warehouse => warehouse.id === this.state.warehouse).name 
     }
+
+    console.log(itemObj)
 
     // /inventory
     axios.post("http://localhost:8080/inventory", itemObj)
@@ -204,6 +206,8 @@ class ItemForm extends Component {
                     className="item-form-com__input"
                     type="number"
                     name="qty"
+                    value={this.state.qty}
+                    onChange={this.onQtyChange}
                   />
                 </div>
                 <div className="item-form-com__wrapper">
