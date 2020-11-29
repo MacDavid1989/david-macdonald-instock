@@ -15,13 +15,14 @@
     }
 
     @include desktop {
+        min-width: 100%;
         padding: 0.625rem 2.5rem;
     }
 
     &__container--address {
         width: 7.5625rem;
         @include desktop {
-            width: 16.3125rem;
+            width: 16.1125rem;
         }
     }
 
@@ -38,7 +39,7 @@
             }
 
             @include desktop {
-                width: 13.586875rem;
+                width: 11.186875rem;
             }
         }
 
@@ -48,7 +49,7 @@
             }
 
             @include desktop {
-                width: 16.3125rem;
+                width: 16.1125rem;
             }
         }
 
@@ -58,7 +59,7 @@
             }
 
             @include desktop {
-                width: 16.3125rem;
+                width: 13.5125rem;
             }
         }
 
@@ -68,7 +69,7 @@
             }
 
             @include desktop {
-                width: 16.3125rem;
+                width: 15.0125rem;
             }
         }
 
