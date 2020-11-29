@@ -20,13 +20,12 @@ function App() {
         </Route>
         <Route path="/inventory/add" component={AddNewInventory}/>
         <Route path="/inventory" component={Inventory}/>
-        <Route path="/warehouse" component={Home}/>
-        <Route path="/warehouse/:warehouseId/inventory" component={Inventory} />
         <Route path="/warehouse/add" component={WarehouseAdd} />
         <Route path="/warehouse/:warehouseId/inventory/:itemId/edit" component={ItemEdit}/>
         <Route path="/warehouse/:warehouseId/inventory/:itemId" component={ItemDetails}/>
         <Route path="/warehouse/:warehouseId/edit" component={WarehouseEdit} />
         <Route path="/warehouse/:warehouseId" component={WarehouseDetails} />
+        <Route path="/warehouse" component={Home}/>
       </Switch>
     </BrowserRouter>
   );
