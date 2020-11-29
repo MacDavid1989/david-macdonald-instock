@@ -6,4 +6,11 @@
     top: 7.9375rem;
     box-shadow: 0 2px 5px rgba(19, 24, 44, 0.1);
     border-radius: 3px;
+    width: calc(21.4375rem + (361 / 393) * (100vw - 23.4375rem));
+    @include tablet {
+        width: calc(704px + (316 / 512) * (100vw - 768px));
+    }
+    @include desktop {
+        width: 1020px;
+    }
 }

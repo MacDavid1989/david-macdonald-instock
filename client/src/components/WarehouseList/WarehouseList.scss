@@ -2,7 +2,7 @@
 @import '../../partials/variables';
 
 .card {
-    width: calc(21.4375rem + (361 / 393) * (100vw - 23.4375rem));
+    width: 100%;
     background-color: map-get($color-primary, global-white);
     padding-bottom: 1.6875rem;
     border-bottom-left-radius: 3px;
@@ -21,7 +21,6 @@
     }
 
     @include tablet {
-        width: calc(704px + (316 / 512) * (100vw - 768px));
         border-bottom: 1px solid map-get($color-secondary, dividers);
         display: flex;
         flex-direction: row;
@@ -30,7 +29,6 @@
         padding: 0 2rem;
     }
     @include desktop {
-        width: 1020px;
         padding: 0 2.5rem;
     }
 
