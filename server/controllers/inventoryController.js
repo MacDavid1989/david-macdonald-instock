@@ -13,7 +13,7 @@ function createNewInventory(req, res) {
   //make new item
   const inventory = {
     id: uuidv4(),
-    warehouseID: req.body.warehouseId,
+    warehouseID: req.body.warehouseID,
     warehouseName: req.body.warehouseName,
     itemName: req.body.itemName,
     description: req.body.description,
