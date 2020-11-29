@@ -9,13 +9,12 @@ import './Inventory.scss';
 //http://localhost:8080/inventory
 class Inventory extends Component {
     state = {
-        inventories: []
+        inventories: null
     }
 
     componentDidMount() {
       axios.get(appUrl + "/inventory")
       .then((response) => {
-          console.log(response.data)
         const data = response.data
         this.setState({ 
           inventories: data,
@@ -29,9 +28,9 @@ class Inventory extends Component {
             <div className="inventory__container">
                 <InventoryNav />
                 <InventoryLabels />
-                <InventoryList 
-                    inventories={this.state.inventories} 
-                />
+                {this.state.inventories&&
+                <InventoryList inventories={this.state.inventories} />
+                }
             </div>
         );
     }

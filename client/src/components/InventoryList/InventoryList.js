@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import deleteOutline from "../../assets/icons/delete_outline-24px.svg";
 import edit from "../../assets/icons/edit-24px.svg";
@@ -6,25 +7,26 @@ import "./InventoryList.scss";
 
 const InventoryList = (props) => {
   const inventories =
-    props.inventories &&
     props.inventories.map((item) => {
       return (
         <div className="inventory-card" key={item.id}>
           <div className="inventory-card__top-container">
             <div className="inventory-card__inventory-item">
               <span className="inventory-card__subheader">INVENTORY ITEM</span>
-              <p className="inventory-card__item-container">
-                <span className="inventory-card__stock-item">
-                  {item.itemName}
-                </span>
-                <span>
-                  <img
-                    src={chevronRight}
-                    className="inventory-card__chevron"
-                    alt="chevronRight"
-                  />
-                </span>
-              </p>
+              <Link to={`/warehouse/${item.warehouseID}/inventory/${item.id}`}>
+                <p className="inventory-card__item-container">
+                  <span className="inventory-card__stock-item">
+                    {item.itemName}
+                  </span>
+                  <span>
+                    <img
+                      src={chevronRight}
+                      className="inventory-card__chevron"
+                      alt="chevronRight"
+                    />
+                  </span>
+                </p>
+              </Link>
             </div>
             <div className="inventory-card__category">
               <span className="inventory-card__subheader">CATEGORY</span>
