@@ -7,6 +7,8 @@
 // <<<<< HEADER COMPONENT STYLING >>>>> \\
 
 .header{
+    position: absolute;
+    z-index: 1;
     background-color: #232940;
     width: 100%;
     padding: 1.5rem 1rem 5.5rem;
