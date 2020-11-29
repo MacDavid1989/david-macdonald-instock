@@ -1,0 +1,20 @@
+@import '../../partials/mixins';
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__text {
+        @include mob-body-small;
+        padding: 2.5rem 0;
+        color: map-get($color-secondary, table-column-header);
+        @include tablet {
+            padding: 4.375rem 0;
+            @include body-small;
+        }
+        @include desktop{
+            padding: 10.125rem 0;
+        }
+    }
+}

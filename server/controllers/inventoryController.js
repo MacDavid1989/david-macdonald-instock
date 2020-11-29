@@ -1,5 +1,6 @@
 const inventory = require("../models/inventoryModel.js");
 const fs = require("fs");
+const { v4: uuidv4 } = require("uuid");
 
 const inventoryFile = "./data/inventories.json";
 
@@ -10,8 +11,9 @@ function createNewInventory(req, res) {
   items = readFileSync();
 
   //make new item
-  inventory = {
-    warehouseId: req.body.warehouseId,
+  const inventory = {
+    id: uuidv4(),
+    warehouseID: req.body.warehouseID,
     warehouseName: req.body.warehouseName,
     itemName: req.body.itemName,
     description: req.body.description,
@@ -21,7 +23,7 @@ function createNewInventory(req, res) {
   };
 
   //add new item to array
-  items.push(inventory);
+  items.unshift(inventory);
 
   //write it back to the file
   fs.writeFileSync(inventoryFile, JSON.stringify(items));
@@ -41,7 +43,22 @@ getAllInventory = (req, res) => {
   res.status(200).json(data);
 };
 
+// delete inventory
+deleteInventory = (req, res) => {
+  const data = readFileSync();
+  const inventory = data.find(item => item.id === req.params.inventoryId);
+  const inventoryIndex = data.indexOf(inventory);
+  if(inventoryIndex === -1 ) {
+    return res.status(404).json("Inventory does not exist")
+  }
+  data.splice(inventoryIndex, 1);
+    //write it back to the file
+  fs.writeFileSync(inventoryFile, JSON.stringify(data, null, 2));
+  res.status(200).json(data);
+}
+
 module.exports = {
   createNewInventory,
   getAllInventory,
+  deleteInventory
 };

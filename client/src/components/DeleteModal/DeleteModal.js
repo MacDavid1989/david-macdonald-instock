@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./DeleteModal.scss";
 import close from "../../assets/icons/close-24px.svg";
-import axios from "axios";
 import { withRouter } from "react-router-dom";
 
 class DeleteModal extends Component {
@@ -19,12 +18,9 @@ class DeleteModal extends Component {
 
   //delete the item
   onSubmitDelete = () => {
-    axios
-      .delete(`http://localhost:8080/warehouse/${this.props.deleteThing.id}`)
-      .then((res) => {
-        this.onCloseDeleteScreen();
-        this.props.updateWarehouse(res.data.warehouses);
-      });
+
+    this.props.onDeleteRoute(this.props.deleteThing.id);
+    this.onCloseDeleteScreen();
   };
 
   //Check if you have data alrady 
@@ -56,10 +52,9 @@ class DeleteModal extends Component {
             <img src={close} alt="close" onClick={this.onCloseDeleteScreen} />
           </div>
           <div>
-            <h1>Delete {this.props.deleteThing.name} warehouse?</h1>
+            <h1>Delete {this.props.deleteThing.name} {this.props.deleteThing.header}?</h1>
             <p>
-              Please confirm that you'd like to delete the King West from the
-              list of warehouses. You won't be able to undo this action.
+              Please confirm that you'd like to delete the {this.props.deleteThing.name} from {this.props.deleteThing.body} You won't be able to undo this action.
             </p>
           </div>
           <div className="deleteModal__btn-wrapper">
