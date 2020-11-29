@@ -1,9 +1,10 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import chevronRight from "../../assets/icons/chevron_right-24px.svg"
-import deleteOutline from "../../assets/icons/delete_outline-24px.svg"
-import edit from "../../assets/icons/edit-24px.svg"
-import './WarehouseList.scss'
+import React from "react";
+import { Link } from "react-router-dom";
+import chevronRight from "../../assets/icons/chevron_right-24px.svg";
+import deleteOutline from "../../assets/icons/delete_outline-24px.svg";
+import edit from "../../assets/icons/edit-24px.svg";
+import "./WarehouseList.scss";
+
 
 const WarehouseList = ({warehouses}) => {
     const showWarehouses = warehouses.map((warehouse) => {
@@ -46,8 +47,11 @@ const WarehouseList = ({warehouses}) => {
                     <img src={deleteOutline} alt="delete" className="card__delete-icon"/>
                 <Link to={`/warehouse/${warehouse.id}/edit`}>
                     <img src={edit} alt="edit" className="card__edit-icon"/>
+
                 </Link>
+              </p>
             </div>
+
         </div>
 
 
@@ -88,9 +92,26 @@ const WarehouseList = ({warehouses}) => {
     return (
         <div>
             {showWarehouses}
+
         </div>
-        
+        <div className="card__icons">
+          <img
+            src={deleteOutline}
+            alt="delete"
+            className="card__delete-icon"
+            onClick={() => {
+              setDelete(warehouse.id, warehouse.name);
+            }}
+          />
+          <Link to={`/warehouse/${warehouse.id}/edit`}>
+            <img src={edit} alt="edit" className="card__edit-icon" />
+          </Link>
+        </div>
+      </div>
     );
+  });
+
+  return <div>{showWarehouses}</div>;
 };
 
 export default WarehouseList;

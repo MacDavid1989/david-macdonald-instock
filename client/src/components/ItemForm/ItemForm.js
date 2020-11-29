@@ -23,7 +23,6 @@ class ItemForm extends Component {
         this.setState({
           warehouseList: res.data,
         });
-        console.log(res.data);
       })
       .catch((err) => console.log(err));
   }
@@ -57,26 +56,38 @@ class ItemForm extends Component {
 
   onFormSubmit = (e) => {
     //error checkign
-    if (!this.state.name || this.state.name.length <= 0) {
+    if (!this.state.name || this.state.name.trim().length <= 0) {
       return false;
     }
-    if (!this.state.description || this.state.description.length <= 0) {
+    if (!this.state.description || this.state.description.trim().length <= 0) {
       return false;
     }
-    if (!this.state.category || this.state.category.length <= 0) {
+    if (!this.state.category || this.state.category.trim().length <= 0) {
       return false;
     }
     //qty cannot be negative
-    if (!this.state.qty || this.state.qty.length < 0) {
+    if (!this.state.qty || this.state.qty.trim().length < 0) {
       return false;
     }
-    if (!this.state.warehouse || this.state.warehouse.length <= 0) {
+    if (!this.state.warehouse || this.state.warehouse.trim().length <= 0) {
       return false;
     }
 
     e.preventDefault();
 
     /* AXIOS REQUEST HERE */
+    // /inventory
+    axios.post("http://localhost:3000/inventory").then(() => {
+      this.setState({
+        warehouseList: [],
+        name: "",
+        description: "",
+        category: "",
+        status: true,
+        qty: 0,
+        warehouse: ""
+      });
+    });
   };
 
   render() {
@@ -142,7 +153,7 @@ class ItemForm extends Component {
               <h3 className="item-form-com__title">Item Availability</h3>
               <div className="item-form-com__wrapper">
                 <div className="item-form-com__wrapper">
-                <label>Status</label>
+                  <label>Status</label>
                   <div className="item-form-com__wrapper item-form-com__wrapper--radio">
                     <div className="item-form-com__wrapper--radio-wrapper">
                       <input
@@ -205,8 +216,13 @@ class ItemForm extends Component {
             </section>
           </div>
           <div className="form__btn-wrapper">
-            <button className="form__btn" type="reset">Cancel</button>
-            <button className="form__btn form__btn--add" type="submit"> + Add Item</button>
+            <button className="form__btn" type="reset">
+              Cancel
+            </button>
+            <button className="form__btn form__btn--add" type="submit">
+              {" "}
+              + Add Item
+            </button>
           </div>
         </form>
       </div>

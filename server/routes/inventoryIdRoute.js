@@ -15,6 +15,7 @@ router.put("/:itemId/update", (req, res) => {
             if(data.id == req.body.id){
                 let newData = createNewInventory(req.body.id, req.body);
                 if(newData){
+                    
                     data = newData;
                     inventoryList.splice(i,1,data)
 
