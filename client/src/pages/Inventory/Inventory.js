@@ -95,6 +95,45 @@ class Inventory extends Component {
     });
   };
 
+  //for searching in search bar
+  updateDisplay = (data) => {
+    //need to make a deep copy or else the main copy of the array will change
+    let updatedList = [];
+    for (let i = 0; i < this.state.inventoryConst.length; i++) {
+      updatedList.push(this.state.inventoryConst[i]);
+    }
+
+    if (data.trim().length > 0) {
+      for (let i = 0; i < updatedList.length; i++) {
+        if (
+          !updatedList[i].name.toLowerCase().includes(data.toLowerCase()) &&
+          !updatedList[i].address.toLowerCase().includes(data.toLowerCase()) &&
+          !updatedList[i].city.toLowerCase().includes(data.toLowerCase()) &&
+          !updatedList[i].country.toLowerCase().includes(data.toLowerCase()) &&
+          !updatedList[i].contact.name
+            .toLowerCase()
+            .includes(data.toLowerCase()) &&
+          !updatedList[i].contact.email
+            .toLowerCase()
+            .includes(data.toLowerCase()) &&
+          !updatedList[i].contact.phone
+            .toLowerCase()
+            .includes(data.toLowerCase())
+        ) {
+          updatedList.splice(i, 1);
+          i--;
+        }
+      }
+      this.setState({
+        inventories: updatedList,
+      });
+    } else {
+      this.setState({
+        inventories: this.state.InventoryConst,
+      });
+    }
+  };
+
   render() {
     return (
       <Fragment>
@@ -103,7 +142,7 @@ class Inventory extends Component {
           onDeleteRoute={this.deleteRoute}
         />
         <div className="inventory__container">
-          <InventoryNav />
+          <InventoryNav updateDisplay={this.updateDisplay}/>
           <InventoryLabels onSort={this.sortByValue}/>
           {this.state.inventories && (
             <InventoryList
