@@ -1,10 +1,15 @@
+// <<<<<<<<<< IMPORTS >>>>>>>>>> \\
+
 @import "../../partials/mixins";
 @import '../../partials/variables';
+
+
+// <<<<< HEADER COMPONENT STYLING >>>>> \\
 
 .header{
     background-color: #232940;
     width: 100%;
-    padding: 1rem 1rem 5rem;
+    padding: 1.5rem 1rem 5.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,14 +18,15 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;   
-        padding: 1.5rem calc(24px + (106/512) * (100vw - 768px)) calc(80px + (41/512) * (100vw - 768px));    
+        padding: 1.6875rem calc(2rem + (106/512) * (100vw - 768px)) calc(7.5625rem + (41/512) * (100vw - 768px));   
     }
     @include desktop{
-        padding: 1.5rem calc(130px + (640/1280) * (100vw - 1280px)) 121px;
+        padding: 1.6875rem calc(8.125rem + (640/1280) * (100vw - 1280px)) 7.5625rem;
     }
     &__wrapper{
         display: flex;
-        width: 100%;
+        justify-content: space-between;
+        width: 21.5rem;
         @include tablet{
             width: fit-content;
         }
@@ -28,26 +34,29 @@
     &__logo{
         height: fit-content;
         width: 129px;
-        margin: 0 0 24px;
+        margin: 0 0 1.5rem;
+        @include tablet {
+            margin: 0;
+        }
     }
     &__btn{
+        text-decoration: none;
         background-color: #232940;
         border: none;
         color: white;
-        width: 164px;
-        padding: .5rem;
+        height: 2.25rem;
+        width: 10.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 20px;
-        width: 50%;
         @include tablet{
-            width: 107px;
-            padding: .7rem;
+            width: 6.6875rem;
+            height: 2.375rem;
         }
         
         &:hover{
             cursor: pointer;
-        }
-        &--active{
-            background-color: #13182C;
         }
     }
 }

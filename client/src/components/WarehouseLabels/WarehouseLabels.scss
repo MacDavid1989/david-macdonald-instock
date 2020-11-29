@@ -3,71 +3,81 @@
 
 .warehouse-labels {
     display: none;
-    
 
     @include tablet {
+        width: 100%;
+        height: 2.5rem;
         display: flex;
-        padding: 10px 10px 10px 32px;
+        padding: 0.625rem 2rem;
+        text-align: center;
         align-items: center;
+        justify-content: space-between;
     }
 
     @include desktop {
-        padding: 10px 20px 10px 40px;
+        padding: 0.625rem 2.5rem;
     }
 
     &__container--address {
-        padding-right: 2rem;
+        width: 7.5625rem;
+        @include desktop {
+            width: 16.3125rem;
+        }
     }
 
     &__sub-container {
         display: flex;
         align-items: center;
-        
+        @include desktop{
+            justify-content: flex-start;
+        }
         
         &--warehouse {
             @include tablet {
-                width: 150px;
+                width: 9.04125rem;
             }
 
             @include desktop {
-                width: 221px;
+                width: 13.586875rem;
             }
         }
 
         &--address {
             @include tablet {
-                width: 95px;
+                width: 5.9375rem;
             }
 
             @include desktop {
-                width: 261px;
+                width: 16.3125rem;
             }
         }
 
         &--name {
             @include tablet {
-                width: 121px;
+                width: 7.5625rem;
             }
 
             @include desktop {
-                width: 200px;
+                width: 16.3125rem;
             }
         }
 
         &--info {
             @include tablet {
-                width: 150px;
+                width: 11.8125rem;
             }
 
             @include desktop {
-                width: 174px;
+                width: 16.3125rem;
             }
         }
 
         &--actions {
             @include tablet {
-                width: 110px;
-                justify-content: center;
+                width: fit-content;
+            }
+            @include desktop {
+                width: 16.3125rem;
             }
         }
     }
@@ -75,15 +85,15 @@
     &__text {
 
         @include tablet {
-            font-size: 12px;
-            line-height: 18px;
+            font-size: 0.75rem;
+            line-height: 1.125rem;
             color: map-get($color-secondary, table-column-header);
             }
     }
 
     &__icon-image {
         @include tablet {
-            height: 16px;
+            height: 0.75rem;
         }
     }
 }
