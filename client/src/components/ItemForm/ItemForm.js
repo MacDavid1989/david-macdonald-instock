@@ -86,12 +86,11 @@ class ItemForm extends Component {
       warehouseName: this.state.warehouseList.find(warehouse => warehouse.id === this.state.warehouse).name 
     }
 
-    console.log(itemObj)
     // /inventory
-    // axios.post("http://localhost:3000/inventory", 
-    // ).then(() => {
-    //   this.props.parentProps.history.goBack()
-    // });
+    axios.post("http://localhost:8080/inventory", itemObj)
+    .then(() => {
+      this.props.parentProps.history.goBack()
+    });
 
   };
 
