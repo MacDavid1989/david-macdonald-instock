@@ -94,24 +94,20 @@ class Home extends Component {
 
     if (key2) {
       if (this.state.inOrder) {
-        console.log("up");
         sortedData = tempData.sort(function (a, b) {
           return a[key1][key2].localeCompare(b[key1][key2]);
         });
       } else {
-        console.log("down");
         sortedData = tempData.sort(function (a, b) {
           return b[key1][key2].localeCompare(a[key1][key2]);
         });
       }
     } else {
       if (this.state.inOrder) {
-        console.log("up");
         sortedData = tempData.sort(function (a, b) {
           return a[key1].localeCompare(b[key1]);
         });
       } else {
-        console.log("down");
         sortedData = tempData.sort(function (a, b) {
           return b[key1].localeCompare(a[key1]);
         });
