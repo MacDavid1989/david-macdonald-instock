@@ -55,40 +55,57 @@ class ItemForm extends Component {
   };
 
   onFormSubmit = (e) => {
-    //error checkign
-    if (!this.state.name || this.state.name.trim().length <= 0) {
-      return false;
-    }
-    if (!this.state.description || this.state.description.trim().length <= 0) {
-      return false;
-    }
-    if (!this.state.category || this.state.category.trim().length <= 0) {
-      return false;
-    }
-    //qty cannot be negative
-    if (!this.state.qty || this.state.qty.trim().length < 0) {
-      return false;
-    }
-    if (!this.state.warehouse || this.state.warehouse.trim().length <= 0) {
-      return false;
-    }
-
     e.preventDefault();
 
-    /* AXIOS REQUEST HERE */
+    //error checking
+    // if (!this.state.name || this.state.name.trim().length <= 0) {
+    //   return false;
+    // }
+    // if (!this.state.description || this.state.description.trim().length <= 0) {
+    //   return false;
+    // }
+    // if (!this.state.category || this.state.category.trim().length <= 0) {
+    //   return false;
+    // }
+    // //qty cannot be negative
+    // if (!this.state.qty || this.state.qty.trim().length < 0) {
+    //   return false;
+    // }
+    // if (!this.state.warehouse || this.state.warehouse.trim().length <= 0) {
+    //   return false;
+    // }
+
+
+    const itemObj = {
+      category: this.state.category,
+      description: this.state.description,
+      itemName: this.state.name,
+      quantity: this.state.qty,
+      status: (this.state.qty === 0) ? "Out of Stock" : "In Stock",
+      warehouseID: this.state.warehouse,
+      warehouseName: this.state.warehouseList.find(warehouse => warehouse.id === this.state.warehouse).name 
+    }
+
+    console.log(itemObj)
     // /inventory
-    axios.post("http://localhost:3000/inventory").then(() => {
-      this.setState({
-        warehouseList: [],
-        name: "",
-        description: "",
-        category: "",
-        status: true,
-        qty: 0,
-        warehouse: ""
-      });
-    });
+    // axios.post("http://localhost:3000/inventory", 
+    // ).then(() => {
+    //   this.props.parentProps.history.goBack()
+    // });
+
   };
+
+  handleReset = () => {
+    this.setState({
+      warehouseList: [],
+      name: "",
+      description: "",
+      category: "",
+      status: true,
+      qty: 0,
+      warehouse: ""
+    });
+  }
 
   render() {
     return (
@@ -216,7 +233,7 @@ class ItemForm extends Component {
             </section>
           </div>
           <div className="form__btn-wrapper">
-            <button className="form__btn" type="reset">
+            <button className="form__btn" onClick={this.handleReset} type="reset">
               Cancel
             </button>
             <button className="form__btn form__btn--add" type="submit">
