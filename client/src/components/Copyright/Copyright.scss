@@ -5,11 +5,13 @@
     color: map-get($color-secondary, table-column-header);
     @include mob-body-small;
     font-weight: lighter;
+
     @include tablet {
-        padding: 4.375rem 0;
+        padding: 4.375rem 0 2.5rem;
         @include body-small;
     }
+
     @include desktop{
-        padding: 10.125rem 0;
+        padding: 5.9375rem 0 3rem;
     }
 }

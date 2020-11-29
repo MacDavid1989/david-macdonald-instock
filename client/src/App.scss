@@ -15,4 +15,8 @@
 
 .spacer{
   height: 8.5rem;
+  
+  @include tablet {
+    height: 5.75rem;
+  }
 }

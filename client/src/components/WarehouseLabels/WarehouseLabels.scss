@@ -3,6 +3,7 @@
 
 .warehouse-labels {
     display: none;
+    background-color: map-get($color-background, page-bg );
 
     @include tablet {
         width: 100%;
