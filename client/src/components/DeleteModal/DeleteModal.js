@@ -19,12 +19,17 @@ class DeleteModal extends Component {
 
   //delete the item
   onSubmitDelete = () => {
+
+    this.props.onDeleteRoute(this.props.deleteThing.id);
+    this.onCloseDeleteScreen();
+    /*
     axios
       .delete(`http://localhost:8080/warehouse/${this.props.deleteThing.id}`)
       .then((res) => {
         this.onCloseDeleteScreen();
-        this.props.updateWarehouse(res.data.warehouses);
+        this.props.updateObject(res.data.warehouses);
       });
+      */
   };
 
   //Check if you have data alrady 
