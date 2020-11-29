@@ -14,19 +14,23 @@ class Inventory extends Component {
         deleteObj: { name: "", id: "" , header: "inventory item", body: "the inventory list."},
     }
 
-    componentDidMount() {
+    getInventories = () => {
+
     const queryId = this.props.match.params.warehouseId;
 
-      axios.get(appUrl + "/inventory")
-      .then((response) => {
-        const data = response.data.filter(item => {
-            return item.warehouseID === queryId;
-        })
-        this.setState({ 
-          inventories: data,
-        });
+    axios.get(appUrl + "/inventory")
+    .then((response) => {
+      const data = response.data.filter(item => {
+          return item.warehouseID === queryId;
       })
-      .catch((error) => console.log(error));
+      this.setState({ 
+        inventories: data,
+      });
+    })
+    .catch((error) => console.log(error));
+    }
+    componentDidMount() {
+        this.getInventories();
     }
 
       //when a user pressed the trash can they 
@@ -39,12 +43,11 @@ class Inventory extends Component {
   };
 
     deleteRoute = (id) => {
-        console.log(id);
-        // axios
-        //   .delete(`http://localhost:8080/warehouse/${id}`)
-        //   .then((res) => {
-        //     this.updateWarehouses(res.data.warehouses);
-        //   });
+        axios
+          .delete(`http://localhost:8080/inventory/${id}`)
+          .then((res) => {
+            this.getInventories();
+          });
       }
 
     render() {
