@@ -28,9 +28,12 @@
         
         padding: 1.5rem;
         display: flex;
+        flex-wrap: wrap;
 
         @include tablet {
             padding: 0;
+            width: 100%;
+            justify-content: space-between;
         }
     }
 
@@ -49,6 +52,16 @@
         display: flex;
         flex-direction: column;
         padding-bottom: 1rem;
+        width: 50%;
+        order: 1;
+
+    @include tablet {
+        order: 1;
+        width: 115px;
+    }
+    @include desktop {
+        width: 221px;
+    }
     }
 
     &__subheader {
@@ -66,7 +79,7 @@
         display: flex;
         
         @include tablet {
-            width: 150px;
+            width: 115px;
         }
 
         @include desktop {
@@ -101,23 +114,38 @@
         padding-bottom: 1rem;
 
         @include tablet {
-            width: 127px;
-        }
+            &--quantity{    
+                width: 61px;
 
-        @include desktop {
-            width: 174px;
-        }
+                @include desktop {
+                    width: 87px;
+                }
+            }
+            
+            &--location {
+                width: 127px;
 
+                @include desktop {
+                    width: 174px;
+                }
+            }
+            font-size: 14px;
+            line-height: 22px;
+        }
     }
 
     &__category {
         display: flex;
         flex-direction: column;
         padding-right: 1rem;
+        width: 50%;
+        order: 3;
 
         @include tablet {
-            width: 130px;
+            width: 115px;
             padding: 0;
+            order: 2;
+            // width: 100%;
         }
 
         @include desktop {
@@ -143,11 +171,15 @@
         flex-direction: column;
         flex-wrap: wrap;
         padding-bottom: 0.75rem;
+        width: 50%;
+        order: 2;
 
         @include tablet {
             justify-content: center;
             padding: 0 1.7rem 1rem 0;
             width: 114px;
+            order: 3;
+            //width: 100%;
         }
 
         @include desktop {
@@ -190,9 +222,12 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        width: 50%;
+        order: 4;
 
         @include tablet {
             width: 61px;
+            //width: 100%;
         }
 
         @include desktop {
@@ -200,12 +235,24 @@
         }
     }
 
+    &__empty {
+        width: 50%;
+        order: 5;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
     &__location-container {
         display: flex;
         flex-direction: column;
+        width: 50%;
+        order: 6;
 
         @include tablet {
-            width: 61px;
+            width: 127px;
+            //width: 100%;
         }
 
         @include desktop {
@@ -213,35 +260,24 @@
         }
     }
 
-    &__phone {
-        padding-bottom: 0;
-        width: 121px;
-    }
 
     &__icons {
         display: flex;
-        padding: 0 1.5rem;
         justify-content: space-between;
+        width: 100%;
+        order: 7;
+
 
         @include tablet {
             padding: 0 0 1rem 0;
             width: 56px;
+            
         }
 
         @include desktop {
-            // width: 20px;
-        }
-    }
-
-    &__delete-icon {
-        @include tablet {
-            height: 18px;
-        }
-    }
-
-    &__edit-icon {
-        @include tablet {
-            height: 18px;
+            width: 56px;
         }
     }
 }
+
+

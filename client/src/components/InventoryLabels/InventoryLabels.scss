@@ -8,12 +8,13 @@
 
     @include tablet {
         display: flex;
-        padding: 10px 10px 10px 32px;
+        padding: 10px 32px 10px 32px;
         align-items: center;
+        justify-content: space-between;
     }
 
     @include desktop {
-        padding: 10px 20px 10px 40px;
+        padding: 10px 40px 10px 40px;
     }
 
     &__container--inventory {
@@ -31,7 +32,7 @@
         
         &--inventory {
             @include tablet {
-                width: 150px;
+                width: 115px;
             }
 
             @include desktop {
@@ -41,7 +42,7 @@
 
         &--category {
             @include tablet {
-                width: 130px;
+                width: 115px;
             }
 
             @include desktop {
@@ -81,7 +82,7 @@
 
         &--actions {
             @include tablet {
-                // width: 110px;
+                width: 56px;
                 justify-content: center;
             }
         }
