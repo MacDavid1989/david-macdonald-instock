@@ -9,6 +9,14 @@ class InventoryNav extends Component {
     searchVal: ""
   }
 
+  onSearchChange = (e) =>{
+    this.setState({
+      searchVal: e.target.value
+    }, () => {
+      this.props.updateDisplay(this.state.searchVal);
+    });
+  }
+
   render() {
     return (
       <nav className="navInv">
