@@ -4,7 +4,7 @@
 .warehouse {
     @include normal;
     position: absolute;
-    top: 8rem;
+    top: 5.75rem;
     display: flex;
     flex-direction: column;
     width: calc(343px + (361/393) * (100vw - 375px));

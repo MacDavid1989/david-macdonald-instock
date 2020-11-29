@@ -16,7 +16,7 @@ const InventoryNav = () => {
         </div>
       </div>
       <div className="navInv__right">
-          <Link to="/warehouse/:warehouseId/inventory/add" className="navInv__button">
+          <Link to="/inventory/add" className="navInv__button">
               + Add New Item
           </Link>
       </div>
