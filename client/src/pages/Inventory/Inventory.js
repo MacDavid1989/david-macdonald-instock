@@ -52,7 +52,7 @@ class Inventory extends Component {
 
     render() {
         return (
-            <><DeleteModal
+            <Fragment><DeleteModal
             deleteThing={this.state.deleteObj}
             onDeleteRoute={this.deleteRoute}
           />
@@ -63,7 +63,7 @@ class Inventory extends Component {
                     inventories={this.state.inventories} 
                     setDelete={this.setDeleteWarehouse}
                 />
-            </div></>
+            </div></Fragment>
         );
     }
 }
