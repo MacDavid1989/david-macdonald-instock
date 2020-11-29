@@ -60,7 +60,7 @@ class Inventory extends Component {
   };
 
   //sorts the values
-  sortByValue = (key1, key2) => {
+  sortByValue = (key1) => {
     let tempData = [];
     let sortedData = [];
     for (let i = 0; i < this.state.inventoryConst.length; i++) {
