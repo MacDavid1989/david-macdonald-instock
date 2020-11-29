@@ -27,12 +27,16 @@ class Home extends Component {
       .catch((error) => console.log(error));
   }
 
+  //when a user pressed the trash can they 
+  //set the delete object for the delete modal
   setDeleteWarehouse = (id, name) => {
     this.setState({
       deleteObj: { id: id, name: name },
     });
   };
 
+  //this updates the state AFTER a delete is done
+  //I reset the  deleteObj to empty so the window will close
   updateWarehouses = (data) => {
     this.setState({
       warehouseConst: data,
@@ -41,6 +45,7 @@ class Home extends Component {
     });
   };
 
+  //for searching in search bar
   updateDisplay = (data) => {
     //need to make a deep copy or else the main copy of the array will change
     let updatedList = [];
@@ -79,6 +84,7 @@ class Home extends Component {
     }
   };
 
+  //sorts the values
   sortByValue = (key1, key2) => {
     let tempData = [];
     let sortedData = [];
@@ -118,6 +124,7 @@ class Home extends Component {
     });
   };
 
+  //this is the route for deleting the warehouse
   deleteRoute = (id) => {
     axios
       .delete(`http://localhost:8080/warehouse/${id}`)
@@ -130,7 +137,6 @@ class Home extends Component {
     return (
       <>
         <DeleteModal
-          updateObject={this.updateWarehouses}
           deleteThing={this.state.deleteObj}
           onDeleteRoute={this.deleteRoute}
         />
