@@ -118,12 +118,21 @@ class Home extends Component {
     });
   };
 
+  deleteRoute = (id) => {
+    axios
+      .delete(`http://localhost:8080/warehouse/${id}`)
+      .then((res) => {
+        this.updateWarehouses(res.data.warehouses);
+      });
+  }
+
   render() {
     return (
       <>
         <DeleteModal
-          updateWarehouse={this.updateWarehouses}
+          updateObject={this.updateWarehouses}
           deleteThing={this.state.deleteObj}
+          onDeleteRoute={this.deleteRoute}
         />
         <div className="warehouse__container">
           <WarehouseNav updateDisplay={this.updateDisplay} />
