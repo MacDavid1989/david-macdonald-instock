@@ -10,5 +10,5 @@ router.get("/", inventoryController.getAllInventory);
 
 router.post ('/', inventoryController.createNewInventory);
 
-
+router.delete('/:inventoryId', inventoryController.deleteInventory);
 module.exports = router;
