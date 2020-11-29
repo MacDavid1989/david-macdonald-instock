@@ -22,27 +22,27 @@
 // <<<<<<<< DESKTOP AND TABLET DESK STYLES >>>>>>>> \\
 
 @mixin page-header {
-    font-size: map-get($size, page-header);
+    font-size: map-get($size-tab-desk, page-header);
     line-height: 2.5rem;
 }
 
 @mixin sub-header {
-    font-size: map-get($size, sub-header);
+    font-size: map-get($size-tab-desk, sub-header);
     line-height: 2rem;
 }
 
 @mixin label-links-btn {
-    font-size: map-get($size, label-links-btn);
+    font-size: map-get($size-tab-desk, labels-links-btn);
     line-height: 1.375rem;
 }
 
 @mixin table-header {
-    font-size: map-get($size, table-header);
+    font-size: map-get($size-tab-desk, table-header);
     line-height: 1.125rem;
 }
 
 @mixin body-large {
-    font-size: map-get($size, body-large);
+    font-size: map-get($size-tab-desk, body-large);
     line-height: 1.75rem;
 }
 

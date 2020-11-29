@@ -2,7 +2,9 @@
 @import '../../partials/variables';
 
 .nav {
-    width: 100%;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    width: calc(21.4375rem + (361 / 393) * (100vw - 23.4375rem));
     display: flex;
     flex-direction: column;
     padding: 2rem 1rem 1.5rem 1rem;
@@ -29,12 +31,12 @@
     }
 
     &__title {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 1.75rem;
+        line-height: 2.25rem;
 
         @include tablet {
-            font-size: 32px;
-            line-height: 40px;
+            font-size: 2rem;
+            line-height: 2.5rem;
         }
     }
 
@@ -47,52 +49,57 @@
         }
 
         @include desktop {
-            padding-left: 330px;
+            padding-left: 20.625rem;
         }
     }
 
     &__search-wrapper {
-        width: 100%;
+        width: 18.4375rem;
         position: relative;
         z-index: 1;
 
         @include tablet {
-            width: 185px;
+            width: 11.5625rem;
             margin-left: auto;
         }
 
         @include desktop {
-            width: 274px;
+            width: 17.125rem;
         }
     }
 
     &__search {
         z-index: 1;
         width: 100%;
+        height: 2.25rem;
         background-color: map-get($color-primary, global-white);
         border: 1px solid map-get($color-secondary, outlines);
         border-radius: 20px;
         padding: 0.5rem 0 0.5rem 1rem;
-        font-size: 13px;
-        line-height: 20px;
+        font-size: 0.8125rem;
+        line-height: 1.25rem;
 
         @include tablet {
-            font-size: 14px;
-            line-height: 22px;
+            height: 2.375rem;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
         }
     }
 
     &__search-icon {
         position: absolute;
-        top: 7px;
-        right: 15px;
+        top: 0.4375rem;
+        right: 0.9375rem;
     }
 
     &__right {
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        @include tablet{
+            justify-content: flex-end;
+        }
 
         @include desktop {
             justify-content: flex-end;
@@ -101,22 +108,26 @@
 
     &__button {
         background-color: map-get($color-primary, interactive-el);
-        width: 100%;
+        width: 18.4375rem;
+        height: 2.25rem;
         border-radius: 20px;
         color: map-get($color-primary, global-white);
         border: none;
         padding: 0.5rem 0;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-decoration: none;
 
         @include tablet {
-            width: 168px;
-            font-size: 14px;
-            line-height: 22px;
+            height: 2.375rem;
+            width: 10.5rem;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
         }
 
         @include desktop {
-            padding: 8px 16px;
+            padding: 0.5rem 1rem;
         }
     }
 }

@@ -2,20 +2,8 @@
 @import '../../partials/variables';
 
 .warehouse__container {
-    margin-left: 1rem;
-    margin-right: 1rem;
     position: absolute;
-    top: 127px;
+    top: 7.9375rem;
     box-shadow: 0 2px 5px rgba(19, 24, 44, 0.1);
     border-radius: 3px;
-
-    @include tablet {
-        margin-left: 2rem;
-        margin-right: 2rem;
-    }
-
-    @include desktop {
-        margin-left: 8.125rem;
-        margin-right: 8.125rem;
-    }
 }
