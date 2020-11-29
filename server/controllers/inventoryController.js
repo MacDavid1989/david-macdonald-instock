@@ -41,7 +41,22 @@ getAllInventory = (req, res) => {
   res.status(200).json(data);
 };
 
+// delete inventory
+deleteInventory = (req, res) => {
+  const data = readFileSync();
+  const inventory = data.find(item => item.id === req.params.inventoryId);
+  const inventoryIndex = data.indexOf(inventory);
+  if(inventoryIndex === -1 ) {
+    return res.status(404).json("Inventory does not exist")
+  }
+  data.splice(inventoryIndex, 1);
+    //write it back to the file
+  fs.writeFileSync(inventoryFile, JSON.stringify(data, null, 2));
+  res.status(200).json(data);
+}
+
 module.exports = {
   createNewInventory,
   getAllInventory,
+  deleteInventory
 };
