@@ -58,40 +58,38 @@
 
 // <<<<<< MOBILE TEXT STYLES >>>>>> \\
 
-
-
 @mixin mob-page-header {
-    font-size: map-get($size-tab-desk, mob-page-header);
+    font-size: map-get($size, mob-page-header);
     line-height: 2.25rem;
 }
 
 @mixin mob-sub-header {
-    font-size: map-get($size-tab-desk, mob-sub-header);
+    font-size: map-get($size, mob-sub-header);
     line-height: 1.75rem;
 }
 
 @mixin mob-labels-links-btn {
-    font-size: map-get($size-tab-desk, mob-labels-links-btn);
+    font-size: map-get($size, mob-labels-links-btn);
     line-height: 1.25rem;
 }
 
 @mixin mob-table-header {
-    font-size: map-get($size-tab-desk, mob-table-header);
+    font-size: map-get($size, mob-table-header);
     line-height: 1rem;
 }
 
 @mixin mob-body-large {
-    font-size: map-get($size-tab-desk, mob-body-large);
+    font-size: map-get($size, mob-body-large);
     line-height: 1.625rem;
 }
 
 @mixin mob-body-medium {
-    font-size: map-get($size-tab-desk, mob-body-medium);
+    font-size: map-get($size, mob-body-medium);
     line-height: 1.25rem;
 }
 
 @mixin mob-body-small {
-    font-size: map-get($size-tab-desk, mob-body-small);
+    font-size: map-get($size, mob-body-small);
     line-height: 1rem;
 }
 

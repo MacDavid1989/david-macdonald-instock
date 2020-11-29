@@ -56,6 +56,8 @@
         justify-content: center;
         align-items: center;
         border-radius: 20px;
+        @include mob-body-medium;
+        
         @include tablet{
             width: 6.6875rem;
             height: 2.375rem;
