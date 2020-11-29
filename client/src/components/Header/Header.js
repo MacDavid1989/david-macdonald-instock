@@ -13,10 +13,12 @@ const header = () => {
       <div className="header__wrapper">
         <NavLink to="/warehouse" className="header__btn"
         activeStyle={{
+          color: '#FFFFFF',
           backgroundColor: "#13182C"
         }} >Warehouses</NavLink>
         <NavLink to="/inventory" className="header__btn"
         activeStyle= {{
+          color: '#FFFFFF',
           backgroundColor: "#13182C"
         }} >Inventory</NavLink>
       </div>

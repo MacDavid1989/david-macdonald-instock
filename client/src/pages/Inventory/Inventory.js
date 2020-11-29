@@ -26,7 +26,6 @@ class Inventory extends Component {
       .get(appUrl + "/inventory")
       .then((response) => {
         const data = response.data;
-        console.log(data);
         this.setState({
           inventories: data,
           inventoryConst: data,
