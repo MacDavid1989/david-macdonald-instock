@@ -2,7 +2,7 @@ import React from "react";
 import sortIcon from "../../assets/icons/sort-24px.svg";
 import "./InventoryLabels.scss";
 
-function InventoryLabels() {
+function InventoryLabels(props) {
   return (
     <div className="inventory-labels">
       <div className="inventory-labels__container inventory-labels__container--inventory">
@@ -13,6 +13,7 @@ function InventoryLabels() {
               src={sortIcon}
               alt="sortIcon"
               className="inventory-labels__icon-image"
+              onClick={()=>{props.onSort("itemName")}}
             />
           </span>
         </p>
@@ -25,6 +26,7 @@ function InventoryLabels() {
               src={sortIcon}
               alt="sortIcon"
               className="inventory-labels__icon-image"
+              onClick={()=>{props.onSort("category")}}
             />
           </span>
         </p>
@@ -37,6 +39,7 @@ function InventoryLabels() {
               src={sortIcon}
               alt="sortIcon"
               className="inventory-labels__icon-image"
+              onClick={()=>{props.onSort("status")}}
             />
           </span>
         </p>
@@ -49,6 +52,7 @@ function InventoryLabels() {
               src={sortIcon}
               alt="sortIcon"
               className="inventory-labels__icon-image"
+              onClick={()=>{props.onSort("quantity")}}
             />
           </span>
         </p>
@@ -61,6 +65,7 @@ function InventoryLabels() {
               src={sortIcon}
               alt="sortIcon"
               className="inventory-labels__icon-image"
+              onClick={()=>{props.onSort("warehouseName")}}
             />
           </span>
         </p>
