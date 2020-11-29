@@ -8,6 +8,7 @@ import ItemDetails from "./pages/ItemDetails/ItemDetails";
 import ItemEdit from "./pages/ItemEdit/ItemEdit";
 import WarehouseEdit from './pages/WarehouseEdit/WarehouseEdit';
 import WarehouseAdd from './pages/WarehouseAdd/WarehouseAdd';
+import Copyright from './components/Copyright/Copyright';
 import Inventory from './pages/Inventory/Inventory';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/warehouse/:warehouseId" component={WarehouseDetails} />
         <Route path="/warehouse" component={Home}/>
       </Switch>
+      <Copyright />
     </BrowserRouter>
   );
 }
