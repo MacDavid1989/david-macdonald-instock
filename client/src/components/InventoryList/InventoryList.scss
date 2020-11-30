@@ -6,7 +6,11 @@
     width: 100%;
     background-color: map-get($color-primary, global-white);
     border-top: 1px solid map-get($color-secondary, dividers);
-    padding-bottom: 27px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    &:hover {
+        background-color: rgba(46, 102, 230, 0.07);
+    }
 
     &:first-of-type{
         border-top: none;
@@ -25,24 +29,25 @@
     }
 
     @include tablet {
+        //width: 704px;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
-        padding: 1rem 2rem 0 2rem;
+        padding: 1.125rem 2rem 1.125rem 2rem;
     }
 
     @include desktop {
-        padding: 1rem 2.5rem 0 2.5rem;
+        height: 3.625rem;
+        padding: 1.125rem 2.5rem 1.125rem 2.5rem;
     }
 
     &__top-container {
-        
-        padding: 1.5rem;
+        padding: 1rem 2.1875rem 1.6875rem 1.8125rem;
         display: flex;
         flex-wrap: wrap;
 
         @include tablet {
+            height: 1.375rem;
             padding: 0;
             width: 100%;
             justify-content: space-between;
@@ -63,23 +68,23 @@
     &__inventory-item {
         display: flex;
         flex-direction: column;
-        padding-bottom: 1rem;
+        padding-bottom: 1.25rem;
         width: 50%;
         order: 1;
 
     @include tablet {
         order: 1;
-        width: 115px;
+        width: 9.375rem;
+        padding: 0;
     }
     @include desktop {
-        width: 221px;
+        width: 13.8125rem;
     }
     }
 
     &__subheader {
-        font-size: 11px;
-        line-height: 16px;
-        padding-bottom: 4px;
+        padding-bottom: 0.25rem;
+        @include mob-table-header;
         color: map-get($color-secondary, table-column-header);
 
         @include tablet {
@@ -89,60 +94,73 @@
 
     &__item-container {
         display: flex;
+        align-items: flex-end;
         
         @include tablet {
-            width: 115px;
+            width: 6.6288rem;
         }
 
         @include desktop {
-            width: 221px;
+            width: 13.8125rem;
         }
     }
 
     &__stock-item {
         color: map-get($color-primary, interactive-el);
-        font-size: 13px;
-        line-height: 20px;
-        font-family: 'regular';
+        @include mob-table-header;
+        font-family: 'Titillium';
+        font-weight: 600;
         position: relative;
 
-        @include desktop{
-            font-size: 14px;
-            line-height: 22px;
+        @include tablet {
+            @include table-header;
         }
     }
 
+    &__stock-item-chevron {
+        height: 0.770625rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     &__chevron {
-        position: absolute;
+        width: 0.77125rem;
+        margin-top: -0.2rem;
+        @include tablet {
+            height: 0.625rem;
+        }
     }
 
     &__info {
-        font-size: 13px;
-        line-height: 20px;
-        font-family: 'regular';
+        @include mob-body-medium;
+        font-family: 'Titillium';
         display: flex;
         flex-wrap: wrap;
         color: map-get($color-primary, global-text);
-        padding-bottom: 1rem;
+        padding-bottom: 1.1875rem;
 
         @include tablet {
+            width: 4.44125rem;
+            padding: 0;
             &--quantity{    
-                width: 61px;
+                width: 3.8125rem;
 
                 @include desktop {
-                    width: 87px;
+                    width: 5.4375rem;
                 }
             }
             
             &--location {
-                width: 127px;
-
+                width: 7.9375rem;
+                @include tablet {
+                    width: 5.25375rem;
+                }
                 @include desktop {
-                    width: 174px;
+                    width: 10.875rem;
                 }
             }
-            font-size: 14px;
-            line-height: 22px;
+            @include body-medium;
         }
     }
 
@@ -154,14 +172,14 @@
         order: 3;
 
         @include tablet {
-            width: 115px;
+            width: 7.5625rem;
             padding: 0;
             order: 2;
             // width: 100%;
         }
 
         @include desktop {
-            width: 174px;
+            width: 10.875rem;
         }
     }
 
@@ -182,51 +200,56 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        padding-bottom: 0.75rem;
+        height: fit-content;
         width: 50%;
         order: 2;
 
         @include tablet {
             justify-content: center;
-            padding: 0 1.7rem 1rem 0;
-            width: 114px;
+            width: 7.625rem;
             order: 3;
             //width: 100%;
         }
 
         @include desktop {
-            width: 174px;
+            width: 10.875rem;
         }
     }
 
     &__stock {
 
         &--in{
-            font-size: 11px;
+            @include mob-table-header;
             text-transform: uppercase;
             color: map-get($color-supporting, in-stock-label);
             background: rgba(21, 132, 99, 0.07);
             border-radius: 20px;
-            width: 61px;
-            height: 24px;
+                width: 3.8125rem;
+            height: 1.5rem;
             justify-content: center;
             align-items: center;
             display: flex;
+            @include tablet {
+                @include body-small;
+                width: 4.0625rem; 
+            }
         }
 
         &--out {
-            font-size: 11px;
+            @include mob-table-header;
             text-transform: uppercase;
             color: map-get($color-supporting, out-of-stock-label);
             background: rgba(201, 69, 21, 0.07);
             border-radius: 20px;
             justify-content: center;
-            width: 86px;
+            width: 5.375rem;
             height: 24px;
             display: flex;
             align-items: center;
-
-            
+            @include tablet {
+                @include body-small;
+                width: 5.75rem; 
+            }
         }
     }
 
@@ -238,12 +261,11 @@
         order: 4;
 
         @include tablet {
-            width: 61px;
-            //width: 100%;
+            width: 3.8125rem;
         }
 
         @include desktop {
-            width: 87px;
+            width: 5.4375rem;
         }
     }
 
@@ -263,12 +285,11 @@
         order: 6;
 
         @include tablet {
-            width: 127px;
-            //width: 100%;
+            width: 5.8125rem;
         }
 
         @include desktop {
-            width: 174px;
+            width: 10.875rem;
         }
     }
 
@@ -281,13 +302,25 @@
 
 
         @include tablet {
-            padding: 0 0 1rem 0;
-            width: 56px;
-            
+            justify-content: flex-end;
+            padding: 0;
+            width: 5.8125rem;            
         }
 
         @include desktop {
-            width: 56px;
+            width: 6.875rem;
+        }
+    }
+
+    &__delete-icon {
+        @include tablet {
+            margin-top: -0.5rem;
+        }
+    }
+
+    &__edit-icon {
+        @include tablet {
+            margin-left: 1.5rem;
         }
     }
 }
