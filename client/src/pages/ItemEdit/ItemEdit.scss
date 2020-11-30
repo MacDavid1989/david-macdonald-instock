@@ -211,6 +211,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 16px 24px;
+        background-color: rgba( map-get($color-background, cta-bg), $alpha: 0.75) ;
     }
 
     &__cancel {
@@ -385,7 +386,8 @@
     
         &__buttons {
             justify-content: flex-end;
-            padding: 40px 32px 16px;
+            margin-top: 24px;
+            padding: 16px 32px 16px;
         }
     
         &__cancel {

@@ -74,7 +74,7 @@ class Warehouse extends Component {
   };
 
   deleteRoute = (id) => {
-    axios.delete(`http://localhost:8080/inventory/${id}`)
+    axios.delete(API_URL + `/inventory/${id}`)
     .then((res) => {
       axios
       .get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}`)

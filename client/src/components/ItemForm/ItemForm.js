@@ -88,7 +88,7 @@ class ItemForm extends Component {
 
 
     // /inventory
-    axios.post("http://localhost:8080/inventory", itemObj)
+    axios.post(API_URL + "/inventory", itemObj)
     .then(() => {
       this.props.parentProps.history.goBack()
     });

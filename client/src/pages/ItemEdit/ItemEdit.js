@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './ItemEdit.scss'
 import backArrow from '../../assets/icons/arrow_back-24px.svg'
+
+const API_URL = process.env.REACT_APP_API_URL;
+
 class ItemEdit extends Component {
     state = {
         name: "",
@@ -17,7 +20,7 @@ class ItemEdit extends Component {
     }
 
     getItem = () => {
-        axios.get(`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}`)
+        axios.get(API_URL + `/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}`)
         .then(res=>{
             this.setState({
                 name: res.data.inventoryItem[0].itemName,
@@ -41,7 +44,7 @@ class ItemEdit extends Component {
     }
 
     getAllWarehouses = () => {
-        axios.get(`http://localhost:8080/warehouse`)
+        axios.get(API_URL + `/warehouse`)
         .then(res=>{
             this.setState({
                 warehouseNameList: res.data.map(warehouse=> warehouse.name).sort(),
@@ -110,7 +113,7 @@ class ItemEdit extends Component {
             quantity: this.state.quantity
         }
 
-        axios.put(`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}/update`, item)
+        axios.put(API_URL + `/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}/update`, item)
         .then(res => {
             this.props.history.goBack()
         })
