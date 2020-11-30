@@ -182,6 +182,9 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        &:hover {
+            background-color: rgba(46, 102, 230, 0.07);
+        }
 
             &__item {
                 width: 265px;
@@ -506,7 +509,9 @@
                             align-items: center;
                             border-bottom: solid #BDC5D5 1px;
                             padding: 18px calc(32px + (8/512) * (100vw - 768px));
-
+                            &:hover {
+                                background-color: rgba(46, 102, 230, 0.07);
+                            }
                         }
 
                         &__name {

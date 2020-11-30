@@ -119,6 +119,11 @@
         border-radius: 20px;
         border: solid 1px map-get($color-secondary, borders);
         padding: 0.5rem 0 0.5rem 1rem;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
         &::placeholder {
             @include mob-labels-links-btn;
             text-transform: capitalize;

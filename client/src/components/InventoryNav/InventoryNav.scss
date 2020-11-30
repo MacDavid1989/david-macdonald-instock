@@ -8,7 +8,6 @@
     flex-direction: column;
     padding: 2rem 1.5rem 1.5rem 1.5rem;
     background-color: map-get($color-primary, global-white);
-    //margin-right: 1rem;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 
@@ -35,7 +34,6 @@
 
     &__title {
         @include mob-page-header;
-        font-family: 'Titillium';
         font-weight: 600;
 
         @include tablet {
@@ -44,13 +42,14 @@
     }
 
     &__middle {
-        width: 100%;
+        width: 295px;
         margin-bottom: 1rem;
 
         @include tablet {
             display: flex;
             justify-content: flex-end;
             margin-bottom: 0;
+            width: calc(185px + (89 / 512) * (100vw - 768px));
         }
     }
 
@@ -59,8 +58,10 @@
         height: 2.25rem;
         position: relative;
         display: flex;
+
         @include tablet {
-            width: 11.5625rem;
+            justify-content: flex-end;
+            width: calc(185px + (89 / 512) * (100vw - 768px));
         }
 
         @include desktop {
@@ -77,7 +78,6 @@
         border-radius: 20px;
         padding: 0.5rem 1.219375rem 0.5rem 1rem;
         @include mob-labels-links-btn;
-        font-family: 'Titillium';
         overflow: scroll;
         transition: 0.2s;
         &:focus {
@@ -85,17 +85,18 @@
         }
         &::placeholder {
             @include mob-body-medium;
-            font-family: 'Titillium';
             color: map-get($color-secondary, placeholder-text);
             @include tablet {
                 @include body-medium;
             }
         }
-
         @include tablet {
             @include body-medium;
             position: relative;
+            width: calc(185px + (89 / 512) * (100vw - 768px));
         }
+
+
     }
 
     &__search-icon {
@@ -132,9 +133,14 @@
         padding: 0.5rem 0;
         text-align: center;
         text-decoration: none;
-        font-family: 'Titillium';
         @include mob-body-medium;
+        font-weight: 600;
+        cursor: pointer;
 
+            &:hover {
+                background-color: #232940;
+            }
+        
         @include tablet {
             @include body-medium;
             width: 8rem;

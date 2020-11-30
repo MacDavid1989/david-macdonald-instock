@@ -96,15 +96,20 @@ class ItemForm extends Component {
   };
 
   handleReset = () => {
-    this.setState({
-      warehouseList: [],
-      name: "",
-      description: "",
-      category: "",
-      status: true,
-      qty: "",
-      warehouse: ""
-    });
+    axios
+      .get(`${API_URL}/warehouse/`)
+      .then((res) => {
+        this.setState({
+          warehouseList: res.data,
+          name: "",
+          description: "",
+          category: "",
+          status: true,
+          qty: "",
+          warehouse: ""
+        });
+      })
+      .catch((err) => console.log(err));
   }
 
   render() {
@@ -220,7 +225,7 @@ class ItemForm extends Component {
                     name="Warehouse"
                     onChange={this.onWarehouseChange}
                   >
-                    <option defaultValue selected disabled hidden>
+                    <option defaultValue value="default" hidden>
                       Please Select
                     </option>
                     {this.state.warehouseList.map((data) => {
