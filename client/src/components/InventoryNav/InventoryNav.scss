@@ -34,8 +34,6 @@
     }
 
     &__title {
-        font-size: 28px;
-        line-height: 36px;
         @include mob-page-header;
         font-family: 'Titillium';
         font-weight: 600;
@@ -62,7 +60,7 @@
         position: relative;
         display: flex;
         @include tablet {
-            width: 185px;
+            width: 11.5625rem;
         }
 
         @include desktop {
@@ -78,9 +76,8 @@
         border: 1px solid map-get($color-secondary, outlines);
         border-radius: 20px;
         padding: 0.5rem 1.219375rem 0.5rem 1rem;
-        font-size: 13px;
-        line-height: 20px;
-        font-family: 'regular';
+        @include mob-labels-links-btn;
+        font-family: 'Titillium';
         overflow: scroll;
         transition: 0.2s;
         &:focus {

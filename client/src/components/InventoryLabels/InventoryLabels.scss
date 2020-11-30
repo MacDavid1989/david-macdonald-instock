@@ -7,6 +7,8 @@
     
 
     @include tablet {
+        @include table-header;
+        font-family: 'Titilium';
         display: flex;
         padding: 0.6875rem 2rem;
         align-items: center;
@@ -14,7 +16,7 @@
     }
 
     @include desktop {
-        padding: 10px 40px 10px 40px;
+        padding: 0.625rem 2.5rem;
     }
 
     &__container--inventory {
@@ -33,51 +35,56 @@
         
         &--inventory {
             @include tablet {
-                width: 6.6288rem;
+                justify-content: flex-start;
+                width: 9.375rem;
             }
 
             @include desktop {
-                width: 221px;
+                width: 13.8125rem;
             }
         }
 
         &--category {
             @include tablet {
-                width: 4.44125rem;
+                justify-content: flex-start;
+                width: 7.5625rem;
             }
 
             @include desktop {
-                width: 174px;
+                width: 10.875rem;
             }
         }
 
         &--status {
             @include tablet {
-                width: 3.44125rem;
+                justify-content: flex-start;
+                width: 7.625rem;
             }
 
             @include desktop {
-                width: 174px;
+                width: 10.875rem;
             }
         }
 
         &--qty {
             @include tablet {
-                width: 2.25375rem;
+                justify-content: flex-start;
+                width: 3.8125rem;
             }
 
             @include desktop {
-                width: 87px;
+                width: 5.4375rem;
             }
         }
 
         &--warehouse {
             @include tablet {
-                width: 5.25375rem;
+                justify-content: flex-start;
+                width: 5.8125rem;
             }
 
             @include desktop {
-                width: 174px;
+                width: 10.875rem;
             }
         }
 
@@ -86,21 +93,24 @@
                 width: 5.8125rem;
                 justify-content: flex-end;
             }
+            @include desktop {
+                width: 6.875rem;
+            }
         }
     }
 
     &__text {
 
         @include tablet {
-            font-size: 12px;
-            line-height: 18px;
+            @include table-header;
+            margin-right: 0.55875rem;
             color: map-get($color-secondary, table-column-header);
             }
     }
 
     &__icon-image {
         @include tablet {
-            height: 16px;
+            height: 0.75rem;
         }
     }
 }
