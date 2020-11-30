@@ -104,3 +104,18 @@
     font-weight: 500;
     color: map-get($color-primary, global-text);
 }
+
+// <<<<<<<< DEFAULT STYLING RESET >>>>>>>> \\
+@mixin select-drop {
+    cursor: pointer;
+    appearance: none;
+    background-image: url(../assets/icons/arrow_drop_down-24px.svg);
+    background-repeat: no-repeat;
+    background-position: 97% center;
+    outline: none;
+    
+    &:hover {
+        border: solid 1px #2E66E5;
+        background-image: url(../assets/icons/arrow_drop_down_blue-24px.svg);
+    }
+}

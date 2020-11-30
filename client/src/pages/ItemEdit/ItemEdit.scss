@@ -30,6 +30,7 @@
             &__arrow {
                 width: 24px;
                 height: 24px;
+                cursor: pointer;
             }
 
             &__heading {
@@ -109,6 +110,7 @@
                 border-radius: 20px;
                 font-size: 13px;
                 line-height: 20px;
+                @include select-drop;
             }
         }
         
@@ -222,6 +224,13 @@
         font-size: 13px;
         font-weight: 600;
         line-height: 20px;
+        cursor: pointer;
+
+        &:hover {
+            border: solid 1px #2E66E5;
+            color: #2E66E5;
+        }
+
     }
 
     &__save {
@@ -239,6 +248,12 @@
         font-size: 13px;
         font-weight: 600;
         line-height: 20px;
+        cursor: pointer;
+
+            &:hover {
+                background-color: #232940;
+            }
+
     }
 
     @media (min-width: 768px) {
@@ -351,6 +366,7 @@
                     height: 38px;
                     font-size: 14px;
                     line-height: 22px;
+                    @include select-drop;
                 }
             }
             
