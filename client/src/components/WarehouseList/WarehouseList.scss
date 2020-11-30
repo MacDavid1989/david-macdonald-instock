@@ -7,7 +7,10 @@
     padding-bottom: 1.6875rem;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-
+    &:hover {
+        background-color: rgba(46, 102, 230, 0.07);
+    }
+    
     a {
         text-decoration: none;
     }
@@ -39,6 +42,8 @@
         border-top: 1px solid map-get($color-secondary, dividers);
         padding: 1rem 1.5rem 1.1875rem 1.5rem;
         display: flex;
+        align-items: center;
+        width: 100%;
 
         @include tablet {
             height: fit-content;
@@ -52,8 +57,9 @@
     }
 
     &__warehouse-address {
+        width: 50%;
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
 
         @include tablet {
             flex-direction: row;
@@ -65,6 +71,7 @@
     &__warehouse {
         display: flex;
         flex-direction: column;
+        width: 147.5px;
     }
 
     &__subheader {
@@ -98,9 +105,10 @@
         color: map-get($color-primary, interactive-el);
         font-size: 0.8125rem;
         line-height: 1.25rem;
+        font-weight: 600;
         position: relative;
 
-        @include desktop{
+        @include tablet {
             font-size: 0.875rem;
             line-height: 1.375rem;
         }
@@ -108,9 +116,8 @@
 
     &__chevron {
         position: absolute;
-        width: 0.97125rem;
-        height: 1.25rem;
-        margin-top: .1rem;
+        width: 20px;
+        height: 20px;
     }
 
     &__info {
@@ -137,6 +144,7 @@
             @include tablet {
                 letter-spacing: -0.03rem;
                 @include label-links-btn;
+                margin: 12.8px 0;
                 height: fit-content;
                 padding: 0 1.8125rem 0 0;
                 width: calc(7.5625rem + (140 / 512) * (100vw - 48rem));
@@ -162,6 +170,7 @@
     }
 
     &__address {
+        width: 147.45px;
         display: flex;
         flex-direction: column;
         padding-right: 1rem;
@@ -178,9 +187,9 @@
 
     &__contact-details {
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        margin-left: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 50%;
 
         @include tablet {
             flex-direction: row;
@@ -193,6 +202,7 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        width: 147.5px;
 
         @include tablet {
             flex-direction: row;
@@ -209,6 +219,7 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        width: 147.5px;
 
         @include tablet {
             width: 11rem;
@@ -226,6 +237,7 @@
         @include mob-labels-links-btn;
         @include tablet{
             width: 10.875rem;
+            margin: 12.8px 0;
         }
 
         @include desktop{
@@ -262,6 +274,8 @@
         width: 1.5rem;
         margin-left: -.175rem;
         margin:  0 1.5rem 0 0;
+        cursor: pointer;
+        
         @include tablet {
             margin-left: 0;
         }

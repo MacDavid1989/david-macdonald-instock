@@ -93,7 +93,7 @@
         font-size: 0.8125rem;
         line-height: 1.25rem;
         border-radius: 20px;
-        outline: none;
+        @include input-state;
 
         @include tablet {
             height: 2.375rem;

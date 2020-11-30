@@ -94,13 +94,17 @@
         @include tablet {
             font-size: 0.75rem;
             line-height: 1.125rem;
+            font-weight: 600;
             color: map-get($color-secondary, table-column-header);
             }
     }
 
     &__icon-image {
         @include tablet {
-            height: 0.75rem;
+            cursor: pointer;
+            width: 12px;
+            height: 12px;
+            margin: 0 0 0 8.94px;
         }
     }
 }

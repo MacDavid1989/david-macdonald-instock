@@ -88,7 +88,7 @@ class ItemForm extends Component {
 
 
     // /inventory
-    axios.post("http://localhost:8080/inventory", itemObj)
+    axios.post(API_URL + "/inventory", itemObj)
     .then(() => {
       this.props.parentProps.history.goBack()
     });
@@ -96,15 +96,20 @@ class ItemForm extends Component {
   };
 
   handleReset = () => {
-    this.setState({
-      warehouseList: [],
-      name: "",
-      description: "",
-      category: "",
-      status: true,
-      qty: "",
-      warehouse: ""
-    });
+    axios
+      .get(`${API_URL}/warehouse/`)
+      .then((res) => {
+        this.setState({
+          warehouseList: res.data,
+          name: "",
+          description: "",
+          category: "",
+          status: true,
+          qty: "",
+          warehouse: ""
+        });
+      })
+      .catch((err) => console.log(err));
   }
 
   render() {
@@ -170,7 +175,7 @@ class ItemForm extends Component {
               <h3 className="item-form-com__title">Item Availability</h3>
               <div className="item-form-com__wrapper">
                 <div className="item-form-com__wrapper">
-                  <label>Status</label>
+                  <label id="status">Status</label>
                   <div className="item-form-com__wrapper item-form-com__wrapper--radio">
                     <div className="item-form-com__wrapper--radio-wrapper">
                       <input
@@ -181,9 +186,9 @@ class ItemForm extends Component {
                         checked={this.state.status}
                         value={true}
                       />
-                      <label>In Stock</label>
+                      <label className={(this.state.status) ? "item-form-com__radio-label item-form-com__radio-label--checked" : "item-form-com__radio-label"}>In Stock</label>
                     </div>
-                    <div>
+                    <div className="item-form-com__wrapper--radio-wrapper-out">
                       <input
                         className="item-form-com__radio"
                         type="radio"
@@ -192,7 +197,7 @@ class ItemForm extends Component {
                         checked={!this.state.status}
                         value={false}
                       />
-                      <label>Out of Stock</label>
+                      <label className={(!this.state.status) ? "item-form-com__radio-label item-form-com__radio-label--checked" : "item-form-com__radio-label"}>Out of Stock</label>
                     </div>
                   </div>
                 </div>
@@ -202,10 +207,10 @@ class ItemForm extends Component {
                   </label>
                   <input
                     required
-                    className="item-form-com__input"
+                    className="item-form-com__input item-form-com__input-qty"
                     type="number"
                     name="qty"
-                    placeholder="Enter item amount"
+                    placeholder="Enter amount"
                     value={this.state.qty}
                     onChange={this.onQtyChange}
                   />
@@ -220,7 +225,7 @@ class ItemForm extends Component {
                     name="Warehouse"
                     onChange={this.onWarehouseChange}
                   >
-                    <option defaultValue hidden>
+                    <option defaultValue value="default" hidden>
                       Please Select
                     </option>
                     {this.state.warehouseList.map((data) => {

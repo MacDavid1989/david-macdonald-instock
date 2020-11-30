@@ -80,6 +80,7 @@
         &--warehouse {
             @include tablet {
                 justify-content: flex-start;
+                align-items: center;
                 width: 5.8125rem;
             }
 
@@ -102,7 +103,8 @@
     &__text {
 
         @include tablet {
-            @include table-header;
+            @include body-small;
+            font-weight: 600;
             margin-right: 0.55875rem;
             color: map-get($color-secondary, table-column-header);
             }
@@ -110,6 +112,10 @@
 
     &__icon-image {
         @include tablet {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            width: 0.75rem;
             height: 0.75rem;
         }
     }

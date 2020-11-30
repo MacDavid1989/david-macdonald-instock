@@ -12,7 +12,6 @@ class ItemDetails extends Component {
     }
 
     componentDidMount(){
-
         axios.get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}`)
         .then(res=>{
             this.setState({item: res.data.inventoryItem[0]})

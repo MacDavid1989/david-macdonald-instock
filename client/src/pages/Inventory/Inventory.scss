@@ -1,11 +1,10 @@
 @import "../../partials/mixins";
 @import '../../partials/variables';
-@import "../../partials/typography";
 
 .inventory__container {
     z-index: 2;
-    box-shadow: 0 2px 5px rgba(19, 24, 44, 0.1);
-    border-radius: 3px;
+    box-shadow: 0 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
+    border-radius: 0.1875rem;
     display: flex;
     flex-direction: column;
     width: calc(21.4375rem + (361 / 393) * (100vw - 23.4375rem));

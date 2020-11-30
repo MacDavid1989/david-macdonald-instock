@@ -104,3 +104,31 @@
     font-weight: 500;
     color: map-get($color-primary, global-text);
 }
+
+// <<<<<<<< FORM FIELDS >>>>>>>> \\
+@mixin select-drop {
+    cursor: pointer;
+    appearance: none;
+    background-image: url(../assets/icons/arrow_drop_down-24px.svg);
+    background-repeat: no-repeat;
+    background-position: 97% center;
+    outline: none;
+    
+    &:focus {
+        border: solid 1px #2E66E5;
+        background-image: url(../assets/icons/arrow_drop_down_blue-24px.svg);
+        &:invalid {
+            border: 1px solid #C94515;
+        }
+    }
+}
+
+@mixin input-state {
+    outline: none;
+    &:focus {
+        border: 1px solid #2E66E5;
+        &:invalid {
+        border: 1px solid #C94515;
+        }
+    }
+}

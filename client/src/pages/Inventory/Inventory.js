@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from "react";
-import { appUrl } from "../../utils/axios";
 import axios from "axios";
+import "./Inventory.scss";
 import InventoryLabels from "../../components/InventoryLabels/InventoryLabels";
 import InventoryNav from "../../components/InventoryNav/InventoryNav";
 import InventoryList from "../../components/InventoryList/InventoryList";
-import "./Inventory.scss";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 
-//http://localhost:8080/inventory
+const API_URL = process.env.REACT_APP_API_URL;
+
 class Inventory extends Component {
   state = {
     inventories: null,
@@ -23,7 +23,7 @@ class Inventory extends Component {
 
   getInventories = () => {
     axios
-      .get(appUrl + "/inventory")
+      .get(API_URL + "/inventory")
       .then((response) => {
         const data = response.data;
         this.setState({
@@ -53,10 +53,19 @@ class Inventory extends Component {
   };
 
   deleteRoute = (id) => {
-    axios.delete(`http://localhost:8080/inventory/${id}`).then((res) => {
+    axios.delete(API_URL + `/inventory/${id}`).then((res) => {
       this.getInventories();
     });
   };
+
+  resetRoute = () => {
+    this.setState({
+      deleteObj: {
+        name: "",
+        id: "",
+      }
+    }) 
+  }
 
   //sorts the values
   sortByValue = (key1) => {
@@ -128,6 +137,7 @@ class Inventory extends Component {
         <DeleteModal
           deleteThing={this.state.deleteObj}
           onDeleteRoute={this.deleteRoute}
+          resetRoute={this.resetRoute}
         />
         <div className="inventory__container">
           <InventoryNav updateDisplay={this.updateDisplay}/>

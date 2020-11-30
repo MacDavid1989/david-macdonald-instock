@@ -5,9 +5,9 @@
 .inventory-card {
     width: 100%;
     background-color: map-get($color-primary, global-white);
-    border-top: 1px solid map-get($color-secondary, dividers);
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top: 0.0625rem solid map-get($color-secondary, dividers);
+    border-bottom-left-radius: 0.1875rem;
+    border-bottom-right-radius: 0.1875rem;
     &:hover {
         background-color: rgba(46, 102, 230, 0.07);
     }
@@ -22,14 +22,14 @@
 
     a:hover {
         text-decoration: underline;
+        color: #2E66E5;
 
         .inventory-card__chevron {
-            transform: translate(4px, 0);
+            transform: translate(0.25rem, 0);
         }
     }
 
     @include tablet {
-        //width: 704px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -72,6 +72,10 @@
         width: 50%;
         order: 1;
 
+        @media(min-width: 43.625rem){
+            width: 20%;
+        }
+
     @include tablet {
         order: 1;
         width: 9.375rem;
@@ -84,6 +88,7 @@
 
     &__subheader {
         padding-bottom: 0.25rem;
+        font-weight: 600;
         @include mob-table-header;
         color: map-get($color-secondary, table-column-header);
 
@@ -97,7 +102,8 @@
         align-items: flex-end;
         
         @include tablet {
-            width: 6.6288rem;
+            align-items: center;
+            width: 100%;
         }
 
         @include desktop {
@@ -107,8 +113,7 @@
 
     &__stock-item {
         color: map-get($color-primary, interactive-el);
-        @include mob-table-header;
-        font-family: 'Titillium';
+        @include mob-body-medium;
         font-weight: 600;
         position: relative;
 
@@ -125,10 +130,11 @@
     }
 
     &__chevron {
-        width: 0.77125rem;
+        width: 1.25rem;
         margin-top: -0.2rem;
         @include tablet {
-            height: 0.625rem;
+            margin-top: 0;
+            height: 1.25rem;
         }
     }
 
@@ -171,11 +177,15 @@
         width: 50%;
         order: 3;
 
+        @media(min-width: 43.625rem){
+            width: 20%;
+            order: 2;
+        }
+
         @include tablet {
             width: 7.5625rem;
             padding: 0;
             order: 2;
-            // width: 100%;
         }
 
         @include desktop {
@@ -189,6 +199,7 @@
         justify-content: center;
         flex: 50%;
         margin-left: 1.5rem;
+        
 
         @include tablet {
             flex-direction: row;
@@ -203,12 +214,15 @@
         height: fit-content;
         width: 50%;
         order: 2;
+        @media(min-width: 43.625rem){
+            width: 20%;
+            order: 3;
+        }
 
         @include tablet {
             justify-content: center;
             width: 7.625rem;
             order: 3;
-            //width: 100%;
         }
 
         @include desktop {
@@ -223,7 +237,7 @@
             text-transform: uppercase;
             color: map-get($color-supporting, in-stock-label);
             background: rgba(21, 132, 99, 0.07);
-            border-radius: 20px;
+            border-radius: 1.25rem;
                 width: 3.8125rem;
             height: 1.5rem;
             justify-content: center;
@@ -240,10 +254,10 @@
             text-transform: uppercase;
             color: map-get($color-supporting, out-of-stock-label);
             background: rgba(201, 69, 21, 0.07);
-            border-radius: 20px;
+            border-radius: 1.25rem;
             justify-content: center;
             width: 5.375rem;
-            height: 24px;
+            height: 1.5rem;
             display: flex;
             align-items: center;
             @include tablet {
@@ -259,6 +273,9 @@
         flex-wrap: wrap;
         width: 50%;
         order: 4;
+        @media(min-width: 43.625rem){
+            width: 20%;
+        }
 
         @include tablet {
             width: 3.8125rem;
@@ -272,6 +289,9 @@
     &__empty {
         width: 50%;
         order: 5;
+        @media(min-width: 43.625rem){
+            width: 0%;
+        }
 
         @include tablet {
             display: none;
@@ -283,6 +303,10 @@
         flex-direction: column;
         width: 50%;
         order: 6;
+
+        @media(min-width: 43.625rem){
+            width: 20%;
+        }
 
         @include tablet {
             width: 5.8125rem;
@@ -296,10 +320,8 @@
 
     &__icons {
         display: flex;
-        justify-content: space-between;
         width: 100%;
         order: 7;
-
 
         @include tablet {
             justify-content: flex-end;
@@ -313,8 +335,12 @@
     }
 
     &__delete-icon {
+        margin-right: 15.4375rem;
+        cursor: pointer;
         @include tablet {
+            margin-right: 0;
             margin-top: -0.5rem;
+            cursor: pointer;
         }
     }
 

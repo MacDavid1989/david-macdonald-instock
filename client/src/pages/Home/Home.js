@@ -1,11 +1,12 @@
+import React, { Component } from "react";
+import axios from "axios";
+import "./Home.scss";
 import WarehouseNav from "../../components/WarehouseNav/WarehouseNav";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
-import { appUrl } from "../../utils/axios";
-import axios from "axios";
-import React, { Component } from "react";
-import "./Home.scss";
 import WarehousesLabels from "../../components/WarehouseLabels/WarehouseLabels";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 class Home extends Component {
   state = {
@@ -17,7 +18,7 @@ class Home extends Component {
 
   componentDidMount() {
     axios
-      .get(appUrl + "/warehouse")
+      .get(API_URL + "/warehouse")
       .then((response) => {
         this.setState({
           warehouseConst: response.data,
@@ -123,10 +124,19 @@ class Home extends Component {
   //this is the route for deleting the warehouse
   deleteRoute = (id) => {
     axios
-      .delete(`http://localhost:8080/warehouse/${id}`)
+      .delete(API_URL+ `/warehouse/${id}`)
       .then((res) => {
         this.updateWarehouses(res.data.warehouses);
       });
+  }
+
+  resetRoute = () => {
+    this.setState({
+      deleteObj: {
+        name: "",
+        id: "",
+      }
+    }) 
   }
 
   render() {
@@ -135,6 +145,7 @@ class Home extends Component {
         <DeleteModal
           deleteThing={this.state.deleteObj}
           onDeleteRoute={this.deleteRoute}
+          resetRoute={this.resetRoute}
         />
         <div className="warehouse__container">
           <WarehouseNav updateDisplay={this.updateDisplay} />

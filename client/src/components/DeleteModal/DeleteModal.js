@@ -11,6 +11,7 @@ class DeleteModal extends Component {
 
   //closes the screen
   onCloseDeleteScreen = () => {
+    this.props.resetRoute()
     this.setState({
       display: false,
     });
@@ -49,12 +50,12 @@ class DeleteModal extends Component {
       >
         <div className="deleteModal__wrapper">
           <div className="deleteModal__close-wrapper">
-            <img src={close} alt="close" onClick={this.onCloseDeleteScreen} />
+            <img className="close-img" src={close} alt="close" onClick={this.onCloseDeleteScreen} />
           </div>
           <div>
             <h1>Delete {this.props.deleteThing.name} {this.props.deleteThing.header}?</h1>
             <p>
-              Please confirm that you'd like to delete the {this.props.deleteThing.name} from {this.props.deleteThing.body} You won't be able to undo this action.
+              Please confirm that you'd like to delete {this.props.deleteThing.name} from {this.props.deleteThing.body} You won't be able to undo this action.
             </p>
           </div>
           <div className="deleteModal__btn-wrapper">

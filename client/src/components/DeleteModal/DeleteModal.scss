@@ -19,27 +19,31 @@
     &__wrapper{
         display: flex;
         flex-direction: column;
-        width: 375px;
-        height: 667px;
+        width: 23.4375rem;
+        height: 42.3125rem;
         padding: 1rem;
         margin: 0 auto;
         background-color: white;
         @include tablet{
-            margin: 185px auto 0;
-            width: 672px;
-            height: 262px;
+            margin: 11.5625rem auto 0;
+            width: 42rem;
+            height: 16.375rem;
             padding: 1rem 2rem;
         }
     }
     &__close-wrapper{
         display: flex;
         justify-content: flex-end;
+
+        .close-img {
+            cursor: pointer;
+        }
     }
     &__btn-wrapper{
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-            margin-top: 381px;
+            margin-top: 23.8125rem;
         width: 100%;
         @include tablet{
             margin-top: auto;
@@ -47,13 +51,24 @@
         }
     }
     &__btn{
-        width: 135px;
+        width: 8.4375rem;
         padding: .5rem;
-        border-radius: 20px;
+        border-radius: 1.25rem;
         border: none;
+        cursor: pointer;
+        outline: none;
+        &:hover {
+            border: solid 0.0625rem #2E66E5;
+            color: #2E66E5;
+        }
         &--delete{
-            background-color: orange;
+            background-color: #C94515;
             color: white;
+            &:hover {
+                border: none;
+                color: white;
+                background-color: #232940;
+            }
             @include tablet{
                 margin-left: 1rem;
                 margin-bottom: 1rem;

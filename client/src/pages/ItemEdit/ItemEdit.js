@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './ItemEdit.scss'
 import backArrow from '../../assets/icons/arrow_back-24px.svg'
+
+const API_URL = process.env.REACT_APP_API_URL;
+
 class ItemEdit extends Component {
     state = {
         name: "",
@@ -17,7 +20,7 @@ class ItemEdit extends Component {
     }
 
     getItem = () => {
-        axios.get(`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}`)
+        axios.get(API_URL + `/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}`)
         .then(res=>{
             this.setState({
                 name: res.data.inventoryItem[0].itemName,
@@ -41,7 +44,7 @@ class ItemEdit extends Component {
     }
 
     getAllWarehouses = () => {
-        axios.get(`http://localhost:8080/warehouse`)
+        axios.get(API_URL + `/warehouse`)
         .then(res=>{
             this.setState({
                 warehouseNameList: res.data.map(warehouse=> warehouse.name).sort(),
@@ -110,7 +113,7 @@ class ItemEdit extends Component {
             quantity: this.state.quantity
         }
 
-        axios.put(`http://localhost:8080/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}/update`, item)
+        axios.put(API_URL + `/warehouse/${this.props.match.params.warehouseId}/inventory/${this.props.match.params.itemId}/update`, item)
         .then(res => {
             this.props.history.goBack()
         })
@@ -136,11 +139,11 @@ class ItemEdit extends Component {
                                 <h2 className="itemEdit__details-title">Item Details</h2>
                                 <div className="itemEdit__details-name">
                                     <label className="itemEdit__details-label">Item Name</label>
-                                    <input id="itemName" name="itemName" type="text" placeholder="Item Name" value={this.state.name} onChange={this.handleName}/>
+                                    <input required id="itemName" name="itemName" type="text" placeholder="Item Name" value={this.state.name} onChange={this.handleName}/>
                                 </div>
                                 <div className="itemEdit__details-description">
                                     <label className="itemEdit__details-label">Description</label>
-                                    <textarea id="itemDescription" name="itemDescription" placeholder="Description" value={this.state.description} onChange={this.handleDescription}></textarea>
+                                    <textarea required id="itemDescription" name="itemDescription" placeholder="Description" value={this.state.description} onChange={this.handleDescription}></textarea>
                                 </div>
                                 <div className="itemEdit__details-category">
                                     <label className="itemEdit__details-label">Category</label>
@@ -157,11 +160,11 @@ class ItemEdit extends Component {
                                     <label className="itemEdit__availability-label">Status</label>
                                     <div className="status__wrapper">
                                         <div className="status__in">
-                                            <input id="itemStatus" name="itemStatus" type="radio" checked={this.state.check} value="true" onChange={this.handleStatus}/>
+                                            <input required id="itemStatus" name="itemStatus" type="radio" checked={this.state.check} value="true" onChange={this.handleStatus}/>
                                             <label className={!!this.state.status&&this.state.status.toLowerCase() === "in stock" ? "status__in-radio checked" : "status__in-radio"}>In Stock</label>
                                         </div>
                                         <div className="status__out">
-                                            <input id="itemStatus" name="itemStatus" type="radio" checked={!this.state.check} value="false" onChange={this.handleStatus}/>
+                                            <input required id="itemStatus" name="itemStatus" type="radio" checked={!this.state.check} value="false" onChange={this.handleStatus}/>
                                             <label className={!!this.state.status&&this.state.status.toLowerCase() === "out of stock" ? "status__out-radio checked" : "status__out-radio"}>Out of Stock</label>
                                         </div>
                                     </div>
