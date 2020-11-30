@@ -6,6 +6,8 @@
     width: 100%;
     background-color: map-get($color-primary, global-white);
     border-top: 1px solid map-get($color-secondary, dividers);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 
     &:first-of-type{
         border-top: none;
@@ -36,7 +38,7 @@
     }
 
     &__top-container {
-        margin: 1rem 1.8125rem 1.6875rem;
+        padding: 1rem 1.8125rem 1.6875rem;
         display: flex;
         flex-wrap: wrap;
 
@@ -127,7 +129,7 @@
         display: flex;
         flex-wrap: wrap;
         color: map-get($color-primary, global-text);
-        padding-bottom: 1rem;
+        padding-bottom: 1.1875rem;
 
         @include tablet {
             &--quantity{    
