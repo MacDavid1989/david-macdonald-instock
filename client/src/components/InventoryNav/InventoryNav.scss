@@ -21,7 +21,7 @@
     }
 
     @include desktop {
-        padding: 2.5rem;
+        padding: 2rem 2.5rem 1.375rem;
     }
     
     &__left {
@@ -41,8 +41,7 @@
         font-weight: 600;
 
         @include tablet {
-            font-size: 32px;
-            line-height: 40px;
+            @include page-header;
         }
     }
 
@@ -52,10 +51,6 @@
 
         @include tablet {
             margin-bottom: 0;
-        }
-
-        @include desktop {
-            padding-left: 330px;
         }
     }
 
@@ -70,7 +65,8 @@
         }
 
         @include desktop {
-            width: 274px;
+            height: 2.375rem;
+            width: 17.125rem;
         }
     }
 
@@ -93,6 +89,9 @@
             @include mob-body-medium;
             font-family: 'Titillium';
             color: map-get($color-secondary, placeholder-text);
+            @include tablet {
+                @include body-medium;
+            }
         }
 
         @include tablet {
@@ -133,6 +132,7 @@
         @include mob-body-medium;
 
         @include tablet {
+            @include body-medium;
             width: 8rem;
             margin-left: 1rem;
             font-size: 14px;
@@ -140,6 +140,7 @@
         }
 
         @include desktop {
+            height: 2.375rem;
             padding: 8px 16px;
         }
     }
