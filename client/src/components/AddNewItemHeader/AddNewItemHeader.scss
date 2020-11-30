@@ -27,7 +27,8 @@
   &__back {
     width: 24px;
     height: 24px;
+    align-self: baseline;
     cursor: pointer;
-    margin-right: 12px;
+    margin: 8px 12px 0 0;
   }
 }

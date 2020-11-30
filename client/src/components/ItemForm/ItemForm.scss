@@ -3,7 +3,7 @@
 @import "../../partials/variables";
 
 .item-form-com {
-  padding: 16px 0 0;
+  padding: 0;
   @include tablet {
     padding: 24px 0 0;
   }
@@ -27,44 +27,93 @@
       flex-direction: row;
       margin: 0 0 16px;
       &-wrapper {
+        display: flex;
+        align-items: center;
         margin-right: 4rem;
+        &-out {
+          display: flex;
+          align-items: center;
+        }
       }
       @include tablet {
         margin: 0 0 24px;
+        
       }
     }
   }
 
   &__input {
     border-radius: 20px;
-    height: 2rem;
+    height: 36px;
     width: 100%;
     border: 1px solid map-get($color-secondary, borders);
     resize: none;
     padding: 1rem;
     margin: 0 0 16px;
+    @include input-state; 
+    font-size: 13px;
+    line-height: 20px;
     &--text-area {
-      height: 100px;
+      height: 120px;
       padding: 0.8rem;
     }
     &--select {
+      margin: 0 0 24px;
       padding: 0;
       padding-left: 0.5rem;
+      @include select-drop;
+      
     }
     &-qty {
-      @include tablet {
-        width: calc(288px - (166 / 512) * (100vw - 768px));
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
       }
-      @include desktop {
+      
+    }
+    @include tablet {
+      height: 38px;
+      margin: 0 0 24px;
+      font-size: 14px;
+      line-height: 22px;
+      width: calc(287px + (142 / 512) * (100vw - 768px));
+      &--text-area {
+        height: 120px;
+      }
+      &--select {
+        margin: 0;
+      }
+      &-qty {
+          width: calc(288px - (166 / 512) * (100vw - 768px));
+      }
+    }
+    @include desktop {
+      width: 429px;
+      &-qty {
         width: 122px;
       }
     }
-    @include tablet {
-      margin: 0 0 24px;
-    }
   }
   &__radio {
-    margin-right: 5px;
+    margin: 0 5px 0 0;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    &-label {
+      cursor: none;
+      color: #5C667E;
+      font-size: 13px;
+      line-height: 20px;
+      &--checked {
+        color: #13182C;
+        font-weight: 600;
+      }
+      @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
   }
 }
 
@@ -78,12 +127,20 @@
   }
   &__inner-wrap {
       
-    padding: 0 1rem;
+    padding: 16px 24px 0;
+    &--top {
+      border-bottom: 1px solid map-get($color-secondary, dividers);
+
+    }
     @include tablet {
+      margin: 0 0 24px;
       padding: 0 calc(32px + (8 / 512) * (100vw - 768px));
       width: 100%;
       &--top {
+        border-bottom: none;
         border-right: 1px solid map-get($color-secondary, dividers);
+        padding: 0 calc(32px + (8 / 512) * (100vw - 768px)) 8px;
+
       }
     }
     @include desktop {
@@ -92,34 +149,66 @@
     }
   }
   #name, #desc, #cat, #status, #qty, #WH {
+    font-size: 13px;
+    line-height: 20px;
     font-weight: 600;
     margin: 0 0 4px;
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+    }
   }
   &__btn-wrapper {
     display: flex;
-    margin-top: 1rem;
-    padding: 1rem;
-    justify-content: space-between;
+    padding: 1rem 24px;
+    justify-content: flex-end;
+    background-color: rgba(247, 248, 249, 0.75);
     width: 100%;
     @include tablet {
+      padding: 1rem calc(32px + (8 / 512) * (100vw - 768px));
       justify-content: flex-end;
+    }
+    @include desktop {
+      padding: 1rem 40px;
     }
   }
   &__btn {
     width: 139px;
     border-radius: 20px;
-    border: none;
+    border: 1px solid #BDC5D5;
     height: 2.2rem;
+    background-color: #FFFFFF;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #5C667E;
+    cursor: pointer;
+    outline: none;
+      &:hover {
+          border: solid 1px #2E66E5;
+          color: #2E66E5;
+      }
     &--add {
         color: white;
+        border: none;
+        margin-left: 17px;
         background-color: map-get($color-primary, interactive-el);
+        cursor: pointer;
+
+          &:hover {
+              border: none;
+              background-color: #232940;
+              color: white;
+          }
     }
     @include tablet {
         width: fit-content;
         padding: 1rem;
         display: flex;
-        margin-left: 1rem;
+        margin-left: 16px;
         align-items: center;
+        font-size: 14px;
+      line-height: 22px;
       }
   }
 }

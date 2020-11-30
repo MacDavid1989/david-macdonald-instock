@@ -2,6 +2,7 @@
 .new-inventory{
     z-index: 2;
     border-radius: 3px;
+    box-shadow: 2px 0 5px 0 rgba(19, 24, 44, 0.1);
     background-color: white;
     width: calc(343px + (361 / 393) * (100vw - 375px));
 
