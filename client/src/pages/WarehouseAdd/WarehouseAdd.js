@@ -182,7 +182,7 @@ render() {
                                     <input required name= "position" placeholder="Contact position" type="text" className="add-warehouse__insert" value={this.state.contact.position} onChange={this.onPositionChange} />
 
                                     <label htmlFor="phone"  className="add-warehouse__tag">phone number</label>
-                                    <input required name= "phone" placeholder="Contact number" type="tel"  className="add-warehouse__insert" value={this.state.contact.phone} onChange={this.onPhoneChange} />
+                                    <input required name= "phone" placeholder="Contact number" type="tel" minLength="10" className="add-warehouse__insert" value={this.state.contact.phone} onChange={this.onPhoneChange} />
 
                                     <label htmlFor="email"  className="add-warehouse__tag">email</label>
                                     <input required name= "email" placeholder="Contact email" type="email" className="add-warehouse__insert" value={this.state.contact.email} onChange={this.onEmailChange} />
