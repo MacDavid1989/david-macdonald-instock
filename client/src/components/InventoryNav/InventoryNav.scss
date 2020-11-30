@@ -50,18 +50,19 @@
         margin-bottom: 1rem;
 
         @include tablet {
+            display: flex;
+            justify-content: flex-end;
             margin-bottom: 0;
         }
     }
 
     &__search-wrapper {
-        width: 18.4375rem;
+        width: 100%;
         height: 2.25rem;
         position: relative;
         display: flex;
         @include tablet {
             width: 185px;
-            margin-left: auto;
         }
 
         @include desktop {
@@ -72,7 +73,7 @@
 
     &__search {
         outline: none;
-        width: 100%;
+        width: 18.4375rem;
         background-color: map-get($color-primary, global-white);
         border: 1px solid map-get($color-secondary, outlines);
         border-radius: 20px;
@@ -95,8 +96,8 @@
         }
 
         @include tablet {
-            font-size: 14px;
-            line-height: 22px;
+            @include body-medium;
+            position: relative;
         }
     }
 
@@ -104,6 +105,12 @@
         margin: 0.5625rem 0 0 -2.219375rem;
         width: 1.093125rem;
         height: 1.093125rem;
+
+        @include tablet {
+            position: absolute;
+            right: 1.219375rem;
+            z-index: 2;
+        }
     }
 
     &__right {
