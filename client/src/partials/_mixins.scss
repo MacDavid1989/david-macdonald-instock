@@ -105,7 +105,7 @@
     color: map-get($color-primary, global-text);
 }
 
-// <<<<<<<< DEFAULT STYLING RESET >>>>>>>> \\
+// <<<<<<<< FORM FIELDS >>>>>>>> \\
 @mixin select-drop {
     cursor: pointer;
     appearance: none;
@@ -117,5 +117,18 @@
     &:focus {
         border: solid 1px #2E66E5;
         background-image: url(../assets/icons/arrow_drop_down_blue-24px.svg);
+        &:invalid {
+            border: 1px solid #C94515;
+        }
+    }
+}
+
+@mixin input-state {
+    outline: none;
+    &:focus {
+        border: 1px solid #2E66E5;
+        &:invalid {
+        border: 1px solid #C94515;
+        }
     }
 }

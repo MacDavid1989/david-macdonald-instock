@@ -34,6 +34,10 @@
     &__close-wrapper{
         display: flex;
         justify-content: flex-end;
+
+        .close-img {
+            cursor: pointer;
+        }
     }
     &__btn-wrapper{
         display: flex;

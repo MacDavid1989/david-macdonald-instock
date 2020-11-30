@@ -140,7 +140,7 @@ class ItemEdit extends Component {
                                 </div>
                                 <div className="itemEdit__details-description">
                                     <label className="itemEdit__details-label">Description</label>
-                                    <textarea id="itemDescription" name="itemDescription" placeholder="Description" value={this.state.description} onChange={this.handleDescription}></textarea>
+                                    <textarea required id="itemDescription" name="itemDescription" placeholder="Description" value={this.state.description} onChange={this.handleDescription}></textarea>
                                 </div>
                                 <div className="itemEdit__details-category">
                                     <label className="itemEdit__details-label">Category</label>

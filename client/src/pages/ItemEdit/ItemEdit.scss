@@ -76,10 +76,7 @@
                 border-radius: 20px;
                 font-size: 13px;
                 line-height: 20px;
-                outline: none;
-                &:focus {
-                    border: 1px solid #2E66E5;
-                }
+                @include input-state;
             }
         }
 
@@ -98,10 +95,8 @@
                 border-radius: 20px;
                 font-size: 13px;
                 line-height: 20px;
-                outline: none;
-                &:focus {
-                    border: 1px solid #2E66E5;
-                }
+                @include input-state;
+
             }
         }
 
@@ -308,10 +303,7 @@
                     height: 38px;
                     font-size: 14px;
                     line-height: 22px;
-                    outline: none;
-                    &:focus {
-                        border: 1px solid #2E66E5;
-                    }
+                    @include input-state;
                 }
             }
     
@@ -321,10 +313,7 @@
                 #itemDescription {
                     font-size: 14px;
                     line-height: 22px;
-                    outline: none;
-                    &:focus {
-                        border: 1px solid #2E66E5;
-                    }
+                    @include input-state;
                 }
             }
     
@@ -334,7 +323,7 @@
                     height: 38px;
                     font-size: 14px;
                     line-height: 22px;
-                    outline: none;
+                    @include select-drop;
                 }
             }
             

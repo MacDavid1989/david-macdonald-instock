@@ -49,7 +49,7 @@ class DeleteModal extends Component {
       >
         <div className="deleteModal__wrapper">
           <div className="deleteModal__close-wrapper">
-            <img src={close} alt="close" onClick={this.onCloseDeleteScreen} />
+            <img className="close-img" src={close} alt="close" onClick={this.onCloseDeleteScreen} />
           </div>
           <div>
             <h1>Delete {this.props.deleteThing.name} {this.props.deleteThing.header}?</h1>
