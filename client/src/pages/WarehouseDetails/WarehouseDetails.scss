@@ -18,9 +18,12 @@
     }
 
     a:hover {
-        text-decoration: underline;
 
         .item__icon {
+            transform: translate(4px, 0);
+        }
+
+        .icon {
             transform: translate(4px, 0);
         }
     }
@@ -61,6 +64,11 @@
                 border: none;
                 width: 36px;
                 height: 36px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #232940;
+                }
 
                 .button {
 
@@ -182,9 +190,13 @@
                 margin: 0 0 20px;
                 
                 .item {
+                    &:hover {
+                        text-decoration: underline;
+                    }
+
                     &__name {
                         width: 140px;
-
+                        
                         .heading {
                             color: #5C667E;
                             font-size: 11px;
@@ -298,9 +310,10 @@
                 justify-content: space-between;
             }
             &__delete{
+                cursor: pointer;
             }
             &__edit {
-
+                cursor: pointer;
             }
         
         }
@@ -503,9 +516,11 @@
                             font-weight: 600;
                             line-height: 22px;
                             width: calc(150px + (71/512) * (100vw - 768px));
-
-
                             color: #2E66E5;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
                         }
 
                         &__icon {
@@ -564,10 +579,12 @@
                         }
 
                         &__delete {
+                            cursor: pointer;
                             margin: 0 24px 0 0;
                         }
 
                         &__edit {
+                            cursor: pointer;
 
                         }
                     }
