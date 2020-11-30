@@ -174,6 +174,7 @@
         @include mob-labels-links-btn;
         text-transform: capitalize;
         color: map-get($color-primary, global-text);
+        outline: none;
         @include tablet {
             width: 4rem;
             height: 2.375rem;

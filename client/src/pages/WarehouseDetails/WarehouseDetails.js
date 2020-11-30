@@ -17,7 +17,12 @@ class Warehouse extends Component {
     inventory: null,
     inventoryConst: null,
     inOrder: true,
-    deleteObj: { name: "", id: "" },
+    deleteObj: { 
+      name: "", 
+      id: "",
+      header: "inventory item",
+      body: `the warehouse inventory list.`
+    },
   };
 
   componentDidMount() {
