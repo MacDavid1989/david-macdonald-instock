@@ -1,37 +1,33 @@
 @import "../../partials/mixins";
-@import "../../partials/typography";
 @import "../../partials/variables";
 
 .add-item-header {
   display: flex;
-  align-items: flex-start;
-  padding: 1.8rem;
+  align-items: center;
+  padding: 32px 24px 24px;
   width: 100%;
+  max-height: 128px;
   border-bottom: 1px solid map-get($color-secondary, borders);
   @include tablet {
-    padding: 2rem;
+    padding: 32px calc(32px + (8 / 512) * (100vw - 768px)) 21px;
+    height: 94px;
+  }
+  @include desktop {
+    padding: 32px 40px 21px;
   }
   &__title {
-    margin: 0;
-    font-family: semi-bold;
-    font-size: 1.5rem;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 600;
     @include tablet {
-      font-size: 2.2rem;
-    }
-    @include tablet {
-      font-size: 3rem;
+      font-size: 32px;
+      line-height: 40px;
     }
   }
   &__back {
-    margin-top: 0.5rem;
-    margin-right: 0.4rem;
-    @include tablet {
-      margin-top: 1.2rem;
-      margin-right: 0.5rem;
-    }
-    @include tablet {
-      margin-top: 1.7rem;
-      margin-right: 1rem;
-    }
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin-right: 12px;
   }
 }

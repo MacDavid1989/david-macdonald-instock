@@ -1,13 +1,11 @@
 @import "../../partials/mixins";
 .new-inventory{
     z-index: 2;
-    border-radius: 8px;
+    border-radius: 3px;
     background-color: white;
     width: calc(343px + (361 / 393) * (100vw - 375px));
 
     @include tablet {
-      top: 5.75rem;
-
         width: calc(704px + (316 / 512) * (100vw - 768px));
     }
 
