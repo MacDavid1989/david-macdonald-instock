@@ -87,16 +87,17 @@
         height: 2.25rem;
         background-color: map-get($color-primary, global-white);
         border: 1px solid map-get($color-secondary, outlines);
-        border-radius: 20px;
         padding: 0.5rem 0 0.5rem 1rem;
         font-size: 0.8125rem;
         line-height: 1.25rem;
+        border-radius: 20px;
+        outline: none;
 
         @include tablet {
             height: 2.375rem;
             font-size: 0.875rem;
             line-height: 1.375rem;
-        }
+        } 
     }
 
     &__search-icon {

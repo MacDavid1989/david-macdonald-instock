@@ -1,8 +1,6 @@
 @import "../../partials/mixins";
 .new-inventory{
-    position: absolute;
-    top: 8.5rem;
-
+    z-index: 2;
     border-radius: 8px;
     background-color: white;
     width: calc(343px + (361 / 393) * (100vw - 375px));
