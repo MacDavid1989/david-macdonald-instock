@@ -4,9 +4,7 @@ import './Copyright.scss';
 const Copyright = () => {
     return (
         <div className="copyright">
-            <p className="copyright__text">
-                &copy;InStock Inc. All Rights Reserved
-            </p>
+                &copy; InStock Inc. All Rights Reserved
         </div>
     );
 };

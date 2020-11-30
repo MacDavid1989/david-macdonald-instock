@@ -15,6 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
+      <div className="spacer"></div>
       <Switch>
         <Route exact path="/">
           <Redirect to="/warehouse"/>

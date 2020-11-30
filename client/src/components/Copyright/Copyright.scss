@@ -1,20 +1,17 @@
 @import '../../partials/mixins';
 
 .copyright {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 2.5rem 0;
+    color: map-get($color-secondary, table-column-header);
+    @include mob-body-small;
+    font-weight: lighter;
 
-    &__text {
-        @include mob-body-small;
-        padding: 2.5rem 0;
-        color: map-get($color-secondary, table-column-header);
-        @include tablet {
-            padding: 4.375rem 0;
-            @include body-small;
-        }
-        @include desktop{
-            padding: 10.125rem 0;
-        }
+    @include tablet {
+        padding: 4.375rem 0 2.5rem;
+        @include body-small;
+    }
+
+    @include desktop{
+        padding: 5.9375rem 0 3rem;
     }
 }

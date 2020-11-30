@@ -6,21 +6,28 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
+    background-color: white;
+    z-index: 3;
     display: flex;
     justify-content: center;
+
+    @include tablet{
+    background-color: rgba(0, 0, 0, 0.5);
+
+    }
+
     &__wrapper{
-        width: 100%;
-        height: 100%;
+        display: flex;
+        flex-direction: column;
+        width: 375px;
+        height: 667px;
         padding: 1rem;
+        margin: 0 auto;
         background-color: white;
         @include tablet{
-            display: block;
-            margin: 5rem auto;
-            width: 80%;
-            height: fit-content;
-            height: 300px;
+            margin: 185px auto 0;
+            width: 672px;
+            height: 262px;
             padding: 1rem 2rem;
         }
     }
@@ -32,14 +39,11 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+            margin-top: 381px;
         width: 100%;
-        height: 100vw;
         @include tablet{
-            height: 20vw;
+            margin-top: auto;
             justify-content: flex-end;
-        }
-        @include desktop{
-            height: 10vw;
         }
     }
     &__btn{
