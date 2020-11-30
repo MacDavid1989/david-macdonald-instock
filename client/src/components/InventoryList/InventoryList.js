@@ -18,7 +18,7 @@ const InventoryList = (props) => {
                   <span className="inventory-card__stock-item">
                     {item.itemName}
                   </span>
-                  <span>
+                  <span className="inventory-card__stock-item-chevron">
                     <img
                       src={chevronRight}
                       className="inventory-card__chevron"
