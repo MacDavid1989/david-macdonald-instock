@@ -6,9 +6,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 2rem 1rem 1.5rem 1rem;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
     background-color: map-get($color-primary, global-white);
-    margin-right: 1rem;
+    //margin-right: 1rem;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 
     @include tablet {
         flex-direction: row;
@@ -33,7 +35,9 @@
     &__title {
         font-size: 28px;
         line-height: 36px;
-        font-family: 'semi-bold';
+        @include mob-page-header;
+        font-family: 'Titillium';
+        font-weight: 600;
 
         @include tablet {
             font-size: 32px;
@@ -55,9 +59,10 @@
     }
 
     &__search-wrapper {
-        width: 100%;
+        width: 18.4375rem;
+        height: 2.25rem;
         position: relative;
-
+        display: flex;
         @include tablet {
             width: 185px;
             margin-left: auto;
@@ -69,14 +74,25 @@
     }
 
     &__search {
+        outline: none;
         width: 100%;
         background-color: map-get($color-primary, global-white);
         border: 1px solid map-get($color-secondary, outlines);
         border-radius: 20px;
-        padding: 0.5rem 0 0.5rem 1rem;
+        padding: 0.5rem 1.219375rem 0.5rem 1rem;
         font-size: 13px;
         line-height: 20px;
         font-family: 'regular';
+        overflow: scroll;
+        transition: 0.2s;
+        &:focus {
+            border: solid 1px map-get($color-primary, interactive-el);
+        }
+        &::placeholder {
+            @include mob-body-medium;
+            font-family: 'Titillium';
+            color: map-get($color-secondary, placeholder-text);
+        }
 
         @include tablet {
             font-size: 14px;
@@ -85,9 +101,9 @@
     }
 
     &__search-icon {
-        position: absolute;
-        top: 7px;
-        right: 15px;
+        margin: 0.5625rem 0 0 -2.219375rem;
+        width: 1.093125rem;
+        height: 1.093125rem;
     }
 
     &__right {
@@ -102,6 +118,8 @@
     }
 
     &__button {
+        width: 18.4375rem;
+        height: 2.25rem;
         background-color: map-get($color-primary, interactive-el);
         width: 100%;
         border-radius: 20px;
@@ -110,9 +128,8 @@
         padding: 0.5rem 0;
         text-align: center;
         text-decoration: none;
-        font-family: 'regular';
-        font-size: 13px;
-        line-height: 20px;
+        font-family: 'Titillium';
+        @include mob-body-medium;
 
         @include tablet {
             width: 168px;
