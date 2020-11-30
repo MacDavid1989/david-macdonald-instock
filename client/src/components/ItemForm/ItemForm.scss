@@ -3,35 +3,38 @@
 @import "../../partials/variables";
 
 .item-form-com {
-  padding-top: 1rem;
+  padding: 16px 0 0;
+  @include tablet {
+    padding: 24px 0 0;
+  }
+
   &__title {
-    margin: 0;
-    font-family: semi-bold;
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0 0 24px;
+    font-weight: 600;
     @include tablet {
-      font-size: 1.8rem;
-    }
-    @include desktop {
-      font-size: 2rem;
+      font-size: 24px;
+      line-height: 32px;
+      margin: 0 0 32px;
     }
   }
+
   &__wrapper {
     display: flex;
     flex-direction: column;
-    margin-top: 0.5rem;
     &--radio {
       flex-direction: row;
-      margin-top: 0 !important;
+      margin: 0 0 16px;
       &-wrapper {
         margin-right: 4rem;
       }
-    }
-    @include tablet {
-      margin-top: 1rem;
-    }
-    @include desktop {
-      margin-top: 1rem;
+      @include tablet {
+        margin: 0 0 24px;
+      }
     }
   }
+
   &__input {
     border-radius: 20px;
     height: 2rem;
@@ -39,6 +42,7 @@
     border: 1px solid map-get($color-secondary, borders);
     resize: none;
     padding: 1rem;
+    margin: 0 0 16px;
     &--text-area {
       height: 100px;
       padding: 0.8rem;
@@ -46,6 +50,17 @@
     &--select {
       padding: 0;
       padding-left: 0.5rem;
+    }
+    &-qty {
+      @include tablet {
+        width: calc(288px - (166 / 512) * (100vw - 768px));
+      }
+      @include desktop {
+        width: 122px;
+      }
+    }
+    @include tablet {
+      margin: 0 0 24px;
     }
   }
   &__radio {
@@ -63,13 +78,22 @@
   }
   &__inner-wrap {
       
-    padding: 1rem;
+    padding: 0 1rem;
     @include tablet {
+      padding: 0 calc(32px + (8 / 512) * (100vw - 768px));
       width: 100%;
       &--top {
         border-right: 1px solid map-get($color-secondary, dividers);
       }
     }
+    @include desktop {
+      padding: 0 40px;
+
+    }
+  }
+  #name, #desc, #cat, #status, #qty, #WH {
+    font-weight: 600;
+    margin: 0 0 4px;
   }
   &__btn-wrapper {
     display: flex;

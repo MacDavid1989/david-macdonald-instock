@@ -170,7 +170,7 @@ class ItemForm extends Component {
               <h3 className="item-form-com__title">Item Availability</h3>
               <div className="item-form-com__wrapper">
                 <div className="item-form-com__wrapper">
-                  <label>Status</label>
+                  <label id="status">Status</label>
                   <div className="item-form-com__wrapper item-form-com__wrapper--radio">
                     <div className="item-form-com__wrapper--radio-wrapper">
                       <input
@@ -181,7 +181,7 @@ class ItemForm extends Component {
                         checked={this.state.status}
                         value={true}
                       />
-                      <label>In Stock</label>
+                      <label >In Stock</label>
                     </div>
                     <div>
                       <input
@@ -202,10 +202,10 @@ class ItemForm extends Component {
                   </label>
                   <input
                     required
-                    className="item-form-com__input"
+                    className="item-form-com__input item-form-com__input-qty"
                     type="number"
                     name="qty"
-                    placeholder="Enter item amount"
+                    placeholder="Enter amount"
                     value={this.state.qty}
                     onChange={this.onQtyChange}
                   />
