@@ -11,6 +11,7 @@ class DeleteModal extends Component {
 
   //closes the screen
   onCloseDeleteScreen = () => {
+    this.props.resetRoute()
     this.setState({
       display: false,
     });

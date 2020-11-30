@@ -1,10 +1,6 @@
-import React from 'react';
-
+import './AddNewInventory.scss';
 import AddNewItemHeader from '../../components/AddNewItemHeader/AddNewItemHeader';
 import ItemForm from '../../components/ItemForm/ItemForm';
-
-import './AddNewInventory.scss';
-
 
 const AddNewInventory = (props) => {
     return (

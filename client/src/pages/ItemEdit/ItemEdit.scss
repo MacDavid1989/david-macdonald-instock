@@ -6,10 +6,10 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
-    width: calc(343px + (361/393) * (100vw - 375px));
+    width: calc(21.4375rem + (361/393) * (100vw - 23.4375rem));
     background: #FFFFFF;
-    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-    border-radius: 3px;
+    box-shadow: 0 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
+    border-radius: 0.3125rem;
 
     a {
         display: flex;
@@ -21,29 +21,29 @@
     &__banner {
         display: flex;
         align-items: center;
-        padding: 32px 24px 24px;
-        border-bottom: solid #BDC5D5 1px;
-        height: 92px;
+        padding: 2rem 1.5rem 1.5rem;
+        border-bottom: solid #BDC5D5 0.0625rem;
+        height: 5.75rem;
         
         .banner {
 
             &__arrow {
-                width: 24px;
-                height: 24px;
+                width: 1.5rem;
+                height: 1.5rem;
                 cursor: pointer;
             }
 
             &__heading {
-                line-height: 36px;
-                font-size: 28px;
+                line-height: 2.25rem;
+                font-size: 1.75rem;
                 font-weight: 600;
-                margin: 0 0 0 8px;
+                margin: 0 0 0 0.5rem;
             }
         }
     }
 
     &__form {
-        padding: 16px 0 0;
+        padding: 1rem 0 0;
     }
 
     &__inputs {
@@ -52,30 +52,30 @@
     }
 
     &__details {
-        padding: 0 24px 24px;
-        border-bottom: solid #BDC5D5 1px;
+        padding: 0 1.5rem 1.5rem;
+        border-bottom: solid #BDC5D5 0.0625rem;
 
         &-title {
-            font-size: 20px;
-            line-height: 28px;
-            margin: 0 0 24px;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            margin: 0 0 1.5rem;
             font-weight: 600;
         }
 
         &-name {
             display: flex;
             flex-direction: column;
-            margin: 0 0 16px;
+            margin: 0 0 1rem;
 
             #itemName {
-                padding: 8px 16px;
+                padding: 0.5rem 1rem;
                 width: 100%;
-                height: 36px;
+                height: 2.25rem;
                 background: #FFFFFF;
-                border: 1px solid #BDC5D5;
-                border-radius: 20px;
-                font-size: 13px;
-                line-height: 20px;
+                border: 0.0625rem solid #BDC5D5;
+                border-radius: 1.25rem;
+                font-size: 0.8125rem;
+                line-height: 1.25rem;
                 @include input-state;
             }
         }
@@ -83,18 +83,18 @@
         &-description {
             display: flex;
             flex-direction: column;
-            margin: 0 0 16px;
+            margin: 0 0 1rem;
 
             #itemDescription {
                 resize: none;
-                padding: 8px 16px;
+                padding: 0.5rem 1rem;
                 width: 100%;
-                height: 120px;
+                height: 7.5rem;
                 background: #FFFFFF;
-                border: 1px solid #BDC5D5;
-                border-radius: 20px;
-                font-size: 13px;
-                line-height: 20px;
+                border: 0.0625rem solid #BDC5D5;
+                border-radius: 1.25rem;
+                font-size: 0.8125rem;
+                line-height: 1.25rem;
                 @include input-state;
 
             }
@@ -105,40 +105,40 @@
             flex-direction: column;
 
             #itemCategory {
-                padding: 8px 16px;
+                padding: 0.5rem 1rem;
                 width: 100%;
-                height: 36px;
+                height: 2.25rem;
                 background: #FFFFFF;
-                border: 1px solid #BDC5D5;
-                border-radius: 20px;
-                font-size: 13px;
-                line-height: 20px;
+                border: 0.0625rem solid #BDC5D5;
+                border-radius: 1.25rem;
+                font-size: 0.8125rem;
+                line-height: 1.25rem;
                 @include select-drop;
             }
         }
         
         &-label {
-            font-size: 13px;
-            line-height: 20px;
+            font-size: 0.8125rem;
+            line-height: 1.25rem;
                 font-weight: 600;
-                margin: 0 0 4px;
+                margin: 0 0 0.25rem;
         }
     }
 
     &__availability {
-        padding: 16px 24px;
+        padding: 1rem 1.5rem;
 
         &-title {
-            font-size: 20px;
-            line-height: 28px;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
                 font-weight: 600;
-                margin: 0 0 24px;
+                margin: 0 0 1.5rem;
         }
 
         &-status {
             display: flex;
             flex-direction: column;
-            margin: 0 0 16px;
+            margin: 0 0 1rem;
 
             .status{
 
@@ -153,9 +153,9 @@
                     width: calc((156 / 295) * 100%);
 
                     &-radio{
-                        font-size: 13px;
-                        line-height: 20px;
-                        margin: 0 0 0 8px;
+                        font-size: 0.8125rem;
+                        line-height: 1.25rem;
+                        margin: 0 0 0 0.5rem;
                     }
                 }
                 &__out {
@@ -164,9 +164,9 @@
                     width: calc((139 / 295) * 100%);
 
                     &-radio{
-                        font-size: 13px;
-                        line-height: 20px;
-                        margin: 0 0 0 8px;
+                        font-size: 0.8125rem;
+                        line-height: 1.25rem;
+                        margin: 0 0 0 0.5rem;
                     }
                 }
 
@@ -186,23 +186,23 @@
             flex-direction: column;
             
             #itemWarehouse {
-                padding: 8px 16px;
+                padding: 0.5rem 1rem;
                 width: 100%;
-                height: 36px;
+                height: 2.25rem;
                 background: #FFFFFF;
-                border: 1px solid #BDC5D5;
-                border-radius: 20px;
-                font-size: 13px;
-                line-height: 20px;
+                border: 0.0625rem solid #BDC5D5;
+                border-radius: 1.25rem;
+                font-size: 0.8125rem;
+                line-height: 1.25rem;
                 @include select-drop;
             }
         }
         
         &-label {
-            font-size: 13px;
-            line-height: 20px;
+            font-size: 0.8125rem;
+            line-height: 1.25rem;
                 font-weight: 600;
-                margin: 0 0 4px;
+                margin: 0 0 0.25rem;
         }
     }
 
@@ -210,7 +210,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 16px 24px;
+        padding: 1rem 1.5rem;
         background-color: rgba( map-get($color-background, cta-bg), $alpha: 0.75) ;
     }
 
@@ -218,21 +218,21 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 8px 51px;
-        height: 36px;
-        width: 139px;
-        border-radius: 20px;
+        padding: 0.5rem 3.1875rem;
+        height: 2.25rem;
+        width: 8.6875rem;
+        border-radius: 1.25rem;
         outline: none;
-        border: 1px solid #BDC5D5;
+        border: 0.0625rem solid #BDC5D5;
         background-color: #FFFFFF;
         color: #5C667E;
-        font-size: 13px;
+        font-size: 0.8125rem;
         font-weight: 600;
-        line-height: 20px;
+        line-height: 1.25rem;
         cursor: pointer;
 
         &:hover {
-            border: solid 1px #2E66E5;
+            border: solid 0.0625rem #2E66E5;
             color: #2E66E5;
         }
 
@@ -242,17 +242,17 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 8px 56px;
-        height: 36px;
-        width: 139px;
-        border-radius: 20px;
+        padding: 0.5rem 3.5rem;
+        height: 2.25rem;
+        width: 8.6875rem;
+        border-radius: 1.25rem;
         outline: none;
         border: none;
         background-color: #2E66E5;
         color: white;
-        font-size: 13px;
+        font-size: 0.8125rem;
         font-weight: 600;
-        line-height: 20px;
+        line-height: 1.25rem;
         cursor: pointer;
 
             &:hover {
@@ -261,24 +261,24 @@
 
     }
 
-    @media (min-width: 768px) {
-        width: calc(704px + (316/512) * (100vw - 768px));
+    @media (min-width: 48rem) {
+        width: calc(44rem + (316/512) * (100vw - 48rem));
     
         &__banner {
-            padding: 32px 24px 21px;
-            height: 94px;
+            padding: 2rem 1.5rem 1.3125rem;
+            height: 5.875rem;
             
             .banner {
     
                 &__heading {
-                    line-height: 40px;
-                    font-size: 32px;
+                    line-height: 2.5rem;
+                    font-size: 2rem;
                 }
             }
         }
     
         &__form {
-            padding: 24px 0 0;
+            padding: 1.5rem 0 0;
         }
 
         &__inputs {
@@ -286,34 +286,34 @@
         }
     
         &__details {
-            padding: 0 32px 32px;
+            padding: 0 2rem 2rem;
             border-bottom: none;
-            border-right: solid #BDC5D5 1px;
-            width: calc(351px + (158/512) * (100vw - 768px));
+            border-right: solid #BDC5D5 0.0625rem;
+            width: calc(21.9375rem + (158/512) * (100vw - 48rem));
     
             &-title {
-                font-size: 20px;
-                line-height: 28px;
-                margin: 0 0 32px;
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+                margin: 0 0 2rem;
             }
     
             &-name {
-                margin: 0 0 24px;
+                margin: 0 0 1.5rem;
     
                 #itemName {
-                    height: 38px;
-                    font-size: 14px;
-                    line-height: 22px;
+                    height: 2.375rem;
+                    font-size: 0.875rem;
+                    line-height: 1.375rem;
                     @include input-state;
                 }
             }
     
             &-description {
-                margin: 0 0 24px;
+                margin: 0 0 1.5rem;
     
                 #itemDescription {
-                    font-size: 14px;
-                    line-height: 22px;
+                    font-size: 0.875rem;
+                    line-height: 1.375rem;
                     @include input-state;
                 }
             }
@@ -321,48 +321,48 @@
             &-category {
     
                 #itemCategory {
-                    height: 38px;
-                    font-size: 14px;
-                    line-height: 22px;
+                    height: 2.375rem;
+                    font-size: 0.875rem;
+                    line-height: 1.375rem;
                     @include select-drop;
                 }
             }
             
             &-label {
-                font-size: 14px;
-                line-height: 22px;
+                font-size: 0.875rem;
+                line-height: 1.375rem;
             }
         }
     
         &__availability {
-            width: calc(352px + (158/512) * (100vw - 768px));
-            padding: 0 32px 32px;
+            width: calc(22rem + (158/512) * (100vw - 48rem));
+            padding: 0 2rem 2rem;
     
             &-title {
-                font-size: 20px;
-                line-height: 28px;
-                margin: 0 0 32px;
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+                margin: 0 0 2rem;
             }
     
             &-status {
-                margin: 0 0 24px;
+                margin: 0 0 1.5rem;
     
                 .status{
     
                     &__in {
-                        width: 110px;
+                        width: 6.875rem;
     
                         &-radio{
-                            font-size: 14px;
-                            line-height: 22px;
+                            font-size: 0.875rem;
+                            line-height: 1.375rem;
                         }
                     }
                     &__out {
-                        width: 178px;
+                        width: 11.125rem;
 
                         &-radio{
-                            font-size: 14px;
-                            line-height: 22px;
+                            font-size: 0.875rem;
+                            line-height: 1.375rem;
                         }
                     }
                 }
@@ -371,57 +371,57 @@
             &-warehouse {
                 
                 #itemWarehouse {
-                    height: 38px;
-                    font-size: 14px;
-                    line-height: 22px;
+                    height: 2.375rem;
+                    font-size: 0.875rem;
+                    line-height: 1.375rem;
                     @include select-drop;
                 }
             }
             
             &-label {
-                font-size: 14px;
-                line-height: 22px;
+                font-size: 0.875rem;
+                line-height: 1.375rem;
             }
         }
     
         &__buttons {
             justify-content: flex-end;
-            margin-top: 24px;
-            padding: 16px 32px 16px;
+            margin-top: 1.5rem;
+            padding: 1rem 2rem 1rem;
         }
     
         &__cancel {
-            padding: 8px 16px;
-            height: 38px;
-            width: 72px;
-            font-size: 14px;
-            line-height: 22px;
-            margin:  0 16px 0 0;
+            padding: 0.5rem 1rem;
+            height: 2.375rem;
+            width: 4.5rem;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            margin:  0 1rem 0 0;
         }
     
         &__save {
-            padding: 8px 16px;
-            height: 38px;
-            width: 61px;
-            font-size: 14px;
-            line-height: 22px;
+            padding: 0.5rem 1rem;
+            height: 2.375rem;
+            width: 3.8125rem;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
         }
     }
 
-    @media (min-width: 1280px) {
-        width: 1020px;
+    @media (min-width: 80rem) {
+        width: 63.75rem;
     
         &__details {
-            width: 509px;
+            width: 31.8125rem;
         }
     
         &__availability {
-            width: 510px;
+            width: 31.875rem;
     
             &-title {
-                font-size: 20px;
-                line-height: 28px;
-                margin: 0 0 32px;
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+                margin: 0 0 2rem;
             }
         }
     }

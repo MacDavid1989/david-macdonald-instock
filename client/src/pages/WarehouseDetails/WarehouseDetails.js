@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import DeleteModal from "../../components/DeleteModal/DeleteModal";
-import axios from "axios";
 import "./WarehouseDetails.scss";
+import axios from "axios";
+import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import edit from "../../assets/icons/edit-24px.svg";
 import editWhite from "../../assets/icons/edit_white-24px.svg";
@@ -25,7 +25,7 @@ class Warehouse extends Component {
     },
   };
 
-  componentDidMount() {
+  getWarehouse = () => {
     axios
       .get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}`)
       .then((res) => {
@@ -33,9 +33,17 @@ class Warehouse extends Component {
           warehouse: res.data.warehouse,
           inventory: res.data.inventory,
           inventoryConst: res.data.inventory,
+          deleteObj: {
+            name: "",
+            id: "",
+          }
         });
       })
       .catch(console.error);
+  }
+
+  componentDidMount() {
+    this.getWarehouse()
   }
 
   sortByValue = (key1) => {
@@ -74,24 +82,17 @@ class Warehouse extends Component {
   };
 
   deleteRoute = (id) => {
-    axios.delete(API_URL + `/inventory/${id}`)
-    .then((res) => {
-      axios
-      .get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}`)
-      .then((res) => {
-        this.setState({
-          warehouse: res.data.warehouse,
-          inventory: res.data.inventory,
-          inventoryConst: res.data.inventory,
-          deleteObj: {
-            name: "",
-            id: "",
-          }
-        });
-      })
-      .catch(console.error);
-    });
+    this.getWarehouse()
   };
+
+  resetRoute = () => {
+    this.setState({
+      deleteObj: {
+        name: "",
+        id: "",
+      }
+    }) 
+  }
 
   render() {
     return (
@@ -99,6 +100,7 @@ class Warehouse extends Component {
         <DeleteModal
           deleteThing={this.state.deleteObj}
           onDeleteRoute={this.deleteRoute}
+          resetRoute={this.resetRoute}
         />
         <div className="warehouse">
           <section className="warehouse__banner">

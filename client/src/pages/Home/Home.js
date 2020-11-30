@@ -1,8 +1,8 @@
+import React, { Component } from "react";
+import axios from "axios";
+import "./Home.scss";
 import WarehouseNav from "../../components/WarehouseNav/WarehouseNav";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
-import axios from "axios";
-import React, { Component } from "react";
-import "./Home.scss";
 import WarehousesLabels from "../../components/WarehouseLabels/WarehouseLabels";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 
@@ -130,12 +130,22 @@ class Home extends Component {
       });
   }
 
+  resetRoute = () => {
+    this.setState({
+      deleteObj: {
+        name: "",
+        id: "",
+      }
+    }) 
+  }
+
   render() {
     return (
       <>
         <DeleteModal
           deleteThing={this.state.deleteObj}
           onDeleteRoute={this.deleteRoute}
+          resetRoute={this.resetRoute}
         />
         <div className="warehouse__container">
           <WarehouseNav updateDisplay={this.updateDisplay} />

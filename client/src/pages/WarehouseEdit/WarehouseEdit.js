@@ -1,9 +1,9 @@
 // <<<<<<<<<< IMPORTS >>>>>>>>>> \\
 
 import React, { Component } from 'react';
-import BackArrow from '../../assets/icons/arrow_back-24px.svg';
-import './WarehouseEdit.scss';
 import axios from 'axios';
+import './WarehouseEdit.scss';
+import BackArrow from '../../assets/icons/arrow_back-24px.svg';
 
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -25,7 +25,7 @@ class EditWarehouse extends Component {
         name: "",
     };
 
-    componentDidMount() {
+    getWarehouseInfo = () => {
         axios
         .get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}`)
         .then((res) => {
@@ -44,6 +44,10 @@ class EditWarehouse extends Component {
             });
         })
         .catch((err) => console.log(err));
+    }
+
+    componentDidMount() {
+        this.getWarehouseInfo()
     }
 
     onNameChange = (e) => {
@@ -120,24 +124,7 @@ class EditWarehouse extends Component {
     }
 
     handleReset = () => {
-        axios
-        .get(`${API_URL}/warehouse/${this.props.match.params.warehouseId}`)
-        .then((res) => {
-            this.setState({
-                address: res.data.warehouse.address,
-                city: res.data.warehouse.city,
-                contact: {
-                    email: res.data.warehouse.contact.email,
-                    name:res.data.warehouse.contact.name,
-                    phone:res.data.warehouse.contact.phone,
-                    position: res.data.warehouse.contact.position
-                },
-                country:res.data.warehouse.country,
-                id: res.data.warehouse.id,
-                name: res.data.warehouse.name,   
-            });
-        })
-        .catch((err) => console.log(err));
+        this.getWarehouseInfo()
     }
 
     handleBack = () => {

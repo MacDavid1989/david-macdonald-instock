@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import './WarehouseAdd.scss';
 import axios from "axios";
 import BackArrow from '../../assets/icons/arrow_back-24px.svg';
-import './WarehouseAdd.scss';
 
 const API_URL = process.env.REACT_APP_API_URL;
 class WarehouseAdd extends Component {

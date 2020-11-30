@@ -45,7 +45,6 @@ createNewWarehouse = (req, res) => {
   //make the new warehouse
   const newWarehouseObj = newWarehouse(uuidv4(), req.body);
 
-  console.log(newWarehouseObj)
   //if there is a good input
   if (newWarehouseObj) {
     //add the new warehouse to the list

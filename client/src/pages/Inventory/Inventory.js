@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from "react";
 import axios from "axios";
+import "./Inventory.scss";
 import InventoryLabels from "../../components/InventoryLabels/InventoryLabels";
 import InventoryNav from "../../components/InventoryNav/InventoryNav";
 import InventoryList from "../../components/InventoryList/InventoryList";
-import "./Inventory.scss";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -57,6 +57,15 @@ class Inventory extends Component {
       this.getInventories();
     });
   };
+
+  resetRoute = () => {
+    this.setState({
+      deleteObj: {
+        name: "",
+        id: "",
+      }
+    }) 
+  }
 
   //sorts the values
   sortByValue = (key1) => {
@@ -128,6 +137,7 @@ class Inventory extends Component {
         <DeleteModal
           deleteThing={this.state.deleteObj}
           onDeleteRoute={this.deleteRoute}
+          resetRoute={this.resetRoute}
         />
         <div className="inventory__container">
           <InventoryNav updateDisplay={this.updateDisplay}/>
