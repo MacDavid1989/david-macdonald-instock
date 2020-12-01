@@ -209,7 +209,7 @@
     &__buttons {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
         padding: 1rem 1.5rem;
         background-color: rgba( map-get($color-background, cta-bg), $alpha: 0.75) ;
     }
@@ -229,6 +229,7 @@
         font-size: 0.8125rem;
         font-weight: 600;
         line-height: 1.25rem;
+        margin: 0 1.0625rem 0 0;
         cursor: pointer;
 
         &:hover {
