@@ -1,0 +1,157 @@
+@import "../../partials/mixins";
+@import '../../partials/variables';
+@import "../../partials/typography";
+
+.navInv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    background-color: map-get($color-primary, global-white);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    @include tablet {
+        height: 5.875rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 2rem 1.375rem 2rem;
+    }
+
+    @include desktop {
+        padding: 2rem 2.5rem 1.375rem;
+    }
+    
+    &__left {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        @include mob-page-header;
+        font-weight: 600;
+
+        @include tablet {
+            @include page-header;
+        }
+    }
+
+    &__middle {
+        width: 295px;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 0;
+            width: calc(185px + (89 / 512) * (100vw - 768px));
+        }
+    }
+
+    &__search-wrapper {
+        width: 100%;
+        height: 2.25rem;
+        position: relative;
+        display: flex;
+
+        @include tablet {
+            justify-content: flex-end;
+            width: calc(185px + (89 / 512) * (100vw - 768px));
+        }
+
+        @include desktop {
+            height: 2.375rem;
+            width: 17.125rem;
+        }
+    }
+
+    &__search {
+        outline: none;
+        width: 18.4375rem;
+        background-color: map-get($color-primary, global-white);
+        border: 1px solid map-get($color-secondary, outlines);
+        border-radius: 20px;
+        padding: 0.5rem 1.219375rem 0.5rem 1rem;
+        @include mob-labels-links-btn;
+        overflow: scroll;
+        transition: 0.2s;
+        &:focus {
+            border: solid 1px map-get($color-primary, interactive-el);
+        }
+        &::placeholder {
+            @include mob-body-medium;
+            color: map-get($color-secondary, placeholder-text);
+            @include tablet {
+                @include body-medium;
+            }
+        }
+        @include tablet {
+            @include body-medium;
+            position: relative;
+            width: calc(185px + (89 / 512) * (100vw - 768px));
+        }
+
+
+    }
+
+    &__search-icon {
+        margin: 0.5625rem 0 0 -2.219375rem;
+        width: 1.093125rem;
+        height: 1.093125rem;
+
+        @include tablet {
+            position: absolute;
+            right: 1.219375rem;
+            z-index: 2;
+        }
+    }
+
+    &__right {
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        @include tablet {
+            width: 9rem;
+            justify-content: flex-end;
+        }
+    }
+
+    &__button {
+        width: 18.4375rem;
+        height: 2.25rem;
+        background-color: map-get($color-primary, interactive-el);
+        border-radius: 20px;
+        color: map-get($color-primary, global-white);
+        border: none;
+        padding: 0.5rem 0;
+        text-align: center;
+        text-decoration: none;
+        @include mob-body-medium;
+        font-weight: 600;
+        cursor: pointer;
+
+            &:hover {
+                background-color: #232940;
+            }
+        
+        @include tablet {
+            @include body-medium;
+            width: 8rem;
+            margin-left: 1rem;
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        @include desktop {
+            height: 2.375rem;
+            padding: 8px 16px;
+        }
+    }
+}

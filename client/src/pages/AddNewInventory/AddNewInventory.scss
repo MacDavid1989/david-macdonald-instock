@@ -1,0 +1,17 @@
+@import "../../partials/mixins";
+
+.new-inventory{
+    z-index: 2;
+    border-radius: 0.1875rem;
+    box-shadow: 0.125rem 0 0.3125rem 0 rgba(19, 24, 44, 0.1);
+    background-color: white;
+    width: calc(21.4375rem + (361 / 393) * (100vw - 23.4375rem));
+
+    @include tablet {
+        width: calc(44rem + (316 / 512) * (100vw - 48rem));
+    }
+
+    @include desktop {
+        width: 63.75rem;
+    }
+}

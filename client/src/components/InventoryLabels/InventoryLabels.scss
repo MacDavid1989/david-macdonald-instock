@@ -1,0 +1,122 @@
+@import "../../partials/mixins";
+@import '../../partials/variables';
+@import "../../partials/typography";
+
+.inventory-labels {
+    display: none;
+    
+
+    @include tablet {
+        @include table-header;
+        font-family: 'Titilium';
+        display: flex;
+        padding: 0.6875rem 2rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @include desktop {
+        padding: 0.625rem 2.5rem;
+    }
+
+    &__container--inventory {
+        padding-right: 2rem;
+
+        @include tablet {
+            padding: 0;
+        }
+    }
+
+    &__sub-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        
+        &--inventory {
+            @include tablet {
+                justify-content: flex-start;
+                width: 9.375rem;
+            }
+
+            @include desktop {
+                width: 13.8125rem;
+            }
+        }
+
+        &--category {
+            @include tablet {
+                justify-content: flex-start;
+                width: 7.5625rem;
+            }
+
+            @include desktop {
+                width: 10.875rem;
+            }
+        }
+
+        &--status {
+            @include tablet {
+                justify-content: flex-start;
+                width: 7.625rem;
+            }
+
+            @include desktop {
+                width: 10.875rem;
+            }
+        }
+
+        &--qty {
+            @include tablet {
+                justify-content: flex-start;
+                width: 3.8125rem;
+            }
+
+            @include desktop {
+                width: 5.4375rem;
+            }
+        }
+
+        &--warehouse {
+            @include tablet {
+                justify-content: flex-start;
+                align-items: center;
+                width: 5.8125rem;
+            }
+
+            @include desktop {
+                width: 10.875rem;
+            }
+        }
+
+        &--actions {
+            @include tablet {
+                width: 5.8125rem;
+                justify-content: flex-end;
+            }
+            @include desktop {
+                width: 6.875rem;
+            }
+        }
+    }
+
+    &__text {
+
+        @include tablet {
+            @include body-small;
+            font-weight: 600;
+            margin-right: 0.55875rem;
+            color: map-get($color-secondary, table-column-header);
+            }
+    }
+
+    &__icon-image {
+        @include tablet {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            width: 0.75rem;
+            height: 0.75rem;
+        }
+    }
+}

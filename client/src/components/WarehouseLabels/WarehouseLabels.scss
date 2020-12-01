@@ -1,0 +1,110 @@
+@import "../../partials/mixins";
+@import '../../partials/variables';
+
+.warehouse-labels {
+    display: none;
+    background-color: map-get($color-background, page-bg );
+
+    @include tablet {
+        width: 100%;
+        height: 2.5rem;
+        display: flex;
+        padding: 0.625rem 2rem;
+        text-align: center;
+        align-items: center;
+        justify-content: initial;
+    }
+
+    @include desktop {
+        min-width: 100%;
+        padding: 0.625rem 2.5rem;
+    }
+
+    &__container--address {
+        width: 7.5625rem;
+        @include tablet {
+            width: calc(7.5625rem + (140 / 512) * (100vw - 48rem));
+        }
+
+        @include desktop {
+            width: 16.3125rem;
+        }
+    }
+
+    &__sub-container {
+        display: flex;
+        align-items: center;
+        
+        
+        &--warehouse {
+            @include tablet {
+                width: calc(9.375rem + (71 / 512) * (100vw - 48rem));
+            }
+
+            @include desktop {
+                width: 13.8125rem;
+            }
+        }
+
+        &--address {
+            @include tablet {
+                width: calc(7.5625rem + (140 / 512) * (100vw - 48rem));
+            }
+
+            @include desktop {
+                width: 16.3125rem;
+            }
+        }
+
+        &--name {
+            @include tablet {
+                width: calc(7.5625rem + (53 / 512) * (100vw - 48rem));
+            }
+
+            @include desktop {
+                width: 10.875rem;
+            }
+        }
+
+        &--info {
+            @include tablet {
+                width: 10.875rem;
+            }
+
+            @include desktop {
+                width: 10.875rem;
+            }
+        }
+
+        &--actions {
+            @include tablet {
+                width: calc(2.875rem + (64 / 512) * (100vw - 48rem));
+                display: flex;
+                justify-content: flex-end;
+            }
+            @include desktop {
+                
+                width: 6.875rem;
+            }
+        }
+    }
+
+    &__text {
+
+        @include tablet {
+            font-size: 0.75rem;
+            line-height: 1.125rem;
+            font-weight: 600;
+            color: map-get($color-secondary, table-column-header);
+            }
+    }
+
+    &__icon-image {
+        @include tablet {
+            cursor: pointer;
+            width: 12px;
+            height: 12px;
+            margin: 0 0 0 8.94px;
+        }
+    }
+}

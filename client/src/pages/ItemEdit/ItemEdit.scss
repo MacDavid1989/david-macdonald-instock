@@ -1,0 +1,428 @@
+@import '../../partials/variables';
+@import '../../partials/mixins';
+
+.itemEdit {
+    @include normal;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    width: calc(21.4375rem + (361/393) * (100vw - 23.4375rem));
+    background: #FFFFFF;
+    box-shadow: 0 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
+    border-radius: 0.3125rem;
+
+    a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+
+    &__banner {
+        display: flex;
+        align-items: center;
+        padding: 2rem 1.5rem 1.5rem;
+        border-bottom: solid #BDC5D5 0.0625rem;
+        height: 5.75rem;
+        
+        .banner {
+
+            &__arrow {
+                width: 1.5rem;
+                height: 1.5rem;
+                cursor: pointer;
+            }
+
+            &__heading {
+                line-height: 2.25rem;
+                font-size: 1.75rem;
+                font-weight: 600;
+                margin: 0 0 0 0.5rem;
+            }
+        }
+    }
+
+    &__form {
+        padding: 1rem 0 0;
+    }
+
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__details {
+        padding: 0 1.5rem 1.5rem;
+        border-bottom: solid #BDC5D5 0.0625rem;
+
+        &-title {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            margin: 0 0 1.5rem;
+            font-weight: 600;
+        }
+
+        &-name {
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 1rem;
+
+            #itemName {
+                padding: 0.5rem 1rem;
+                width: 100%;
+                height: 2.25rem;
+                background: #FFFFFF;
+                border: 0.0625rem solid #BDC5D5;
+                border-radius: 1.25rem;
+                font-size: 0.8125rem;
+                line-height: 1.25rem;
+                @include input-state;
+            }
+        }
+
+        &-description {
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 1rem;
+
+            #itemDescription {
+                resize: none;
+                padding: 0.5rem 1rem;
+                width: 100%;
+                height: 7.5rem;
+                background: #FFFFFF;
+                border: 0.0625rem solid #BDC5D5;
+                border-radius: 1.25rem;
+                font-size: 0.8125rem;
+                line-height: 1.25rem;
+                @include input-state;
+
+            }
+        }
+
+        &-category {
+            display: flex;
+            flex-direction: column;
+
+            #itemCategory {
+                padding: 0.5rem 1rem;
+                width: 100%;
+                height: 2.25rem;
+                background: #FFFFFF;
+                border: 0.0625rem solid #BDC5D5;
+                border-radius: 1.25rem;
+                font-size: 0.8125rem;
+                line-height: 1.25rem;
+                @include select-drop;
+            }
+        }
+        
+        &-label {
+            font-size: 0.8125rem;
+            line-height: 1.25rem;
+                font-weight: 600;
+                margin: 0 0 0.25rem;
+        }
+    }
+
+    &__availability {
+        padding: 1rem 1.5rem;
+
+        &-title {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+                font-weight: 600;
+                margin: 0 0 1.5rem;
+        }
+
+        &-status {
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 1rem;
+
+            .status{
+
+                &__wrapper {
+                    display: flex;
+                    align-items: center;
+                }
+
+                &__in {
+                    display: flex;
+                    align-items: center;
+                    width: calc((156 / 295) * 100%);
+
+                    &-radio{
+                        font-size: 0.8125rem;
+                        line-height: 1.25rem;
+                        margin: 0 0 0 0.5rem;
+                    }
+                }
+                &__out {
+                    display: flex;
+                    align-items: center;
+                    width: calc((139 / 295) * 100%);
+
+                    &-radio{
+                        font-size: 0.8125rem;
+                        line-height: 1.25rem;
+                        margin: 0 0 0 0.5rem;
+                    }
+                }
+
+            }
+         
+            .checked {
+                font-weight: 600;
+            }
+            
+            #itemStatus {
+                cursor: pointer;
+            }
+        }
+
+        &-warehouse {
+            display: flex;
+            flex-direction: column;
+            
+            #itemWarehouse {
+                padding: 0.5rem 1rem;
+                width: 100%;
+                height: 2.25rem;
+                background: #FFFFFF;
+                border: 0.0625rem solid #BDC5D5;
+                border-radius: 1.25rem;
+                font-size: 0.8125rem;
+                line-height: 1.25rem;
+                @include select-drop;
+            }
+        }
+        
+        &-label {
+            font-size: 0.8125rem;
+            line-height: 1.25rem;
+                font-weight: 600;
+                margin: 0 0 0.25rem;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        background-color: rgba( map-get($color-background, cta-bg), $alpha: 0.75) ;
+    }
+
+    &__cancel {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0.5rem 3.1875rem;
+        height: 2.25rem;
+        width: 8.6875rem;
+        border-radius: 1.25rem;
+        outline: none;
+        border: 0.0625rem solid #BDC5D5;
+        background-color: #FFFFFF;
+        color: #5C667E;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        line-height: 1.25rem;
+        cursor: pointer;
+
+        &:hover {
+            border: solid 0.0625rem #2E66E5;
+            color: #2E66E5;
+        }
+
+    }
+
+    &__save {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0.5rem 3.5rem;
+        height: 2.25rem;
+        width: 8.6875rem;
+        border-radius: 1.25rem;
+        outline: none;
+        border: none;
+        background-color: #2E66E5;
+        color: white;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        line-height: 1.25rem;
+        cursor: pointer;
+
+            &:hover {
+                background-color: #232940;
+            }
+
+    }
+
+    @media (min-width: 48rem) {
+        width: calc(44rem + (316/512) * (100vw - 48rem));
+    
+        &__banner {
+            padding: 2rem 1.5rem 1.3125rem;
+            height: 5.875rem;
+            
+            .banner {
+    
+                &__heading {
+                    line-height: 2.5rem;
+                    font-size: 2rem;
+                }
+            }
+        }
+    
+        &__form {
+            padding: 1.5rem 0 0;
+        }
+
+        &__inputs {
+            flex-direction: row;
+        }
+    
+        &__details {
+            padding: 0 2rem 2rem;
+            border-bottom: none;
+            border-right: solid #BDC5D5 0.0625rem;
+            width: calc(21.9375rem + (158/512) * (100vw - 48rem));
+    
+            &-title {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+                margin: 0 0 2rem;
+            }
+    
+            &-name {
+                margin: 0 0 1.5rem;
+    
+                #itemName {
+                    height: 2.375rem;
+                    font-size: 0.875rem;
+                    line-height: 1.375rem;
+                    @include input-state;
+                }
+            }
+    
+            &-description {
+                margin: 0 0 1.5rem;
+    
+                #itemDescription {
+                    font-size: 0.875rem;
+                    line-height: 1.375rem;
+                    @include input-state;
+                }
+            }
+    
+            &-category {
+    
+                #itemCategory {
+                    height: 2.375rem;
+                    font-size: 0.875rem;
+                    line-height: 1.375rem;
+                    @include select-drop;
+                }
+            }
+            
+            &-label {
+                font-size: 0.875rem;
+                line-height: 1.375rem;
+            }
+        }
+    
+        &__availability {
+            width: calc(22rem + (158/512) * (100vw - 48rem));
+            padding: 0 2rem 2rem;
+    
+            &-title {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+                margin: 0 0 2rem;
+            }
+    
+            &-status {
+                margin: 0 0 1.5rem;
+    
+                .status{
+    
+                    &__in {
+                        width: 6.875rem;
+    
+                        &-radio{
+                            font-size: 0.875rem;
+                            line-height: 1.375rem;
+                        }
+                    }
+                    &__out {
+                        width: 11.125rem;
+
+                        &-radio{
+                            font-size: 0.875rem;
+                            line-height: 1.375rem;
+                        }
+                    }
+                }
+            }
+    
+            &-warehouse {
+                
+                #itemWarehouse {
+                    height: 2.375rem;
+                    font-size: 0.875rem;
+                    line-height: 1.375rem;
+                    @include select-drop;
+                }
+            }
+            
+            &-label {
+                font-size: 0.875rem;
+                line-height: 1.375rem;
+            }
+        }
+    
+        &__buttons {
+            justify-content: flex-end;
+            margin-top: 1.5rem;
+            padding: 1rem 2rem 1rem;
+        }
+    
+        &__cancel {
+            padding: 0.5rem 1rem;
+            height: 2.375rem;
+            width: 4.5rem;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            margin:  0 1rem 0 0;
+        }
+    
+        &__save {
+            padding: 0.5rem 1rem;
+            height: 2.375rem;
+            width: 3.8125rem;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+        }
+    }
+
+    @media (min-width: 80rem) {
+        width: 63.75rem;
+    
+        &__details {
+            width: 31.8125rem;
+        }
+    
+        &__availability {
+            width: 31.875rem;
+    
+            &-title {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+                margin: 0 0 2rem;
+            }
+        }
+    }
+}

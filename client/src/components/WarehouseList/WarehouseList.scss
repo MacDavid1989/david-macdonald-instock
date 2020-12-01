@@ -1,0 +1,311 @@
+@import "../../partials/mixins";
+@import '../../partials/variables';
+
+.card {
+    width: 100%;
+    background-color: map-get($color-primary, global-white);
+    padding-bottom: 1.6875rem;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    &:hover {
+        background-color: rgba(46, 102, 230, 0.07);
+    }
+    
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+
+        .card__chevron {
+            transform: translate(4px, 0);
+        }
+    }
+
+    &:first-of-type{
+        border-top: none;
+    }
+
+    @include tablet {
+        border-bottom: 1px solid map-get($color-secondary, dividers);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 2rem;
+    }
+    @include desktop {
+        padding: 0 2.5rem;
+    }
+
+    &__top-container {
+        border-top: 1px solid map-get($color-secondary, dividers);
+        padding: 1rem 1.5rem 1.1875rem 1.5rem;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        @include tablet {
+            height: fit-content;
+            border-top: none;
+            padding: 0.2rem 0;
+            align-items: center;
+        }
+        @include desktop{
+            justify-content: left;
+        }
+    }
+
+    &__warehouse-address {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__warehouse {
+        display: flex;
+        flex-direction: column;
+        width: 147.5px;
+    }
+
+    &__subheader {
+        font-size: 0.6875rem;
+        line-height: 1rem;
+        padding-bottom: 0.25rem;
+        color: map-get($color-secondary, table-column-header);
+        font-weight: 800;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__location-container {
+        height: fit-content;
+        display: flex;
+        @include tablet {
+            padding-top: 1.2rem;
+            width: calc(9.375rem + (71 / 512) * (100vw - 48rem));
+            align-items: flex-end;
+        }
+
+        @include desktop {
+            width: 13.8125rem;
+        }
+    }
+
+    &__location {
+        margin-bottom: 1rem;
+        color: map-get($color-primary, interactive-el);
+        font-size: 0.8125rem;
+        line-height: 1.25rem;
+        font-weight: 600;
+        position: relative;
+
+        @include tablet {
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+        }
+    }
+
+    &__chevron {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+    }
+
+    &__info {
+        font-size: 0.8125rem;
+        line-height: 1.25rem;
+        display: flex;
+        flex-wrap: wrap;
+        color: map-get($color-primary, global-text);
+        //padding-bottom: 1rem;
+
+        @include tablet {
+            width: 5.9375rem;
+        }
+
+        @include desktop{
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+        }
+
+        &--address {
+            width:6.9375rem;
+            height: 2.5rem;
+            @include mob-labels-links-btn;
+            @include tablet {
+                letter-spacing: -0.03rem;
+                @include label-links-btn;
+                margin: 12.8px 0;
+                height: fit-content;
+                padding: 0 1.8125rem 0 0;
+                width: calc(7.5625rem + (140 / 512) * (100vw - 48rem));
+            }
+            @include desktop {
+                width: 16.3125rem;
+            }
+        }
+
+        &--name {
+            margin-bottom: 1rem;
+            @include mob-labels-links-btn;
+            @include tablet {
+                letter-spacing: -0.03rem;
+                @include label-links-btn;
+                width: 7.5625rem;
+                margin-bottom: 0;
+            }
+            @include desktop {
+                width: 10.875rem;
+            }
+        }
+    }
+
+    &__address {
+        width: 147.45px;
+        display: flex;
+        flex-direction: column;
+        padding-right: 1rem;
+
+        @include tablet {
+            width: calc(7.5625rem + (140 / 512) * (100vw - 48rem));
+            justify-content: space-between;
+            padding: 0;
+        }
+        @include desktop{
+            width: 16.3125rem;
+        }
+    }
+
+    &__contact-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 50%;
+
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+            margin: 0;
+        }
+    }
+
+    &__name {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 147.5px;
+
+        @include tablet {
+            flex-direction: row;
+            justify-content:left;
+            align-items: center;
+            width: calc(7.5625rem + (53 / 512) * (100vw - 48rem));
+        }
+        @include desktop{
+            width: 10.875rem;
+        }
+    }
+
+    &__contact-info {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 147.5px;
+
+        @include tablet {
+            width: 11rem;
+            height: 2.75rem;
+        }
+
+        @include desktop {
+            width: 10.875rem;
+        }
+    }
+
+    &__phone-email{
+        width: fit-content;
+        height: 2.5rem;
+        @include mob-labels-links-btn;
+        @include tablet{
+            width: 10.875rem;
+            margin: 12.8px 0;
+        }
+
+        @include desktop{
+            width: 10.875rem;
+        }
+    }
+
+    &__phone {
+        padding-bottom: 0;
+        width: 7.5625rem;
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+    &__icons {
+        display: flex;
+        padding: 0 1.5rem;
+        justify-content: space-between;
+        width: 343px;
+
+        @include tablet {
+            justify-content: flex-end;
+            width: calc(2.875rem + (64 / 512) * (100vw - 48rem));
+            padding: 0;
+        }
+
+        @include desktop{
+            width: 6.875rem;
+        }
+    }
+
+    &__delete-icon{
+        width: 1.5rem;
+        margin-left: -.175rem;
+        margin:  0 1.5rem 0 0;
+        cursor: pointer;
+        
+        @include tablet {
+            margin-left: 0;
+        }
+    }
+
+    &__edit-icon{
+        width: 1.5rem;
+        margin-right: -.035rem;
+    }
+
+    &__email {
+        letter-spacing: -0.03rem;
+        @include label-links-btn;
+
+        @include tablet {
+            width: 100%;
+        }
+    }
+}
+
+.card-tab {
+    display: none;
+    @include tablet {
+        display: block;
+    }
+}
+
+.card-mob {
+    @include tablet {
+        display: none;
+    }
+    
+}
