@@ -27,8 +27,9 @@ yarn-error.log*
 
 
 # css files
-.css.map
-.css
+*.css.map
+*.css
+
 
 # eslint
 .eslintcache
